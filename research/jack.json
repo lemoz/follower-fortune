@@ -1,0 +1,24 @@
+{
+ "meta": {
+  "account": "jack",
+  "name": "@jack",
+  "totalFollowers": 9161230,
+  "researched": 1,
+  "identified": 0,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "stewartclark57",
+   "name": "Stewart Clark",
+   "followers": 1710,
+   "identified": false,
+   "headline": "Unidentified individual; no bio or distinguishing public profile",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  }
+ ]
+}

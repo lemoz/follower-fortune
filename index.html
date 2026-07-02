@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FollowerFortune — how rich is your network?</title>
+<style>
+  :root{
+    --bg:#070912; --bg2:#0c1020; --card:rgba(255,255,255,.04); --card2:rgba(255,255,255,.06);
+    --line:rgba(255,255,255,.08); --txt:#e8ecf6; --mut:#8b94ad; --gold:#ffd24a; --green:#34e0a1;
+    --pink:#ff6ec7; --blue:#5b9dff; --violet:#a98bff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1200px 700px at 80% -10%, rgba(169,139,255,.18), transparent 60%),
+      radial-gradient(900px 600px at -10% 10%, rgba(52,224,161,.12), transparent 55%),
+      var(--bg);
+    color:var(--txt); min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+  header.top{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .logo{font-size:26px}
+  h1{font-size:24px;margin:0;letter-spacing:-.02em}
+  .tag{color:var(--mut);font-size:14px;margin:4px 0 24px}
+
+  .searchbar{display:flex;gap:10px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
+    padding:10px;border-radius:16px;backdrop-filter:blur(8px)}
+  .searchbar input{flex:1;min-width:220px;background:rgba(0,0,0,.25);border:1px solid var(--line);
+    color:var(--txt);font-size:16px;padding:14px 16px;border-radius:11px;outline:none}
+  .searchbar input::placeholder{color:#5e677f}
+  .btn{border:none;cursor:pointer;font-weight:700;font-size:15px;padding:0 22px;border-radius:11px;color:#0a0a12;
+    background:linear-gradient(135deg,var(--gold),#ff9d4a)}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent;color:var(--mut);border:1px solid var(--line);font-weight:600}
+  .btn.ghost:hover{color:var(--txt)}
+  .hint{color:var(--mut);font-size:12.5px;margin:10px 2px 0}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{font-size:12.5px;color:var(--mut);background:var(--card);border:1px solid var(--line);
+    padding:6px 11px;border-radius:999px;cursor:pointer}
+  .chip:hover{color:var(--txt);border-color:rgba(255,255,255,.2)}
+
+  .result{margin-top:28px;display:none}
+  .result.show{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .profrow{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .avatar{width:58px;height:58px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-weight:800;font-size:20px;color:#0a0a12}
+  .pname{font-size:19px;font-weight:700;line-height:1.1}
+  .phandle{color:var(--mut);font-size:14px}
+  .verified{color:var(--blue);font-size:15px}
+
+  .bignum{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+  .total{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1;margin:6px 0 2px;
+    background:linear-gradient(120deg,var(--gold),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--mut);font-size:14px}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .stat{background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:13px 14px}
+  .stat .k{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+  .stat .v{font-size:20px;font-weight:700;margin-top:3px}
+
+  .graphwrap{position:relative}
+  .graphwrap h3,.lbcard h3,.gl h3{margin:0 0 4px;font-size:15px}
+  .muted{color:var(--mut);font-size:12.5px;margin:0 0 12px}
+  svg{width:100%;height:auto;display:block}
+  .node-label{font-size:9px;fill:var(--txt);opacity:.85}
+  .node-money{font-size:8.5px;font-weight:700}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  @media(max-width:820px){.cols{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse}
+  th,td{text-align:left;padding:9px 8px;font-size:14px;border-bottom:1px solid var(--line)}
+  th{color:var(--mut);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  td.r,th.r{text-align:right}
+  .rank{color:var(--mut);width:26px;font-variant-numeric:tabular-nums}
+  .mini-av{width:26px;height:26px;border-radius:50%;display:inline-grid;place-items:center;font-size:11px;font-weight:800;color:#0a0a12;vertical-align:middle;margin-right:8px}
+  .who{display:flex;align-items:center}
+  .whoname{font-weight:600;line-height:1.05}
+  .whoh{color:var(--mut);font-size:12px}
+  .money{font-weight:700;font-variant-numeric:tabular-nums}
+  .title-pill{font-size:11px;color:var(--mut);background:var(--card2);border:1px solid var(--line);padding:2px 8px;border-radius:999px;white-space:nowrap}
+  tr.me{background:rgba(255,210,74,.07)}
+
+  .gl{margin-top:18px}
+  .footer{color:var(--mut);font-size:12px;text-align:center;margin-top:34px;line-height:1.6}
+  .footer b{color:#aab2c8}
+  .empty{color:var(--mut);font-size:13px;padding:14px 0}
+  .pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 0 0 rgba(52,224,161,.6);animation:p 1.8s infinite}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(52,224,161,.5)}70%{box-shadow:0 0 0 8px rgba(52,224,161,0)}100%{box-shadow:0 0 0 0 rgba(52,224,161,0)}}
+  .toggle{display:inline-flex;align-items:center;gap:8px;color:var(--mut);font-size:13px;margin:12px 2px 0;cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+  .err{display:none;margin:12px 2px 0;color:#ffb1b1;background:rgba(255,90,90,.08);border:1px solid rgba(255,90,90,.28);padding:9px 12px;border-radius:10px;font-size:13px}
+  .srclink{text-decoration:none;font-size:12px;opacity:.65}
+  .srclink:hover{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">🐋</div>
+    <div>
+      <h1>FollowerFortune</h1>
+    </div>
+  </header>
+  <p class="tag">Drop in any X / Twitter profile and see the hidden net worth lurking in their followers.</p>
+
+  <div class="searchbar">
+    <input id="q" type="text" placeholder="https://x.com/username  ·  or just @username" autocomplete="off" spellcheck="false"/>
+    <button class="btn" id="go">Estimate fortune</button>
+    <button class="btn ghost" id="lucky">🎲 Surprise me</button>
+  </div>
+  <p class="hint">For entertainment only — net worth is estimated by a (totally made-up) model from the handle. Same handle always gives the same result, so it's shareable.</p>
+  <label class="toggle"><input type="checkbox" id="realmode"/> 🛰️ Use real followers (live API — needs your twitterapi.io key in <code>.env</code>)</label>
+  <label class="toggle"><input type="checkbox" id="researchmode"/> 🔬 Deep-researched dossiers — evidence-based, sourced estimates (demo: <b>@levelsio</b>)</label>
+  <div id="err" class="err"></div>
+  <div class="chips" id="chips"></div>
+
+  <div class="result" id="result">
+    <div class="hero">
+      <div class="panel">
+        <div class="profrow">
+          <div class="avatar" id="av"></div>
+          <div>
+            <div class="pname"><span id="pname"></span> <span class="verified" id="ver"></span></div>
+            <div class="phandle" id="phandle"></div>
+          </div>
+        </div>
+        <div class="bignum">Total estimated net worth of followers</div>
+        <div class="total" id="total"></div>
+        <div class="sub" id="totsub"></div>
+        <div class="stats">
+          <div class="stat"><div class="k" id="k0">Followers</div><div class="v" id="s_followers"></div></div>
+          <div class="stat"><div class="k" id="k1">Avg per follower</div><div class="v" id="s_avg"></div></div>
+          <div class="stat"><div class="k" id="k2">Millionaires</div><div class="v" id="s_mill"></div></div>
+          <div class="stat"><div class="k" id="k3">🐋 Billionaire whales</div><div class="v" id="s_whales"></div></div>
+        </div>
+      </div>
+
+      <div class="panel graphwrap">
+        <h3>The money network</h3>
+        <p class="muted">Bubble size = estimated net worth. The 12 richest followers.</p>
+        <div id="graph"></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="panel lbcard">
+        <h3>💰 Richest followers</h3>
+        <p class="muted">The whales swimming in this network.</p>
+        <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Vibe</th><th class="r">Net worth</th></tr></thead>
+          <tbody id="lb"></tbody></table>
+      </div>
+
+      <div class="panel gl">
+        <h3><span class="pulse"></span>Global leaderboard</h3>
+        <p class="muted">Every profile searched on this device, by total network fortune.</p>
+        <table><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Network fortune</th></tr></thead>
+          <tbody id="global"></tbody></table>
+        <button class="btn ghost" id="clearlb" style="margin-top:12px;font-size:12.5px;padding:8px 14px">Clear leaderboard</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">
+    <b>FollowerFortune</b> estimates are <b>speculative guesses for entertainment and research</b> — nobody's actual net worth is known here.<br/>
+    Toy mode invents numbers deterministically from the handle. Live mode uses public follower counts only.
+    Researched dossiers are AI-compiled from public sources and carry wide error bars; verdicts and ranges are opinions, not facts.<br/>
+    Not financial data. Not financial advice. If you're listed and want out, ping <a href="https://x.com/cdossman" style="color:#aab2c8">@cdossman</a> and you'll be removed. Don't @ your accountant.
+  </p>
+</div>
+
+<script>
+/* ---------- deterministic RNG seeded by handle ---------- */
+function hashSeed(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return (h^h>>>16)>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
+
+/* ---------- name + handle generators ---------- */
+const FIRST=["Alex","Jordan","Taylor","Morgan","Casey","Riley","Jamie","Avery","Quinn","Sky","Devin","Harper","Sasha","Noah","Mia","Leo","Zoe","Kai","Ivy","Max","Luna","Eli","Nina","Theo","Aria","Finn","Cleo","Remy","Iris","Dante","Maya","Otis","Vera","Hugo","Wren","Cyrus","Greta","Milo","Esme","Rex","Dahlia","Soren","Blair","Knox","Opal","Cruz","Nadia","Ezra","Phoebe","Tariq","Yara","Bodhi","Sloane","Wade","Priya","Dmitri"];
+const LAST=["Chen","Park","Rivera","Kim","Patel","Nguyen","Walsh","Okoro","Silva","Haddad","Ivanov","Cohen","Mbeki","Rossi","Tan","Khan","Vega","Lund","Adeyemi","Brandt","Cruz","Mori","Sato","Diallo","Novak","Reyes","Sharma","Bauer","Costa","Fischer","Lopez","Mensah","Petrov","Yamamoto","Andersson","Bianchi","Dubois","Ferraro","Gupta","Holm"];
+const HSUF=["x","_","hq","io","eth","_dev","sol","_xyz","420","fm","tv","_jpg","ssss","gg","_real","nyc","_btc","99","_ai","lol"];
+const TITLES=[
+  [10e3,"🍜 Ramen survivor"],[100e3,"☕ Getting by"],[500e3,"🛋️ Comfortable"],
+  [1e6,"🏠 Almost there"],[10e6,"💼 Millionaire"],[100e6,"🚀 Serious money"],
+  [1e9,"💎 Mega rich"],[1e15,"🐋 Billionaire whale"]
+];
+function titleFor(nw){for(const [cap,t] of TITLES){if(nw<cap)return t;}return "🐋 Billionaire whale";}
+
+/* gradient avatar from a string */
+function grad(seed){const r=mulberry32(hashSeed(seed+"_g"));const h1=Math.floor(r()*360),h2=(h1+60+Math.floor(r()*180))%360;
+  return `linear-gradient(135deg,hsl(${h1} 80% 62%),hsl(${h2} 80% 55%))`;}
+function initials(name){return name.split(" ").map(w=>w[0]).join("").slice(0,2).toUpperCase();}
+
+/* ---------- money formatting ---------- */
+function money(n){
+  if(n>=1e12)return "$"+(n/1e12).toFixed(2)+"T";
+  if(n>=1e9)return "$"+(n/1e9).toFixed(2)+"B";
+  if(n>=1e6)return "$"+(n/1e6).toFixed(1)+"M";
+  if(n>=1e3)return "$"+(n/1e3).toFixed(0)+"K";
+  return "$"+Math.round(n);
+}
+function compact(n){
+  if(n>=1e6)return (n/1e6).toFixed(n>=1e7?0:1)+"M";
+  if(n>=1e3)return (n/1e3).toFixed(n>=1e4?0:1)+"K";
+  return ""+n;
+}
+
+/* ---------- parse handle from url/text ---------- */
+function parseHandle(raw){
+  let s=raw.trim();
+  s=s.replace(/^https?:\/\//i,"").replace(/^(www\.)?(x|twitter|fixupx|vxtwitter)\.com\//i,"");
+  s=s.split(/[/?#]/)[0];
+  s=s.replace(/^@/,"");
+  s=s.replace(/[^A-Za-z0-9_]/g,"");
+  return s.slice(0,15);
+}
+
+/* ---------- the model ---------- */
+function analyze(handle){
+  const rng=mulberry32(hashSeed("@"+handle.toLowerCase()));
+  // follower count: fame roll -> roughly 80 .. 40M
+  const fame=rng();
+  const followers=Math.max(42,Math.floor(80*Math.pow(10,fame*5.7)));
+  // how wealthy this particular crowd skews
+  const wealthFactor=0.6+rng()*rng()*5; // right-skewed
+  const xm=1500, alpha=1.16, cap=90e9;
+
+  // aggregates computed analytically from the Pareto tail so the headline
+  // counts always agree with the order-statistic leaderboard below
+  // (a Pareto(xmw, alpha) has mean alpha*xmw/(alpha-1) and P(X>=T)=(xmw/T)^alpha)
+  const xmw=xm*wealthFactor;
+  const meanNw=(alpha/(alpha-1))*xmw;
+  const totalAll=followers*meanNw;
+  const avg=meanNw;
+  const pAbove=T=>Math.min(1,Math.pow(xmw/T,alpha));
+  // floor of (followers+1)*P(>=T) == exact count crossing T under the order
+  // statistics used for the leaderboard, so headline & list never disagree
+  const millAll=Math.floor((followers+1)*pAbove(1e6));
+  const whalesAll=Math.floor((followers+1)*pAbove(1e9));
+
+  // build a named cast representing the RICHEST followers, using order statistics
+  // of the population so the leaderboard is consistent with the aggregate stats
+  const cast=[];
+  const M=Math.min(followers,60);
+  for(let i=0;i<M;i++){
+    const fn=FIRST[Math.floor(rng()*FIRST.length)];
+    const ln=LAST[Math.floor(rng()*LAST.length)];
+    const name=fn+" "+ln;
+    const h=(fn+ln).toLowerCase().replace(/[^a-z]/g,"")+(rng()<0.6?HSUF[Math.floor(rng()*HSUF.length)]:"");
+    // exact order statistic: the (i+1)-th richest of `followers` followers.
+    // #1 is kept pure (the true max) so it matches the whale/millionaire counts;
+    // lower ranks get mild jitter so the list doesn't look mechanical.
+    const u=(i+1)/(followers+1);
+    const jit=rng();
+    let nw=Math.min(cap, xmw/Math.pow(u,1/alpha));
+    if(i>0) nw*=(0.85+jit*0.3);
+    cast.push({name,handle:h,nw});
+  }
+  cast.sort((a,b)=>b.nw-a.nw);
+
+  // the profile's own estimated worth
+  const ownU=Math.max(1e-6,rng()*rng());
+  const ownWorth=Math.min(cap, xm/Math.pow(ownU,1/alpha)*(1+fame*8));
+  const verified=fame>0.62 || rng()>0.85;
+
+  return {handle,followers,totalAll,avg,millAll,whalesAll,cast,ownWorth,verified};
+}
+
+/* ---------- rendering ---------- */
+const $=id=>document.getElementById(id);
+
+function renderGraph(cast){
+  const W=560,H=420,cx=W/2,cy=H/2;
+  const top=cast.slice(0,12);
+  const maxNw=top[0].nw;
+  let edges="",nodes="";
+  top.forEach((f,i)=>{
+    const ang=(i/top.length)*Math.PI*2 - Math.PI/2;
+    const ring = i%2===0 ? 150 : 188;
+    const x=cx+Math.cos(ang)*ring, y=cy+Math.sin(ang)*ring;
+    const r=10+Math.sqrt(f.nw/maxNw)*30;
+    const col=`hsl(${(hashSeed(f.name)%360)} 75% 60%)`;
+    edges+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.12)" stroke-width="1"/>`;
+    nodes+=`<g>
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${col}" fill-opacity="0.85" stroke="rgba(255,255,255,.25)"/>
+      <text class="node-money" x="${x}" y="${y+3}" text-anchor="middle" fill="#0a0a12">${money(f.nw)}</text>
+      <text class="node-label" x="${x}" y="${y+r+11}" text-anchor="middle">@${f.handle.slice(0,12)}</text>
+    </g>`;
+  });
+  const center=`<circle cx="${cx}" cy="${cy}" r="34" fill="url(#cg)" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+    <text x="${cx}" y="${cy+4}" text-anchor="middle" font-size="11" font-weight="800" fill="#0a0a12">YOU</text>`;
+  $("graph").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img">
+    <defs><radialGradient id="cg"><stop offset="0%" stop-color="#ffd24a"/><stop offset="100%" stop-color="#ff9d4a"/></radialGradient></defs>
+    ${edges}${nodes}${center}</svg>`;
+}
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function renderLeaderboard(cast,n){
+  const rows=cast.slice(0,n||15).map((f,i)=>{
+    const pill=f.pill||('<span class="title-pill">'+titleFor(f.nw)+'</span>');
+    const sub=f.sub?('<br/><span class="whoh">'+esc(f.sub)+'</span>'):'';
+    const src=f.sourceUrl?(' <a class="srclink" href="'+esc(f.sourceUrl)+'" target="_blank" rel="noopener">🔗</a>'):'';
+    const moneyTxt=f.moneyText||money(f.nw);
+    return '<tr><td class="rank">'+(i+1)+'</td>'+
+      '<td><div class="who"><span class="mini-av" style="background:'+grad(f.name)+'">'+initials(f.name)+'</span>'+
+      '<span><span class="whoname">'+esc(f.name)+'</span>'+src+'<br/><span class="whoh">@'+esc(f.handle)+'</span>'+sub+'</span></div></td>'+
+      '<td>'+pill+'</td>'+
+      '<td class="r money">'+moneyTxt+'</td></tr>';
+  }).join("");
+  $("lb").innerHTML=rows;
+}
+
+const LB_KEY="ff_global_v1";
+function loadLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||{};}catch(e){return {};}}
+function saveLB(o){localStorage.setItem(LB_KEY,JSON.stringify(o));}
+function recordLB(d){
+  const lb=loadLB();
+  lb[d.handle.toLowerCase()]={handle:d.handle,total:d.totalAll,followers:d.followers,whales:d.whalesAll};
+  saveLB(lb);
+}
+// canonical leaderboard: the real researched dossiers (research/index.json), not localStorage noise
+let DOSSIERS=null;
+function loadDossiers(){
+  fetch('/research/index.json').then(r=>r.ok?r.json():null).then(d=>{
+    if(Array.isArray(d)){DOSSIERS=d;renderGlobal((($("q")&&$("q").value)||'').replace(/^@/,''));}
+  }).catch(()=>{});
+}
+function renderGlobal(currentHandle){
+  let arr;
+  if(DOSSIERS&&DOSSIERS.length){
+    arr=DOSSIERS.slice().sort((a,b)=>b.total-a.total).slice(0,12)
+      .map(d=>({handle:d.handle,total:d.total,followers:d.followers,sub:(d.identified||0)+' identified · '+(d.researched||0)+' researched'}));
+  }else{
+    const lb=loadLB();
+    arr=Object.values(lb).sort((a,b)=>b.total-a.total).slice(0,12)
+      .map(p=>({handle:p.handle,total:p.total,followers:p.followers,sub:(p.whales||0)+' 🐋'}));
+  }
+  if(arr.length===0){$("global").innerHTML=`<tr><td colspan="3" class="empty">No researched accounts yet.</td></tr>`;return;}
+  $("global").innerHTML=arr.map((p,i)=>`<tr class="${currentHandle&&p.handle.toLowerCase()===currentHandle.toLowerCase()?'me':''}">
+    <td class="rank">${i+1}</td>
+    <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc(p.handle.slice(0,2).toUpperCase())}</span>
+      <span><span class="whoname">@${esc(p.handle)}</span><br/><span class="whoh">${compact(p.followers)} followers · ${esc(p.sub)}</span></span></div></td>
+    <td class="r money">${money(p.total)}</td></tr>`).join("");
+}
+
+// shared renderer — takes a normalized object from either the synthetic model or the live API
+function paint(d){
+  $("av").style.background=grad(d.handle);
+  $("av").textContent=d.handle.slice(0,2).toUpperCase();
+  $("pname").textContent=d.displayName;
+  $("ver").textContent=d.verified?"✔":"";
+  $("phandle").textContent=d.handleLine;
+  $("total").textContent=money(d.totalAll);
+  $("totsub").textContent=d.totsub;
+  const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
+  d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
+  renderGraph(d.cast);
+  renderLeaderboard(d.cast,d.lbCount);
+  recordLB({handle:d.handle,totalAll:d.totalAll,followers:d.followers,whalesAll:d.whalesAll});
+  renderGlobal(d.handle);
+  $("result").classList.add("show");
+  $("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+// deterministic per-PERSON net worth: a given handle has the same worth wherever it appears
+function personNetWorth(handle){
+  const r=mulberry32(hashSeed("nw_"+String(handle).toLowerCase()));
+  let u=r(); if(u<1e-7)u=1e-7;
+  const factor=0.5+r()*r()*6;
+  return Math.min(9e10, 1500/Math.pow(u,1/1.16)*factor);
+}
+
+// synthetic (no API) — wraps the existing model
+function syntheticD(handle){
+  const a=analyze(handle);
+  return {handle,displayName:"@"+handle,
+    handleLine:"Own estimated worth: "+money(a.ownWorth),
+    verified:a.verified,followers:a.followers,
+    totalAll:a.totalAll,avg:a.avg,whalesAll:a.whalesAll,cast:a.cast,
+    stats:[{k:"Followers",v:compact(a.followers)},{k:"Avg per follower",v:money(a.avg)},
+      {k:"Millionaires",v:a.millAll.toLocaleString()},{k:"🐋 Billionaire whales",v:a.whalesAll.toLocaleString()}],
+    totsub:"across "+a.followers.toLocaleString()+" followers · estimated model"};
+}
+
+// live — real follower list from twitterapi.io, net worth still the fun estimate per real person
+function realD(handle,resp){
+  const total=resp.totalFollowers||(resp.followers?resp.followers.length:0)||0;
+  const sample=(resp.followers||[]).map(f=>({name:f.name||("@"+f.userName),handle:f.userName,nw:personNetWorth(f.userName)}))
+    .sort((a,b)=>b.nw-a.nw);
+  const n=sample.length||1;
+  const sampleTotal=sample.reduce((s,x)=>s+x.nw,0);
+  const sampleMill=sample.filter(x=>x.nw>=1e6).length;
+  const sampleWhale=sample.filter(x=>x.nw>=1e9).length;
+  const avg=sampleTotal/n;
+  const richest=sample.length?sample[0].nw:0;
+  return {handle,
+    displayName:(resp.profile&&resp.profile.name)||("@"+handle),
+    handleLine:"@"+handle+" · own est. "+money(personNetWorth(handle)),
+    verified:!!(resp.profile&&resp.profile.isBlueVerified),
+    followers:total,totalAll:avg*total,avg,
+    whalesAll:sampleWhale,cast:sample,
+    stats:[{k:"Followers (real)",v:compact(total)},{k:"Avg net worth",v:money(avg)},
+      {k:"Richest in sample",v:money(richest)},{k:"🛰️ Live sample",v:String(sample.length)}],
+    totsub:"across "+total.toLocaleString()+" real followers · 🛰️ live sample of "+sample.length};
+}
+
+// researched — evidence-based dossiers produced by the offline research pipeline
+function verdictPill(verdict,conf){
+  const map={supported:["✅","#34e0a1"],plausible:["🟢","#5b9dff"],overstated:["🟠","#ffb155"],unfounded:["⚪","#8b94ad"]};
+  const mc=map[verdict]||["⚪","#8b94ad"];
+  return '<span class="title-pill" style="border-color:'+mc[1]+'55;color:'+mc[1]+'">'+mc[0]+' '+esc(verdict)+' · '+esc(conf)+'</span>';
+}
+function rangeText(lo,hi){
+  lo=lo||0; hi=hi||0;
+  if(lo===0&&hi===0) return '<span class="whoh">n/a</span>';
+  if(lo===0) return '&lt;'+money(hi);
+  return money(lo)+'–'+money(hi);
+}
+function researchD(handle,data){
+  const M=data.meta||{};
+  const ppl=(data.people||[]).map(p=>({
+    name:p.name||("@"+p.handle), handle:p.handle, nw:((p.low||0)+(p.high||0))/2,
+    pill:verdictPill(p.verdict,p.confidence),
+    sub:(p.headline||"").slice(0,95),
+    sourceUrl:(p.sources&&p.sources[0])||"",
+    moneyText:rangeText(p.low,p.high)
+  })).sort((a,b)=>b.nw-a.nw);
+  const sumMid=ppl.reduce((s,x)=>s+x.nw,0);
+  const top=ppl.length?ppl[0].nw:0;
+  return {handle:M.account||handle,
+    displayName:M.name||("@"+handle),
+    handleLine:"🔬 deep-researched dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable",
+    verified:true,followers:M.totalFollowers||0,
+    totalAll:sumMid,avg:ppl.length?sumMid/ppl.length:0,whalesAll:0,
+    cast:ppl,lbCount:20,
+    stats:[{k:"Followers (real)",v:compact(M.totalFollowers||0)},{k:"Researched",v:String(M.researched||ppl.length)},
+      {k:"Identified",v:String(M.identified||0)},{k:"Top estimate",v:money(top)}],
+    totsub:"Σ midpoints of researched ranges · evidence-based, mostly low-confidence"};
+}
+async function runResearch(handle){
+  const btn=$("go"),old=btn.textContent;
+  btn.textContent="Loading dossier…";btn.disabled=true;
+  try{
+    const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
+    if(!r.ok){ showError("No researched dossier for @"+handle+" yet. Showing the estimated model instead."); paint(syntheticD(handle)); return; }
+    paint(researchD(handle, await r.json()));
+  }catch(e){ showError("Couldn't load the dossier ("+e+"). Showing the estimated model."); paint(syntheticD(handle)); }
+  finally{ btn.textContent=old;btn.disabled=false; }
+}
+
+function showError(m){const e=$("err");e.textContent=m;e.style.display="block";}
+function clearError(){const e=$("err");e.style.display="none";e.textContent="";}
+
+async function runReal(handle){
+  const btn=$("go"),old=btn.textContent;
+  btn.textContent="Fetching… (~10s)";btn.disabled=true;
+  try{
+    const r=await fetch("/api/lookup?handle="+encodeURIComponent(handle)+"&max=100");
+    const j=await r.json();
+    if(!j.ok){
+      const m={no_api_key:"No API key on the server yet — add TWITTERAPI_KEY to follower-fortune/.env and restart the server. Showing the estimated model instead.",
+        bad_key:"twitterapi.io rejected the API key — double-check it in .env.",
+        not_found:"twitterapi.io couldn't load @"+handle+" (typo, or a protected/suspended account?).",
+        rate_limited:"Rate limited — wait a few seconds and try again.",
+        bad_handle:"That handle didn't parse."}[j.error]||j.message||"Lookup failed.";
+      showError(m);
+      if(j.error==="no_api_key"||j.error==="bad_key"||j.error==="not_found") paint(syntheticD(handle));
+      return;
+    }
+    paint(realD(handle,j));
+  }catch(e){
+    showError("Couldn't reach the local API server — is it running? ("+e+")");
+    paint(syntheticD(handle));
+  }finally{ btn.textContent=old;btn.disabled=false; }
+}
+
+function run(raw){
+  const handle=parseHandle(raw);
+  if(!handle){$("q").focus();return;}
+  $("q").value="@"+handle;
+  clearError();
+  if($("researchmode")&&$("researchmode").checked) runResearch(handle);
+  else if($("realmode")&&$("realmode").checked) runReal(handle);
+  else paint(syntheticD(handle));
+}
+
+/* sample chips */
+const SAMPLES=["cdossman","levelsio","elonmusk","naval","balajis","VitalikButerin","jack","paulg","sama"];
+$("chips").innerHTML="Try: "+SAMPLES.map(s=>`<span class="chip" data-h="${s}">@${s}</span>`).join("");
+$("chips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(c)run(c.dataset.h);});
+
+$("go").addEventListener("click",()=>run($("q").value));
+$("q").addEventListener("keydown",e=>{if(e.key==="Enter")run($("q").value);});
+$("lucky").addEventListener("click",()=>run(SAMPLES[Math.floor(Math.random()*SAMPLES.length)]));
+$("clearlb").addEventListener("click",()=>{localStorage.removeItem(LB_KEY);renderGlobal($("q").value);});
+
+renderGlobal("");
+loadDossiers();
+</script>
+</body>
+</html>

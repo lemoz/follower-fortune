@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "account": "paulg",
+  "name": "@paulg",
+  "totalFollowers": 3599536,
+  "researched": 1,
+  "identified": 0,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "peptalksblog",
+   "name": "Pep",
+   "followers": 2171,
+   "identified": false,
+   "headline": "Independent facilitator and self-published author running a small coaching/workshop practice",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 5000,
+   "high": 80000,
+   "sources": [
+    "https://www.peptalksblog.com/",
+    "https://x.com/peptalksblog/status/1868703042792538539"
+   ]
+  }
+ ]
+}

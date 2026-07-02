@@ -1,0 +1,53 @@
+{
+ "meta": {
+  "account": "VitalikButerin",
+  "name": "@VitalikButerin",
+  "totalFollowers": 6673306,
+  "researched": 3,
+  "identified": 1,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "bigsunsocial",
+   "name": "BigSunAI",
+   "followers": 17087,
+   "identified": true,
+   "headline": "BigSunAI — green AI infrastructure and BSGAI utility token company; Chairman & CEO is Chia-Ching Luo",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.bsgai.ai",
+    "https://x.com/bigsunsocial"
+   ]
+  },
+  {
+   "handle": "LiShenlan",
+   "name": "Li Shenlan",
+   "followers": 5641,
+   "identified": false,
+   "headline": "Unidentified individual; no public profile found",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "KangZeyuan",
+   "name": "Kang Zeyuan",
+   "followers": 5586,
+   "identified": false,
+   "headline": "Unidentified small-scale adult content creator on X/Twitter selling custom content",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.wikidata.org/wiki/Q13653791"
+   ]
+  }
+ ]
+}

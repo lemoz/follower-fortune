@@ -1,0 +1,74 @@
+[
+ {
+  "handle": "cdossman",
+  "name": "@cdossman",
+  "total": 546689250.0,
+  "followers": 1497,
+  "researched": 591,
+  "identified": 456
+ },
+ {
+  "handle": "levelsio",
+  "name": "@levelsio",
+  "total": 28383250.0,
+  "followers": 905538,
+  "researched": 70,
+  "identified": 29
+ },
+ {
+  "handle": "elonmusk",
+  "name": "@elonmusk",
+  "total": 24396000.0,
+  "followers": 240448680,
+  "researched": 28,
+  "identified": 6
+ },
+ {
+  "handle": "balajis",
+  "name": "@balajis",
+  "total": 305000.0,
+  "followers": 1745391,
+  "researched": 4,
+  "identified": 1
+ },
+ {
+  "handle": "sama",
+  "name": "@sama",
+  "total": 250000.0,
+  "followers": 5270109,
+  "researched": 4,
+  "identified": 1
+ },
+ {
+  "handle": "naval",
+  "name": "@naval",
+  "total": 140250.0,
+  "followers": 3500958,
+  "researched": 8,
+  "identified": 2
+ },
+ {
+  "handle": "paulg",
+  "name": "@paulg",
+  "total": 42500.0,
+  "followers": 3599536,
+  "researched": 1,
+  "identified": 0
+ },
+ {
+  "handle": "jack",
+  "name": "@jack",
+  "total": 0.0,
+  "followers": 9161230,
+  "researched": 1,
+  "identified": 0
+ },
+ {
+  "handle": "VitalikButerin",
+  "name": "@VitalikButerin",
+  "total": 0.0,
+  "followers": 6673306,
+  "researched": 3,
+  "identified": 1
+ }
+]

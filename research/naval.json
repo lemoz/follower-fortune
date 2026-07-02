@@ -1,0 +1,124 @@
+{
+ "meta": {
+  "account": "naval",
+  "name": "@naval",
+  "totalFollowers": 3500958,
+  "researched": 8,
+  "identified": 2,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "heresmishti",
+   "name": "mishti ali",
+   "followers": 5012,
+   "identified": true,
+   "headline": "Founder's Associate at Lightfern AI; former journalist and comms lead at nsave (YC/Sequoia-backed fintech)",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 10000,
+   "high": 120000,
+   "sources": [
+    "https://www.linkedin.com/in/mishti-ali/ (search result listing, LinkedIn blocked direct fetch)",
+    "https://muckrack.com/mishti-ali-1 (search result listing, page blocked direct fetch)"
+   ]
+  },
+  {
+   "handle": "koutarou_furuno",
+   "name": "古野光太朗",
+   "followers": 1794,
+   "identified": true,
+   "headline": "CEO of TechWorker, early-stage Japanese AI consulting startup; Waseda University student-founder with prior Givery AI consulting experience and UPenn study abroad",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 80000,
+   "sources": [
+    "https://prtimes.jp/main/html/rd/p/000000005.000136017.html",
+    "https://techworker.co.jp/"
+   ]
+  },
+  {
+   "handle": "Mazel0x",
+   "name": "Mazel",
+   "followers": 2404,
+   "identified": false,
+   "headline": "Unidentified crypto/meme-coin retail enthusiast; $PEPE self-described \"maxi\" on X",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/Mazel0x/status/1944217482958643452 (HTTP 402 — page not accessible without authentication)"
+   ]
+  },
+  {
+   "handle": "Teazelbtc",
+   "name": "Teazelbtc (Vibecoder arc)",
+   "followers": 5575,
+   "identified": false,
+   "headline": "Pseudonymous smart contract developer and Web3 community ambassador",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500,
+   "high": 10000,
+   "sources": [
+    "https://x.com/Teazelbtc (account exists but returned HTTP 402, not accessible without authentication)",
+    "https://www.cointrust.com/market-news/fishwar-and-kult-games-partner-to-advance-web3-gaming-innovation"
+   ]
+  },
+  {
+   "handle": "PrayAndGrow_",
+   "name": "Pray and Grow",
+   "followers": 2833,
+   "identified": false,
+   "headline": "Anonymous Christian faith/inspirational X account; no real-world identity surfaced",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PrayAndGrow_"
+   ]
+  },
+  {
+   "handle": "divahere_ngl",
+   "name": "$",
+   "followers": 1266,
+   "identified": false,
+   "headline": "Unidentified private account; no public persona or wealth signals found",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "kyawgyi86123151",
+   "name": "@kyawgyi86123155",
+   "followers": 3551,
+   "identified": false,
+   "headline": "Unidentified Twitter/X account — likely a personal account of a Myanmar national named Kyaw Gyi",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/KyawGyi86934791",
+    "https://x.com/Kyawgyi30328060"
+   ]
+  },
+  {
+   "handle": "IamaugustJr",
+   "name": "August ✨",
+   "followers": 1254,
+   "identified": false,
+   "headline": "Unidentified X/Twitter user posting quotes, poetry, music, and nature content",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "account": "sama",
+  "name": "@sama",
+  "totalFollowers": 5270109,
+  "researched": 4,
+  "identified": 1,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "sassyTinATL",
+   "name": "Tiffany Thompson",
+   "followers": 1842,
+   "identified": true,
+   "headline": "Brand & Growth Marketing Leader; former Oracle Social Cloud Director; startup advisor based in Atlanta, GA",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 400000,
+   "sources": [
+    "https://x.com/sassytinatl",
+    "https://www.linkedin.com/in/tthompsoninatl/"
+   ]
+  },
+  {
+   "handle": "AleMacLeo",
+   "name": "Aleksandr",
+   "followers": 10401,
+   "identified": false,
+   "headline": "Unidentified individual; self-described \"thinker, inventor, storyteller\" on X/Twitter",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "gadget_sakenomi",
+   "name": "【公式】酒呑ガジェット　〜静かな環境であなたに...こちらは音のでないコンテンツです。〜",
+   "followers": 1411,
+   "identified": false,
+   "headline": "Automated AI tech blog (酒呑ガジェット) — anonymous Japanese affiliate content operation",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://gadget.e-sakenomi.com/",
+    "https://x.com/gadget_sakenomi/status/1993517935047135668"
+   ]
+  },
+  {
+   "handle": "MariaGoret92924",
+   "name": "Gorete de Castro",
+   "followers": 1124,
+   "identified": false,
+   "headline": "Private Brazilian individual; grandmother and coffee enthusiast with no public profile",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  }
+ ]
+}

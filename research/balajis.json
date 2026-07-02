@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "account": "balajis",
+  "name": "@balajis",
+  "totalFollowers": 1745391,
+  "researched": 4,
+  "identified": 1,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "stanscates",
+   "name": "Stan Scates",
+   "followers": 3755,
+   "identified": true,
+   "headline": "Music industry professional with ~25 years of experience; mid-level career in music promotion or A&R",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 300000,
+   "sources": [
+    "https://x.com/stanscates",
+    "https://www.linkedin.com/in/stan-scates-616a9118"
+   ]
+  },
+  {
+   "handle": "1D10Two",
+   "name": "RainCrow",
+   "followers": 2225,
+   "identified": false,
+   "headline": "US Navy Desert Shield/Desert Storm veteran; claims 7th-generation descent from Cherokee Chief Oconostota; VFW Life Member; US Constitutionalist",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 150000,
+   "sources": []
+  },
+  {
+   "handle": "MarcoEspositop",
+   "name": "Marco Esposito",
+   "followers": 5886,
+   "identified": false,
+   "headline": "Web3 community builder and tokenization advocate; bio links to mirae.fund, a small Web3 fund",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 100000,
+   "sources": [
+    "https://mirae.fund/ (redirected from t.co/1C4VrryZBC in bio; returned 403)",
+    "https://mirae.fund/team (found in search results; not directly fetched)"
+   ]
+  },
+  {
+   "handle": "michaelskyx",
+   "name": "Michael Sky",
+   "followers": 2625,
+   "identified": false,
+   "headline": "Unidentified individual using name \"Michael Sky\" on X/Twitter",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  }
+ ]
+}

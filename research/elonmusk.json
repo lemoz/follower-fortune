@@ -1,0 +1,389 @@
+{
+ "meta": {
+  "account": "elonmusk",
+  "name": "@elonmusk",
+  "totalFollowers": 240448680,
+  "researched": 28,
+  "identified": 6,
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+ },
+ "people": [
+  {
+   "handle": "pracownik",
+   "name": "claudio pracownik",
+   "followers": 21771,
+   "identified": true,
+   "headline": "Brazilian financial executive; former Partner/COO at BTG Pactual, CEO of Genial Investimentos, CFO at Flamengo; CEO of Win the Game sports finance JV",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 5000000,
+   "high": 25000000,
+   "sources": [
+    "https://www.bloomberglinea.com/2022/09/19/claudio-pracownik/",
+    "https://rocketreach.co/claudio-pracownik-email_16225842"
+   ]
+  },
+  {
+   "handle": "ebarmack",
+   "name": "Erik Barmack",
+   "followers": 2951,
+   "identified": true,
+   "headline": "Founder & CEO of Wild Sheep Content; former VP Head of International Originals at Netflix (8+ years); oversaw The Witcher, La Casa de Papel, and Netflix's anime initiative",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 4000000,
+   "high": 12000000,
+   "sources": [
+    "https://www.wildsheepcontent.com/who-we-are",
+    "https://www.c21media.net/news/netflix-alum-erik-barmacks-wild-sheep-sports-revises-motherwell-fc-bid/"
+   ]
+  },
+  {
+   "handle": "SU_IDDK",
+   "name": "上野 宗一郎｜IDDK CEO",
+   "followers": 1798,
+   "identified": true,
+   "headline": "Founder and CEO of IDDK Co., Ltd. — Toshiba spinout developing lensless semiconductor microscopy (MID) technology for space and field applications",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://fundinno.com/projects/113",
+    "https://iddk.co.jp/app-def/S-102/iddk_wp/?p=4988&lang=en"
+   ]
+  },
+  {
+   "handle": "kikillo",
+   "name": "kiki 🕯️",
+   "followers": 33139,
+   "identified": false,
+   "headline": "Spanish social media creator running independent streetwear brand Kikillo Club (kikillopieces.com)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 150000,
+   "sources": [
+    "https://www.instagram.com/kikillokikillo/",
+    "https://kikillopieces.com/"
+   ]
+  },
+  {
+   "handle": "Cr5Wj",
+   "name": "セイル✈︎SIL",
+   "followers": 1411,
+   "identified": false,
+   "headline": "Japanese hobbyist Twitter/X user with aviation and motorsports interests; not publicly identifiable",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 150000,
+   "sources": [
+    "https://x.com/Cr5Wj"
+   ]
+  },
+  {
+   "handle": "TemuTommyUK",
+   "name": "Elliott Fountain",
+   "followers": 4746,
+   "identified": true,
+   "headline": "Co-founder of PlayerTrader.com (UK football player scouting database) and CEO of a related venture; micro-startup entrepreneur in the UK football tech space",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 10000,
+   "high": 75000,
+   "sources": [
+    "https://www.playertrader.com/"
+   ]
+  },
+  {
+   "handle": "Husam_Ali2015",
+   "name": "Husam Ali",
+   "followers": 1248,
+   "identified": true,
+   "headline": "Iraqi PhD renewable energy researcher and senior engineer at the Iraqi Ministry of Electricity; postdoctoral fellow at Lebanese University",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 10000,
+   "high": 50000,
+   "sources": [
+    "https://www.energycentral.com/member/kQEcb5OUmW",
+    "https://www.energycentral.com/energy-biz/post/iraqi-scientist-in-the-field-of-renewable-energy-mddaDctY1UYJmFy"
+   ]
+  },
+  {
+   "handle": "jiwude",
+   "name": "Tee.rak",
+   "followers": 31660,
+   "identified": false,
+   "headline": "Thai outdoor/finance hobbyist on X with ~31K followers; self-described ordinary person interested in hiking, camping, and personal finance",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 5000,
+   "high": 50000,
+   "sources": []
+  },
+  {
+   "handle": "PK_sonsofjohnny",
+   "name": "Pat Kelly",
+   "followers": 1589,
+   "identified": false,
+   "headline": "Local/regional Americana musician; singer, keyboardist for Sons of Johnny and Farmer Rick Band",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 5000,
+   "high": 50000,
+   "sources": []
+  },
+  {
+   "handle": "Sharzard5",
+   "name": "S. Prabhu Ⓥ",
+   "followers": 1933,
+   "identified": false,
+   "headline": "PhD candidate in political theory at UC Irvine; theorist of Zoonpolitiks and the Political Animal Class",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 0,
+   "high": 50000,
+   "sources": []
+  },
+  {
+   "handle": "SwalehMbowa",
+   "name": "Swaleh",
+   "followers": 4289,
+   "identified": false,
+   "headline": "Unidentified individual; ordinary social media user with East African Arsenal fan profile",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": []
+  },
+  {
+   "handle": "Tatijana00",
+   "name": "Tatijana Djordjevic",
+   "followers": 1467,
+   "identified": false,
+   "headline": "Private individual; Serbian nurse, born 1981, mother of two",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 0,
+   "high": 30000,
+   "sources": []
+  },
+  {
+   "handle": "Nsr330630O0O",
+   "name": "د.الخفاجي",
+   "followers": 10005,
+   "identified": true,
+   "headline": "Iraqi PhD spiritual care practitioner based in Najaf; anti-Safavid religious commentator",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 2000,
+   "high": 25000,
+   "sources": [
+    "https://x.com/nsr330630o0o",
+    "https://twitter.com/Nsr330630O0O/status/1884974149849743584"
+   ]
+  },
+  {
+   "handle": "Joe_Chiemerie",
+   "name": "Chris Jay 🎩",
+   "followers": 2785,
+   "identified": false,
+   "headline": "Web3 content creator and \"Clipper\" building onchain; unverified account with ~2,785 followers",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 20000,
+   "sources": []
+  },
+  {
+   "handle": "margaritasala",
+   "name": "margarita salvador",
+   "followers": 2590,
+   "identified": false,
+   "headline": "Psychologist (UANL), private individual in Mexico",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 15000,
+   "sources": []
+  },
+  {
+   "handle": "ursoguerra",
+   "name": "Urso Tubarão 👑",
+   "followers": 2794,
+   "identified": false,
+   "headline": "Anonymous Brazilian NSFW adult content creator on X/Twitter operating under the pseudonym \"Urso Tubarão\"",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000,
+   "sources": []
+  },
+  {
+   "handle": "MissDesse2",
+   "name": "𝑆𝑜𝑛𝑖@ 🐦🇨🇭🇮🇹🇫🇷",
+   "followers": 15595,
+   "identified": false,
+   "headline": "Private French-speaking individual based in Switzerland, sharing personal interests on X/Twitter",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/MissDesse2"
+   ]
+  },
+  {
+   "handle": "mtg59517275",
+   "name": "taijyu warhammer40k",
+   "followers": 1553,
+   "identified": false,
+   "headline": "Japanese Warhammer 40K and MTG Arena hobbyist; no real-world identity confirmed",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/mtg59517275/status/1941831320403161216"
+   ]
+  },
+  {
+   "handle": "SylviaRojas",
+   "name": "Shyvy 🌳",
+   "followers": 4418,
+   "identified": false,
+   "headline": "Unidentified Spanish-speaking individual with literary interests; account bio references Joseph Brodsky and \"Zurda\" (leftist/left-handed), ~4,418 followers, unverified",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/sylviarojas (redirects to x.com/sylviarojas, returned 402)",
+    "https://x.com/sylviarojas (returned 402 Payment Required, content not accessible)"
+   ]
+  },
+  {
+   "handle": "nanjing0714",
+   "name": "南京没有好男人",
+   "followers": 1890,
+   "identified": false,
+   "headline": "Unidentified Chinese-language X/Twitter account with ~1,890 followers; no real-name or financial signals found",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "JeremySkippers",
+   "name": "Jeremy Skippers",
+   "followers": 1017,
+   "identified": false,
+   "headline": "Unidentified niche music/art persona; no public record found",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "TwistedMetalca",
+   "name": "twistedmetalca",
+   "followers": 4458,
+   "identified": false,
+   "headline": "Unidentified X/Twitter account with generic bio; likely a Canadian individual or enthusiast account",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/twistedmetalc",
+    "https://www.thefabricator.com/podcast/episode/the-fabricator-podcast/bead-rolling-art-with-jarrod-klassen-of-twisted-metal-sign-company"
+   ]
+  },
+  {
+   "handle": "Stormy_NAFO",
+   "name": "Nevera_Fella 🇭🇷🇻🇦🇪🇺🇺🇦🇮🇱",
+   "followers": 3415,
+   "identified": false,
+   "headline": "Pseudonymous NAFO fella; self-described physicist with Croatian flags in bio",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://en.wikipedia.org/wiki/NAFO_(group)",
+    "https://www.kyivpost.com/post/204"
+   ]
+  },
+  {
+   "handle": "q8wtykCLJ69z2kw",
+   "name": "Yap-D",
+   "followers": 1776,
+   "identified": false,
+   "headline": "Pseudonymous Japanese-language X account with no traceable public identity",
+   "verdict": "supported",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "SmallCap_Intel",
+   "name": "Veronica Tredoux",
+   "followers": 1057,
+   "identified": false,
+   "headline": "Unverified small-cap stock alert service account; real person behind name could not be identified",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.feedspot.com/investing_twitter_influencers/",
+    "https://www.linkedin.com/pub/dir/+/Tredoux"
+   ]
+  },
+  {
+   "handle": "DouglasGoodfel4",
+   "name": "Douglas Goodfelow",
+   "followers": 1961,
+   "identified": false,
+   "headline": "Unidentified individual behind a low-follower motivational X account with Canadian/US flags in bio",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "aruji_1",
+   "name": "あるじくん",
+   "followers": 13151,
+   "identified": false,
+   "headline": "Unidentified Japanese-language X/Twitter account (@aruji_1)",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "CellyArruda",
+   "name": "🇧🇷Celly M° Arruda 🇧🇷2️⃣2️⃣🇧🇷(Tia do Zap)🇧🇷",
+   "followers": 2200,
+   "identified": false,
+   "headline": "Unidentified Brazilian private individual; evangelical/Christian micro-account with 2,200 followers",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/celly_arruda",
+    "https://www.christianitytoday.com/2024/03/christian-social-media-influencers-brazil-instagram-tiktok/"
+   ]
+  }
+ ]
+}
