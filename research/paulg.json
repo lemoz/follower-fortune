@@ -3,8 +3,8 @@
   "account": "paulg",
   "name": "@paulg",
   "totalFollowers": 3599536,
-  "researched": 256,
-  "identified": 251,
+  "researched": 263,
+  "identified": 258,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Paul Graham",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 4289917208.1922164,
-   "low": 2144958604.0961082,
-   "high": 8579834416.384433,
-   "floor": 1037500000.0
+   "total": 4284577266.5585165,
+   "low": 2142288633.2792583,
+   "high": 8569154533.117033,
+   "floor": 1044250000.0
   }
  },
  "people": [
@@ -3869,6 +3869,117 @@
     "https://www.vycapital.com/",
     "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
     "https://uk.linkedin.com/in/atamas"
+   ]
+  },
+  {
+   "handle": "GregMoranX",
+   "name": "Greg Moran",
+   "followers": 11191,
+   "identified": true,
+   "headline": "Greg Moran, co-founder and former CEO of Zoomcar (terminated as CEO June 2024 amid SEC scrutiny of revenue projections; also resigned from the board).",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://x.com/GregMoranX",
+    "https://en.wikipedia.org/wiki/Zoomcar",
+    "https://inc42.com/buzz/nasdaq-listed-zoomcar-terminates-ceo-greg-moran/"
+   ]
+  },
+  {
+   "handle": "Christian_rson",
+   "name": "Christian S\u00f8rensen",
+   "followers": 1290,
+   "identified": true,
+   "headline": "Co-founder of LeadHaste, a B2B outbound lead-generation agency",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://leadhaste.com/about",
+    "https://www.linkedin.com/in/christian-s%C3%B8rensen-368b2335/"
+   ]
+  },
+  {
+   "handle": "BillZanetti",
+   "name": "Bill Zanetti",
+   "followers": 2199,
+   "identified": true,
+   "headline": "Orlando-based entertainment/theme-park management instructor (UCF) and founder/CEO of UPCOT (pre-launch ed-tech startup)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://billzanetti.com/",
+    "https://hospitality.ucf.edu/person/bill-zanetti/",
+    "https://www.upcot.com/",
+    "https://x.com/BillZanetti"
+   ]
+  },
+  {
+   "handle": "Pashpops",
+   "name": "Pasha Rayan",
+   "followers": 2163,
+   "identified": true,
+   "headline": "Co-founder of A1Zap/A1Base (YC W25) and Forage (YC W19, acquired).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://www.pasharayan.com/bio/",
+    "https://www.ycombinator.com/companies/a1zap-by-a1base",
+    "https://www.ycombinator.com/companies/forage",
+    "https://x.com/pashpops"
+   ]
+  },
+  {
+   "handle": "Justin_dorey",
+   "name": "Justin Dorey",
+   "followers": 5293,
+   "identified": true,
+   "headline": "Canadian Olympic freestyle halfpipe skier (2014 Sochi, retired 2016); profile bio claims former Deloitte and current Luxor (unverified employer/role)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://olympic.ca/team-canada/justin-dorey/",
+    "https://en.wikipedia.org/wiki/Justin_Dorey"
+   ]
+  },
+  {
+   "handle": "LeiTian14",
+   "name": "Lei Tian",
+   "followers": 2262,
+   "identified": true,
+   "headline": "Lei Tian, PhD, Associate Professor of ECE/BME at Boston University and PI of BU Computational Imaging Systems Lab",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 100000,
+   "high": 800000,
+   "sources": [
+    "https://www.bu.edu/eng/profile/lei-tian/",
+    "https://sites.bu.edu/tianlab/",
+    "https://x.com/LeiTian14"
+   ]
+  },
+  {
+   "handle": "brentsum",
+   "name": "Brent Summers",
+   "followers": 13666,
+   "identified": true,
+   "headline": "Cofounder/CTO of NoCodeOps, acquired by Zapier (July 2024, undisclosed terms); joined Zapier product team",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://zapier.com/blog/nocodeops-joins-zapier/",
+    "https://hypepotamus.com/feature/nocodeops-gets-acquired/"
    ]
   }
  ]

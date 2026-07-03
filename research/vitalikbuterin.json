@@ -3,8 +3,8 @@
   "account": "VitalikButerin",
   "name": "@VitalikButerin",
   "totalFollowers": 6673306,
-  "researched": 174,
-  "identified": 168,
+  "researched": 180,
+  "identified": 174,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Vitalik Buterin",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 6368883474.761063,
-   "low": 3184441737.3805313,
-   "high": 12737766949.522125,
-   "floor": 948351500.0
+   "total": 6370918601.008849,
+   "low": 3185459300.5044246,
+   "high": 12741837202.017698,
+   "floor": 950391500.0
   }
  },
  "people": [
@@ -2631,6 +2631,101 @@
     "https://www.vycapital.com/",
     "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
     "https://uk.linkedin.com/in/atamas"
+   ]
+  },
+  {
+   "handle": "Christian_rson",
+   "name": "Christian S\u00f8rensen",
+   "followers": 1290,
+   "identified": true,
+   "headline": "Co-founder of LeadHaste, a B2B outbound lead-generation agency",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://leadhaste.com/about",
+    "https://www.linkedin.com/in/christian-s%C3%B8rensen-368b2335/"
+   ]
+  },
+  {
+   "handle": "BillZanetti",
+   "name": "Bill Zanetti",
+   "followers": 2199,
+   "identified": true,
+   "headline": "Orlando-based entertainment/theme-park management instructor (UCF) and founder/CEO of UPCOT (pre-launch ed-tech startup)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://billzanetti.com/",
+    "https://hospitality.ucf.edu/person/bill-zanetti/",
+    "https://www.upcot.com/",
+    "https://x.com/BillZanetti"
+   ]
+  },
+  {
+   "handle": "Justin_dorey",
+   "name": "Justin Dorey",
+   "followers": 5293,
+   "identified": true,
+   "headline": "Canadian Olympic freestyle halfpipe skier (2014 Sochi, retired 2016); profile bio claims former Deloitte and current Luxor (unverified employer/role)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://olympic.ca/team-canada/justin-dorey/",
+    "https://en.wikipedia.org/wiki/Justin_Dorey"
+   ]
+  },
+  {
+   "handle": "genekogan",
+   "name": "Gene Kogan",
+   "followers": 26783,
+   "identified": true,
+   "headline": "AI artist and engineer; creator of ml4a and Abraham; co-founder of Eden and Mars College; early Runway advisor.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://genekogan.com/",
+    "https://github.com/genekogan",
+    "https://www.mars.college/",
+    "https://x.com/genekogan"
+   ]
+  },
+  {
+   "handle": "prosmoon",
+   "name": "Prosper Mwedzi",
+   "followers": 3804,
+   "identified": true,
+   "headline": "Public X profile identifies Prosper Mwedzi as an Assistant Counsel to the Law Officers of the Crown in Guernsey; independently corroborated as a lawyer (M.Law Hons) and blockchain/tokenomics writer wi",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 150000,
+   "sources": [
+    "https://x.com/prosmoon",
+    "https://medium.com/digital-assets-at-the-verge-of-upending-banking/zimbabwe-should-embrace-tokenomics-96a40e377264"
+   ]
+  },
+  {
+   "handle": "forwardsecrecy",
+   "name": "Ron Stoner",
+   "followers": 2055,
+   "identified": true,
+   "headline": "Security at Category Labs, the team behind Monad.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 750000,
+   "sources": [
+    "https://www.category.xyz/team",
+    "https://x.com/forwardsecrecy",
+    "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
    ]
   }
  ]

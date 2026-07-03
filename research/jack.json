@@ -3,8 +3,8 @@
   "account": "jack",
   "name": "@jack",
   "totalFollowers": 9161230,
-  "researched": 176,
-  "identified": 175,
+  "researched": 183,
+  "identified": 182,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Jack Dorsey",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 8384202200.053098,
-   "low": 4192101100.026549,
-   "high": 16768404400.106195,
-   "floor": 942751000.0
+   "total": 8391011514.00885,
+   "low": 4195505757.004425,
+   "high": 16782023028.0177,
+   "floor": 949566000.0
   }
  },
  "people": [
@@ -2672,6 +2672,118 @@
     "https://www.vycapital.com/",
     "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
     "https://uk.linkedin.com/in/atamas"
+   ]
+  },
+  {
+   "handle": "GregMoranX",
+   "name": "Greg Moran",
+   "followers": 11191,
+   "identified": true,
+   "headline": "Greg Moran, co-founder and former CEO of Zoomcar (terminated as CEO June 2024 amid SEC scrutiny of revenue projections; also resigned from the board).",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://x.com/GregMoranX",
+    "https://en.wikipedia.org/wiki/Zoomcar",
+    "https://inc42.com/buzz/nasdaq-listed-zoomcar-terminates-ceo-greg-moran/"
+   ]
+  },
+  {
+   "handle": "BillZanetti",
+   "name": "Bill Zanetti",
+   "followers": 2199,
+   "identified": true,
+   "headline": "Orlando-based entertainment/theme-park management instructor (UCF) and founder/CEO of UPCOT (pre-launch ed-tech startup)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://billzanetti.com/",
+    "https://hospitality.ucf.edu/person/bill-zanetti/",
+    "https://www.upcot.com/",
+    "https://x.com/BillZanetti"
+   ]
+  },
+  {
+   "handle": "Pashpops",
+   "name": "Pasha Rayan",
+   "followers": 2163,
+   "identified": true,
+   "headline": "Co-founder of A1Zap/A1Base (YC W25) and Forage (YC W19, acquired).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://www.pasharayan.com/bio/",
+    "https://www.ycombinator.com/companies/a1zap-by-a1base",
+    "https://www.ycombinator.com/companies/forage",
+    "https://x.com/pashpops"
+   ]
+  },
+  {
+   "handle": "Justin_dorey",
+   "name": "Justin Dorey",
+   "followers": 5293,
+   "identified": true,
+   "headline": "Canadian Olympic freestyle halfpipe skier (2014 Sochi, retired 2016); profile bio claims former Deloitte and current Luxor (unverified employer/role)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://olympic.ca/team-canada/justin-dorey/",
+    "https://en.wikipedia.org/wiki/Justin_Dorey"
+   ]
+  },
+  {
+   "handle": "LeiTian14",
+   "name": "Lei Tian",
+   "followers": 2262,
+   "identified": true,
+   "headline": "Lei Tian, PhD, Associate Professor of ECE/BME at Boston University and PI of BU Computational Imaging Systems Lab",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 100000,
+   "high": 800000,
+   "sources": [
+    "https://www.bu.edu/eng/profile/lei-tian/",
+    "https://sites.bu.edu/tianlab/",
+    "https://x.com/LeiTian14"
+   ]
+  },
+  {
+   "handle": "prosmoon",
+   "name": "Prosper Mwedzi",
+   "followers": 3804,
+   "identified": true,
+   "headline": "Public X profile identifies Prosper Mwedzi as an Assistant Counsel to the Law Officers of the Crown in Guernsey; independently corroborated as a lawyer (M.Law Hons) and blockchain/tokenomics writer wi",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 150000,
+   "sources": [
+    "https://x.com/prosmoon",
+    "https://medium.com/digital-assets-at-the-verge-of-upending-banking/zimbabwe-should-embrace-tokenomics-96a40e377264"
+   ]
+  },
+  {
+   "handle": "forwardsecrecy",
+   "name": "Ron Stoner",
+   "followers": 2055,
+   "identified": true,
+   "headline": "Security at Category Labs, the team behind Monad.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 750000,
+   "sources": [
+    "https://www.category.xyz/team",
+    "https://x.com/forwardsecrecy",
+    "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
    ]
   }
  ]

@@ -3,8 +3,8 @@
   "account": "sama",
   "name": "@sama",
   "totalFollowers": 5270109,
-  "researched": 353,
-  "identified": 344,
+  "researched": 363,
+  "identified": 354,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Sam Altman",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 10257019036.439312,
-   "low": 5128509518.219656,
-   "high": 20514038072.878624,
-   "floor": 1108737250.0
+   "total": 10194209509.58398,
+   "low": 5097104754.79199,
+   "high": 20388419019.16796,
+   "floor": 1116712250.0
   }
  },
  "people": [
@@ -5308,6 +5308,165 @@
     "https://www.vycapital.com/",
     "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
     "https://uk.linkedin.com/in/atamas"
+   ]
+  },
+  {
+   "handle": "xPetu",
+   "name": "xPetu (legal name not found)",
+   "followers": 57197,
+   "identified": true,
+   "headline": "Pseudonymous League of Legends creator/streamer, first player to reach Challenger with Shen Mid; AFK talent page says he is pursuing a PhD in Mathematics",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 20000,
+   "high": 300000,
+   "sources": [
+    "https://www.thisisafk.com/our-talent/xpetu/",
+    "https://twitchtracker.com/xpetu",
+    "https://x.com/xpetu"
+   ]
+  },
+  {
+   "handle": "Christian_rson",
+   "name": "Christian S\u00f8rensen",
+   "followers": 1290,
+   "identified": true,
+   "headline": "Co-founder of LeadHaste, a B2B outbound lead-generation agency",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://leadhaste.com/about",
+    "https://www.linkedin.com/in/christian-s%C3%B8rensen-368b2335/"
+   ]
+  },
+  {
+   "handle": "BillZanetti",
+   "name": "Bill Zanetti",
+   "followers": 2199,
+   "identified": true,
+   "headline": "Orlando-based entertainment/theme-park management instructor (UCF) and founder/CEO of UPCOT (pre-launch ed-tech startup)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://billzanetti.com/",
+    "https://hospitality.ucf.edu/person/bill-zanetti/",
+    "https://www.upcot.com/",
+    "https://x.com/BillZanetti"
+   ]
+  },
+  {
+   "handle": "SocialtyPro",
+   "name": "Austin Armstrong",
+   "followers": 6015,
+   "identified": true,
+   "headline": "CEO/founder of Syllaby and CEO/co-founder of SocialtyPro; AI marketing speaker/author",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 1500000,
+   "sources": [
+    "https://austinarmstrong.ai/",
+    "https://www.linkedin.com/in/austinarmstrong90/",
+    "https://twitter.com/SocialtyPro",
+    "https://wraltechwire.com/2023/08/30/durham-founder-scaled-quickly-with-backing-of-3m-social-followers-now-hes-raising-funds/"
+   ]
+  },
+  {
+   "handle": "Pashpops",
+   "name": "Pasha Rayan",
+   "followers": 2163,
+   "identified": true,
+   "headline": "Co-founder of A1Zap/A1Base (YC W25) and Forage (YC W19, acquired).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://www.pasharayan.com/bio/",
+    "https://www.ycombinator.com/companies/a1zap-by-a1base",
+    "https://www.ycombinator.com/companies/forage",
+    "https://x.com/pashpops"
+   ]
+  },
+  {
+   "handle": "Justin_dorey",
+   "name": "Justin Dorey",
+   "followers": 5293,
+   "identified": true,
+   "headline": "Canadian Olympic freestyle halfpipe skier (2014 Sochi, retired 2016); profile bio claims former Deloitte and current Luxor (unverified employer/role)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://olympic.ca/team-canada/justin-dorey/",
+    "https://en.wikipedia.org/wiki/Justin_Dorey"
+   ]
+  },
+  {
+   "handle": "LeiTian14",
+   "name": "Lei Tian",
+   "followers": 2262,
+   "identified": true,
+   "headline": "Lei Tian, PhD, Associate Professor of ECE/BME at Boston University and PI of BU Computational Imaging Systems Lab",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 100000,
+   "high": 800000,
+   "sources": [
+    "https://www.bu.edu/eng/profile/lei-tian/",
+    "https://sites.bu.edu/tianlab/",
+    "https://x.com/LeiTian14"
+   ]
+  },
+  {
+   "handle": "prosmoon",
+   "name": "Prosper Mwedzi",
+   "followers": 3804,
+   "identified": true,
+   "headline": "Public X profile identifies Prosper Mwedzi as an Assistant Counsel to the Law Officers of the Crown in Guernsey; independently corroborated as a lawyer (M.Law Hons) and blockchain/tokenomics writer wi",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 150000,
+   "sources": [
+    "https://x.com/prosmoon",
+    "https://medium.com/digital-assets-at-the-verge-of-upending-banking/zimbabwe-should-embrace-tokenomics-96a40e377264"
+   ]
+  },
+  {
+   "handle": "brentsum",
+   "name": "Brent Summers",
+   "followers": 13666,
+   "identified": true,
+   "headline": "Cofounder/CTO of NoCodeOps, acquired by Zapier (July 2024, undisclosed terms); joined Zapier product team",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://zapier.com/blog/nocodeops-joins-zapier/",
+    "https://hypepotamus.com/feature/nocodeops-gets-acquired/"
+   ]
+  },
+  {
+   "handle": "forwardsecrecy",
+   "name": "Ron Stoner",
+   "followers": 2055,
+   "identified": true,
+   "headline": "Security at Category Labs, the team behind Monad.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 750000,
+   "sources": [
+    "https://www.category.xyz/team",
+    "https://x.com/forwardsecrecy",
+    "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
    ]
   }
  ]
