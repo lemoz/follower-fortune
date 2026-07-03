@@ -3,8 +3,8 @@
   "account": "cdossman",
   "name": "@cdossman",
   "totalFollowers": 1497,
-  "researched": 591,
-  "identified": 456,
+  "researched": 617,
+  "identified": 462,
   "note": "People who FOLLOW @cdossman (researched followers), web-researched and adversarially verified. Most low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Chris Dossman",
@@ -25,10 +25,10 @@
    "b3": 19
   },
   "estimate": {
-   "total": 648265778.3471835,
-   "low": 546689250.0,
-   "high": 1296531556.694367,
-   "floor": 546689250.0
+   "total": 695886655.593238,
+   "low": 547994250.0,
+   "high": 1391773311.186476,
+   "floor": 547994250.0
   }
  },
  "people": [
@@ -8773,6 +8773,350 @@
    "sources": [
     "https://www.facebook.com/WhoisMannan/"
    ]
+  },
+  {
+   "handle": "PythonCrafted",
+   "name": "Python Crafted",
+   "followers": 11111,
+   "identified": false,
+   "headline": "Unidentified Python tips/tutorials content account; no public source ties it to a specific individual or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "broblas",
+   "name": "Nick",
+   "followers": 919,
+   "identified": false,
+   "headline": "Self-described dad and engineer claiming a co-founder role at \"Singularis\" with an exit to \"microwavevision,\" but no public source corroborates this company, exit, or person.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Ben_p_eubanks",
+   "name": "Benjamin P. Eubanks",
+   "followers": 20,
+   "identified": false,
+   "headline": "Low-follower account with an empty bio; multiple people share the name \"Ben(jamin) Eubanks\" (HR analyst, environmental VP, psychiatrist) but none could be confirmed as this specific handle",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "fiskepa",
+   "name": "Filip Milenkovic",
+   "followers": 318,
+   "identified": false,
+   "headline": "Small personal X account with an empty bio and only a decade-old Serbian-language tweet found; identity and profession could not be reliably confirmed.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/fiskepa?lang=en"
+   ]
+  },
+  {
+   "handle": "PodcastsAI",
+   "name": "PodcastsAI",
+   "followers": 191,
+   "identified": false,
+   "headline": "Small (191-follower) unbranded account posting AI/tech podcast clip threads; no identifiable owner, company, or individual found in public sources",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PodcastsAI/status/2031847510717727036"
+   ]
+  },
+  {
+   "handle": "rybfgf7",
+   "name": "R\u272f",
+   "followers": 115,
+   "identified": false,
+   "headline": "Unidentified low-follower X account with empty bio; no public sources link this handle to a real person or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "ShoorasJknzI4",
+   "name": "Shooras",
+   "followers": 125,
+   "identified": false,
+   "headline": "Unidentified low-follower account with empty bio; no public sources link this handle to a real identity",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "kryzk1",
+   "name": "Jason Kryski",
+   "followers": 338,
+   "identified": true,
+   "headline": "Serial entrepreneur based in Kelowna, Canada \u2014 co-founder/CEO of Strawhouse (2019-2021) and Uncoil (2017-2021), performance/affiliate marketing agencies, now CEO of Matter Inc. \"Angel investor\" framing is unconfirmed beyond an AngelMatch listing.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://x.com/kryzk1",
+    "https://www.crunchbase.com/person/jason-kryski",
+    "https://ca.linkedin.com/in/jkryski",
+    "https://www.companiesofcanada.com/person/1568791/jason-kryski"
+   ]
+  },
+  {
+   "handle": "asapsesh",
+   "name": "sachin",
+   "followers": 208,
+   "identified": false,
+   "headline": "Small account (208 followers) with only a first name and generic SJSU alumni bio; could not be reliably identified from public sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "salomartin",
+   "name": "Martin Salo",
+   "followers": 996,
+   "identified": true,
+   "headline": "Estonian tech founder with a 15-year AI industry background, now building Tensor Estate, an early-stage venture developing large power-capacity (100-400 MW) land sites for data centers/AI infrastructure in Estonia.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/salomartin/",
+    "https://x.com/salomartin?lang=en",
+    "https://tensor.estate/"
+   ]
+  },
+  {
+   "handle": "Svk20012305",
+   "name": "Svk",
+   "followers": 167,
+   "identified": false,
+   "headline": "Unidentified small account; no public sources tie this handle to a real name or organization",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "teezoush59056",
+   "name": "Teezoush",
+   "followers": 41,
+   "identified": false,
+   "headline": "Unidentified small account with no bio content beyond \"#22\"; no public identifying information found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Dewayne_W",
+   "name": "Dewayne Whitfield",
+   "followers": 505,
+   "identified": true,
+   "headline": "Federal government AI/UX technologist \u2014 Technology Innovation Strategist at USPS (built first voice AI chatbot in USPS call center; named to Cognilytica's 2019 list of 50 US Federal Government AI Influencers), now Applied AI Engineering Strategist at U.S. Department of Energy (2022 Secretary's Honor Award); Design Leadership MA/MBA, Johns Hopkins Carey Business School / MICA.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 250000,
+   "sources": [
+    "https://www.linkedin.com/in/dewaynewhitfield/",
+    "https://x.com/dewayne_w",
+    "https://www.cognilytica.com/50-us-federal-government-ai-influencers/",
+    "https://www.mica.edu/art-articles/details/dewayne-whitfield-16-design-leadership-ma-mba-receives-us-department-of-energy-excellence-award/"
+   ]
+  },
+  {
+   "handle": "thierry836",
+   "name": "thierry",
+   "followers": 56,
+   "identified": false,
+   "headline": "Unidentified low-follower account with no bio or public identifying information found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "BrutalCoding",
+   "name": "Daniel Breedeveld",
+   "followers": 40,
+   "identified": true,
+   "headline": "Independent Dutch-Australian Flutter/Dart developer and open-source AI tooling builder (aub.ai, shady.ai), based in Perth, working with startups since 2013",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://github.com/BrutalCoding",
+    "https://x.com/BrutalCoding"
+   ]
+  },
+  {
+   "handle": "efjie8008",
+   "name": "Francois Julien",
+   "followers": 79,
+   "identified": false,
+   "headline": "Unidentified low-follower account with a generic French motivational bio; no public sources tie this handle to a real, verifiable person.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "ai__learner",
+   "name": "dc",
+   "followers": 0,
+   "identified": false,
+   "headline": "Unidentified account with 0 followers, no bio, and a generic display name (\"dc\"); no public evidence ties this handle to a specific real person or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "DamianTiranti",
+   "name": "Damian Tiranti (unverified)",
+   "followers": 34,
+   "identified": false,
+   "headline": "Small crypto-mining/trading account (\"TWIN MINING\") with no verifiable public identity behind the name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "findinganiche",
+   "name": "Anish Madhok",
+   "followers": 23,
+   "identified": true,
+   "headline": "Digital product/growth professional \u2014 Product Manager at Hyke, previously Shopee, Zomato, and EasyPark Group",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 300000,
+   "sources": [
+    "https://x.com/findinganiche",
+    "https://www.linkedin.com/in/m-anish/",
+    "https://rocketreach.co/anish-madhok-email_79193231",
+    "https://www.weekday.works/people/anish-madhok-m-anish"
+   ]
+  },
+  {
+   "handle": "himesh_p",
+   "name": "Himesh P.",
+   "followers": 268,
+   "identified": false,
+   "headline": "Small personal X account (268 followers) with a generic motivational quote bio; no identifiable public figure or organization found",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "hirosuda",
+   "name": "Hiro Suda",
+   "followers": 306,
+   "identified": false,
+   "headline": "Small X account (306 followers) describing self as a Japan-born, US-based machine learning and cooking practitioner; no public source reliably matches this specific person.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "PolSciDataNerd",
+   "name": "PolSciDataNerd (unidentified)",
+   "followers": 238,
+   "identified": false,
+   "headline": "Small, pseudonymous political-commentary account; real identity not found in public sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "alexscheelmeyer",
+   "name": "Alex Scheel Meyer",
+   "followers": 67,
+   "identified": false,
+   "headline": "Machine learning consultant at MachineReady, based in Central Denmark Region",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.linkedin.com/in/alexscheelmeyer/"
+   ]
+  },
+  {
+   "handle": "AITech10",
+   "name": "A.I & Tech",
+   "followers": 281,
+   "identified": false,
+   "headline": "Unidentified low-follower account posting generic AI/tech content; no public identity found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "astosyk",
+   "name": "Andriy Stosyk",
+   "followers": 228,
+   "identified": true,
+   "headline": "Solution Architect at EPAM Systems (Ukraine), formerly Software Architect at SoftServe; founder of small consultancy DataEngs",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 30000,
+   "high": 250000,
+   "sources": [
+    "https://www.linkedin.com/in/andriystosyk/",
+    "https://www.zoominfo.com/p/Andriy-Stosyk/3093644855",
+    "https://twitter.com/astosyk"
+   ]
+  },
+  {
+   "handle": "Machine_Learn_",
+   "name": "Machine Learning (unidentified account)",
+   "followers": 478,
+   "identified": false,
+   "headline": "Small (478-follower) generic-topic account posting under a non-personal \"Machine Learning\" display name with a hashtag-only bio; no public source ties it to a specific individual or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
   }
  ]
 }

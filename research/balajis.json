@@ -3,8 +3,8 @@
   "account": "balajis",
   "name": "@balajis",
   "totalFollowers": 1745391,
-  "researched": 192,
-  "identified": 183,
+  "researched": 193,
+  "identified": 184,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Balaji Srinivasan",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 10378968039.334915,
-   "low": 5189484019.667458,
-   "high": 20757936078.66983,
-   "floor": 324329000.0
+   "total": 4898936521.957418,
+   "low": 2449468260.978709,
+   "high": 9797873043.914837,
+   "floor": 325116500.0
   }
  },
  "people": [
@@ -2894,6 +2894,24 @@
     "https://x.com/iambahago",
     "https://www.zoominfo.com/p/John-Bahago/13527648613",
     "http://www.danboschools.com/college/contact.php"
+   ]
+  },
+  {
+   "handle": "MrTalkStock",
+   "name": "Ali Azar",
+   "followers": 25985,
+   "identified": true,
+   "headline": "Chartered Accountant and founder/CIO of Magnus Hathaway Investments, a SEBI-registered research analyst advisory firm in India serving retail investors",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 75000,
+   "high": 1500000,
+   "sources": [
+    "https://www.linkedin.com/in/mrtalkstock/",
+    "https://www.magnushathaway.com/",
+    "https://www.financeoutlookindia.com/finance/vendor/magnus-hathaway-investments-staying-disciplined-when-markets-change--cid-817.html",
+    "https://www.upsurge.club/instructor/ca-ali-azar",
+    "https://x.com/MrTalkStock/status/1884580013384814643"
    ]
   }
  ]

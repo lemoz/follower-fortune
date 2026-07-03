@@ -3,8 +3,8 @@
   "account": "levelsio",
   "name": "@levelsio",
   "totalFollowers": 905538,
-  "researched": 70,
-  "identified": 29,
+  "researched": 93,
+  "identified": 38,
   "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Pieter Levels",
@@ -26,10 +26,10 @@
    "b3": 3
   },
   "estimate": {
-   "total": 22723793550.156124,
-   "low": 11361896775.078062,
-   "high": 45447587100.31225,
-   "floor": 28383250.0
+   "total": 35552035859.41948,
+   "low": 17776017929.70974,
+   "high": 71104071718.83896,
+   "floor": 35655750.0
   }
  },
  "people": [
@@ -1033,6 +1033,362 @@
    "followers": 2280,
    "identified": false,
    "headline": "Unidentified FC Barcelona fan account with 2,280 followers",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "KilledByAPixel",
+   "name": "Frank Force",
+   "followers": 10715,
+   "identified": true,
+   "headline": "Veteran game developer (30+ yrs, ex-Certain Affinity/Rooster Teeth/Midway/Volition; DOOM 2016, Red Faction: Guerrilla) now running independent studio Frank Force Games and open-source tools (LittleJS, ZzFX)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 75000,
+   "high": 900000,
+   "sources": [
+    "https://frankforce.com/about-2/",
+    "https://frankforce.com/resume/",
+    "https://killedbyapixel.github.io/",
+    "https://github.com/KilledByAPixel"
+   ]
+  },
+  {
+   "handle": "Putuputrayasa",
+   "name": "Putu Putrayasa",
+   "followers": 269209,
+   "identified": true,
+   "headline": "Indonesian NLP Master Trainer, business coach, and founder/CEO of Bernas Media Group, Universitas Mahakarya Asia, and related education/property ventures",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Putuputrayasa",
+    "https://id.linkedin.com/in/putu-putrayasa",
+    "https://www.putuputrayasa.com/",
+    "https://www.zoominfo.com/p/Putu-Putrayasa/9034434581"
+   ]
+  },
+  {
+   "handle": "plidezus",
+   "name": "Liu Shaonan (\u5218\u5c11\u6960)",
+   "followers": 10847,
+   "identified": true,
+   "headline": "Chinese product manager and cofounder of note-taking app flomo (and xiaobot/mubu), a small self-funded team of two, previously worked at Baixing.com and DXY (Dingxiang Doctor)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://x.com/plidezus",
+    "https://github.com/plidezus",
+    "https://pandaily.com/note-taking-app-flomo-to-acquire-bytedances-mubu-from-feishu",
+    "https://www.uisdc.com/flomo-liushaonan",
+    "https://www.zhihu.com/people/plidezus"
+   ]
+  },
+  {
+   "handle": "dankimxyz",
+   "name": "Dan Kim",
+   "followers": 116560,
+   "identified": true,
+   "headline": "VP Product Partnerships at Airwallex (fintech unicorn); ex-Coinbase, ex-Chime; associated with the x402 AI-payments standard; SF Bay Area based",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/dankimxyz"
+   ]
+  },
+  {
+   "handle": "PeterDeKeyzer",
+   "name": "Peter De Keyzer",
+   "followers": 16231,
+   "identified": true,
+   "headline": "Belgian economist, former chief economist at KBC/ABN AMRO/Petercam/BNP Paribas Fortis, now founder of communications/lobbying firm Growth Inc. and co-author of \"Belgium 2040\"",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 3000000,
+   "sources": [
+    "https://www.growth-inc.be/team_member/peter-de-keyzer/",
+    "https://nl.wikipedia.org/wiki/Peter_De_Keyzer",
+    "https://be.linkedin.com/in/peter-de-keyzer-703ba22",
+    "https://x.com/peterdekeyzer"
+   ]
+  },
+  {
+   "handle": "wembabayaga",
+   "name": "Unknown",
+   "followers": 13078,
+   "identified": false,
+   "headline": "Anonymous account with a name riffing on \"Wembanyama\"; no public identification found",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "RichDecibels",
+   "name": "Richard D. Bartlett",
+   "followers": 32778,
+   "identified": true,
+   "headline": "Co-founder of Loomio, Enspiral, Microsolidarity and The Hum; organizational/community design consultant now running Casa Tilo retreat center near Barcelona",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 20000,
+   "high": 300000,
+   "sources": [
+    "https://richdecibels.com/",
+    "https://x.com/RichDecibels",
+    "https://x.com/RichDecibels/status/1905527489453044016"
+   ]
+  },
+  {
+   "handle": "LaydenRobinson",
+   "name": "Layden Robinson",
+   "followers": 102450,
+   "identified": true,
+   "headline": "NFL offensive guard (Texas A&M product), 2024 4th-round draft pick, waived by the Patriots and now on the Las Vegas Raiders practice squad (signed Oct 21, 2025)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 600000,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Layden_Robinson",
+    "https://www.pro-football-reference.com/players/R/RobiLa02.htm",
+    "https://www.nfl.com/players/layden-robinson/",
+    "https://www.raiders.com/team/players-roster/layden-robinson/"
+   ]
+  },
+  {
+   "handle": "LeoInvests",
+   "name": "Leo (LeoInvests) \u2014 pseudonymous, real legal name not disclosed",
+   "followers": 10090,
+   "identified": false,
+   "headline": "Pseudonymous futures/options trading educator running \"The Lab\" mentorship community and a $117-147/mo membership (leoliquidity.com, thelabtrading.com); no real legal name or verifiable identity found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://leoliquidity.com/",
+    "https://x.com/leooinvests/highlights",
+    "https://thelabtrading.com/"
+   ]
+  },
+  {
+   "handle": "MarcClairNoShow",
+   "name": "Marc Clair",
+   "followers": 11844,
+   "identified": false,
+   "headline": "Independent podcast host and editor-in-chief of Lions of Liberty; hosts The Marc Clair Show and frequently appears as a guest on other podcasts",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.podchaser.com/creators/marc-clair-107ZznfibY",
+    "https://podcasts.apple.com/us/podcast/the-marc-clair-show/id1602262615"
+   ]
+  },
+  {
+   "handle": "0x1_0NE",
+   "name": "\"ONE\" (pseudonymous figure associated with Clavi)",
+   "followers": 15518,
+   "identified": false,
+   "headline": "Pseudonymous persona (\"ONE\") associated with Clavi AG messaging/research; publicly-disclosed founder/CEO of Clavi is Dara Sabeti, contradicting the claim that Clavi's founder identity is undisclosed. Entry cites Dara Sabeti's LinkedIn as a source for \"ONE\" while asserting ONE's identity is unknown \u2014 an internal contradiction indicating source misattribution or conflation of two different personas.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://clavi-one.com/",
+    "https://www.crunchbase.com/organization/clavi",
+    "https://www.cbinsights.com/company/clavi/people"
+   ]
+  },
+  {
+   "handle": "thechrismeade",
+   "name": "Chris Meade",
+   "followers": 36503,
+   "identified": true,
+   "headline": "Co-founder/CMO of CROSSNET (exited to Vivere Ltd), Forbes 30 Under 30; now building Founders Club and BODY Hot Pilates",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.forbes.com/sites/elainepofeldt/2020/11/27/looking-to-run-their-own-business-these-millennials-invented-a-hot-new-game-now-theyre-bringing-in-eight-figure-revenue/",
+    "https://www.linkedin.com/in/cjmeade/",
+    "https://www.qu.edu/magazine/chris-meade-14-helps-create-hottest-new-take-on-volleyball/",
+    "https://x.com/thechrismeade/status/1956422262573162971"
+   ]
+  },
+  {
+   "handle": "lowpolyduck",
+   "name": "Lowpolyduck (anonymous persona)",
+   "followers": 14168,
+   "identified": false,
+   "headline": "Anonymous/pseudonymous duck-mascot persona associated with Thesis (crypto studio behind Mezo, Fold App); no real identity publicly confirmed",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "kazravan",
+   "name": "Omid Kazravan",
+   "followers": 11150,
+   "identified": true,
+   "headline": "Sales trainer, author of multiple sales books, real estate investor, and co-host of the \"My First Exit\" podcast; now building an app.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://www.linkedin.com/in/kazravan/",
+    "https://twitter.com/kazravan",
+    "https://www.amazon.com/Omid-Kazravan/e/B01F1WYKRK",
+    "https://podcasts.apple.com/mn/podcast/my-first-exit-mfe/id1789009433"
+   ]
+  },
+  {
+   "handle": "hxxntrr",
+   "name": "Hunter Tobin",
+   "followers": 38983,
+   "identified": true,
+   "headline": "Hunter Tobin, operator of a done-for-you credit repair / business-credit consulting service, known on X for credit-hacking and business-funding content",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1500000,
+   "sources": [
+    "https://x.com/hxxntrr",
+    "https://www.linkedin.com/posts/hxxntrr_credit-repair-in-2020-and-credit-repair-in-activity-7445122832751054848-uueH",
+    "https://thecredithunter.com/"
+   ]
+  },
+  {
+   "handle": "santi_despierta",
+   "name": "Santiago",
+   "followers": 22284,
+   "identified": false,
+   "headline": "X account posting health/wellness content (creatine, bone broth, etc.) under the name \"Santiago\"; no verifiable real-world identity found",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "atilsamancioglu",
+   "name": "At\u0131l Samanc\u0131o\u011flu",
+   "followers": 11820,
+   "identified": true,
+   "headline": "Turkish tech educator and bestselling Udemy instructor (500k+ students); founder/CEO of Academy Club, CTO of software company Orphex.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.udemy.com/user/atil-samancioglu/",
+    "https://tr.linkedin.com/in/at%C4%B1l-samanc%C4%B1o%C4%9Flu-96028871"
+   ]
+  },
+  {
+   "handle": "HieuTrinhVn",
+   "name": "Unknown (pseudonymous crypto Twitter account)",
+   "followers": 15288,
+   "identified": false,
+   "headline": "Pseudonymous crypto/Web3 account that rotates its display name and persona across unrelated projects (TermMax, Monad ecosystem, OpenMind); bio is just \"DM\" with no verifiable real identity.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/HieuTrinhVn/status/2050808313919705540",
+    "https://x.com/HieuTrinhVn/status/1997276505219678303",
+    "https://x.com/HieuTrinhVn/status/1953099838813552778",
+    "https://x.com/HieuTrinhVn"
+   ]
+  },
+  {
+   "handle": "VortiaAI",
+   "name": "Vortia AI",
+   "followers": 16569,
+   "identified": true,
+   "headline": "Vortia AI is a Layer-1 blockchain protocol (\"Vortiachain\") for decentralized/on-chain AI \u2014 verifiable inference, encrypted data exchange, and AI agent execution on-chain.",
+   "verdict": "supported",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://vortia.ai/",
+    "https://www.crunchbase.com/organization/vortia-ai",
+    "https://techbullion.com/vortia-ai-wants-to-be-the-operating-system-for-decentralized-ai/",
+    "https://www.linkedin.com/company/vortia-ai"
+   ]
+  },
+  {
+   "handle": "kyneoxofficial",
+   "name": "Kyneox",
+   "followers": 15152,
+   "identified": false,
+   "headline": "Small AI/blockchain-themed X account promoting BC.GAME (crypto casino); no verifiable real-world identity found",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "heft_gallery",
+   "name": "Heft (Gallery)",
+   "followers": 10598,
+   "identified": true,
+   "headline": "Contemporary art gallery in NYC's Lower East Side, founded by Adam Heft Berninger, opened April 2025",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://heftgallery.com/",
+    "https://heftgallery.com/program",
+    "https://www.artnews.com/art-news/news/heft-gallery-opens-in-new-york-city-ai-art-1234741940/",
+    "https://www.linkedin.com/in/adamberninger/"
+   ]
+  },
+  {
+   "handle": "fins0905",
+   "name": "John Bartholomew",
+   "followers": 29260,
+   "identified": true,
+   "headline": "International Master, chess YouTuber, co-founder of Chessable (acquired by Play Magnus Group for ~$6.7M in 2019), now co-founder of Chessiverse",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 1000000,
+   "sources": [
+    "https://en.wikipedia.org/wiki/John_Bartholomew_(chess_player)",
+    "https://blog.chessiverse.com/john-bartholomew-joins-chessiverse-as-co-founder/",
+    "https://en.wikipedia.org/wiki/Play_Magnus_Group",
+    "https://frontofficesports.com/top-chess-player-platform-join-forces-in-82-9m-deal/"
+   ]
+  },
+  {
+   "handle": "AmbitiousAdvice",
+   "name": "Ambition",
+   "followers": 72885,
+   "identified": false,
+   "headline": "Unidentified account \u2014 generic \"Ambition\"-branded advice/motivational account with an empty bio; no public figure or organization could be matched to this handle.",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,

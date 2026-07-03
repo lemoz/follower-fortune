@@ -3,9 +3,9 @@
   "handle": "elonmusk",
   "name": "@elonmusk",
   "total": 24396000.0,
-  "est": 1626664406493.8862,
+  "est": 1407231294791.7993,
   "followers": 240448680,
-  "researched": 28,
+  "researched": 30,
   "identified": 6,
   "owner": {
    "low": 950000000000,
@@ -13,36 +13,23 @@
   }
  },
  {
-  "handle": "jack",
-  "name": "@jack",
-  "total": 285701000.0,
-  "est": 38462059904.71963,
-  "followers": 9161230,
-  "researched": 171,
-  "identified": 170,
+  "handle": "levelsio",
+  "name": "@levelsio",
+  "total": 35655750.0,
+  "est": 35552035859.41948,
+  "followers": 905538,
+  "researched": 93,
+  "identified": 38,
   "owner": {
-   "low": 5900000000,
-   "high": 7700000000
-  }
- },
- {
-  "handle": "VitalikButerin",
-  "name": "@VitalikButerin",
-  "total": 291601500.0,
-  "est": 28100180721.682243,
-  "followers": 6673306,
-  "researched": 170,
-  "identified": 164,
-  "owner": {
-   "low": 380000000,
-   "high": 750000000
+   "low": 30000000,
+   "high": 80000000
   }
  },
  {
   "handle": "sama",
   "name": "@sama",
   "total": 449827250.0,
-  "est": 25665175591.15614,
+  "est": 10998480779.780075,
   "followers": 5270109,
   "researched": 343,
   "identified": 334,
@@ -52,23 +39,23 @@
   }
  },
  {
-  "handle": "levelsio",
-  "name": "@levelsio",
-  "total": 28383250.0,
-  "est": 22723793550.156124,
-  "followers": 905538,
-  "researched": 70,
-  "identified": 29,
+  "handle": "jack",
+  "name": "@jack",
+  "total": 285701000.0,
+  "est": 7727156261.513273,
+  "followers": 9161230,
+  "researched": 171,
+  "identified": 170,
   "owner": {
-   "low": 30000000,
-   "high": 80000000
+   "low": 5900000000,
+   "high": 7700000000
   }
  },
  {
   "handle": "naval",
   "name": "@naval",
   "total": 344316750.0,
-  "est": 17095027905.129519,
+  "est": 7351852238.394597,
   "followers": 3500958,
   "researched": 220,
   "identified": 205,
@@ -78,10 +65,36 @@
   }
  },
  {
+  "handle": "VitalikButerin",
+  "name": "@VitalikButerin",
+  "total": 291601500.0,
+  "est": 5712136723.929204,
+  "followers": 6673306,
+  "researched": 170,
+  "identified": 164,
+  "owner": {
+   "low": 380000000,
+   "high": 750000000
+  }
+ },
+ {
+  "handle": "balajis",
+  "name": "@balajis",
+  "total": 325116500.0,
+  "est": 4898936521.957418,
+  "followers": 1745391,
+  "researched": 193,
+  "identified": 184,
+  "owner": {
+   "low": 200000000,
+   "high": 500000000
+  }
+ },
+ {
   "handle": "paulg",
   "name": "@paulg",
   "total": 375640000.0,
-  "est": 15930541061.623844,
+  "est": 3867178430.900309,
   "followers": 3599536,
   "researched": 247,
   "identified": 242,
@@ -91,26 +104,13 @@
   }
  },
  {
-  "handle": "balajis",
-  "name": "@balajis",
-  "total": 324329000.0,
-  "est": 10378968039.334915,
-  "followers": 1745391,
-  "researched": 192,
-  "identified": 183,
-  "owner": {
-   "low": 200000000,
-   "high": 500000000
-  }
- },
- {
   "handle": "cdossman",
   "name": "@cdossman",
-  "total": 546689250.0,
-  "est": 648265778.3471835,
+  "total": 547994250.0,
+  "est": 695886655.593238,
   "followers": 1497,
-  "researched": 591,
-  "identified": 456,
+  "researched": 617,
+  "identified": 462,
   "owner": {
    "low": 2000000,
    "high": 10000000

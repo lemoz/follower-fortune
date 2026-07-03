@@ -3,7 +3,7 @@
   "account": "elonmusk",
   "name": "@elonmusk",
   "totalFollowers": 240448680,
-  "researched": 28,
+  "researched": 30,
   "identified": 6,
   "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
   "owner": {
@@ -28,9 +28,9 @@
    "b3": 0
   },
   "estimate": {
-   "total": 1626664406493.8862,
-   "low": 813332203246.9431,
-   "high": 3253328812987.7725,
+   "total": 1407231294791.7993,
+   "low": 703615647395.8997,
+   "high": 2814462589583.5986,
    "floor": 24396000.0
   }
  },
@@ -410,6 +410,36 @@
    "sources": [
     "https://twitter.com/celly_arruda",
     "https://www.christianitytoday.com/2024/03/christian-social-media-influencers-brazil-instagram-tiktok/"
+   ]
+  },
+  {
+   "handle": "mrfundman",
+   "name": "mr fundman",
+   "followers": 15577,
+   "identified": false,
+   "headline": "Pseudonymous Tesla/tech investing commentary account; no real-world identity found in public sources",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/mrfundman",
+    "https://x.com/mrfundman?lang=en"
+   ]
+  },
+  {
+   "handle": "amina_warsuma",
+   "name": "Amina Warsuma",
+   "followers": 25354,
+   "identified": true,
+   "headline": "Independent filmmaker, author, and former model (born 1953, Bronx NY); one of the models in the 1973 Battle of Versailles fashion show; directed/starred in indie documentary \"A Black Model in Paris\" and wrote memoir \"My Stars Are Still Shining\"",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Amina_Warsuma",
+    "https://x.com/amina_warsuma"
    ]
   }
  ]
