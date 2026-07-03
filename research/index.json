@@ -2,7 +2,7 @@
  {
   "handle": "cdossman",
   "name": "@cdossman",
-  "total": 546689250,
+  "total": 546689250.0,
   "followers": 1497,
   "researched": 591,
   "identified": 456
@@ -10,15 +10,15 @@
  {
   "handle": "sama",
   "name": "@sama",
-  "total": 443827250,
+  "total": 449827250.0,
   "followers": 5270109,
-  "researched": 342,
-  "identified": 333
+  "researched": 343,
+  "identified": 334
  },
  {
   "handle": "paulg",
   "name": "@paulg",
-  "total": 375640000,
+  "total": 375640000.0,
   "followers": 3599536,
   "researched": 247,
   "identified": 242
@@ -26,7 +26,7 @@
  {
   "handle": "naval",
   "name": "@naval",
-  "total": 344316750,
+  "total": 344316750.0,
   "followers": 3500958,
   "researched": 220,
   "identified": 205
@@ -34,7 +34,7 @@
  {
   "handle": "balajis",
   "name": "@balajis",
-  "total": 324329000,
+  "total": 324329000.0,
   "followers": 1745391,
   "researched": 192,
   "identified": 183
@@ -42,7 +42,7 @@
  {
   "handle": "VitalikButerin",
   "name": "@VitalikButerin",
-  "total": 291601500,
+  "total": 291601500.0,
   "followers": 6673306,
   "researched": 170,
   "identified": 164
@@ -50,7 +50,7 @@
  {
   "handle": "jack",
   "name": "@jack",
-  "total": 285701000,
+  "total": 285701000.0,
   "followers": 9161230,
   "researched": 171,
   "identified": 170
@@ -58,7 +58,7 @@
  {
   "handle": "levelsio",
   "name": "@levelsio",
-  "total": 28383250,
+  "total": 28383250.0,
   "followers": 905538,
   "researched": 70,
   "identified": 29
@@ -66,7 +66,7 @@
  {
   "handle": "elonmusk",
   "name": "@elonmusk",
-  "total": 24396000,
+  "total": 24396000.0,
   "followers": 240448680,
   "researched": 28,
   "identified": 6
