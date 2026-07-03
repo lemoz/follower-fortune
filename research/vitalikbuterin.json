@@ -3,8 +3,8 @@
   "account": "VitalikButerin",
   "name": "@VitalikButerin",
   "totalFollowers": 6673306,
-  "researched": 170,
-  "identified": 164,
+  "researched": 174,
+  "identified": 168,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Vitalik Buterin",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 5712136723.929204,
-   "low": 2856068361.964602,
-   "high": 11424273447.858408,
-   "floor": 291601500.0
+   "total": 6368883474.761063,
+   "low": 3184441737.3805313,
+   "high": 12737766949.522125,
+   "floor": 948351500.0
   }
  },
  "people": [
@@ -2567,6 +2567,71 @@
    "low": 0,
    "high": 0,
    "sources": []
+  },
+  {
+   "handle": "LiserraAgustin",
+   "name": "Agustin Liserra",
+   "followers": 1767,
+   "identified": true,
+   "headline": "Head of Finance at Reserve Protocol; former co-founder/CEO of Num Finance and former CFO of Buenbit.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://www.crunchbase.com/person/agustin-liserra",
+    "https://theorg.com/org/num-finance/org-chart/agustin-liserra",
+    "https://pulse2.com/num-finance-agustin-liserra-profile/",
+    "https://www.linkedin.com/in/agustin-liserra-16284329/"
+   ]
+  },
+  {
+   "handle": "RTinkslinger",
+   "name": "Aakash Kumar",
+   "followers": 2957,
+   "identified": true,
+   "headline": "Managing Director at Z47 (formerly Matrix Partners India) / DeVC; ex-Hotstar growth/monetization lead, former Housing.com CSO, founder of a gaming venture exited in 2013, and active angel investor (10",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://z47.com/team/aakash-kumar",
+    "https://x.com/RTinkslinger",
+    "https://in.linkedin.com/in/kumaraakash"
+   ]
+  },
+  {
+   "handle": "ThorupMikkel",
+   "name": "Mikkel Thorup",
+   "followers": 8956,
+   "identified": true,
+   "headline": "Founder & CEO of Expat Money, host of The Expat Money Show, and author focused on expat/offshore consulting.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://expatmoney.com/about-us",
+    "https://expatmoneyshow.com/"
+   ]
+  },
+  {
+   "handle": "atamas",
+   "name": "Alexander Tamas",
+   "followers": 1577,
+   "identified": true,
+   "headline": "Vy Capital founder/leader and former DST Global dealmaker; wealth estimate inferred from VC carry and fund scale",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000000,
+   "high": 1200000000,
+   "sources": [
+    "https://x.com/atamas",
+    "https://www.vycapital.com/",
+    "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
+    "https://uk.linkedin.com/in/atamas"
+   ]
   }
  ]
 }

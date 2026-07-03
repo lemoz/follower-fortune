@@ -3,8 +3,8 @@
   "account": "paulg",
   "name": "@paulg",
   "totalFollowers": 3599536,
-  "researched": 247,
-  "identified": 242,
+  "researched": 256,
+  "identified": 251,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Paul Graham",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 3867178430.900309,
-   "low": 1933589215.4501545,
-   "high": 7734356861.800618,
-   "floor": 375640000.0
+   "total": 4289917208.1922164,
+   "low": 2144958604.0961082,
+   "high": 8579834416.384433,
+   "floor": 1037500000.0
   }
  },
  "people": [
@@ -3726,6 +3726,150 @@
    "low": 0,
    "high": 0,
    "sources": []
+  },
+  {
+   "handle": "LiserraAgustin",
+   "name": "Agustin Liserra",
+   "followers": 1767,
+   "identified": true,
+   "headline": "Head of Finance at Reserve Protocol; former co-founder/CEO of Num Finance and former CFO of Buenbit.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://www.crunchbase.com/person/agustin-liserra",
+    "https://theorg.com/org/num-finance/org-chart/agustin-liserra",
+    "https://pulse2.com/num-finance-agustin-liserra-profile/",
+    "https://www.linkedin.com/in/agustin-liserra-16284329/"
+   ]
+  },
+  {
+   "handle": "kaandogrusoz",
+   "name": "Kaan Dogrusoz",
+   "followers": 1926,
+   "identified": true,
+   "headline": "CEO/co-founder of Weave Robotics (YC S24 home-robotics startup), founded 2024 with Evan Wineland after leaving Apple; CMU grad. X identity confirmed genuine. Company raised only a ~$500K pre-seed (Oct",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 2000000,
+   "sources": [
+    "https://www.ycombinator.com/companies/weave-robotics",
+    "https://www.linkedin.com/in/kaan-dogrusoz-073b748a",
+    "https://x.com/kaandogrusoz",
+    "https://www.crunchbase.com/funding_round/weave-robotics-pre-seed--e34b6d18"
+   ]
+  },
+  {
+   "handle": "RTinkslinger",
+   "name": "Aakash Kumar",
+   "followers": 2957,
+   "identified": true,
+   "headline": "Managing Director at Z47 (formerly Matrix Partners India) / DeVC; ex-Hotstar growth/monetization lead, former Housing.com CSO, founder of a gaming venture exited in 2013, and active angel investor (10",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://z47.com/team/aakash-kumar",
+    "https://x.com/RTinkslinger",
+    "https://in.linkedin.com/in/kumaraakash"
+   ]
+  },
+  {
+   "handle": "jmrlNYC",
+   "name": "Josh Merel",
+   "followers": 3922,
+   "identified": true,
+   "headline": "Fauna Robotics co-founder/CTO (ex-Google DeepMind researcher); Amazon acquired Fauna in March 2026 for an undisclosed sum",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 8000000,
+   "sources": [
+    "https://www.cnbc.com/2026/03/24/amazon-humanoid-maker-fauna-robotics-sprout.html",
+    "https://fortune.com/2026/03/29/amazon-acquisition-fauna-robotics-sprout-humanoid-robot-homes-schools-disney/"
+   ]
+  },
+  {
+   "handle": "DougKennedy93",
+   "name": "Doug Kennedy",
+   "followers": 11051,
+   "identified": true,
+   "headline": "Philadelphia-area founder/CEO of Kennedy Creative, a boutique executive-brand and ghostwriting agency for B2B founders and CEOs (engagements start at $3,000+/month; 50+ clients served over 3 years per",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://kennedycreativemedia.com/",
+    "https://twitter.com/DougKennedy93",
+    "https://www.linkedin.com/in/doug-kennedy-aab230191/"
+   ]
+  },
+  {
+   "handle": "is_OwenLewis",
+   "name": "Owen Lewis",
+   "followers": 8164,
+   "identified": true,
+   "headline": "Techno-optimist/fusion-energy writer and nuclear/fusion-energy consultant, author of the Techno-Optimist Substack",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://technooptimist1.substack.com/",
+    "https://technooptimist1.substack.com/about"
+   ]
+  },
+  {
+   "handle": "_vztu",
+   "name": "Zhengzhong \"Jay\" Tu",
+   "followers": 7412,
+   "identified": true,
+   "headline": "Assistant Professor of Computer Science & Engineering at Texas A&M; former Google Research researcher; Ph.D. UT Austin",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 400000,
+   "sources": [
+    "https://vztu.github.io/",
+    "https://engineering.tamu.edu/cse/profiles/tu-zhengzhong.html"
+   ]
+  },
+  {
+   "handle": "tylerbarstow",
+   "name": "Tyler Barstow",
+   "followers": 2124,
+   "identified": true,
+   "headline": "AI at Trust & Will; former co-founder of Vinyl Me, Please.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/tyler-barstow-24616318/",
+    "https://magazine.vinylmeplease.com/authors/tyler-barstow/",
+    "https://www.forbes.com/sites/julianmitchell/2017/08/07/this-colorado-startup-is-taking-an-analog-approach-to-disrupting-the-record-industry/"
+   ]
+  },
+  {
+   "handle": "atamas",
+   "name": "Alexander Tamas",
+   "followers": 1577,
+   "identified": true,
+   "headline": "Vy Capital founder/leader and former DST Global dealmaker; wealth estimate inferred from VC carry and fund scale",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000000,
+   "high": 1200000000,
+   "sources": [
+    "https://x.com/atamas",
+    "https://www.vycapital.com/",
+    "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
+    "https://uk.linkedin.com/in/atamas"
+   ]
   }
  ]
 }

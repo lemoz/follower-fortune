@@ -3,8 +3,8 @@
   "account": "balajis",
   "name": "@balajis",
   "totalFollowers": 1745391,
-  "researched": 193,
-  "identified": 184,
+  "researched": 200,
+  "identified": 191,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Balaji Srinivasan",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 4898936521.957418,
-   "low": 2449468260.978709,
-   "high": 9797873043.914837,
-   "floor": 325116500.0
+   "total": 4394232934.298552,
+   "low": 2197116467.149276,
+   "high": 8788465868.597103,
+   "floor": 983016500.0
   }
  },
  "people": [
@@ -2912,6 +2912,118 @@
     "https://www.financeoutlookindia.com/finance/vendor/magnus-hathaway-investments-staying-disciplined-when-markets-change--cid-817.html",
     "https://www.upsurge.club/instructor/ca-ali-azar",
     "https://x.com/MrTalkStock/status/1884580013384814643"
+   ]
+  },
+  {
+   "handle": "kaandogrusoz",
+   "name": "Kaan Dogrusoz",
+   "followers": 1926,
+   "identified": true,
+   "headline": "CEO/co-founder of Weave Robotics (YC S24 home-robotics startup), founded 2024 with Evan Wineland after leaving Apple; CMU grad. X identity confirmed genuine. Company raised only a ~$500K pre-seed (Oct",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 2000000,
+   "sources": [
+    "https://www.ycombinator.com/companies/weave-robotics",
+    "https://www.linkedin.com/in/kaan-dogrusoz-073b748a",
+    "https://x.com/kaandogrusoz",
+    "https://www.crunchbase.com/funding_round/weave-robotics-pre-seed--e34b6d18"
+   ]
+  },
+  {
+   "handle": "RTinkslinger",
+   "name": "Aakash Kumar",
+   "followers": 2957,
+   "identified": true,
+   "headline": "Managing Director at Z47 (formerly Matrix Partners India) / DeVC; ex-Hotstar growth/monetization lead, former Housing.com CSO, founder of a gaming venture exited in 2013, and active angel investor (10",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://z47.com/team/aakash-kumar",
+    "https://x.com/RTinkslinger",
+    "https://in.linkedin.com/in/kumaraakash"
+   ]
+  },
+  {
+   "handle": "ThorupMikkel",
+   "name": "Mikkel Thorup",
+   "followers": 8956,
+   "identified": true,
+   "headline": "Founder & CEO of Expat Money, host of The Expat Money Show, and author focused on expat/offshore consulting.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://expatmoney.com/about-us",
+    "https://expatmoneyshow.com/"
+   ]
+  },
+  {
+   "handle": "DougKennedy93",
+   "name": "Doug Kennedy",
+   "followers": 11051,
+   "identified": true,
+   "headline": "Philadelphia-area founder/CEO of Kennedy Creative, a boutique executive-brand and ghostwriting agency for B2B founders and CEOs (engagements start at $3,000+/month; 50+ clients served over 3 years per",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://kennedycreativemedia.com/",
+    "https://twitter.com/DougKennedy93",
+    "https://www.linkedin.com/in/doug-kennedy-aab230191/"
+   ]
+  },
+  {
+   "handle": "is_OwenLewis",
+   "name": "Owen Lewis",
+   "followers": 8164,
+   "identified": true,
+   "headline": "Techno-optimist/fusion-energy writer and nuclear/fusion-energy consultant, author of the Techno-Optimist Substack",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://technooptimist1.substack.com/",
+    "https://technooptimist1.substack.com/about"
+   ]
+  },
+  {
+   "handle": "tylerbarstow",
+   "name": "Tyler Barstow",
+   "followers": 2124,
+   "identified": true,
+   "headline": "AI at Trust & Will; former co-founder of Vinyl Me, Please.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/tyler-barstow-24616318/",
+    "https://magazine.vinylmeplease.com/authors/tyler-barstow/",
+    "https://www.forbes.com/sites/julianmitchell/2017/08/07/this-colorado-startup-is-taking-an-analog-approach-to-disrupting-the-record-industry/"
+   ]
+  },
+  {
+   "handle": "atamas",
+   "name": "Alexander Tamas",
+   "followers": 1577,
+   "identified": true,
+   "headline": "Vy Capital founder/leader and former DST Global dealmaker; wealth estimate inferred from VC carry and fund scale",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000000,
+   "high": 1200000000,
+   "sources": [
+    "https://x.com/atamas",
+    "https://www.vycapital.com/",
+    "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
+    "https://uk.linkedin.com/in/atamas"
    ]
   }
  ]

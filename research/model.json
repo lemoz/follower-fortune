@@ -1,17 +1,18 @@
 {
- "note": "v1.1 \u2014 measured rates: b0=24% (6/25 random organic sub-1k, scaled per board by audience quality q=share of sampled followers >=1k, anchored to cdossman q=0.284, clamped [0.002,0.24]); b1=13% (4/30); b2=37% (10/27); b3=60% assumed. total = floor + remainder x bucket share x rate x mean.",
+ "note": "v1.2 \u2014 measured rates: b0=24% organic (6/25, scaled per board by audience quality q vs anchor 0.284, clamp [0.002,0.24]); b1=9.4% (16/170 random); b2=28% (14/50 random); b3=60% assumed. Bucket means winsorized at $10M midpoint so single whales do not distort extrapolation (whales still count fully in researched floors). total = floor + remainder x share x rate x mean.",
  "bucketMeans": {
   "b0": 406146.01769911504,
-  "b1": 1219874.080882353,
-  "b2": 2776409.090909091,
+  "b1": 979095.9507042253,
+  "b2": 1882820.987654321,
   "b3": 1093029.4117647058
  },
  "identRates": {
   "b0": 0.24,
-  "b1": 0.13,
-  "b2": 0.37,
+  "b1": 0.09411764705882353,
+  "b2": 0.28,
   "b3": 0.6
  },
  "qAnchor": 0.284,
+ "winsorCap": 10000000,
  "errorFactor": 2.0
 }

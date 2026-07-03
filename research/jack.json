@@ -3,8 +3,8 @@
   "account": "jack",
   "name": "@jack",
   "totalFollowers": 9161230,
-  "researched": 171,
-  "identified": 170,
+  "researched": 176,
+  "identified": 175,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Jack Dorsey",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 7727156261.513273,
-   "low": 3863578130.7566366,
-   "high": 15454312523.026546,
-   "floor": 285701000.0
+   "total": 8384202200.053098,
+   "low": 4192101100.026549,
+   "high": 16768404400.106195,
+   "floor": 942751000.0
   }
  },
  "people": [
@@ -2589,6 +2589,89 @@
    "sources": [
     "https://www.bsgai.ai",
     "https://x.com/bigsunsocial"
+   ]
+  },
+  {
+   "handle": "LiserraAgustin",
+   "name": "Agustin Liserra",
+   "followers": 1767,
+   "identified": true,
+   "headline": "Head of Finance at Reserve Protocol; former co-founder/CEO of Num Finance and former CFO of Buenbit.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://www.crunchbase.com/person/agustin-liserra",
+    "https://theorg.com/org/num-finance/org-chart/agustin-liserra",
+    "https://pulse2.com/num-finance-agustin-liserra-profile/",
+    "https://www.linkedin.com/in/agustin-liserra-16284329/"
+   ]
+  },
+  {
+   "handle": "kaandogrusoz",
+   "name": "Kaan Dogrusoz",
+   "followers": 1926,
+   "identified": true,
+   "headline": "CEO/co-founder of Weave Robotics (YC S24 home-robotics startup), founded 2024 with Evan Wineland after leaving Apple; CMU grad. X identity confirmed genuine. Company raised only a ~$500K pre-seed (Oct",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 2000000,
+   "sources": [
+    "https://www.ycombinator.com/companies/weave-robotics",
+    "https://www.linkedin.com/in/kaan-dogrusoz-073b748a",
+    "https://x.com/kaandogrusoz",
+    "https://www.crunchbase.com/funding_round/weave-robotics-pre-seed--e34b6d18"
+   ]
+  },
+  {
+   "handle": "RTinkslinger",
+   "name": "Aakash Kumar",
+   "followers": 2957,
+   "identified": true,
+   "headline": "Managing Director at Z47 (formerly Matrix Partners India) / DeVC; ex-Hotstar growth/monetization lead, former Housing.com CSO, founder of a gaming venture exited in 2013, and active angel investor (10",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://z47.com/team/aakash-kumar",
+    "https://x.com/RTinkslinger",
+    "https://in.linkedin.com/in/kumaraakash"
+   ]
+  },
+  {
+   "handle": "tylerbarstow",
+   "name": "Tyler Barstow",
+   "followers": 2124,
+   "identified": true,
+   "headline": "AI at Trust & Will; former co-founder of Vinyl Me, Please.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/tyler-barstow-24616318/",
+    "https://magazine.vinylmeplease.com/authors/tyler-barstow/",
+    "https://www.forbes.com/sites/julianmitchell/2017/08/07/this-colorado-startup-is-taking-an-analog-approach-to-disrupting-the-record-industry/"
+   ]
+  },
+  {
+   "handle": "atamas",
+   "name": "Alexander Tamas",
+   "followers": 1577,
+   "identified": true,
+   "headline": "Vy Capital founder/leader and former DST Global dealmaker; wealth estimate inferred from VC carry and fund scale",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000000,
+   "high": 1200000000,
+   "sources": [
+    "https://x.com/atamas",
+    "https://www.vycapital.com/",
+    "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
+    "https://uk.linkedin.com/in/atamas"
    ]
   }
  ]

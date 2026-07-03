@@ -3,8 +3,8 @@
   "account": "sama",
   "name": "@sama",
   "totalFollowers": 5270109,
-  "researched": 343,
-  "identified": 334,
+  "researched": 353,
+  "identified": 344,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Sam Altman",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 10998480779.780075,
-   "low": 5499240389.890038,
-   "high": 21996961559.56015,
-   "floor": 449827250.0
+   "total": 10257019036.439312,
+   "low": 5128509518.219656,
+   "high": 20514038072.878624,
+   "floor": 1108737250.0
   }
  },
  "people": [
@@ -5147,6 +5147,167 @@
    "high": 10000000,
    "sources": [
     "https://videonest.co"
+   ]
+  },
+  {
+   "handle": "LiserraAgustin",
+   "name": "Agustin Liserra",
+   "followers": 1767,
+   "identified": true,
+   "headline": "Head of Finance at Reserve Protocol; former co-founder/CEO of Num Finance and former CFO of Buenbit.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://www.crunchbase.com/person/agustin-liserra",
+    "https://theorg.com/org/num-finance/org-chart/agustin-liserra",
+    "https://pulse2.com/num-finance-agustin-liserra-profile/",
+    "https://www.linkedin.com/in/agustin-liserra-16284329/"
+   ]
+  },
+  {
+   "handle": "kaandogrusoz",
+   "name": "Kaan Dogrusoz",
+   "followers": 1926,
+   "identified": true,
+   "headline": "CEO/co-founder of Weave Robotics (YC S24 home-robotics startup), founded 2024 with Evan Wineland after leaving Apple; CMU grad. X identity confirmed genuine. Company raised only a ~$500K pre-seed (Oct",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 2000000,
+   "sources": [
+    "https://www.ycombinator.com/companies/weave-robotics",
+    "https://www.linkedin.com/in/kaan-dogrusoz-073b748a",
+    "https://x.com/kaandogrusoz",
+    "https://www.crunchbase.com/funding_round/weave-robotics-pre-seed--e34b6d18"
+   ]
+  },
+  {
+   "handle": "RTinkslinger",
+   "name": "Aakash Kumar",
+   "followers": 2957,
+   "identified": true,
+   "headline": "Managing Director at Z47 (formerly Matrix Partners India) / DeVC; ex-Hotstar growth/monetization lead, former Housing.com CSO, founder of a gaming venture exited in 2013, and active angel investor (10",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://z47.com/team/aakash-kumar",
+    "https://x.com/RTinkslinger",
+    "https://in.linkedin.com/in/kumaraakash"
+   ]
+  },
+  {
+   "handle": "kurtinc",
+   "name": "Kurt Elster",
+   "followers": 16917,
+   "identified": true,
+   "headline": "Founder/CEO of Ethercycle (small, deliberately-limited Shopify Plus agency, self-funded/debt-free), host of The Unofficial Shopify Podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 200000,
+   "high": 1500000,
+   "sources": [
+    "https://kurtelster.com/",
+    "https://ethercycle.com/",
+    "https://ethercycle.com/about/"
+   ]
+  },
+  {
+   "handle": "DougKennedy93",
+   "name": "Doug Kennedy",
+   "followers": 11051,
+   "identified": true,
+   "headline": "Philadelphia-area founder/CEO of Kennedy Creative, a boutique executive-brand and ghostwriting agency for B2B founders and CEOs (engagements start at $3,000+/month; 50+ clients served over 3 years per",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://kennedycreativemedia.com/",
+    "https://twitter.com/DougKennedy93",
+    "https://www.linkedin.com/in/doug-kennedy-aab230191/"
+   ]
+  },
+  {
+   "handle": "chenchengpro",
+   "name": "Chen Cheng (\u9648\u6210 / \u4e91\u8c26, GitHub @sorrycc)",
+   "followers": 10418,
+   "identified": true,
+   "headline": "Ant Group/Alipay senior front-end engineer (P8 rank) and open-source maintainer behind UmiJS, dva, Mako/utoo, and Neovate Code.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 800000,
+   "sources": [
+    "https://github.com/sorrycc",
+    "https://sorrycc.com/",
+    "https://x.com/chenchengpro"
+   ]
+  },
+  {
+   "handle": "is_OwenLewis",
+   "name": "Owen Lewis",
+   "followers": 8164,
+   "identified": true,
+   "headline": "Techno-optimist/fusion-energy writer and nuclear/fusion-energy consultant, author of the Techno-Optimist Substack",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://technooptimist1.substack.com/",
+    "https://technooptimist1.substack.com/about"
+   ]
+  },
+  {
+   "handle": "_vztu",
+   "name": "Zhengzhong \"Jay\" Tu",
+   "followers": 7412,
+   "identified": true,
+   "headline": "Assistant Professor of Computer Science & Engineering at Texas A&M; former Google Research researcher; Ph.D. UT Austin",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 400000,
+   "sources": [
+    "https://vztu.github.io/",
+    "https://engineering.tamu.edu/cse/profiles/tu-zhengzhong.html"
+   ]
+  },
+  {
+   "handle": "tylerbarstow",
+   "name": "Tyler Barstow",
+   "followers": 2124,
+   "identified": true,
+   "headline": "AI at Trust & Will; former co-founder of Vinyl Me, Please.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/tyler-barstow-24616318/",
+    "https://magazine.vinylmeplease.com/authors/tyler-barstow/",
+    "https://www.forbes.com/sites/julianmitchell/2017/08/07/this-colorado-startup-is-taking-an-analog-approach-to-disrupting-the-record-industry/"
+   ]
+  },
+  {
+   "handle": "atamas",
+   "name": "Alexander Tamas",
+   "followers": 1577,
+   "identified": true,
+   "headline": "Vy Capital founder/leader and former DST Global dealmaker; wealth estimate inferred from VC carry and fund scale",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000000,
+   "high": 1200000000,
+   "sources": [
+    "https://x.com/atamas",
+    "https://www.vycapital.com/",
+    "https://www.wsj.com/business/entrepreneurship/musk-investors-spacex-ai-tesla-2711aca1",
+    "https://uk.linkedin.com/in/atamas"
    ]
   }
  ]
