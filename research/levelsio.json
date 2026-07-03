@@ -5,7 +5,19 @@
   "totalFollowers": 905538,
   "researched": 70,
   "identified": 29,
-  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
+  "owner": {
+   "name": "Pieter Levels",
+   "headline": "Dutch indie hacker and bootstrapped founder of Nomad List, Remote OK, Photo AI, and Interior AI",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 30000000.0,
+   "high": 80000000.0,
+   "sources": [
+    "https://unnetworth.com/pieter-levels-net-worth/",
+    "https://www.cinenetworth.com/pieter-levels-net-worth/"
+   ]
+  }
  },
  "people": [
   {
@@ -28,7 +40,7 @@
    "name": "Danny Buck",
    "followers": 3429,
    "identified": true,
-   "headline": "Co-Founder & CEO of CRAFTD London, a bootstrapped DTC men's jewelry brand that scaled to £20M+ in annual revenue",
+   "headline": "Co-Founder & CEO of CRAFTD London, a bootstrapped DTC men's jewelry brand that scaled to \u00a320M+ in annual revenue",
    "verdict": "plausible",
    "confidence": "medium",
    "low": 4000000,
@@ -64,8 +76,8 @@
    "low": 300000,
    "high": 2000000,
    "sources": [
-    "https://www.linkedin.com/in/andreasblixt/ (LinkedIn profile — redirects to es.linkedin.com/in/andreasblixt, confirmed identity and career)",
-    "https://www.crunchbase.com/person/andreas-blixt (Crunchbase person profile — confirmed identity, 403 on fetch but name surfaced in search)"
+    "https://www.linkedin.com/in/andreasblixt/ (LinkedIn profile \u2014 redirects to es.linkedin.com/in/andreasblixt, confirmed identity and career)",
+    "https://www.crunchbase.com/person/andreas-blixt (Crunchbase person profile \u2014 confirmed identity, 403 on fetch but name surfaced in search)"
    ]
   },
   {
@@ -85,7 +97,7 @@
   },
   {
    "handle": "drishtikone",
-   "name": "DRISHTIKONE दृष्टिकोण (Perspectives)",
+   "name": "DRISHTIKONE \u0926\u0943\u0937\u094d\u091f\u093f\u0915\u094b\u0923 (Perspectives)",
    "followers": 7631,
    "identified": true,
    "headline": "Founder & Chief Editor of Drishtikone.com; IT professional with corporate consulting background (Tata Consultancy Services); MBA, based in Alpharetta, Georgia",
@@ -175,7 +187,7 @@
   },
   {
    "handle": "dwillems42",
-   "name": "Danny Willems🛡️",
+   "name": "Danny Willems\ud83d\udee1\ufe0f",
    "followers": 2345,
    "identified": true,
    "headline": "Principal Cryptography Engineer at ZODL (Zcash Open Development Labs); former Head of Cryptography at o1Labs; co-founder of LeakIX",
@@ -190,7 +202,7 @@
   },
   {
    "handle": "SenorAlex__",
-   "name": "Señor Alex ( Alexy Joven )",
+   "name": "Se\u00f1or Alex ( Alexy Joven )",
    "followers": 5139,
    "identified": true,
    "headline": "Founder of Modjo (modjo.me), a bootstrapped AI-native growth agency for B2B and prosumer tech companies",
@@ -381,7 +393,7 @@
   },
   {
    "handle": "nico_nomad",
-   "name": "にこ⛄️旅と山暮らし",
+   "name": "\u306b\u3053\u26c4\ufe0f\u65c5\u3068\u5c71\u66ae\u3089\u3057",
    "followers": 3012,
    "identified": false,
    "headline": "Japanese lifestyle blogger and inn manager living at 1,600m elevation; left salaried work to travel and run a guesthouse",
@@ -479,7 +491,7 @@
   },
   {
    "handle": "kuzicrypto",
-   "name": "Kuzi⚡️",
+   "name": "Kuzi\u26a1\ufe0f",
    "followers": 4057,
    "identified": false,
    "headline": "Anonymous crypto degen trader and yield farmer; runs a small Telegram channel \"Kuzi's Flow\" (64 subscribers) sharing on-chain alpha and yield farming notes",
@@ -493,7 +505,7 @@
   },
   {
    "handle": "ieasterfan",
-   "name": "宕机君在搬砖",
+   "name": "\u5b95\u673a\u541b\u5728\u642c\u7816",
    "followers": 1308,
    "identified": true,
    "headline": "Chinese software developer and hobbyist stock-tool creator; former ThoughtWorks dev, current Ops engineer",
@@ -539,7 +551,7 @@
    "name": "Tans",
    "followers": 1798,
    "identified": false,
-   "headline": "Data Engineer, Mumbai/Melbourne — unverified personal account, no public wealth signals found",
+   "headline": "Data Engineer, Mumbai/Melbourne \u2014 unverified personal account, no public wealth signals found",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 0,
@@ -582,7 +594,7 @@
    "name": "Jexor One Studio",
    "followers": 15703,
    "identified": false,
-   "headline": "Jexor One Studio — unidentified founder of a self-described SaaS/mobile-app studio",
+   "headline": "Jexor One Studio \u2014 unidentified founder of a self-described SaaS/mobile-app studio",
    "verdict": "unfounded",
    "confidence": "high",
    "low": 0,
@@ -722,7 +734,7 @@
    "name": "Lexur",
    "followers": 7563,
    "identified": false,
-   "headline": "Operator of @Lexur, a Solana social trading/perps platform built by LexurLabs — real identity not publicly disclosed",
+   "headline": "Operator of @Lexur, a Solana social trading/perps platform built by LexurLabs \u2014 real identity not publicly disclosed",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,
@@ -748,7 +760,7 @@
   },
   {
    "handle": "Adam38363368936",
-   "name": "Adam也叫吉米",
+   "name": "Adam\u4e5f\u53eb\u5409\u7c73",
    "followers": 14777,
    "identified": false,
    "headline": "Chinese-language AI content creator posting about AI image/video generation tools and prompt engineering",
@@ -790,7 +802,7 @@
   },
   {
    "handle": "joaoli13",
-   "name": "João Lima",
+   "name": "Jo\u00e3o Lima",
    "followers": 7172,
    "identified": true,
    "headline": "Brazilian academic researcher specializing in legal informatics (legimatics/legistics), computational ontology, and AI-law intersections; affiliated with University of Brasilia (UnB) area institutions",
@@ -805,7 +817,7 @@
   },
   {
    "handle": "spvggy",
-   "name": "Asho! 👁️🐦‍🔥",
+   "name": "Asho! \ud83d\udc41\ufe0f\ud83d\udc26\u200d\ud83d\udd25",
    "followers": 1152,
    "identified": false,
    "headline": "Unidentified Nigerian/diaspora social media user posting in Pidgin English about music, art, and culture",
@@ -835,10 +847,10 @@
   },
   {
    "handle": "all7i8n9",
-   "name": "Alpha.等风",
+   "name": "Alpha.\u7b49\u98ce",
    "followers": 62314,
    "identified": false,
-   "headline": "Chinese-language crypto trading influencer operating under the pseudonym \"Alpha.等风\"",
+   "headline": "Chinese-language crypto trading influencer operating under the pseudonym \"Alpha.\u7b49\u98ce\"",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,
@@ -903,7 +915,7 @@
   },
   {
    "handle": "HYAKKEI_ME",
-   "name": "登山メディア.HYAKKEI",
+   "name": "\u767b\u5c71\u30e1\u30c7\u30a3\u30a2.HYAKKEI",
    "followers": 3277,
    "identified": false,
    "headline": "Outdoor/mountain web media brand account operated by TABA Inc. (Tokyo); not a personal account",
@@ -959,7 +971,7 @@
   },
   {
    "handle": "WorkFarOfficial",
-   "name": "Teddy 🇺🇸",
+   "name": "Teddy \ud83c\uddfa\ud83c\uddf8",
    "followers": 1604,
    "identified": false,
    "headline": "Unidentified individual operating @WorkFarOfficial, associated with WorkFar Robotics startup",
@@ -977,7 +989,7 @@
    "name": "Data Axle",
    "followers": 3791,
    "identified": false,
-   "headline": "Corporate Twitter/X brand account for Data Axle, Inc. (formerly Infogroup) — a privately held data and marketing services company owned by Court Square Capital Partners — corporate account, not an ind",
+   "headline": "Corporate Twitter/X brand account for Data Axle, Inc. (formerly Infogroup) \u2014 a privately held data and marketing services company owned by Court Square Capital Partners \u2014 corporate account, not an ind",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,
@@ -992,7 +1004,7 @@
    "name": "Gala",
    "followers": 56515,
    "identified": true,
-   "headline": "Ex-OKX Web3 Partnership Lead, published author, Ms Chinese Washington pageant titleholder; Seattle-based crypto/Web3 professional with corporate background at PwC, Ogilvy, and Tencent. — corporate acc",
+   "headline": "Ex-OKX Web3 Partnership Lead, published author, Ms Chinese Washington pageant titleholder; Seattle-based crypto/Web3 professional with corporate background at PwC, Ogilvy, and Tencent. \u2014 corporate acc",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,

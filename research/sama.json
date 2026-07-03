@@ -5,7 +5,19 @@
   "totalFollowers": 5270109,
   "researched": 343,
   "identified": 334,
-  "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public."
+  "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
+  "owner": {
+   "name": "Sam Altman",
+   "headline": "CEO of OpenAI; holds no OpenAI equity but has amassed billions via personal stakes in Helion, Reddit, Stripe, and hundreds of other companies",
+   "verdict": "supported",
+   "confidence": "medium",
+   "low": 3400000000,
+   "high": 4500000000,
+   "sources": [
+    "https://www.forbes.com/profile/sam-altman/",
+    "https://www.forbes.com/sites/aliciapark/2026/05/12/sam-altman-testifies-he-owns-one-third-of-helion-energy-worth-165-billion/"
+   ]
+  }
  },
  "people": [
   {

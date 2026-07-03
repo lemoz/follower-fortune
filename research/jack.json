@@ -5,7 +5,19 @@
   "totalFollowers": 9161230,
   "researched": 171,
   "identified": 170,
-  "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public."
+  "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
+  "owner": {
+   "name": "Jack Dorsey",
+   "headline": "Co-founder of Twitter/X and Block (formerly Square)",
+   "verdict": "supported",
+   "confidence": "medium",
+   "low": 5900000000,
+   "high": 7700000000,
+   "sources": [
+    "https://www.forbes.com/profile/jack-dorsey/ (real-time: $7.7B as of 7/3/26)",
+    "https://www.bloomberg.com/billionaires/profiles/jack-p-dorsey/"
+   ]
+  }
  },
  "people": [
   {
@@ -85,7 +97,7 @@
    "name": "Eugen",
    "followers": 2278,
    "identified": true,
-   "headline": "Co-Founder & CEO of Edra (edra.ai); ex-Palantir US Commercial Lead — $36.5M raised from Sequoia",
+   "headline": "Co-Founder & CEO of Edra (edra.ai); ex-Palantir US Commercial Lead \u2014 $36.5M raised from Sequoia",
    "verdict": "plausible",
    "confidence": "medium",
    "low": 2000000,
@@ -232,7 +244,7 @@
   },
   {
    "handle": "BobLoukas",
-   "name": "Bob Loukas 🗽",
+   "name": "Bob Loukas \ud83d\uddfd",
    "followers": 385186,
    "identified": true,
    "headline": "Cycle trader and founder of Bitcoin Live membership platform, NYC-based position trader of 30 years",
@@ -355,7 +367,7 @@
    "name": "Peter Livingston",
    "followers": 4026,
    "identified": true,
-   "headline": "Founder and General Partner, Unpopular Ventures — micro-VC rolling fund and syndicate with $81M deployed across 536 portfolio companies",
+   "headline": "Founder and General Partner, Unpopular Ventures \u2014 micro-VC rolling fund and syndicate with $81M deployed across 536 portfolio companies",
    "verdict": "plausible",
    "confidence": "low",
    "low": 1000000,
@@ -412,7 +424,7 @@
   },
   {
    "handle": "0thernet",
-   "name": "ben guo 🏇",
+   "name": "ben guo \ud83c\udfc7",
    "followers": 9529,
    "identified": true,
    "headline": "Co-founder & President, Zo Computer; ex-Stripe (2015-2023)",
@@ -517,7 +529,7 @@
   },
   {
    "handle": "chriscassano",
-   "name": "🔥",
+   "name": "\ud83d\udd25",
    "followers": 1144,
    "identified": true,
    "headline": "Co-Founder and CTO of Lit Protocol, a Web3 decentralized key management and encryption network that raised $15.2M across Seed and Series A rounds.",
@@ -652,10 +664,10 @@
   },
   {
    "handle": "airgups23",
-   "name": "Shiv 💡",
+   "name": "Shiv \ud83d\udca1",
    "followers": 6904,
    "identified": true,
-   "headline": "Founder and Managing Partner, U of Digital — ad-tech and programmatic advertising education company",
+   "headline": "Founder and Managing Partner, U of Digital \u2014 ad-tech and programmatic advertising education company",
    "verdict": "plausible",
    "confidence": "medium",
    "low": 300000,
@@ -892,7 +904,7 @@
   },
   {
    "handle": "erinlmcmahon",
-   "name": "Erin L McMahon 🏃🏼‍♀️",
+   "name": "Erin L McMahon \ud83c\udfc3\ud83c\udffc\u200d\u2640\ufe0f",
    "followers": 1924,
    "identified": true,
    "headline": "VP of Marketing and Investor Relations at Axe Compute (AGPU); podcast host; former Aethir, Ankr, Meta, Twitter, Google marketing executive",
@@ -922,7 +934,7 @@
   },
   {
    "handle": "sanjivvmore",
-   "name": "Sanjiv Moré",
+   "name": "Sanjiv Mor\u00e9",
    "followers": 1492,
    "identified": true,
    "headline": "Head of Digital Blitzscale Sales at Spoke Safety; prior roles at Panasonic Avionics, Current (GE), GigSky, Martindale-Nolo",
@@ -931,16 +943,16 @@
    "low": 200000,
    "high": 800000,
    "sources": [
-    "https://www.linkedin.com/in/sanjivmore/ (search result metadata only — page returned HTTP 999)",
-    "https://rocketreach.co/sanjiv-more-email_17544623 (search result metadata only — page returned HTTP 403)"
+    "https://www.linkedin.com/in/sanjivmore/ (search result metadata only \u2014 page returned HTTP 999)",
+    "https://rocketreach.co/sanjiv-more-email_17544623 (search result metadata only \u2014 page returned HTTP 403)"
    ]
   },
   {
    "handle": "dutch_travel",
-   "name": "Bart Lamers ai Automation 🦾 robotics",
+   "name": "Bart Lamers ai Automation \ud83e\uddbe robotics",
    "followers": 3635,
    "identified": true,
-   "headline": "Founder/Owner, DDPRO (DataDrivenPro) — Netherlands IT automation and RPA consultancy since 1998",
+   "headline": "Founder/Owner, DDPRO (DataDrivenPro) \u2014 Netherlands IT automation and RPA consultancy since 1998",
    "verdict": "overstated",
    "confidence": "low",
    "low": 150000,
@@ -997,7 +1009,7 @@
   },
   {
    "handle": "ManuAlzuru",
-   "name": "ManuAlzuru🥑",
+   "name": "ManuAlzuru\ud83e\udd51",
    "followers": 13067,
    "identified": true,
    "headline": "Web3 community builder, founder of ETHBarcelona and Blockravers, DoinGud contributor, MetaCartel and API3 DAO participant",
@@ -1045,7 +1057,7 @@
    "name": "Oskar Hane",
    "followers": 1057,
    "identified": true,
-   "headline": "Senior Staff Software Engineer / Tech Lead AI at Neo4j, based in Linköping, Sweden; co-author of Essential GraphRAG (Manning Publications)",
+   "headline": "Senior Staff Software Engineer / Tech Lead AI at Neo4j, based in Link\u00f6ping, Sweden; co-author of Essential GraphRAG (Manning Publications)",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 200000,
@@ -1142,7 +1154,7 @@
    "high": 600000,
    "sources": [
     "https://www.linkedin.com/in/drew-shah/ (via search result summary)",
-    "https://councylcapital.com/byu-fall23-intern (fetched directly — confirms lower-middle-market PE focus, mobile home parks, board advisors with $10B+ prior AUM)"
+    "https://councylcapital.com/byu-fall23-intern (fetched directly \u2014 confirms lower-middle-market PE focus, mobile home parks, board advisors with $10B+ prior AUM)"
    ]
   },
   {
@@ -1192,7 +1204,7 @@
   },
   {
    "handle": "OmarUFlorez",
-   "name": "Omar U. Florez 🇵🇪🇺🇸",
+   "name": "Omar U. Florez \ud83c\uddf5\ud83c\uddea\ud83c\uddfa\ud83c\uddf8",
    "followers": 3250,
    "identified": true,
    "headline": "Senior ML Researcher and PhD; technical lead for LatamGPT pre-training; co-founder of LatinXinAI nonprofit; former Twitter Cortex, Capital One, Intel Labs, IBM researcher",
@@ -1225,7 +1237,7 @@
    "name": "Vishal Goklani",
    "followers": 719,
    "identified": true,
-   "headline": "Founder and CEO of Metricle, Inc. — bootstrapped financial analytics startup; ML/NLP engineer with quant finance background",
+   "headline": "Founder and CEO of Metricle, Inc. \u2014 bootstrapped financial analytics startup; ML/NLP engineer with quant finance background",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 50000,
@@ -1237,7 +1249,7 @@
   },
   {
    "handle": "Zecca_Lehn",
-   "name": "Zécca",
+   "name": "Z\u00e9cca",
    "followers": 20678,
    "identified": true,
    "headline": "General Partner at Responsibly Ventures, a sub-$10M pre-seed impact VC fund; Community Lead at posi2ive",
@@ -1297,10 +1309,10 @@
   },
   {
    "handle": "dcsan",
-   "name": "˗ˏˋ DC ˎˊ˗",
+   "name": "\u02d7\u02cf\u02cb DC \u02ce\u02ca\u02d7",
    "followers": 1184,
    "identified": true,
-   "headline": "Creative coder, serial founder — 6 startups across 4 countries (UK, US, Japan, China) with 2 exits; worked on conversational AI at Google; active in games, NLP, gen art, and EdTech",
+   "headline": "Creative coder, serial founder \u2014 6 startups across 4 countries (UK, US, Japan, China) with 2 exits; worked on conversational AI at Google; active in games, NLP, gen art, and EdTech",
    "verdict": "overstated",
    "confidence": "low",
    "low": 80000,
@@ -1342,7 +1354,7 @@
   },
   {
    "handle": "Springcoil",
-   "name": "Peadar Coyle (🇪🇺 eu/acc)",
+   "name": "Peadar Coyle (\ud83c\uddea\ud83c\uddfa eu/acc)",
    "followers": 2670,
    "identified": true,
    "headline": "Co-founder of AudioStack, an AI-native audio production platform for Media and Entertainment",
@@ -1357,7 +1369,7 @@
   },
   {
    "handle": "hermanwu01",
-   "name": "Herman Wu🇺🇦",
+   "name": "Herman Wu\ud83c\uddfa\ud83c\udde6",
    "followers": 105,
    "identified": true,
    "headline": "Principal Instructor / Master Instructor and Senior Training Lead, Deep Learning Institute at NVIDIA (Taiwan)",
@@ -1375,7 +1387,7 @@
    "name": "Andy Dillow",
    "followers": 66,
    "identified": true,
-   "headline": "COO at Springpod; former Director at The Intern Group — UK edtech operator",
+   "headline": "COO at Springpod; former Director at The Intern Group \u2014 UK edtech operator",
    "verdict": "plausible",
    "confidence": "low",
    "low": 100000,
@@ -1510,7 +1522,7 @@
    "name": "Jousef Murad",
    "followers": 19843,
    "identified": true,
-   "headline": "CEO & Lead Engineer at APEX Consulting — boutique B2B AI automation and lead generation agency based in Eindhoven, Netherlands; Siemens Technology Partner; mechanical engineer background; content crea",
+   "headline": "CEO & Lead Engineer at APEX Consulting \u2014 boutique B2B AI automation and lead generation agency based in Eindhoven, Netherlands; Siemens Technology Partner; mechanical engineer background; content crea",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 80000,
@@ -1629,7 +1641,7 @@
    "name": "Marcia Nompumelelo Davids",
    "followers": 3474,
    "identified": true,
-   "headline": "Advocate (Junior Counsel), Arbitrator (AAArb), and Aviator — Group 33 Advocates & The Maisels Group, Pretoria/Johannesburg, South Africa",
+   "headline": "Advocate (Junior Counsel), Arbitrator (AAArb), and Aviator \u2014 Group 33 Advocates & The Maisels Group, Pretoria/Johannesburg, South Africa",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 75000,
@@ -1656,7 +1668,7 @@
   },
   {
    "handle": "gijigae",
-   "name": "sangmin.eth | 安全なう",
+   "name": "sangmin.eth | \u5b89\u5168\u306a\u3046",
    "followers": 33703,
    "identified": true,
    "headline": "Founder & CEO of The Choimirai Company, Japan-based AI/EdTech educator and Dify Ambassador",
@@ -1791,7 +1803,7 @@
   },
   {
    "handle": "ctjlewis",
-   "name": "Lewis 🇺🇸",
+   "name": "Lewis \ud83c\uddfa\ud83c\uddf8",
    "followers": 45618,
    "identified": true,
    "headline": "Independent software developer and early-stage AI founder; building SpellcraftAI and open-source TypeScript/ESM tooling under EvolvingPrograms",
@@ -1836,7 +1848,7 @@
   },
   {
    "handle": "erinjerri",
-   "name": "Erin Jerri Pañgilinan",
+   "name": "Erin Jerri Pa\u00f1gilinan",
    "followers": 3443,
    "identified": true,
    "headline": "Founder of CYReality (stealth XR/AI startup); O'Reilly author; FASTER nonprofit founder; General Assembly instructor",
@@ -1956,7 +1968,7 @@
   },
   {
    "handle": "BinaryHB",
-   "name": "段少🎵DaDalus",
+   "name": "\u6bb5\u5c11\ud83c\udfb5DaDalus",
    "followers": 2783,
    "identified": true,
    "headline": "Chinese indie developer and solopreneur; founder of Calis AI Studio LLC; iOS app developer; OPC (One-Person Company) practitioner",
@@ -2025,7 +2037,7 @@
    "low": 0,
    "high": 150000,
    "sources": [
-    "https://www.phronesisai.com/blog/a-drug-design-company-cebz4 (redirects to limedrugdesign.com — surfaced via WebSearch result confirming Will Spagnoli as CTO/founder of Phronesis AI/LIME Drug Design)"
+    "https://www.phronesisai.com/blog/a-drug-design-company-cebz4 (redirects to limedrugdesign.com \u2014 surfaced via WebSearch result confirming Will Spagnoli as CTO/founder of Phronesis AI/LIME Drug Design)"
    ]
   },
   {
@@ -2074,7 +2086,7 @@
   },
   {
    "handle": "JabaBanik",
-   "name": ": 🎀 𝒥𝒶𝒷𝒶 𝐵𝒶𝓃𝒾𝓀 🎀 : 🌺",
+   "name": ": \ud83c\udf80 \ud835\udca5\ud835\udcb6\ud835\udcb7\ud835\udcb6 \ud835\udc35\ud835\udcb6\ud835\udcc3\ud835\udcbe\ud835\udcc0 \ud83c\udf80 : \ud83c\udf3a",
    "followers": 2190,
    "identified": true,
    "headline": "Senior Data Scientist / AI & Data Science Leader at IBM Global Business Services (IBM GBS)",
@@ -2089,7 +2101,7 @@
   },
   {
    "handle": "HeyVixon",
-   "name": "Vikas Singh (vikas.lens) 🌿, in Dubai 🇦🇪",
+   "name": "Vikas Singh (vikas.lens) \ud83c\udf3f, in Dubai \ud83c\udde6\ud83c\uddea",
    "followers": 2475,
    "identified": true,
    "headline": "Founder/operator of XTrading (AI perp DEX on Hyperliquid), crypto advisor in Dubai",
@@ -2107,7 +2119,7 @@
    "name": "Ryan Lisse",
    "followers": 1615,
    "identified": true,
-   "headline": "Fractional AI Engineer & Agent Architect / Software Consultant at Salt / Music Producer — Amsterdam",
+   "headline": "Fractional AI Engineer & Agent Architect / Software Consultant at Salt / Music Producer \u2014 Amsterdam",
    "verdict": "plausible",
    "confidence": "low",
    "low": 20000,
@@ -2143,7 +2155,7 @@
    "low": 10000,
    "high": 80000,
    "sources": [
-    "https://www.linkedin.com/in/orazulay/ (HTTP 999, LinkedIn blocked — identity confirmed via search snippet)",
+    "https://www.linkedin.com/in/orazulay/ (HTTP 999, LinkedIn blocked \u2014 identity confirmed via search snippet)",
     "https://rocketreach.co/or-azulay-email_1308373"
    ]
   },
@@ -2263,13 +2275,13 @@
    "low": -30000,
    "high": 80000,
    "sources": [
-    "https://www.linkedin.com/in/tomasz-jezak/ (LinkedIn profile confirms Amazon Industrial Robotics + UCSD, though direct fetch was blocked — confirmed via search snippet)",
+    "https://www.linkedin.com/in/tomasz-jezak/ (LinkedIn profile confirms Amazon Industrial Robotics + UCSD, though direct fetch was blocked \u2014 confirmed via search snippet)",
     "https://www.levels.fyi/companies/amazon/salaries/software-engineer/levels/sde-i"
    ]
   },
   {
    "handle": "Mr_BaaGii",
-   "name": "BaaGii Sharkhuu🕵️‍♂️",
+   "name": "BaaGii Sharkhuu\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
    "followers": 5094,
    "identified": true,
    "headline": "Mongolian SysAdmin and Full-Stack Developer based in South Korea",
@@ -2284,10 +2296,10 @@
   },
   {
    "handle": "astropredo",
-   "name": "Pedro Pinheiro 🪐",
+   "name": "Pedro Pinheiro \ud83e\ude90",
    "followers": 4355,
    "identified": true,
-   "headline": "Astrophysicist (UFRN), Data Scientist, AI/ML Specialist, Science Communicator — Natal, Brazil",
+   "headline": "Astrophysicist (UFRN), Data Scientist, AI/ML Specialist, Science Communicator \u2014 Natal, Brazil",
    "verdict": "overstated",
    "confidence": "low",
    "low": 5000,
@@ -2302,7 +2314,7 @@
    "name": "Motaz Saad",
    "followers": 1432,
    "identified": true,
-   "headline": "Assistant Professor of Computer Science, Islamic University of Gaza; PhD from Université de Lorraine",
+   "headline": "Assistant Professor of Computer Science, Islamic University of Gaza; PhD from Universit\u00e9 de Lorraine",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 2000,
@@ -2374,7 +2386,7 @@
   },
   {
    "handle": "BullishStudio",
-   "name": "Bullish Studio 🦝",
+   "name": "Bullish Studio \ud83e\udd9d",
    "followers": 8119,
    "identified": true,
    "headline": "Investor-focused content studio and advertising agency founded by Brian Hanly (ex-VICE Media); Brooklyn, NY; privately held",
@@ -2448,7 +2460,7 @@
   },
   {
    "handle": "drishtikone",
-   "name": "DRISHTIKONE दृष्टिकोण (Perspectives)",
+   "name": "DRISHTIKONE \u0926\u0943\u0937\u094d\u091f\u093f\u0915\u094b\u0923 (Perspectives)",
    "followers": 7631,
    "identified": true,
    "headline": "Founder & Chief Editor of Drishtikone.com; IT professional with corporate consulting background (Tata Consultancy Services); MBA, based in Alpharetta, Georgia",
@@ -2526,7 +2538,7 @@
    "name": "Gala",
    "followers": 56515,
    "identified": true,
-   "headline": "Ex-OKX Web3 Partnership Lead, published author, Ms Chinese Washington pageant titleholder; Seattle-based crypto/Web3 professional with corporate background at PwC, Ogilvy, and Tencent. — corporate acc",
+   "headline": "Ex-OKX Web3 Partnership Lead, published author, Ms Chinese Washington pageant titleholder; Seattle-based crypto/Web3 professional with corporate background at PwC, Ogilvy, and Tencent. \u2014 corporate acc",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,
@@ -2556,7 +2568,7 @@
    "name": "BigSunAI",
    "followers": 17087,
    "identified": true,
-   "headline": "BigSunAI — green AI infrastructure and BSGAI utility token company; Chairman & CEO is Chia-Ching Luo",
+   "headline": "BigSunAI \u2014 green AI infrastructure and BSGAI utility token company; Chairman & CEO is Chia-Ching Luo",
    "verdict": "unfounded",
    "confidence": "high",
    "low": 0,

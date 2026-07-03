@@ -100,6 +100,8 @@
   .srclink:hover{opacity:1}
   .gl tbody tr{cursor:pointer}
   .gl tbody tr:hover{background:rgba(255,255,255,.045)}
+  .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
+  .ownworth .srclink{margin-left:2px}
 </style>
 </head>
 <body>
@@ -131,6 +133,7 @@
           <div>
             <div class="pname"><span id="pname"></span> <span class="verified" id="ver"></span></div>
             <div class="phandle" id="phandle"></div>
+            <div class="ownworth" id="ownworth"></div>
           </div>
         </div>
         <div class="bignum">Total estimated net worth of followers</div>
@@ -336,7 +339,9 @@ function renderGlobal(currentHandle){
   let arr;
   if(DOSSIERS&&DOSSIERS.length){
     arr=DOSSIERS.slice().sort((a,b)=>b.total-a.total).slice(0,12)
-      .map(d=>({handle:d.handle,total:d.total,followers:d.followers,sub:(d.identified||0)+' identified · '+(d.researched||0)+' researched'}));
+      .map(d=>({handle:d.handle,total:d.total,followers:d.followers,
+        sub:(d.identified||0)+' identified · '+(d.researched||0)+' researched'
+          +((d.owner&&(d.owner.low||d.owner.high))?(' · own '+money(d.owner.low)+'–'+money(d.owner.high)):'')}));
   }else{
     const lb=loadLB();
     arr=Object.values(lb).sort((a,b)=>b.total-a.total).slice(0,12)
@@ -359,6 +364,8 @@ function paint(d){
   $("phandle").textContent=d.handleLine;
   $("total").textContent=d.totalText||money(d.totalAll);
   $("totsub").textContent=d.totsub;
+  const ow=$("ownworth");
+  if(d.ownLine){ow.innerHTML=d.ownLine;ow.style.display="block";}else{ow.style.display="none";}
   if(d.hint)$("hint").textContent=d.hint;
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
@@ -388,7 +395,8 @@ function syntheticD(handle){
   const realCount=realCountFor(handle);
   const a=analyze(handle,realCount);
   return {handle,displayName:"@"+handle,
-    handleLine:"Own estimated worth: "+money(a.ownWorth),
+    handleLine:"@"+handle,
+    ownLine:"🎲 Own estimated worth: "+money(a.ownWorth)+" (invented)",
     verified:a.verified,followers:a.followers,
     totalAll:a.totalAll,avg:a.avg,whalesAll:a.whalesAll,cast:a.cast,
     stats:[{k:realCount?"Followers (real)":"Followers",v:compact(a.followers)},{k:"Avg per follower",v:money(a.avg)},
@@ -444,8 +452,12 @@ function researchD(handle,data){
   })).sort((a,b)=>b.nw-a.nw);
   const sumMid=ppl.reduce((s,x)=>s+x.nw,0);
   const top=ppl.length?ppl[0].nw:0;
+  const o=M.owner;
+  const ownLine=o?('💰 Own estimated worth: '+rangeText(o.low,o.high)+' · '+esc(o.verdict)
+    +((o.sources&&o.sources[0])?(' <a class="srclink" href="'+esc(o.sources[0])+'" target="_blank" rel="noopener">🔗</a>'):'')):'';
   return {handle:M.account||handle,
     displayName:M.name||("@"+handle),
+    ownLine,
     handleLine:"🔬 deep-researched dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable",
     verified:true,followers:M.totalFollowers||0,
     totalAll:sumMid,avg:ppl.length?sumMid/ppl.length:0,whalesAll:0,

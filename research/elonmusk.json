@@ -5,7 +5,21 @@
   "totalFollowers": 240448680,
   "researched": 28,
   "identified": 6,
-  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public."
+  "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
+  "owner": {
+   "name": "Elon Musk",
+   "headline": "CEO of Tesla and SpaceX/xAI; world's richest person, briefly the first-ever trillionaire after SpaceX's June 2026 IPO before a pullback",
+   "verdict": "supported",
+   "confidence": "medium",
+   "low": 950000000000.0,
+   "high": 1450000000000.0,
+   "sources": [
+    "https://www.forbes.com/profile/elon-musk/",
+    "https://www.forbes.com/real-time-billionaires/",
+    "https://www.forbes.com/sites/pr/2026/06/12/forbes-declares-elon-musk-as-the-worlds-first-trillionaire/",
+    "https://www.forbes.com/sites/tylerroush/2026/07/01/elon-musk-loses-trillionaire-status-as-spacex-slide-cuts-net-worth-by-50-billion/"
+   ]
+  }
  },
  "people": [
   {
@@ -40,10 +54,10 @@
   },
   {
    "handle": "SU_IDDK",
-   "name": "上野 宗一郎｜IDDK CEO",
+   "name": "\u4e0a\u91ce \u5b97\u4e00\u90ce\uff5cIDDK CEO",
    "followers": 1798,
    "identified": true,
-   "headline": "Founder and CEO of IDDK Co., Ltd. — Toshiba spinout developing lensless semiconductor microscopy (MID) technology for space and field applications",
+   "headline": "Founder and CEO of IDDK Co., Ltd. \u2014 Toshiba spinout developing lensless semiconductor microscopy (MID) technology for space and field applications",
    "verdict": "overstated",
    "confidence": "medium",
    "low": 0,
@@ -55,7 +69,7 @@
   },
   {
    "handle": "kikillo",
-   "name": "kiki 🕯️",
+   "name": "kiki \ud83d\udd6f\ufe0f",
    "followers": 33139,
    "identified": false,
    "headline": "Spanish social media creator running independent streetwear brand Kikillo Club (kikillopieces.com)",
@@ -70,7 +84,7 @@
   },
   {
    "handle": "Cr5Wj",
-   "name": "セイル✈︎SIL",
+   "name": "\u30bb\u30a4\u30eb\u2708\ufe0eSIL",
    "followers": 1411,
    "identified": false,
    "headline": "Japanese hobbyist Twitter/X user with aviation and motorsports interests; not publicly identifiable",
@@ -137,7 +151,7 @@
   },
   {
    "handle": "Sharzard5",
-   "name": "S. Prabhu Ⓥ",
+   "name": "S. Prabhu \u24cb",
    "followers": 1933,
    "identified": false,
    "headline": "PhD candidate in political theory at UC Irvine; theorist of Zoonpolitiks and the Political Animal Class",
@@ -173,7 +187,7 @@
   },
   {
    "handle": "Nsr330630O0O",
-   "name": "د.الخفاجي",
+   "name": "\u062f.\u0627\u0644\u062e\u0641\u0627\u062c\u064a",
    "followers": 10005,
    "identified": true,
    "headline": "Iraqi PhD spiritual care practitioner based in Najaf; anti-Safavid religious commentator",
@@ -188,7 +202,7 @@
   },
   {
    "handle": "Joe_Chiemerie",
-   "name": "Chris Jay 🎩",
+   "name": "Chris Jay \ud83c\udfa9",
    "followers": 2785,
    "identified": false,
    "headline": "Web3 content creator and \"Clipper\" building onchain; unverified account with ~2,785 followers",
@@ -212,10 +226,10 @@
   },
   {
    "handle": "ursoguerra",
-   "name": "Urso Tubarão 👑",
+   "name": "Urso Tubar\u00e3o \ud83d\udc51",
    "followers": 2794,
    "identified": false,
-   "headline": "Anonymous Brazilian NSFW adult content creator on X/Twitter operating under the pseudonym \"Urso Tubarão\"",
+   "headline": "Anonymous Brazilian NSFW adult content creator on X/Twitter operating under the pseudonym \"Urso Tubar\u00e3o\"",
    "verdict": "overstated",
    "confidence": "low",
    "low": 0,
@@ -224,7 +238,7 @@
   },
   {
    "handle": "MissDesse2",
-   "name": "𝑆𝑜𝑛𝑖@ 🐦🇨🇭🇮🇹🇫🇷",
+   "name": "\ud835\udc46\ud835\udc5c\ud835\udc5b\ud835\udc56@ \ud83d\udc26\ud83c\udde8\ud83c\udded\ud83c\uddee\ud83c\uddf9\ud83c\uddeb\ud83c\uddf7",
    "followers": 15595,
    "identified": false,
    "headline": "Private French-speaking individual based in Switzerland, sharing personal interests on X/Twitter",
@@ -252,7 +266,7 @@
   },
   {
    "handle": "SylviaRojas",
-   "name": "Shyvy 🌳",
+   "name": "Shyvy \ud83c\udf33",
    "followers": 4418,
    "identified": false,
    "headline": "Unidentified Spanish-speaking individual with literary interests; account bio references Joseph Brodsky and \"Zurda\" (leftist/left-handed), ~4,418 followers, unverified",
@@ -267,7 +281,7 @@
   },
   {
    "handle": "nanjing0714",
-   "name": "南京没有好男人",
+   "name": "\u5357\u4eac\u6ca1\u6709\u597d\u7537\u4eba",
    "followers": 1890,
    "identified": false,
    "headline": "Unidentified Chinese-language X/Twitter account with ~1,890 followers; no real-name or financial signals found",
@@ -306,7 +320,7 @@
   },
   {
    "handle": "Stormy_NAFO",
-   "name": "Nevera_Fella 🇭🇷🇻🇦🇪🇺🇺🇦🇮🇱",
+   "name": "Nevera_Fella \ud83c\udded\ud83c\uddf7\ud83c\uddfb\ud83c\udde6\ud83c\uddea\ud83c\uddfa\ud83c\uddfa\ud83c\udde6\ud83c\uddee\ud83c\uddf1",
    "followers": 3415,
    "identified": false,
    "headline": "Pseudonymous NAFO fella; self-described physicist with Croatian flags in bio",
@@ -360,7 +374,7 @@
   },
   {
    "handle": "aruji_1",
-   "name": "あるじくん",
+   "name": "\u3042\u308b\u3058\u304f\u3093",
    "followers": 13151,
    "identified": false,
    "headline": "Unidentified Japanese-language X/Twitter account (@aruji_1)",
@@ -372,7 +386,7 @@
   },
   {
    "handle": "CellyArruda",
-   "name": "🇧🇷Celly M° Arruda 🇧🇷2️⃣2️⃣🇧🇷(Tia do Zap)🇧🇷",
+   "name": "\ud83c\udde7\ud83c\uddf7Celly M\u00b0 Arruda \ud83c\udde7\ud83c\uddf72\ufe0f\u20e32\ufe0f\u20e3\ud83c\udde7\ud83c\uddf7(Tia do Zap)\ud83c\udde7\ud83c\uddf7",
    "followers": 2200,
    "identified": false,
    "headline": "Unidentified Brazilian private individual; evangelical/Christian micro-account with 2,200 followers",
