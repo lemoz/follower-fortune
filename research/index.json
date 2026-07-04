@@ -52,6 +52,19 @@
   }
  },
  {
+  "handle": "pmarca",
+  "name": "@pmarca",
+  "total": 1114041500.0,
+  "est": 6490238544.476004,
+  "followers": 4412590,
+  "researched": 279,
+  "identified": 279,
+  "owner": {
+   "low": 1800000000.0,
+   "high": 2200000000.0
+  }
+ },
+ {
   "handle": "VitalikButerin",
   "name": "@VitalikButerin",
   "total": 982541500.0,
@@ -78,6 +91,19 @@
   }
  },
  {
+  "handle": "garryTan",
+  "name": "@garryTan",
+  "total": 1045028000.0,
+  "est": 4367573558.471271,
+  "followers": 926149,
+  "researched": 242,
+  "identified": 242,
+  "owner": {
+   "low": 50000000,
+   "high": 300000000
+  }
+ },
+ {
   "handle": "paulg",
   "name": "@paulg",
   "total": 1068550000.0,
@@ -101,6 +127,32 @@
   "owner": {
    "low": 200000000,
    "high": 500000000
+  }
+ },
+ {
+  "handle": "patrickc",
+  "name": "@patrickc",
+  "total": 386096500.0,
+  "est": 1395434337.3451328,
+  "followers": 1242793,
+  "researched": 213,
+  "identified": 213,
+  "owner": {
+   "low": 16000000000.0,
+   "high": 18500000000.0
+  }
+ },
+ {
+  "handle": "dhh",
+  "name": "@dhh",
+  "total": 250393000.0,
+  "est": 1192606127.052409,
+  "followers": 725860,
+  "researched": 149,
+  "identified": 149,
+  "owner": {
+   "low": 40000000,
+   "high": 80000000
   }
  },
  {

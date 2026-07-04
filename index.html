@@ -338,7 +338,7 @@ function loadDossiers(){
 function renderGlobal(currentHandle){
   let arr;
   if(DOSSIERS&&DOSSIERS.length){
-    arr=DOSSIERS.slice().sort((a,b)=>(b.est||b.total)-(a.est||a.total)).slice(0,12)
+    arr=DOSSIERS.slice().sort((a,b)=>(b.est||b.total)-(a.est||a.total)).slice(0,20)
       .map(d=>({handle:d.handle,total:d.est||d.total,followers:d.followers,
         sub:(d.identified||0)+' identified · researched floor '+money(d.total)
           +((d.owner&&(d.owner.low||d.owner.high))?(' · own '+money(d.owner.low)+'–'+money(d.owner.high)):'')}));
