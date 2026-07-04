@@ -3,8 +3,8 @@
   "account": "balajis",
   "name": "@balajis",
   "totalFollowers": 1745391,
-  "researched": 208,
-  "identified": 199,
+  "researched": 211,
+  "identified": 202,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Balaji Srinivasan",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 4250531994.530717,
-   "low": 2125265997.2653584,
-   "high": 8501063989.061434,
-   "floor": 993531500.0
+   "total": 3616888690.926203,
+   "low": 1808444345.4631014,
+   "high": 7233777381.852406,
+   "floor": 1025681500.0
   }
  },
  "people": [
@@ -3149,6 +3149,56 @@
     "https://www.category.xyz/team",
     "https://x.com/forwardsecrecy",
     "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "AlexanderGirau",
+   "name": "Alexander L. Girau",
+   "followers": 1575,
+   "identified": true,
+   "headline": "CEO and co-founder of Group1; founding CEO/founder of Advano; battery-materials entrepreneur and YC S17 alum.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.group1.ai/team/alexander-l-girau-m-s",
+    "https://www.ycombinator.com/companies/advano",
+    "https://www.linkedin.com/in/alexandergirau",
+    "https://www.prnewswire.com/news-releases/advano-delivers-scalable-advanced-silicon-solution-to-battery-industry-announcing-18-5-million-in-series-a-funding-300994346.html"
+   ]
+  },
+  {
+   "handle": "aviel",
+   "name": "Aviel Ginzburg",
+   "followers": 8434,
+   "identified": true,
+   "headline": "Seattle venture capitalist: General Partner at Founders' Co-op, founder of Foundations, and co-founder of Simply Measured (acquired by Sprout Social, 2017, terms undisclosed)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 15000000,
+   "sources": [
+    "https://www.founderscoop.com/author/aviel/",
+    "https://www.geekwire.com/2024/inside-the-new-serendipity-factory-trying-to-spark-the-startup-scene-in-seattle/",
+    "https://www.geekwire.com/2017/sprout-social-acquires-seattle-social-media-analytics-startup-simply-measured/"
    ]
   }
  ]

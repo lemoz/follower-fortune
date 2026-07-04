@@ -3,7 +3,7 @@
   "account": "cdossman",
   "name": "@cdossman",
   "totalFollowers": 1497,
-  "researched": 617,
+  "researched": 666,
   "identified": 462,
   "note": "People who FOLLOW @cdossman (researched followers), web-researched and adversarially verified. Most low-confidence; net worth is rarely public.",
   "owner": {
@@ -25,9 +25,9 @@
    "b3": 19
   },
   "estimate": {
-   "total": 654743395.3571429,
+   "total": 611206518.9971305,
    "low": 547994250.0,
-   "high": 1309486790.7142859,
+   "high": 1222413037.994261,
    "floor": 547994250.0
   }
  },
@@ -9112,6 +9112,726 @@
    "followers": 478,
    "identified": false,
    "headline": "Small (478-follower) generic-topic account posting under a non-personal \"Machine Learning\" display name with a hashtag-only bio; no public source ties it to a specific individual or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Jffersonrick",
+   "name": "Jefferson Rick",
+   "followers": 119,
+   "identified": false,
+   "headline": "No reliable public-source identity found for this handle/display name after exact-handle, name, LinkedIn, GitHub, bio-phrase, and press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Jffersonrick",
+    "https://twitter.com/Jffersonrick",
+    "https://www.linkedin.com/search/results/people/?keywords=Jefferson%20Rick",
+    "https://github.com/search?q=%22Jefferson+Rick%22&type=users"
+   ]
+  },
+  {
+   "handle": "jsehelj",
+   "name": "jse",
+   "followers": 89,
+   "identified": false,
+   "headline": "No reliable public identity found from exact-handle searches across X/Twitter, GitHub, LinkedIn, and broader web results.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/jsehelj",
+    "https://twitter.com/jsehelj",
+    "https://github.com/jsehelj",
+    "https://www.linkedin.com/in/jsehelj/"
+   ]
+  },
+  {
+   "handle": "chuleannn",
+   "name": "Julian",
+   "followers": 78,
+   "identified": false,
+   "headline": "No reliable public-source match found for the X account beyond the display name and generic LLM bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/chuleannn",
+    "https://twitter.com/chuleannn",
+    "https://github.com/chuleannn",
+    "https://www.linkedin.com/in/chuleannn"
+   ]
+  },
+  {
+   "handle": "mrhanzhang",
+   "name": "Han Zhang",
+   "followers": 26,
+   "identified": false,
+   "headline": "No reliable public-source match found for @mrhanzhang beyond the supplied display name and bio; handle searches did not surface confirming LinkedIn, GitHub, personal-site, company, or press records.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "JnI976I928jsk",
+   "name": "StaceyBryan",
+   "followers": 55,
+   "identified": false,
+   "headline": "No reliable public identity found for the X handle or display name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Mertub160542",
+   "name": "Mertub",
+   "followers": 54,
+   "identified": false,
+   "headline": "Unidentified X account; exact-handle and display-name searches found no reliable public match.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "KindlyContrary",
+   "name": "",
+   "followers": 138,
+   "identified": false,
+   "headline": "No reliable public identity found for @KindlyContrary from indexed web, X profile access, GitHub, LinkedIn, Reddit, or bio/display-name searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/KindlyContrary",
+    "https://x.com/search?q=from%3AKindlyContrary&src=typed_query&f=live",
+    "https://github.com/search?q=KindlyContrary&type=users",
+    "https://github.com/search?q=KindlyContrary&type=code"
+   ]
+  },
+  {
+   "handle": "Lavinehemlani",
+   "name": "Lavine Hemlani",
+   "followers": 225,
+   "identified": true,
+   "headline": "Lavine Hemlani, founder/CEO/chairman of Xccelerate (confirmed via Crunchbase, LinkedIn, and Xccelerate's own site); no public source discloses his personal net worth",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.xccelerate.co/about",
+    "https://www.crunchbase.com/person/lavine-hemlani",
+    "https://twitter.com/lavinehemlani"
+   ]
+  },
+  {
+   "handle": "LilyOwe44683",
+   "name": "Eliana",
+   "followers": 358,
+   "identified": false,
+   "headline": "No reliable public identity link found for this handle, display name, or bio phrase across web, LinkedIn, GitHub, and press-style searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/LilyOwe44683",
+    "https://twitter.com/LilyOwe44683",
+    "https://www.linkedin.com/search/results/all/?keywords=LilyOwe44683",
+    "https://github.com/search?q=LilyOwe44683&type=users"
+   ]
+  },
+  {
+   "handle": "lilbacon18",
+   "name": "basil fawlty",
+   "followers": 0,
+   "identified": false,
+   "headline": "No reliable public-source match found for @lilbacon18 as a real person, company, or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "BiggerBaldr",
+   "name": "buck baldr \ud83c\udfe6",
+   "followers": 88,
+   "identified": false,
+   "headline": "No reliable public-source identification found for @BiggerBaldr from handle, display-name, bio, LinkedIn/GitHub/site/news-style searches, or direct X/Twitter profile checks.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/BiggerBaldr",
+    "https://twitter.com/BiggerBaldr"
+   ]
+  },
+  {
+   "handle": "dipmwrites",
+   "name": "Dipesh Malhotra",
+   "followers": 66,
+   "identified": false,
+   "headline": "Public search did not find a reliable off-X identity match for @dipmwrites / Dipesh Malhotra across exact-name, handle, LinkedIn, GitHub, Medium/Substack, founder, and press queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/dipmwrites",
+    "https://twitter.com/dipmwrites"
+   ]
+  },
+  {
+   "handle": "Foscadegen",
+   "name": "Pau G.",
+   "followers": 126,
+   "identified": false,
+   "headline": "Could not tie the X account to a verifiable real person or organization from public web results.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Foscadegen",
+    "https://twitter.com/Foscadegen",
+    "https://github.com/Foscadegen",
+    "https://www.linkedin.com/in/foscadegen/"
+   ]
+  },
+  {
+   "handle": "GretelGrin17855",
+   "name": "GrinGretel",
+   "followers": 3,
+   "identified": false,
+   "headline": "No reliable public identity found for this low-follower X account.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "chiragdaryani",
+   "name": "Chirag Daryani",
+   "followers": 82,
+   "identified": false,
+   "headline": "Unverified: GitHub/Medium profile for a Toronto-based data scientist named Chirag Daryani exists and links to a LinkedIn, but neither source contains any link to the X/Twitter handle @chiragdaryani \u2014 ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://github.com/chiragdaryani (confirms bio/Toronto/LinkedIn/Medium links but has NO Twitter/X link), https://chiragdaryani.medium.com/ (not independently verified in this pass)"
+   ]
+  },
+  {
+   "handle": "ffedzzy",
+   "name": "Edo",
+   "followers": 224,
+   "identified": false,
+   "headline": "Could not verify a real-world identity beyond the display name and claimed Releem SMM affiliation; Releem public team/company sources do not list an Edo or ffedzzy.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ffedzzy",
+    "https://twitter.com/ffedzzy",
+    "https://releem.com/",
+    "https://releem.com/about"
+   ]
+  },
+  {
+   "handle": "McSmoshe59803",
+   "name": "McSmoshe",
+   "followers": 93,
+   "identified": false,
+   "headline": "No reliable public identity found from web, LinkedIn, GitHub, company, personal-site, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/McSmoshe59803"
+   ]
+  },
+  {
+   "handle": "HolgerJohnVogel",
+   "name": "HolgerJohnVogel",
+   "followers": 146,
+   "identified": false,
+   "headline": "Only an X/Twitter profile was located; I found no corroborating LinkedIn, GitHub, personal-site, company-page, or press match for the handle/name/bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/HolgerJohnVogel",
+    "https://x.com/HolgerJohnVogel"
+   ]
+  },
+  {
+   "handle": "IBC_TIM",
+   "name": "Finisher",
+   "followers": 694,
+   "identified": false,
+   "headline": "Pseudonymous X account with bio \u201cIBC MAXI\u201d; public searches did not connect it to a real person, company, GitHub, LinkedIn, site, or press profile.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twstalker.com/IBC_TIM",
+    "https://twitter.com/IBC_TIM"
+   ]
+  },
+  {
+   "handle": "Sadduzak",
+   "name": "Saddu",
+   "followers": 8,
+   "identified": false,
+   "headline": "No reliable public identity found for the handle or display name after web, LinkedIn, GitHub, and press-style searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "FFqBj5B6WOmzuHn",
+   "name": "rooljia",
+   "followers": 14,
+   "identified": false,
+   "headline": "No reliable public identity found from exact-handle, display-name, LinkedIn, GitHub, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/FFqBj5B6WOmzuHn",
+    "https://twitter.com/FFqBj5B6WOmzuHn"
+   ]
+  },
+  {
+   "handle": "princesobe",
+   "name": "Prince Sobe",
+   "followers": 112,
+   "identified": false,
+   "headline": "No reliable public identity found from public web searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "BettyyyCruz",
+   "name": "Betty Cruz",
+   "followers": 58,
+   "identified": false,
+   "headline": "No reliable public identity or organization match found beyond the supplied X display name and generic PR bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/BettyyyCruz",
+    "https://twitter.com/BettyyyCruz"
+   ]
+  },
+  {
+   "handle": "FullColorDays",
+   "name": "Unknown",
+   "followers": 559,
+   "identified": false,
+   "headline": "No reliable public identity found; the visible X profile has only a generic bio/location and no usable posts, website, employer, or name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/FullColorDays",
+    "https://x.com/FullColorDays/with_replies",
+    "https://x.com/FullColorDays/photo",
+    "https://web.archive.org/cdx/?url=twitter.com/FullColorDays&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=digest"
+   ]
+  },
+  {
+   "handle": "Yef_Yef",
+   "name": "yef",
+   "followers": 46,
+   "identified": false,
+   "headline": "No reliable public-source identification found for @Yef_Yef beyond the display name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Yef_Yef",
+    "https://twitter.com/Yef_Yef",
+    "https://github.com/Yef-Yef",
+    "https://github.com/YefYef"
+   ]
+  },
+  {
+   "handle": "zakariaambari",
+   "name": "Z\u0153ro",
+   "followers": 71,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the X handle/display name after exact-handle, name, LinkedIn, GitHub, site, and press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/zakariaambari",
+    "https://twitter.com/zakariaambari"
+   ]
+  },
+  {
+   "handle": "montadhar_r",
+   "name": "Montadhar REKAYA",
+   "followers": 182,
+   "identified": false,
+   "headline": "X profile describes a data engineer, but web searches did not surface corroborating public LinkedIn, GitHub, personal-site, company, or press evidence tying the account to a specific real person.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/montadhar_r"
+   ]
+  },
+  {
+   "handle": "jacobhokinson",
+   "name": "Jacob Hokinson",
+   "followers": 518,
+   "identified": false,
+   "headline": "No reliable public-source identity match found for @jacobhokinson beyond the display name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/jacobhokinson",
+    "https://twitter.com/jacobhokinson"
+   ]
+  },
+  {
+   "handle": "john_rush_x",
+   "name": "JR",
+   "followers": 14,
+   "identified": false,
+   "headline": "Sparse X profile; no reliable public sources tie @john_rush_x to a specific person, company, or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/john_rush_x"
+   ]
+  },
+  {
+   "handle": "Jou080268",
+   "name": "Unknown",
+   "followers": 5,
+   "identified": false,
+   "headline": "No reliable public identity found from exact-handle web searches or direct checks of likely profile URLs.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Jou080268",
+    "https://twitter.com/Jou080268",
+    "https://github.com/Jou080268",
+    "https://www.linkedin.com/in/Jou080268"
+   ]
+  },
+  {
+   "handle": "Jpadge3",
+   "name": "Joey Padgett",
+   "followers": 468,
+   "identified": false,
+   "headline": "Uncorroborated X account: public search did not surface reliable LinkedIn, GitHub, company, personal-site, or press evidence tying Joey Padgett to Smooth Move.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Jpadge3",
+    "https://twitter.com/Jpadge3"
+   ]
+  },
+  {
+   "handle": "Kayyz_00",
+   "name": "\ud83c\udf2a\ud83c\udf2a",
+   "followers": 611,
+   "identified": false,
+   "headline": "No reliable public identity match found from exact-handle searches or accessible profile sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Kayyz_00",
+    "https://twitter.com/Kayyz_00"
+   ]
+  },
+  {
+   "handle": "mlussati_",
+   "name": "Manilson Lussati",
+   "followers": 41,
+   "identified": false,
+   "headline": "Unverified: X handle @mlussati_ has no independent confirmation of belonging to Manilson Lussati (a Santander Brasil/F1rst Tecnologia ML engineer and PalancaCode content creator); only cited source is",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://github.com/mlussati"
+   ]
+  },
+  {
+   "handle": "PeterWe39157041",
+   "name": "Peweb",
+   "followers": 10,
+   "identified": false,
+   "headline": "No reliable public web evidence links @PeterWe39157041 / \u201cPeweb\u201d to a specific real person, company, or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PeterWe39157041",
+    "https://twitter.com/PeterWe39157041"
+   ]
+  },
+  {
+   "handle": "AlexHerry9",
+   "name": "Marian kolosic",
+   "followers": 100,
+   "identified": false,
+   "headline": "No reliable public-source identity match found for the handle, display name, or bio claims after searches across X/Twitter indexing, LinkedIn, GitHub, social mirrors, exact-name variants, and bio-phra",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/AlexHerry9",
+    "https://twitter.com/AlexHerry9"
+   ]
+  },
+  {
+   "handle": "neprasad",
+   "name": "Eswara Prasad",
+   "followers": 279,
+   "identified": false,
+   "headline": "Could not corroborate @neprasad as a specific public person beyond the X display name and bio after searches across handle, name, LinkedIn, GitHub, cloud/data role, and press patterns.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "deepu53940431",
+   "name": "deepu",
+   "followers": 11,
+   "identified": false,
+   "headline": "No reliable public identity found for this low-follower X account; the display name is too generic and exact-handle searches did not surface corroborating public profiles.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/deepu53940431",
+    "https://twitter.com/deepu53940431"
+   ]
+  },
+  {
+   "handle": "djstrangeloop",
+   "name": "Deepak J",
+   "followers": 100,
+   "identified": false,
+   "headline": "No reliable public-source match found beyond the X display name; exact-handle searches across web, GitHub, LinkedIn, and press did not corroborate an identity.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/djstrangeloop",
+    "https://twitter.com/djstrangeloop"
+   ]
+  },
+  {
+   "handle": "SuperPrompts",
+   "name": "Super Prompts",
+   "followers": 591,
+   "identified": true,
+   "headline": "Brand account for the Super Prompts AI-art gallery/platform at superprompts.com; no public individual owner/founder found.",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/SuperPrompts",
+    "https://tyy.ai/super-prompts/",
+    "https://superprompts.com/"
+   ]
+  },
+  {
+   "handle": "RikCunningham",
+   "name": "TheRomulan",
+   "followers": 5,
+   "identified": false,
+   "headline": "No reliable public-source identity match found for @RikCunningham after searches across exact handle, display name, bio text, LinkedIn, GitHub, and general web results.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/RikCunningham",
+    "https://twitter.com/RikCunningham"
+   ]
+  },
+  {
+   "handle": "Jessica80677112",
+   "name": "Jessica O'Neill",
+   "followers": 8,
+   "identified": false,
+   "headline": "Unverified X display name; linked t.co URL redirects to approcket.co, but no reliable public profile or company/person match found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://t.co/GTtRfXI7aN",
+    "https://approcket.co/",
+    "https://x.com/Jessica80677112"
+   ]
+  },
+  {
+   "handle": "julianthefrank",
+   "name": "Julian Frank",
+   "followers": 203,
+   "identified": false,
+   "headline": "Could not connect the X account to a reliable public off-platform identity after searching handle, display name, LinkedIn, GitHub, personal-site, and press-style queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/julianthefrank"
+   ]
+  },
+  {
+   "handle": "nanoknowstech",
+   "name": "NanoKnowsTech",
+   "followers": 942,
+   "identified": false,
+   "headline": "No public person or organization could be reliably tied to the NanoKnowsTech tech-news account.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/nanoknowstech",
+    "https://twitter.com/nanoknowstech",
+    "https://t.co/D8ll76ZD2K"
+   ]
+  },
+  {
+   "handle": "albieio",
+   "name": "Albie",
+   "followers": 175,
+   "identified": false,
+   "headline": "No reliable public-source match found for @albieio beyond the supplied unreleased standup-tool profile details; searches for the handle, exact bio text, albie.io, LinkedIn, GitHub, Product Hunt, start",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "linijohan",
+   "name": "Lini",
+   "followers": 105,
+   "identified": false,
+   "headline": "No reliable public identity found from indexed web, LinkedIn, GitHub, personal-site, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Shreedharvellay",
+   "name": "Shreedhar",
+   "followers": 799,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the supplied X display name and bio; searches for the handle and taskman-sv did not surface usable LinkedIn, GitHub, personal-site, company, or press evidence.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "kivanolai",
+   "name": "Tristan Nguyen",
+   "followers": 507,
+   "identified": false,
+   "headline": "The account presents as \u201cTristan Nguyen\u201d and links to AMOCA Health/BioInsight AI, but I could not corroborate a specific real person through independent public sources such as LinkedIn, GitHub, press,",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/kivanolai",
+    "https://twitter.com/kivanolai",
+    "https://www.amoca.xyz/"
+   ]
+  },
+  {
+   "handle": "chao1017",
+   "name": "Shuang-Jui Chao",
+   "followers": 19,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the X display name; exact-name and handle searches did not surface corroborating LinkedIn, GitHub, personal-site, or press evidence.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/chao1017",
+    "https://twitter.com/chao1017",
+    "https://github.com/chao1017",
+    "https://www.linkedin.com/in/chao1017/"
+   ]
+  },
+  {
+   "handle": "tonykptony",
+   "name": "Green Panther",
+   "followers": 12,
+   "identified": false,
+   "headline": "No reliable public-source match found for @tonykptony beyond the supplied X profile details.",
    "verdict": "unfounded",
    "confidence": "low",
    "low": 0,

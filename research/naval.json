@@ -3,8 +3,8 @@
   "account": "naval",
   "name": "@naval",
   "totalFollowers": 3500958,
-  "researched": 237,
-  "identified": 222,
+  "researched": 241,
+  "identified": 226,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Naval Ravikant",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 7040132672.717735,
-   "low": 3520066336.3588676,
-   "high": 14080265345.43547,
-   "floor": 1009901750.0
+   "total": 5186311589.8975725,
+   "low": 2593155794.9487863,
+   "high": 10372623179.795145,
+   "floor": 1037301750.0
   }
  },
  "people": [
@@ -3582,6 +3582,72 @@
    "sources": [
     "https://zapier.com/blog/nocodeops-joins-zapier/",
     "https://hypepotamus.com/feature/nocodeops-gets-acquired/"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "joanrod_ai",
+   "name": "Joan Rodriguez",
+   "followers": 4036,
+   "identified": true,
+   "headline": "Co-founder, CEO and Chief Scientist of QuiverAI; AI researcher behind StarVector/RLRF; QuiverAI announced an $8.3M seed round led by a16z.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 6000000,
+   "sources": [
+    "https://joanrod.github.io/",
+    "https://quiver.ai/blog/announcing-our-seed-round/",
+    "https://a16z.com/announcement/investing-in-quiverai/",
+    "https://x.com/joanrod_ai/status/2026693353090240819"
+   ]
+  },
+  {
+   "handle": "AlexanderGirau",
+   "name": "Alexander L. Girau",
+   "followers": 1575,
+   "identified": true,
+   "headline": "CEO and co-founder of Group1; founding CEO/founder of Advano; battery-materials entrepreneur and YC S17 alum.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.group1.ai/team/alexander-l-girau-m-s",
+    "https://www.ycombinator.com/companies/advano",
+    "https://www.linkedin.com/in/alexandergirau",
+    "https://www.prnewswire.com/news-releases/advano-delivers-scalable-advanced-silicon-solution-to-battery-industry-announcing-18-5-million-in-series-a-funding-300994346.html"
+   ]
+  },
+  {
+   "handle": "dipakcgajjar",
+   "name": "Dipak C. Gajjar",
+   "followers": 4482,
+   "identified": true,
+   "headline": "London-based WordPress performance consultant; founder of CodeUp Studios and WP Speed Care",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://dipakgajjar.com/about-london-wordpress-consultant-uk/",
+    "https://profiles.wordpress.org/dipakcg/"
    ]
   }
  ]

@@ -3,8 +3,8 @@
   "account": "levelsio",
   "name": "@levelsio",
   "totalFollowers": 905538,
-  "researched": 422,
-  "identified": 70,
+  "researched": 523,
+  "identified": 80,
   "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Pieter Levels",
@@ -26,10 +26,10 @@
    "b3": 3
   },
   "estimate": {
-   "total": 27781906978.18661,
-   "low": 13890953489.093306,
-   "high": 55563813956.37322,
-   "floor": 718538250.0
+   "total": 16043841860.843943,
+   "low": 8021920930.421971,
+   "high": 32087683721.687885,
+   "floor": 768688250.0
   }
  },
  "people": [
@@ -6404,6 +6404,1552 @@
    "sources": [
     "https://x.com/A_Kapustin",
     "https://www.forbes.ru/forbeslife/437873-kak-bloger-anatoliy-kapustin-napisal-knigu-o-muzhchinah-hhi-veka-po-tredu-v"
+   ]
+  },
+  {
+   "handle": "leaving_tech",
+   "name": "Leaving Tech",
+   "followers": 1624,
+   "identified": false,
+   "headline": "Could not reliably identify the person behind this pseudonymous X account from public search results, handle/bio matches, LinkedIn/GitHub/site/press searches, or the X profile page.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/leaving_tech"
+   ]
+  },
+  {
+   "handle": "piochun",
+   "name": "Pio Chun",
+   "followers": 1595,
+   "identified": false,
+   "headline": "Could not reliably identify a public real person or organization behind this Korean-language X account from web, LinkedIn, GitHub, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twitter.com/piochun"
+   ]
+  },
+  {
+   "handle": "Bin_nashar",
+   "name": "\u0623\u0628\u0648 \u0641\u0627\u0631\u0633",
+   "followers": 23326,
+   "identified": false,
+   "headline": "Arabic-language X account using a kunya/display name and poetic bio; no reliable public identity match found in web, LinkedIn, GitHub, personal-site, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Bin_nashar",
+    "https://twitter.com/Bin_nashar"
+   ]
+  },
+  {
+   "handle": "santifer",
+   "name": "Santiago Fern\u00e1ndez de Valderrama Aparicio",
+   "followers": 6915,
+   "identified": true,
+   "headline": "Applied AI operator; creator of career-ops (open-source, viral on GitHub); founder/exited Santifer iRepair (Seville phone-repair chain, sold 2025); Head of Applied AI at Zinkee.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://santifer.io/about",
+    "https://career-ops.org/about",
+    "https://github.com/santifer"
+   ]
+  },
+  {
+   "handle": "ally_foe",
+   "name": "Foe Ally",
+   "followers": 3041,
+   "identified": false,
+   "headline": "Pseudonymous Chinese ad/AI/markets account; no reliable public real-name identity found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ally_foe",
+    "https://twstalker.com/ally_foe"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "samlambert",
+   "name": "Sam Lambert",
+   "followers": 31165,
+   "identified": true,
+   "headline": "Sam Lambert, CEO of PlanetScale; former GitHub VP of Engineering; public personal site lists angel investments.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 2000000,
+   "high": 25000000,
+   "sources": [
+    "https://samlambert.com/",
+    "https://github.com/samlambert",
+    "https://theorg.com/org/planetscale/org-chart/sam-lambert",
+    "https://x.com/samlambert"
+   ]
+  },
+  {
+   "handle": "Brennan_Lup",
+   "name": "Brennan Lupyrypa",
+   "followers": 2275,
+   "identified": true,
+   "headline": "GTM/growth operator at Weave/WorkWeave (YC W25), a seed-stage ($4.2M raised) engineering analytics startup",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://x.com/Brennan_Lup",
+    "https://workweave.dev/company",
+    "https://www.ycombinator.com/companies/weave-3",
+    "https://workweave.dev/blog/announcing-our-4-2m-seed-round"
+   ]
+  },
+  {
+   "handle": "LiveONE_TV",
+   "name": "LiveONE.tv / LIVEONETV Incorporated",
+   "followers": 7275,
+   "identified": true,
+   "headline": "Official LiveONE.tv account for LIVEONETV Incorporated, described on its site as a New York American media company producing arts, news, and educational programming.",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/LiveONE_TV",
+    "https://liveone.tv/",
+    "https://liveone.tv/about-us",
+    "https://liveone.tv/scandal"
+   ]
+  },
+  {
+   "handle": "menrva33",
+   "name": "Miles Dyson",
+   "followers": 3758,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the X display name and bio; the display name matches a fictional Terminator character, and searches for the handle/Booca entities did not corroborate a real pe",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/menrva33",
+    "https://en.wikipedia.org/wiki/Miles_Dyson"
+   ]
+  },
+  {
+   "handle": "Moodtui1998",
+   "name": "Unknown",
+   "followers": 1814,
+   "identified": false,
+   "headline": "No reliable public-source match found tying @Moodtui1998 / display name \"\u0e2d\u0e2d\u0e15\u0e2d\" to a specific real person, company, or public professional profile.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Moodtui1998",
+    "https://twitter.com/Moodtui1998"
+   ]
+  },
+  {
+   "handle": "tolcapital",
+   "name": "Cesar Agudelo",
+   "followers": 3613,
+   "identified": false,
+   "headline": "No reliable public source found tying @tolcapital / TOL Capital to a verifiable person, company record, LinkedIn, GitHub, site, or press profile.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/tolcapital",
+    "https://twitter.com/tolcapital"
+   ]
+  },
+  {
+   "handle": "privacytoolsIO",
+   "name": "PrivacyTools.io",
+   "followers": 43205,
+   "identified": true,
+   "headline": "Brand account for PrivacyTools.io, a privacy-software directory/guide; public sources point to a project/brand, not an identifiable individual.",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://privacytools.io/",
+    "https://privacytools.io/legal",
+    "https://privacytools.io/license",
+    "https://twitter.com/privacytoolsIO"
+   ]
+  },
+  {
+   "handle": "BloFinWallet",
+   "name": "BloFin Wallet",
+   "followers": 1034,
+   "identified": true,
+   "headline": "Official BloFin Wallet brand/product account for BloFin/BloFin Inc., not an individual person.",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/BloFinWallet",
+    "https://wallet.blofin.com/",
+    "https://www.blofin.com/",
+    "https://blofin.com/about-us"
+   ]
+  },
+  {
+   "handle": "dneorej",
+   "name": "Jeroen Develter",
+   "followers": 1346,
+   "identified": false,
+   "headline": "The X profile claims Jeroen Develter, CEO of @PersistenceOne, but I found no corroborating public web presence for the person or company.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/dneorej",
+    "https://twitter.com/dneorej",
+    "https://x.com/PersistenceOne"
+   ]
+  },
+  {
+   "handle": "joanrod_ai",
+   "name": "Joan Rodriguez",
+   "followers": 4036,
+   "identified": true,
+   "headline": "Co-founder, CEO and Chief Scientist of QuiverAI; AI researcher behind StarVector/RLRF; QuiverAI announced an $8.3M seed round led by a16z.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 6000000,
+   "sources": [
+    "https://joanrod.github.io/",
+    "https://quiver.ai/blog/announcing-our-seed-round/",
+    "https://a16z.com/announcement/investing-in-quiverai/",
+    "https://x.com/joanrod_ai/status/2026693353090240819"
+   ]
+  },
+  {
+   "handle": "shimkeyy",
+   "name": "Unknown",
+   "followers": 6493,
+   "identified": false,
+   "headline": "Pseudonymous X account; no reliable public identity found from searched web, LinkedIn, GitHub, press, or company-source queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/shimkeyy",
+    "https://twitter.com/shimkeyy",
+    "https://x.com/voicehavefun"
+   ]
+  },
+  {
+   "handle": "conycointalks",
+   "name": "Cony@OKX",
+   "followers": 2032,
+   "identified": false,
+   "headline": "Pseudonymous OKX Wallet/X Layer events and marketing account; no reliable public full-name match found across web, LinkedIn-style, GitHub, press, and OKX-related searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/conycointalks",
+    "https://web3.okx.com/",
+    "https://web3.okx.com/xlayer"
+   ]
+  },
+  {
+   "handle": "michmayowa",
+   "name": "Michael",
+   "followers": 3099,
+   "identified": false,
+   "headline": "Could not reliably connect @michmayowa to a specific public person, company, GitHub, LinkedIn, personal site, or press profile beyond the X display name and bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/michmayowa"
+   ]
+  },
+  {
+   "handle": "DanSkorbach",
+   "name": "Dan Skorbach",
+   "followers": 8622,
+   "identified": false,
+   "headline": "No reliable public-source identification found beyond the X display name and bio claim about Frontline Health/The Epoch Times.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/DanSkorbach",
+    "https://twitter.com/DanSkorbach",
+    "https://en.wikipedia.org/wiki/The_Epoch_Times"
+   ]
+  },
+  {
+   "handle": "duya_ai",
+   "name": "\u6e21\u9e26 Duya.ai",
+   "followers": 4792,
+   "identified": false,
+   "headline": "No reliable public source tied @duya_ai / Duya.ai to a real person or identifiable organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/duya_ai",
+    "https://duya.ai",
+    "https://www.duya.ai"
+   ]
+  },
+  {
+   "handle": "Game2MN",
+   "name": "Game2MN",
+   "followers": 4186,
+   "identified": false,
+   "headline": "Chinese-language retro/indie gaming account; no public off-platform identity found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "AlexanderGirau",
+   "name": "Alexander L. Girau",
+   "followers": 1575,
+   "identified": true,
+   "headline": "CEO and co-founder of Group1; founding CEO/founder of Advano; battery-materials entrepreneur and YC S17 alum.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.group1.ai/team/alexander-l-girau-m-s",
+    "https://www.ycombinator.com/companies/advano",
+    "https://www.linkedin.com/in/alexandergirau",
+    "https://www.prnewswire.com/news-releases/advano-delivers-scalable-advanced-silicon-solution-to-battery-industry-announcing-18-5-million-in-series-a-funding-300994346.html"
+   ]
+  },
+  {
+   "handle": "Cryptonik__1",
+   "name": "CryptoDuo",
+   "followers": 5357,
+   "identified": false,
+   "headline": "Pseudonymous crypto account; no reliable public identity found across exact-handle, display-name, LinkedIn, GitHub, and press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Cryptonik__1"
+   ]
+  },
+  {
+   "handle": "nstanley",
+   "name": "Neil Stanley",
+   "followers": 1475,
+   "identified": false,
+   "headline": "Could not corroborate the X bio's claim of a Dubai-based entrepreneur/VC through public search; the only clear same-name public result found was a deceased English cricketer, which does not match.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/nstanley",
+    "https://en.wikipedia.org/wiki/Neil_Stanley"
+   ]
+  },
+  {
+   "handle": "MrSmith7777eth",
+   "name": "Mr. Smith",
+   "followers": 1099,
+   "identified": false,
+   "headline": "No reliable public identity found for this generic NFT/crypto/P2E account after exact-handle, bio, LinkedIn, GitHub, company, and press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/MrSmith7777eth"
+   ]
+  },
+  {
+   "handle": "alei198634",
+   "name": "CryptoCaptain.eth",
+   "followers": 2141,
+   "identified": false,
+   "headline": "Pseudonymous BAYC 1451 collector; no reliable public real-world identity found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/alei198634",
+    "https://opensea.io/",
+    "https://etherscan.io/",
+    "https://etherscan.io/name-lookup"
+   ]
+  },
+  {
+   "handle": "therealscale",
+   "name": "scale",
+   "followers": 4493,
+   "identified": false,
+   "headline": "No public source found tying @therealscale to a real person or company; the X profile is anonymous, Istanbul-based, and has no external link.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/therealscale",
+    "https://twitter.com/therealscale",
+    "https://x.com/therealscale/photo",
+    "https://x.com/therealscale/header_photo"
+   ]
+  },
+  {
+   "handle": "hoomihero1",
+   "name": "Unknown",
+   "followers": 1544,
+   "identified": false,
+   "headline": "No reliable public identity found for @hoomihero1 / hoomihero.base.eth after exact-handle and name searches across web, GitHub, LinkedIn, Base/Basename, Farcaster/Warpcast, and press/company queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/hoomihero1"
+   ]
+  },
+  {
+   "handle": "beau0502",
+   "name": "Unknown",
+   "followers": 1305,
+   "identified": false,
+   "headline": "No reliable public-source identity match found for the NFT-themed account using handle, display name, or bio searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/beau0502",
+    "https://twitter.com/beau0502"
+   ]
+  },
+  {
+   "handle": "PhawkHugh",
+   "name": "Mr.NoSleep",
+   "followers": 4552,
+   "identified": false,
+   "headline": "No reliable public identity found from the handle, display name, bio phrases, or searches across LinkedIn/GitHub/personal-site/press-style queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PhawkHugh"
+   ]
+  },
+  {
+   "handle": "morezvani11",
+   "name": "morezvani11",
+   "followers": 1108,
+   "identified": false,
+   "headline": "No reliable public identity found after exact-handle, LinkedIn, GitHub, personal-site, Web3, and press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/morezvani11"
+   ]
+  },
+  {
+   "handle": "SpoogemanGhost",
+   "name": "Unknown",
+   "followers": 19580,
+   "identified": false,
+   "headline": "Public searches found only a pseudonymous NAFO/Ukraine-support profile, with no reliable real-person or organization match.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/SpoogemanGhost",
+    "https://twitter.com/SpoogemanGhost",
+    "https://en.wikipedia.org/wiki/NAFO_%28group%29"
+   ]
+  },
+  {
+   "handle": "jamieratliff",
+   "name": "Jamie Ratliff",
+   "followers": 1012,
+   "identified": false,
+   "headline": "Could not reliably connect @jamieratliff to a public person or organization beyond the display name.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "Reshusaur",
+   "name": "resham",
+   "followers": 4509,
+   "identified": false,
+   "headline": "Could not reliably identify the person behind @Reshusaur from public web results beyond the X account\u2019s first-name display and self-described product-designer/prev.-Meta bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Reshusaur",
+    "https://twitter.com/Reshusaur"
+   ]
+  },
+  {
+   "handle": "Va77ss",
+   "name": "Vass",
+   "followers": 34752,
+   "identified": false,
+   "headline": "Pseudonymous X account; I could not verify a matching real-world identity from public web sources or Lunar Strategy team pages.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Va77ss",
+    "https://twitter.com/Va77ss",
+    "https://www.lunarstrategy.com/",
+    "https://www.lunarstrategy.com/lunar-specialists"
+   ]
+  },
+  {
+   "handle": "rafael_zagas",
+   "name": "Rafael Farias",
+   "followers": 1755,
+   "identified": false,
+   "headline": "No reliable public source tied @rafael_zagas to a specific Rafael Farias, company, role, or wealth-bearing career profile.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "anasnarooeii",
+   "name": "anasnarooeii",
+   "followers": 1176,
+   "identified": false,
+   "headline": "Crypto-themed X account with no reliable public identity corroborated from search results.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "kemsty2",
+   "name": "Aymard Moyo",
+   "followers": 1206,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the X display name/bio; searches for the handle and name across LinkedIn, GitHub, personal-site, DevOps/AWS, and press queries did not produce corroborating pu",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/kemsty2"
+   ]
+  },
+  {
+   "handle": "0xBehnaZ1",
+   "name": "Behnaz | LFP",
+   "followers": 1168,
+   "identified": false,
+   "headline": "Only a first-name crypto/X persona tied to LFP Monad could be found; I could not verify a real-world identity, company page, LinkedIn, GitHub, personal site, or press profile with reasonable confidenc",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/0xBehnaZ1",
+    "https://x.com/Lfp_monad"
+   ]
+  },
+  {
+   "handle": "paulkliks",
+   "name": "Paul Kliks",
+   "followers": 1669,
+   "identified": false,
+   "headline": "Unverified \u2014 cited sources do not support the claimed identity (Munich personal trainer/podcaster/author)",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": []
+  },
+  {
+   "handle": "carrabelloy",
+   "name": "carrabelloy",
+   "followers": 4708,
+   "identified": false,
+   "headline": "Unidentified X account with a generic German/Dutch personal bio; no reliable public identity found across web, LinkedIn, GitHub, press, or cross-platform searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/carrabelloy",
+    "https://twitter.com/carrabelloy"
+   ]
+  },
+  {
+   "handle": "Karl_Steinkamp",
+   "name": "Karl Steinkamp",
+   "followers": 2798,
+   "identified": false,
+   "headline": "X profile matches the supplied name and bio, but I could not corroborate the account owner through public LinkedIn, GitHub, company, press, or personal-site sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Karl_Steinkamp"
+   ]
+  },
+  {
+   "handle": "quid_defi",
+   "name": "QUID",
+   "followers": 1765,
+   "identified": false,
+   "headline": "No reliable public identification found for QUID / @quid_defi.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/quid_defi",
+    "https://twitter.com/quid_defi",
+    "https://quiddefi.com/"
+   ]
+  },
+  {
+   "handle": "MJahangirifard",
+   "name": "mahsun",
+   "followers": 3122,
+   "identified": false,
+   "headline": "No reliable public-source identity found beyond the X display name and bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/MJahangirifard",
+    "https://twitter.com/MJahangirifard"
+   ]
+  },
+  {
+   "handle": "Faryadm70",
+   "name": "Alanm",
+   "followers": 4165,
+   "identified": false,
+   "headline": "No reliable public identity found beyond the X display name and bio; searches for the handle, display name, SeismicSys, LiquidTrading, LinkedIn, GitHub, and press did not establish a real person or or",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Faryadm70",
+    "https://t.co/wzdCoKTkHJ"
+   ]
+  },
+  {
+   "handle": "bossjones",
+   "name": "Malcolm Jones",
+   "followers": 2463,
+   "identified": true,
+   "headline": "Malcolm Jones, confirmed as the bossjones handle across GitHub, Behance, Twitter/X, LinkedIn, and about.me; Behance founding-team web developer, now Sr. DevOps Engineer at Adobe (UVA grad)",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://github.com/bossjones",
+    "https://www.behance.net/bossjones",
+    "https://x.com/bossjones",
+    "https://www.linkedin.com/in/bossjones"
+   ]
+  },
+  {
+   "handle": "diegoarmandoAD",
+   "name": "DIEGO",
+   "followers": 18791,
+   "identified": false,
+   "headline": "Public searches did not reliably connect @diegoarmandoAD to a real person, employer profile, personal site, GitHub, LinkedIn, or press source; only the pseudonymous Web3/X profile signals were found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/diegoarmandoAD",
+    "https://twitter.com/diegoarmandoAD",
+    "https://www.solflare.com/",
+    "https://jup.ag/"
+   ]
+  },
+  {
+   "handle": "YSBundela1008",
+   "name": "Bundela",
+   "followers": 1531,
+   "identified": false,
+   "headline": "No reliable public-source match ties this X account to a specific real person, company, organization, LinkedIn profile, GitHub profile, personal site, or press record.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/YSBundela1008"
+   ]
+  },
+  {
+   "handle": "raffhbb_",
+   "name": "Raff",
+   "followers": 5439,
+   "identified": false,
+   "headline": "Public searches found only the pseudonymous profile claims in the prompt and the named organizations; I could not independently tie @raffhbb_ / Raff to a real-world identity via LinkedIn, GitHub, port",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.helius.dev/",
+    "https://checkprice.app/",
+    "https://degods.com/",
+    "https://www.skroutz.gr/"
+   ]
+  },
+  {
+   "handle": "yolandaayalacam",
+   "name": "Yola Ayala",
+   "followers": 2454,
+   "identified": false,
+   "headline": "No reliable public identity match found for the X account beyond the display name and generic bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/yolandaayalacam"
+   ]
+  },
+  {
+   "handle": "iamindianna",
+   "name": "Indianna",
+   "followers": 5584,
+   "identified": false,
+   "headline": "Personal-looking X account tied only to PurpleSoftHub branding; no reliable public full-name identity found across search/company/developer-profile checks.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/iamindianna",
+    "https://twitter.com/iamindianna",
+    "https://www.purplesofthub.com/",
+    "https://www.purplesofthub.com/about"
+   ]
+  },
+  {
+   "handle": "mferbuff",
+   "name": "Hanxin",
+   "followers": 1545,
+   "identified": false,
+   "headline": "Pseudonymous X account with crypto/AI-themed bio; no reliable public-source identity match found across web, GitHub, LinkedIn, press, or phrase searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/mferbuff",
+    "https://twitter.com/mferbuff",
+    "https://t.co/YxqreLTtYH"
+   ]
+  },
+  {
+   "handle": "juhoisol",
+   "name": "Juho Isola",
+   "followers": 2968,
+   "identified": false,
+   "headline": "Could not corroborate the X display name against reliable public LinkedIn, GitHub, company, personal-site, or press sources; only the social profile itself was reachable.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/juhoisol",
+    "https://twitter.com/juhoisol"
+   ]
+  },
+  {
+   "handle": "ernesto_lana",
+   "name": "Ernesto Lana",
+   "followers": 1754,
+   "identified": false,
+   "headline": "Display name only; searches for Ernesto Lana, @ernesto_lana, and Forulus found no reliable public corroboration of a real-world identity or company presence.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ernesto_lana"
+   ]
+  },
+  {
+   "handle": "quite_new",
+   "name": "Abhinav",
+   "followers": 1682,
+   "identified": false,
+   "headline": "Display name only; no corroborating public identity found from indexed public sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/quite_new",
+    "https://twitter.com/quite_new"
+   ]
+  },
+  {
+   "handle": "ChadStoloff",
+   "name": "Chad Stoloff",
+   "followers": 1254,
+   "identified": false,
+   "headline": "Could not corroborate a public identity beyond the X display name and bio after searches for LinkedIn, GitHub, personal-site, podcast, company, and press matches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ChadStoloff"
+   ]
+  },
+  {
+   "handle": "CJamesMedia",
+   "name": "Chris James",
+   "followers": 2469,
+   "identified": true,
+   "headline": "Chris James, founder/CEO of Battle Approved Motors, an early-stage electric off-road vehicle/UTV startup (funded via Wefunder crowdfunding, ~$1.3M+ raised from small-dollar retail investors) and host ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://battleapproved.com/our-story/",
+    "https://wefunder.com/bam/?bw=",
+    "https://x.com/CJamesMedia",
+    "https://www.linkedin.com/in/cjamesmedia/"
+   ]
+  },
+  {
+   "handle": "web3hustlerr_",
+   "name": "Web3Hustler.Sol",
+   "followers": 1164,
+   "identified": false,
+   "headline": "No reliable public identity found for the pseudonymous Web3Hustler.Sol account from exact-handle, bio, LinkedIn, GitHub, and web searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/web3hustlerr_"
+   ]
+  },
+  {
+   "handle": "aviel",
+   "name": "Aviel Ginzburg",
+   "followers": 8434,
+   "identified": true,
+   "headline": "Seattle venture capitalist: General Partner at Founders' Co-op, founder of Foundations, and co-founder of Simply Measured (acquired by Sprout Social, 2017, terms undisclosed)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 15000000,
+   "sources": [
+    "https://www.founderscoop.com/author/aviel/",
+    "https://www.geekwire.com/2024/inside-the-new-serendipity-factory-trying-to-spark-the-startup-scene-in-seattle/",
+    "https://www.geekwire.com/2017/sprout-social-acquires-seattle-social-media-analytics-startup-simply-measured/"
+   ]
+  },
+  {
+   "handle": "dipakcgajjar",
+   "name": "Dipak C. Gajjar",
+   "followers": 4482,
+   "identified": true,
+   "headline": "London-based WordPress performance consultant; founder of CodeUp Studios and WP Speed Care",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://dipakgajjar.com/about-london-wordpress-consultant-uk/",
+    "https://profiles.wordpress.org/dipakcg/"
+   ]
+  },
+  {
+   "handle": "CrypJohn",
+   "name": "John Cryp",
+   "followers": 1755,
+   "identified": false,
+   "headline": "Pseudonymous crypto-focused X account; public sources found only display name, bio, and Netherlands location, with no corroborated real-world identity.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.twstalker.com/CrypJohn",
+    "https://x.com/CrypJohn",
+    "https://twitter.com/CrypJohn",
+    "https://github.com/CrypJohn"
+   ]
+  },
+  {
+   "handle": "ConfluxObserver",
+   "name": "Observer\u1d9c\u1da0\u02e3",
+   "followers": 1060,
+   "identified": false,
+   "headline": "Chinese-language Conflux/CFX-themed X account; no reliable public person, company, LinkedIn, GitHub, site, or press identity found for the handle.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ConfluxObserver",
+    "https://twitter.com/ConfluxObserver"
+   ]
+  },
+  {
+   "handle": "PLM_Pimp",
+   "name": "Land, man",
+   "followers": 3244,
+   "identified": false,
+   "headline": "No reliable public-source identification found for this X account after searches for the handle, display name, bio text, and likely LinkedIn/GitHub/press matches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PLM_Pimp"
+   ]
+  },
+  {
+   "handle": "FaithTechGuy",
+   "name": "Faith Tech Guy | Raymond Goode Jr.",
+   "followers": 9822,
+   "identified": false,
+   "headline": "X profile self-identifies as Raymond Goode Jr. and founder of ShepherdLink, but I found no independent public corroboration of the person/founder identity; ShepherdLink\u2019s site exists but does not name",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/FaithTechGuy",
+    "https://www.shepherdlink.app/",
+    "https://www.paulstechnologies.com/"
+   ]
+  },
+  {
+   "handle": "theopalios",
+   "name": "Theo Palios",
+   "followers": 18150,
+   "identified": false,
+   "headline": "No reliable public corroboration found for Theo Palios or the claimed Unicorn Labs/Alzheimer's AI CEO role beyond the X profile metadata.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/theopalios"
+   ]
+  },
+  {
+   "handle": "DesiBaker_",
+   "name": "",
+   "followers": 2840,
+   "identified": false,
+   "headline": "Could not verify a real-world identity beyond the X profile/bio and linked @db_alchemy reference.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/DesiBaker_",
+    "https://x.com/db_alchemy"
+   ]
+  },
+  {
+   "handle": "pingfanbufan",
+   "name": "Michael Sun",
+   "followers": 2966,
+   "identified": false,
+   "headline": "Could not corroborate @pingfanbufan as a specific real person beyond the X display name and bio; exact-handle, bio-text, LinkedIn-style, GitHub, and press searches did not produce a reliable public ma",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/pingfanbufan",
+    "https://twitter.com/pingfanbufan"
+   ]
+  },
+  {
+   "handle": "1dalehardiman",
+   "name": "Dale Hardiman",
+   "followers": 14923,
+   "identified": false,
+   "headline": "Could not verify the person behind @1dalehardiman from independent public sources beyond the X/Twitter profile name and bio.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/1dalehardiman",
+    "https://twitter.com/1dalehardiman"
+   ]
+  },
+  {
+   "handle": "RichAyotte",
+   "name": "Richard Ayotte",
+   "followers": 1235,
+   "identified": true,
+   "headline": "Canadian software engineer, Tezos baker behind b\u0101k\ua729/Baktz, and creator of the Russignol Tezos hardware signer",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://richayotte.com/",
+    "https://baktz.com/",
+    "https://russignol.com/"
+   ]
+  },
+  {
+   "handle": "0xPatrickNguyen",
+   "name": "Patrick Nguyen",
+   "followers": 3614,
+   "identified": false,
+   "headline": "Unverified: claimed cofounder of Amnis Finance; ex-Google \u2014 no source ties this X handle to that identity",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://amnis.finance/ (confirms Amnis Finance exists as a project, does NOT confirm handle ownership or founder identity)",
+    "https://docs.amnis.finance/ (same limitation)"
+   ]
+  },
+  {
+   "handle": "0xfreddieC",
+   "name": "Freddie",
+   "followers": 1692,
+   "identified": false,
+   "headline": "Could not identify the account holder beyond the display name and self-description as Hopway founder and ex-Chia; searches found no reliable public LinkedIn, GitHub, personal site, company page, or pr",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/0xfreddieC",
+    "https://www.chia.net/team/",
+    "https://github.com/Chia-Network",
+    "https://github.com/orgs/Chia-Network/people"
+   ]
+  },
+  {
+   "handle": "pasha_insights",
+   "name": "Pablo",
+   "followers": 11445,
+   "identified": false,
+   "headline": "Pseudonymous crypto X account; I found no reliable public source tying the handle/display name to a real person, company, LinkedIn, GitHub, personal site, or press profile.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/pasha_insights",
+    "https://twitter.com/pasha_insights"
+   ]
+  },
+  {
+   "handle": "KagawaTomo",
+   "name": "\u9999\u5ddd\u53cb\u5fd7\uff08KAGAWA TOMOYUKI\uff09",
+   "followers": 2000,
+   "identified": true,
+   "headline": "Nara-based small-business operator (self-employed since 2016, ran IT/telecom ventures in China, returned to Japan 2024); identity corroborated via note.com, Wantedly, Linktree, but zero financial disc",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://x.com/KagawaTomo",
+    "https://note.com/kagawatomo/n/nebb2f6021e97",
+    "https://www.wantedly.com/id/KagawaTomo",
+    "https://linktr.ee/kagawatomo"
+   ]
+  },
+  {
+   "handle": "MellowLyon",
+   "name": "M E L L O W!",
+   "followers": 1306,
+   "identified": false,
+   "headline": "Pseudonymous South Africa-based X account; public searches did not reveal a reliable real-name identity or professional profile match.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://twstalker.com/MellowLyon"
+   ]
+  },
+  {
+   "handle": "sixthgalaxy",
+   "name": "syras",
+   "followers": 24524,
+   "identified": false,
+   "headline": "No reliable public identity found; exact handle/bio searches and a matching GitHub profile did not establish a real-person name or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/sixthgalaxy",
+    "https://twitter.com/sixthgalaxy",
+    "https://github.com/sixthgalaxy",
+    "https://github.com/sixthgalaxy/mycode/blob/master/README.md"
+   ]
+  },
+  {
+   "handle": "Pavan_Kanwar",
+   "name": "Pavan SSK",
+   "followers": 2199,
+   "identified": false,
+   "headline": "Could not corroborate @Pavan_Kanwar / Pavan SSK / Pavan Kanwar as a specific public person from indexed LinkedIn, GitHub, personal-site, company, or press sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Pavan_Kanwar"
+   ]
+  },
+  {
+   "handle": "VannDough",
+   "name": "Unknown",
+   "followers": 1927,
+   "identified": false,
+   "headline": "No reliable public identity found for @VannDough after searches across indexed web, LinkedIn, GitHub, TradingView/social variants, and press-style queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/VannDough",
+    "https://twitter.com/VannDough",
+    "https://github.com/VannDough",
+    "https://www.linkedin.com/in/VannDough"
+   ]
+  },
+  {
+   "handle": "pharouknucleus",
+   "name": "Umar Farouk Ahmad",
+   "followers": 1929,
+   "identified": true,
+   "headline": "GitHub profile for @pharouknucleus links directly to the X handle and lists the same name (Umar Farouk Ahmad) with affiliation to the Center for Renewable Energy Research, Bayero University Kano; iden",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://github.com/pharouknucleus",
+    "https://twitter.com/pharouknucleus/status/1247326628121894913"
+   ]
+  },
+  {
+   "handle": "buildwithAj7667",
+   "name": "",
+   "followers": 1035,
+   "identified": false,
+   "headline": "Could not link the Build_With_Aj X account to a verifiable real person, company, GitHub, LinkedIn, personal site, or press profile from public search results.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/buildwithAj7667"
+   ]
+  },
+  {
+   "handle": "madebypuru",
+   "name": "Puru",
+   "followers": 1341,
+   "identified": false,
+   "headline": "Could not reliably identify the person or organization behind @madebypuru from accessible public sources.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/madebypuru",
+    "https://twitter.com/madebypuru",
+    "https://x.com/madebypuru?lang=en"
+   ]
+  },
+  {
+   "handle": "leftycoffeebar",
+   "name": "Wilfred",
+   "followers": 1637,
+   "identified": false,
+   "headline": "No public-source match found connecting the account to a specific real person, company, or organization.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/leftycoffeebar",
+    "https://twitter.com/leftycoffeebar",
+    "https://github.com/leftycoffeebar",
+    "https://www.linkedin.com/in/leftycoffeebar/"
+   ]
+  },
+  {
+   "handle": "PhilMrlo",
+   "name": "Hix0n",
+   "followers": 6195,
+   "identified": false,
+   "headline": "Pseudonymous blocmates newsletter writer; I found blocmates/Beehiiv evidence for the Hix0n byline but no reliable public source tying @PhilMrlo/Hix0n to a real-name identity.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/PhilMrlo",
+    "https://twitter.com/PhilMrlo",
+    "https://www.blocmates.com/",
+    "https://www.blocmates.com/the-apes"
+   ]
+  },
+  {
+   "handle": "JosephRutland5",
+   "name": "Joe Rutland",
+   "followers": 3760,
+   "identified": false,
+   "headline": "X profile claims Joe Rutland is founder of GSR Network and publisher of Rockies Roundtable, but I found no reliable independent public sources corroborating the person, company, or role.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/JosephRutland5",
+    "https://twitter.com/JosephRutland5"
+   ]
+  },
+  {
+   "handle": "AnandaniNisha",
+   "name": "Nisha Anandani",
+   "followers": 10266,
+   "identified": false,
+   "headline": "No reliable external public match found beyond the X profile name/bio; LinkedIn, GitHub, personal-site, company, and press searches did not corroborate an identity.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/AnandaniNisha"
+   ]
+  },
+  {
+   "handle": "Xindu71859152",
+   "name": "duxin.eth",
+   "followers": 1527,
+   "identified": false,
+   "headline": "Pseudonymous crypto and cross-border e-commerce account; no reliable public identity match found from handle, display name, bio text, GitHub, LinkedIn, ENS/web3, or press searches.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Xindu71859152"
+   ]
+  },
+  {
+   "handle": "JJBaybee",
+   "name": "Zohare Haider",
+   "followers": 2337,
+   "identified": true,
+   "headline": "Zohare Haider, Bucknell-educated entrepreneur and co-founder/CEO of jalebi.io (SMB food-tech platform); son of late Air Commodore S. Sajad Haider; prior roles at British Council, Acumen, Ooredoo Group",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/JJBaybee",
+    "https://www.crunchbase.com/person/zohare-haider"
+   ]
+  },
+  {
+   "handle": "MaynorAI1",
+   "name": "MaynorAI",
+   "followers": 21466,
+   "identified": false,
+   "headline": "Pseudonymous Chinese-language indie developer/digital-nomad account; no reliable public real-name, LinkedIn, GitHub, company, or press match found.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/MaynorAI1",
+    "https://twitter.com/MaynorAI1",
+    "https://t.co/ersj92YPF7",
+    "https://t.co/IYv7Fxxx9S"
+   ]
+  },
+  {
+   "handle": "kamrinklauschie",
+   "name": "Kamrin Klauschie",
+   "followers": 1697,
+   "identified": false,
+   "headline": "Unverified \u2014 no evidence of employment at Thesis Driven or any public identity matching this handle",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://thesisdriven.com/about-us (checked directly: page does NOT mention Kamrin Klauschie; team list is Brad Hargreaves/Paul Stanton (Partners), James Kaminsky (Editorial Director), Oscar Hajduk (Product), Victoria Audu (Community Manager), Daniel Heller (GM, Operator Database), Daria Drozd (Growth Marketing), Daniel Kronovet (CTO) \u2014 no 'Chief of Staff' role exists on the page)"
+   ]
+  },
+  {
+   "handle": "patrol_panda",
+   "name": "Panda Patrol",
+   "followers": 4283,
+   "identified": true,
+   "headline": "Brand/community account for the Panda Patrol NFT-style Discord project; no public individual operator identified.",
+   "verdict": "supported",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/patrol_panda",
+    "https://twitter.com/patrol_panda",
+    "https://t.co/WGZeipfys0",
+    "https://discord.gg/K9fcNp7nTQ"
+   ]
+  },
+  {
+   "handle": "DustinMontSEO",
+   "name": "Dustin Montgomery",
+   "followers": 1977,
+   "identified": true,
+   "headline": "Mansfield, Ohio-based SEO consultant behind Dustin Montgomery SEO Consulting; 20+ years in the website industry per his site. Handle @DustinMontSEO is corroborated by his own site's social links, but ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://dustinmontgomery.com/",
+    "https://dustinmontgomery.com/dtc-ecommerce-case-study/"
+   ]
+  },
+  {
+   "handle": "robbatech_id",
+   "name": "RobbaTech | Second Brain",
+   "followers": 4975,
+   "identified": true,
+   "headline": "Brand/education account for RobbaTech, associated in the profile bio with Robbanian Technology; no identifiable individual owner found in public search.",
+   "verdict": "supported",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/robbatech_id",
+    "https://x.com/robbanin_id"
+   ]
+  },
+  {
+   "handle": "Muennighoff",
+   "name": "Niklas Muennighoff",
+   "followers": 10180,
+   "identified": true,
+   "headline": "AI/LLM researcher building Composer at Cursor; Stanford CS PhD student and Knight-Hennessy Scholar (advised by Yejin Choi and Andrew Ng).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://muennighoff.com/",
+    "https://github.com/Muennighoff",
+    "https://x.com/Muennighoff",
+    "https://www.linkedin.com/in/muennighoff/"
+   ]
+  },
+  {
+   "handle": "BartzWow",
+   "name": "frogflower",
+   "followers": 1248,
+   "identified": false,
+   "headline": "Pseudonymous Korean-language AI/design account; no reliable public real-name, employer, LinkedIn, GitHub, or press identity found.",
+   "verdict": "unfounded",
+   "confidence": "medium",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/BartzWow",
+    "https://twstalker.com/BartzWow",
+    "https://www.youtube.com/@frogflower/shorts"
+   ]
+  },
+  {
+   "handle": "chandansgowdru",
+   "name": "Chandan S Gowda",
+   "followers": 1290,
+   "identified": true,
+   "headline": "Chandan S Gowda, CTO at HackCulture, creator/educator behind Engineering in Kannada (YouTube coding courses in Kannada), and AOSSIE GitHub org admin.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://github.com/chandansgowda",
+    "https://x.com/chandansgowdru",
+    "https://www.linkedin.com/in/chandan-s-gowda/"
+   ]
+  },
+  {
+   "handle": "oxydocais",
+   "name": "Petros Maragkos",
+   "followers": 7471,
+   "identified": false,
+   "headline": "Unverified: X profile claims name \"Petros Maragkos (MDX)\" with roles as COO of Mutoco, co-founder of CAIS AI, and EstiaGroup CM/SM manager, but no independent source confirms this identity or these ro",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/oxydocais (self-referential/unverifiable; WebFetch returned HTTP 402, could not confirm profile content)"
+   ]
+  },
+  {
+   "handle": "onlyoneneel",
+   "name": "Neel Gondhia (unverified display name)",
+   "followers": 1088,
+   "identified": false,
+   "headline": "No reliable public identification found beyond the X display name; searches did not surface corroborating LinkedIn, GitHub, company, personal-site, or press evidence.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/onlyoneneel"
+   ]
+  },
+  {
+   "handle": "gregoryestevez3",
+   "name": "Gregory Estevez",
+   "followers": 1372,
+   "identified": false,
+   "headline": "Could not verify a public identity beyond the X profile name/bio after searching for the handle, named companies, token/project terms, LinkedIn, GitHub, and press references.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/gregoryestevez3",
+    "https://x.com/gtechinnovation",
+    "https://x.com/onetimehhcsoft",
+    "https://en.wikipedia.org/wiki/Michel_Rivera"
+   ]
+  },
+  {
+   "handle": "mmni99inc",
+   "name": "Adam Charles Maxwell",
+   "followers": 2208,
+   "identified": false,
+   "headline": "Only the X profile and its linked Facebook vanity URL point to the name Adam Charles Maxwell; I found no reliable public LinkedIn, GitHub, company, personal-site, or press record tying the account to ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/mmni99inc",
+    "https://www.facebook.com/AdamCharlesMaxwell/"
+   ]
+  },
+  {
+   "handle": "BiznatchEnt",
+   "name": "Biznatch Enterprises",
+   "followers": 1672,
+   "identified": false,
+   "headline": "No reliable public-source match found beyond the account\u2019s self-described Biznatch Enterprises identity; exact-name/handle searches, LinkedIn/GitHub/press searches, and Canadian registry entry points ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://ised-isde.canada.ca/cc/lgcy/fdrlCrpSrch.html",
+    "https://ised-isde.canada.ca/cbr-rec/en/search",
+    "https://www.quebec.ca/entreprises-et-travailleurs-autonomes/obtenir-renseignements-entreprise/recherche-registre-entreprises/acceder-registre-entreprises",
+    "https://en.wikipedia.org/wiki/List_of_official_business_registers"
+   ]
+  },
+  {
+   "handle": "0xSalary",
+   "name": "nomoresalary",
+   "followers": 2245,
+   "identified": false,
+   "headline": "No reliable public-source identification found for @0xSalary / nomoresalary after searches across the handle, display name, X/Twitter, GitHub, LinkedIn, and broader web/press queries.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/0xSalary",
+    "https://twitter.com/0xSalary"
    ]
   }
  ]

@@ -3,8 +3,8 @@
   "account": "jack",
   "name": "@jack",
   "totalFollowers": 9161230,
-  "researched": 183,
-  "identified": 182,
+  "researched": 187,
+  "identified": 186,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Jack Dorsey",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 8391011514.00885,
-   "low": 4195505757.004425,
-   "high": 16782023028.0177,
-   "floor": 949566000.0
+   "total": 8416258264.840708,
+   "low": 4208129132.420354,
+   "high": 16832516529.681416,
+   "floor": 974816000.0
   }
  },
  "people": [
@@ -2784,6 +2784,72 @@
     "https://www.category.xyz/team",
     "https://x.com/forwardsecrecy",
     "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "joanrod_ai",
+   "name": "Joan Rodriguez",
+   "followers": 4036,
+   "identified": true,
+   "headline": "Co-founder, CEO and Chief Scientist of QuiverAI; AI researcher behind StarVector/RLRF; QuiverAI announced an $8.3M seed round led by a16z.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 6000000,
+   "sources": [
+    "https://joanrod.github.io/",
+    "https://quiver.ai/blog/announcing-our-seed-round/",
+    "https://a16z.com/announcement/investing-in-quiverai/",
+    "https://x.com/joanrod_ai/status/2026693353090240819"
+   ]
+  },
+  {
+   "handle": "CJamesMedia",
+   "name": "Chris James",
+   "followers": 2469,
+   "identified": true,
+   "headline": "Chris James, founder/CEO of Battle Approved Motors, an early-stage electric off-road vehicle/UTV startup (funded via Wefunder crowdfunding, ~$1.3M+ raised from small-dollar retail investors) and host ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://battleapproved.com/our-story/",
+    "https://wefunder.com/bam/?bw=",
+    "https://x.com/CJamesMedia",
+    "https://www.linkedin.com/in/cjamesmedia/"
+   ]
+  },
+  {
+   "handle": "dipakcgajjar",
+   "name": "Dipak C. Gajjar",
+   "followers": 4482,
+   "identified": true,
+   "headline": "London-based WordPress performance consultant; founder of CodeUp Studios and WP Speed Care",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://dipakgajjar.com/about-london-wordpress-consultant-uk/",
+    "https://profiles.wordpress.org/dipakcg/"
    ]
   }
  ]

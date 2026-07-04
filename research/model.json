@@ -1,15 +1,15 @@
 {
- "note": "v1.3 \u2014 measured rates: b0=24% organic (6/25, scaled per board by audience quality q vs anchor 0.284, clamp [0.002,0.24]); b1=8.9% (28/313 random); b2=24.7% (18/73 random); b3=60% assumed. Bucket means winsorized at $10M. total = floor + remainder x share x rate x mean.",
+ "note": "v1.4 \u2014 measured post-verification rates: b0=8.1% (6/74 random organic sub-1k, scaled per board by audience quality q vs anchor 0.284, clamp [0.002, 0.081]); b1=9.0% (36/401); b2=23.3% (20/86); b3=60% assumed. Bucket means winsorized at $10M. total = floor + remainder x share x rate x mean.",
  "bucketMeans": {
   "b0": 406146.01769911504,
-  "b1": 992578.5472972973,
-  "b2": 1813747.0588235294,
+  "b1": 1047461.3486842106,
+  "b2": 1893028.735632184,
   "b3": 1093029.4117647058
  },
  "identRates": {
-  "b0": 0.24,
-  "b1": 0.08945686900958466,
-  "b2": 0.2465753424657534,
+  "b0": 0.08108108108108109,
+  "b1": 0.08977556109725686,
+  "b2": 0.23255813953488372,
   "b3": 0.6
  },
  "qAnchor": 0.284,

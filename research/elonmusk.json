@@ -3,8 +3,8 @@
   "account": "elonmusk",
   "name": "@elonmusk",
   "totalFollowers": 240448680,
-  "researched": 49,
-  "identified": 25,
+  "researched": 58,
+  "identified": 34,
   "note": "Evidence-based ranges from live web research, verified by an adversarial checker. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Elon Musk",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 1117396116229.378,
-   "low": 558698058114.689,
-   "high": 2234792232458.756,
-   "floor": 690231000.0
+   "total": 586100377418.3014,
+   "low": 293050188709.1507,
+   "high": 1172200754836.6028,
+   "floor": 726881000.0
   }
  },
  "people": [
@@ -742,6 +742,156 @@
     "https://www.category.xyz/team",
     "https://x.com/forwardsecrecy",
     "https://medium.com/@forwardsecrecy/overthewire-advent-bonanza-2019-easter-egg-3-bdce1a6bd191"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "Brennan_Lup",
+   "name": "Brennan Lupyrypa",
+   "followers": 2275,
+   "identified": true,
+   "headline": "GTM/growth operator at Weave/WorkWeave (YC W25), a seed-stage ($4.2M raised) engineering analytics startup",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://x.com/Brennan_Lup",
+    "https://workweave.dev/company",
+    "https://www.ycombinator.com/companies/weave-3",
+    "https://workweave.dev/blog/announcing-our-4-2m-seed-round"
+   ]
+  },
+  {
+   "handle": "joanrod_ai",
+   "name": "Joan Rodriguez",
+   "followers": 4036,
+   "identified": true,
+   "headline": "Co-founder, CEO and Chief Scientist of QuiverAI; AI researcher behind StarVector/RLRF; QuiverAI announced an $8.3M seed round led by a16z.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 6000000,
+   "sources": [
+    "https://joanrod.github.io/",
+    "https://quiver.ai/blog/announcing-our-seed-round/",
+    "https://a16z.com/announcement/investing-in-quiverai/",
+    "https://x.com/joanrod_ai/status/2026693353090240819"
+   ]
+  },
+  {
+   "handle": "AlexanderGirau",
+   "name": "Alexander L. Girau",
+   "followers": 1575,
+   "identified": true,
+   "headline": "CEO and co-founder of Group1; founding CEO/founder of Advano; battery-materials entrepreneur and YC S17 alum.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.group1.ai/team/alexander-l-girau-m-s",
+    "https://www.ycombinator.com/companies/advano",
+    "https://www.linkedin.com/in/alexandergirau",
+    "https://www.prnewswire.com/news-releases/advano-delivers-scalable-advanced-silicon-solution-to-battery-industry-announcing-18-5-million-in-series-a-funding-300994346.html"
+   ]
+  },
+  {
+   "handle": "CJamesMedia",
+   "name": "Chris James",
+   "followers": 2469,
+   "identified": true,
+   "headline": "Chris James, founder/CEO of Battle Approved Motors, an early-stage electric off-road vehicle/UTV startup (funded via Wefunder crowdfunding, ~$1.3M+ raised from small-dollar retail investors) and host ",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 1000000,
+   "sources": [
+    "https://battleapproved.com/our-story/",
+    "https://wefunder.com/bam/?bw=",
+    "https://x.com/CJamesMedia",
+    "https://www.linkedin.com/in/cjamesmedia/"
+   ]
+  },
+  {
+   "handle": "aviel",
+   "name": "Aviel Ginzburg",
+   "followers": 8434,
+   "identified": true,
+   "headline": "Seattle venture capitalist: General Partner at Founders' Co-op, founder of Foundations, and co-founder of Simply Measured (acquired by Sprout Social, 2017, terms undisclosed)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 15000000,
+   "sources": [
+    "https://www.founderscoop.com/author/aviel/",
+    "https://www.geekwire.com/2024/inside-the-new-serendipity-factory-trying-to-spark-the-startup-scene-in-seattle/",
+    "https://www.geekwire.com/2017/sprout-social-acquires-seattle-social-media-analytics-startup-simply-measured/"
+   ]
+  },
+  {
+   "handle": "dipakcgajjar",
+   "name": "Dipak C. Gajjar",
+   "followers": 4482,
+   "identified": true,
+   "headline": "London-based WordPress performance consultant; founder of CodeUp Studios and WP Speed Care",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://dipakgajjar.com/about-london-wordpress-consultant-uk/",
+    "https://profiles.wordpress.org/dipakcg/"
+   ]
+  },
+  {
+   "handle": "KagawaTomo",
+   "name": "\u9999\u5ddd\u53cb\u5fd7\uff08KAGAWA TOMOYUKI\uff09",
+   "followers": 2000,
+   "identified": true,
+   "headline": "Nara-based small-business operator (self-employed since 2016, ran IT/telecom ventures in China, returned to Japan 2024); identity corroborated via note.com, Wantedly, Linktree, but zero financial disc",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://x.com/KagawaTomo",
+    "https://note.com/kagawatomo/n/nebb2f6021e97",
+    "https://www.wantedly.com/id/KagawaTomo",
+    "https://linktr.ee/kagawatomo"
+   ]
+  },
+  {
+   "handle": "Muennighoff",
+   "name": "Niklas Muennighoff",
+   "followers": 10180,
+   "identified": true,
+   "headline": "AI/LLM researcher building Composer at Cursor; Stanford CS PhD student and Knight-Hennessy Scholar (advised by Yejin Choi and Andrew Ng).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://muennighoff.com/",
+    "https://github.com/Muennighoff",
+    "https://x.com/Muennighoff",
+    "https://www.linkedin.com/in/muennighoff/"
    ]
   }
  ]
