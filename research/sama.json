@@ -3,8 +3,8 @@
   "account": "sama",
   "name": "@sama",
   "totalFollowers": 5270109,
-  "researched": 411,
-  "identified": 402,
+  "researched": 426,
+  "identified": 417,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Sam Altman",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 7314861074.517514,
-   "low": 3657430537.258757,
-   "high": 14629722149.035028,
-   "floor": 1196827250.0
+   "total": 7446791715.821435,
+   "low": 3723395857.9107175,
+   "high": 14893583431.64287,
+   "floor": 1209397250.0
   }
  },
  "people": [
@@ -6223,6 +6223,243 @@
    "sources": [
     "https://x.com/nic_amadio",
     "https://www.linkedin.com/posts/nicola-amadio_my-salary-journey-as-a-software-engineer-activity-7327577144983711744-meq-"
+   ]
+  },
+  {
+   "handle": "souporserious",
+   "name": "Travis Arnold",
+   "followers": 4650,
+   "identified": true,
+   "headline": "Indie designer/developer behind souporserious identity; maintains open-source projects (renoun, react-measure, restyle) with modest star counts (largest ~1.9k stars); no evidence of funding, acquisiti",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://github.com/souporserious",
+    "https://souporserious.com/"
+   ]
+  },
+  {
+   "handle": "husseincak",
+   "name": "Hussein Lababidi",
+   "followers": 1952,
+   "identified": true,
+   "headline": "Identified as Hussein Lababidi, a Malaga/Marbella-based freelance web designer and WordPress developer (hussein.es self-links @husseincak as his X handle) \u2014 no public financial disclosures exist for t",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 150000,
+   "sources": [
+    "https://github.com/husseincak",
+    "https://hussein.es/"
+   ]
+  },
+  {
+   "handle": "DocSanchezG",
+   "name": "Dr. C\u00e9sar Alejandro S\u00e1nchez Galeana",
+   "followers": 17524,
+   "identified": true,
+   "headline": "Mexico City ophthalmologist (refractive/cataract/glaucoma/cornea specialist, 28 yrs experience, 15,000+ surgeries), founder/director of Optall Vision clinic since 2009; identity corroborated by indepe",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://www.optallvision.com/docsanchezg.html",
+    "https://www.marthadebayle.com/especialista/cesar-sanchez-galeana/",
+    "https://www.topdoctors.mx/doctor/cesar-alejandro-sanchez-galeana/",
+    "https://www.doctoralia.com.mx/cesar-alejandro-sanchez-galeana/oftalmologo/alvaro-obregon"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
+   ]
+  },
+  {
+   "handle": "HaoTang_ai",
+   "name": "Hao Tang",
+   "followers": 1573,
+   "identified": true,
+   "headline": "Tenure-track Assistant Professor and PhD supervisor at Peking University School of Computer Science; computer vision/AI",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 30000,
+   "high": 300000,
+   "sources": [
+    "https://x.com/HaoTang_ai",
+    "https://github.com/Ha0Tang"
+   ]
+  },
+  {
+   "handle": "masterofnone",
+   "name": "Danial (surname unverified \u2014 \"Alias\" not confirmed)",
+   "followers": 2800,
+   "identified": true,
+   "headline": "Kuala Lumpur-based founder of Kracked Devs (Malaysian dev community/bootcamp); no public funding, exit, revenue, or wealth evidence found. Hiring posts show local-scale salaries (RM4,000-7,000/mo, ~$8",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/masterofnone (verified live profile, KL-based, joined Dec 2018, ties to @KrackedDevs)",
+    "https://krackeddevs.com/ (verified live site, community/bootcamp positioning)"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "BDmytryshyn",
+   "name": "Bohdan Dmytryshyn",
+   "followers": 2261,
+   "identified": true,
+   "headline": "CTO and Co-Founder of Agiliway, a privately held Ukraine/Poland-based custom software development and IT consulting firm (co-founded 2015); previously held leadership roles at SoftServe (2004-2015).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://x.com/BDmytryshyn",
+    "https://theorg.com/org/agiliway/org-chart/bohdan-dmytryshyn",
+    "https://www.linkedin.com/in/bohdan-dmytryshyn-3223b64/",
+    "https://www.crunchbase.com/person/bohdan-dmytryshyn"
+   ]
+  },
+  {
+   "handle": "bkingfilm",
+   "name": "\u5218\u6d0b (BBKinG / \u5bfc\u6f14BK)",
+   "followers": 16232,
+   "identified": true,
+   "headline": "Founder of BKinGfilm/\u5f7c\u91d1\u5f71\u5320, a Shanghai game and esports video production studio, and author of \u300a\u4e2d\u56fd\u7535\u7ade\u5e55\u540e\u53f2\u300b.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://www.bkingfilm.com/about/",
+    "https://x.com/bkingfilm"
+   ]
+  },
+  {
+   "handle": "pahyppolite",
+   "name": "Paul-Adrien Hyppolite",
+   "followers": 1494,
+   "identified": true,
+   "headline": "Co-founder and CEO of Spiko, a Paris-based cash-management fintech; Spiko raised a $22M Series A (led by Index Ventures, July 2025) and reports over $1B in customer AUM on its platform \u2014 AUM is not co",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.indexventures.com/perspectives/spiko-raises-22m-to-democratize-access-to-treasury-yields/",
+    "https://www.crunchbase.com/person/paul-adrien-hyppolite",
+    "https://www.spiko.io/about"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "fredericrenken",
+   "name": "Fr\u00e9d\u00e9ric Renken",
+   "followers": 6781,
+   "identified": true,
+   "headline": "Co-founder of Lassie, an a16z-backed AI startup automating dental (not generic doctors') office front-desk/billing work; Lassie raised a $35M Series A led by a16z (total ~$47M raised)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000000,
+   "sources": [
+    "https://a16z.com/announcement/investing-in-lassie/",
+    "https://councils.forbes.com/profile/Fr%C3%A9d%C3%A9ric-Renken-Co-Founder-Lassie/a6e63123-6926-401a-b660-f64ca5a91cfd",
+    "https://www.orrick.com/en/News/2026/06/Lassie-Raises-35-Million-in-Series-A-Round-Led-By-a16z"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
+   ]
+  },
+  {
+   "handle": "illestrater_",
+   "name": "Tim Kang",
+   "followers": 12700,
+   "identified": true,
+   "headline": "X handle @illestrater_ (bio: tim.eth, LA-based, building with @multimedia_org) matches GitHub user illestrater / Tim Kang and Foundation.app profile Tim Kang (@illestrater) \u2014 identity confirmed. Howev",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/illestrater_",
+    "https://github.com/illestrater",
+    "https://foundation.app/@illestrater"
+   ]
+  },
+  {
+   "handle": "WasimShips",
+   "name": "Wasim (Dreamlaunch co-founder; surname not publicly verified)",
+   "followers": 3489,
+   "identified": true,
+   "headline": "Co-founder of Dreamlaunch (dreamlaunch.studio), an AI-native MVP/product studio co-founded with Harshil Tomar; corroborated by independent press coverage (Zee Business) and Tomar's own posts, not just",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://www.zeebiz.com/startups/news-fired-from-us-remote-job-indian-techies-venture-hits-rs-44-lakh-revenue-in-6-months-380310",
+    "https://x.com/Hartdrawss (Harshil Tomar's own posts naming WasimShips as co-founder)"
    ]
   }
  ]

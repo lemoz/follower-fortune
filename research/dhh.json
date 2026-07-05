@@ -3,8 +3,8 @@
   "account": "dhh",
   "name": "@dhh",
   "totalFollowers": 725860,
-  "researched": 163,
-  "identified": 163,
+  "researched": 164,
+  "identified": 164,
   "note": "Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.",
   "sampleDist": {
    "sampled": 2000,
@@ -26,10 +26,10 @@
    ]
   },
   "estimate": {
-   "total": 1171544082.2269082,
-   "low": 585772041.1134541,
-   "high": 2343088164.4538164,
-   "floor": 261498000.0
+   "total": 1081172866.8486476,
+   "low": 540586433.4243238,
+   "high": 2162345733.697295,
+   "floor": 262298000.0
   }
  },
  "people": [
@@ -2518,6 +2518,23 @@
    "sources": [
     "https://x.com/nic_amadio",
     "https://www.linkedin.com/posts/nicola-amadio_my-salary-journey-as-a-software-engineer-activity-7327577144983711744-meq-"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
    ]
   }
  ]

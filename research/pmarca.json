@@ -3,8 +3,8 @@
   "account": "pmarca",
   "name": "@pmarca",
   "totalFollowers": 4412590,
-  "researched": 305,
-  "identified": 305,
+  "researched": 314,
+  "identified": 314,
   "note": "Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.",
   "sampleDist": {
    "sampled": 2000,
@@ -26,10 +26,10 @@
    ]
   },
   "estimate": {
-   "total": 6368883880.458331,
-   "low": 3184441940.2291656,
-   "high": 12737767760.916662,
-   "floor": 1137176500.0
+   "total": 6146483869.6981535,
+   "low": 3073241934.8490767,
+   "high": 12292967739.396307,
+   "floor": 1148216500.0
   }
  },
  "people": [
@@ -4661,6 +4661,149 @@
     "https://profiles.wordpress.org/ereckers/",
     "https://x.com/ereckers",
     "https://www.redbridgenet.com/author/ereckers/"
+   ]
+  },
+  {
+   "handle": "souporserious",
+   "name": "Travis Arnold",
+   "followers": 4650,
+   "identified": true,
+   "headline": "Indie designer/developer behind souporserious identity; maintains open-source projects (renoun, react-measure, restyle) with modest star counts (largest ~1.9k stars); no evidence of funding, acquisiti",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://github.com/souporserious",
+    "https://souporserious.com/"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
+   ]
+  },
+  {
+   "handle": "HaoTang_ai",
+   "name": "Hao Tang",
+   "followers": 1573,
+   "identified": true,
+   "headline": "Tenure-track Assistant Professor and PhD supervisor at Peking University School of Computer Science; computer vision/AI",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 30000,
+   "high": 300000,
+   "sources": [
+    "https://x.com/HaoTang_ai",
+    "https://github.com/Ha0Tang"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "pahyppolite",
+   "name": "Paul-Adrien Hyppolite",
+   "followers": 1494,
+   "identified": true,
+   "headline": "Co-founder and CEO of Spiko, a Paris-based cash-management fintech; Spiko raised a $22M Series A (led by Index Ventures, July 2025) and reports over $1B in customer AUM on its platform \u2014 AUM is not co",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.indexventures.com/perspectives/spiko-raises-22m-to-democratize-access-to-treasury-yields/",
+    "https://www.crunchbase.com/person/paul-adrien-hyppolite",
+    "https://www.spiko.io/about"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "fredericrenken",
+   "name": "Fr\u00e9d\u00e9ric Renken",
+   "followers": 6781,
+   "identified": true,
+   "headline": "Co-founder of Lassie, an a16z-backed AI startup automating dental (not generic doctors') office front-desk/billing work; Lassie raised a $35M Series A led by a16z (total ~$47M raised)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000000,
+   "sources": [
+    "https://a16z.com/announcement/investing-in-lassie/",
+    "https://councils.forbes.com/profile/Fr%C3%A9d%C3%A9ric-Renken-Co-Founder-Lassie/a6e63123-6926-401a-b660-f64ca5a91cfd",
+    "https://www.orrick.com/en/News/2026/06/Lassie-Raises-35-Million-in-Series-A-Round-Led-By-a16z"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
+   ]
+  },
+  {
+   "handle": "illestrater_",
+   "name": "Tim Kang",
+   "followers": 12700,
+   "identified": true,
+   "headline": "X handle @illestrater_ (bio: tim.eth, LA-based, building with @multimedia_org) matches GitHub user illestrater / Tim Kang and Foundation.app profile Tim Kang (@illestrater) \u2014 identity confirmed. Howev",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/illestrater_",
+    "https://github.com/illestrater",
+    "https://foundation.app/@illestrater"
    ]
   }
  ]

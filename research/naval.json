@@ -3,8 +3,8 @@
   "account": "naval",
   "name": "@naval",
   "totalFollowers": 3500958,
-  "researched": 263,
-  "identified": 248,
+  "researched": 274,
+  "identified": 259,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Naval Ravikant",
@@ -28,10 +28,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 5114636811.259552,
-   "low": 2557318405.629776,
-   "high": 10229273622.519104,
-   "floor": 1050386750.0
+   "total": 5202505143.862049,
+   "low": 2601252571.9310246,
+   "high": 10405010287.724098,
+   "floor": 1058964250.0
   }
  },
  "people": [
@@ -3993,6 +3993,180 @@
     "https://profiles.wordpress.org/ereckers/",
     "https://x.com/ereckers",
     "https://www.redbridgenet.com/author/ereckers/"
+   ]
+  },
+  {
+   "handle": "souporserious",
+   "name": "Travis Arnold",
+   "followers": 4650,
+   "identified": true,
+   "headline": "Indie designer/developer behind souporserious identity; maintains open-source projects (renoun, react-measure, restyle) with modest star counts (largest ~1.9k stars); no evidence of funding, acquisiti",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://github.com/souporserious",
+    "https://souporserious.com/"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
+   ]
+  },
+  {
+   "handle": "danielgrifol",
+   "name": "Daniel Grifol",
+   "followers": 2315,
+   "identified": true,
+   "headline": "Spanish SaaS executive (CRO/CMO) at TramitApp, a small Madrid-based HR/time-tracking startup (South Summit 2022 finalist); Cruasan affiliation unverified. No evidence of funding rounds, revenue, or an",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://es.linkedin.com/in/danielgrifol",
+    "https://www.tramitapp.com/",
+    "https://twitter.com/danielgrifol/status/1757679372591366259"
+   ]
+  },
+  {
+   "handle": "onurschu",
+   "name": "Onur \u015euyal\u00e7\u0131nkaya",
+   "followers": 21316,
+   "identified": true,
+   "headline": "Amsterdam-based senior frontend software engineer (ex-heycar, Yemeksepeti, Apple); personal site onur.dev and GitHub suyalcinkaya both confirmed linked to X handle @onurschu",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://onur.dev/ (confirms identity/employment, no financial data)",
+    "https://github.com/suyalcinkaya (confirms identity, no financial data)",
+    "https://x.com/onurschu (handle verified as belonging to this person)"
+   ]
+  },
+  {
+   "handle": "masterofnone",
+   "name": "Danial (surname unverified \u2014 \"Alias\" not confirmed)",
+   "followers": 2800,
+   "identified": true,
+   "headline": "Kuala Lumpur-based founder of Kracked Devs (Malaysian dev community/bootcamp); no public funding, exit, revenue, or wealth evidence found. Hiring posts show local-scale salaries (RM4,000-7,000/mo, ~$8",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/masterofnone (verified live profile, KL-based, joined Dec 2018, ties to @KrackedDevs)",
+    "https://krackeddevs.com/ (verified live site, community/bootcamp positioning)"
+   ]
+  },
+  {
+   "handle": "ATechAjay",
+   "name": "Ajay Yadav",
+   "followers": 26823,
+   "identified": true,
+   "headline": "Frontend developer and technical writer/content creator behind ATechAjay and The Div Soup; public GitHub, LinkedIn, and Medium profiles confirm identity, but no business or income disclosed",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 5000,
+   "high": 50000,
+   "sources": [
+    "https://github.com/ATechAjay",
+    "https://github.com/ATechAjay/ATechAjay",
+    "https://x.com/atechajay"
+   ]
+  },
+  {
+   "handle": "kevinvdveer",
+   "name": "Kevin van der Veer",
+   "followers": 1310,
+   "identified": true,
+   "headline": "Kevin van der Veer, confirmed co-founder of Monday Merch (with Jeroen Westerbeek, Florian Frenken, Dani\u00ebl Salimian) and co-founder of WoodWatch since 2013 (Forbes 30 Under 30 / FT1000 company); exact ",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1500000,
+   "sources": [
+    "https://www.mondaymerch.com/articles/monday-merch-raises-half-a-million-in-growth-funding",
+    "https://x.com/kevinvdveer",
+    "https://www.linkedin.com/in/kevinvanderveer/"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "pahyppolite",
+   "name": "Paul-Adrien Hyppolite",
+   "followers": 1494,
+   "identified": true,
+   "headline": "Co-founder and CEO of Spiko, a Paris-based cash-management fintech; Spiko raised a $22M Series A (led by Index Ventures, July 2025) and reports over $1B in customer AUM on its platform \u2014 AUM is not co",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.indexventures.com/perspectives/spiko-raises-22m-to-democratize-access-to-treasury-yields/",
+    "https://www.crunchbase.com/person/paul-adrien-hyppolite",
+    "https://www.spiko.io/about"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
+   ]
+  },
+  {
+   "handle": "illestrater_",
+   "name": "Tim Kang",
+   "followers": 12700,
+   "identified": true,
+   "headline": "X handle @illestrater_ (bio: tim.eth, LA-based, building with @multimedia_org) matches GitHub user illestrater / Tim Kang and Foundation.app profile Tim Kang (@illestrater) \u2014 identity confirmed. Howev",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/illestrater_",
+    "https://github.com/illestrater",
+    "https://foundation.app/@illestrater"
    ]
   }
  ]

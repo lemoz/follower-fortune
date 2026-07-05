@@ -3,8 +3,8 @@
   "account": "patrickc",
   "name": "@patrickc",
   "totalFollowers": 1242793,
-  "researched": 228,
-  "identified": 228,
+  "researched": 234,
+  "identified": 234,
   "note": "Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.",
   "sampleDist": {
    "sampled": 2000,
@@ -26,10 +26,10 @@
    ]
   },
   "estimate": {
-   "total": 1403697152.9646018,
-   "low": 701848576.4823009,
-   "high": 2807394305.9292035,
-   "floor": 394371500.0
+   "total": 1413942279.2123895,
+   "low": 706971139.6061947,
+   "high": 2827884558.424779,
+   "floor": 404621500.0
   }
  },
  "people": [
@@ -3491,6 +3491,102 @@
    "sources": [
     "https://x.com/nic_amadio",
     "https://www.linkedin.com/posts/nicola-amadio_my-salary-journey-as-a-software-engineer-activity-7327577144983711744-meq-"
+   ]
+  },
+  {
+   "handle": "sean_oneill",
+   "name": "Sean O'Neill",
+   "followers": 12544,
+   "identified": true,
+   "headline": "Sean O'Neill is Skift's Senior Hospitality Editor, a Washington, D.C./Philadelphia-area journalist covering hotels and hospitality.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://skift.com/author/sean-oneill/",
+    "https://muckrack.com/seanoneill",
+    "https://theorg.com/org/skift/org-chart/sean-oneill"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "pahyppolite",
+   "name": "Paul-Adrien Hyppolite",
+   "followers": 1494,
+   "identified": true,
+   "headline": "Co-founder and CEO of Spiko, a Paris-based cash-management fintech; Spiko raised a $22M Series A (led by Index Ventures, July 2025) and reports over $1B in customer AUM on its platform \u2014 AUM is not co",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.indexventures.com/perspectives/spiko-raises-22m-to-democratize-access-to-treasury-yields/",
+    "https://www.crunchbase.com/person/paul-adrien-hyppolite",
+    "https://www.spiko.io/about"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "fredericrenken",
+   "name": "Fr\u00e9d\u00e9ric Renken",
+   "followers": 6781,
+   "identified": true,
+   "headline": "Co-founder of Lassie, an a16z-backed AI startup automating dental (not generic doctors') office front-desk/billing work; Lassie raised a $35M Series A led by a16z (total ~$47M raised)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000000,
+   "sources": [
+    "https://a16z.com/announcement/investing-in-lassie/",
+    "https://councils.forbes.com/profile/Fr%C3%A9d%C3%A9ric-Renken-Co-Founder-Lassie/a6e63123-6926-401a-b660-f64ca5a91cfd",
+    "https://www.orrick.com/en/News/2026/06/Lassie-Raises-35-Million-in-Series-A-Round-Led-By-a16z"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
    ]
   }
  ]

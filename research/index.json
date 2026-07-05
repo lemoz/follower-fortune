@@ -2,11 +2,11 @@
  {
   "handle": "elonmusk",
   "name": "@elonmusk",
-  "total": 759393500.0,
-  "est": 563113215389.2491,
+  "total": 771379000.0,
+  "est": 544492353504.8006,
   "followers": 240448680,
-  "researched": 102,
-  "identified": 78,
+  "researched": 120,
+  "identified": 96,
   "owner": {
    "low": 950000000000,
    "high": 1450000000000
@@ -15,11 +15,11 @@
  {
   "handle": "levelsio",
   "name": "@levelsio",
-  "total": 806760750.0,
-  "est": 15391420836.942055,
+  "total": 821428750.0,
+  "est": 14452646454.530367,
   "followers": 905538,
-  "researched": 662,
-  "identified": 148,
+  "researched": 1418,
+  "identified": 175,
   "owner": {
    "low": 30000000,
    "high": 80000000
@@ -28,11 +28,11 @@
  {
   "handle": "jack",
   "name": "@jack",
-  "total": 985276000.0,
-  "est": 8426703643.58407,
+  "total": 990376000.0,
+  "est": 8431799582.123894,
   "followers": 9161230,
-  "researched": 205,
-  "identified": 204,
+  "researched": 210,
+  "identified": 209,
   "owner": {
    "low": 5900000000,
    "high": 7700000000
@@ -41,11 +41,11 @@
  {
   "handle": "sama",
   "name": "@sama",
-  "total": 1196827250.0,
-  "est": 7314861074.517514,
+  "total": 1209397250.0,
+  "est": 7446791715.821435,
   "followers": 5270109,
-  "researched": 411,
-  "identified": 402,
+  "researched": 426,
+  "identified": 417,
   "owner": {
    "low": 3400000000,
    "high": 4500000000
@@ -54,11 +54,11 @@
  {
   "handle": "VitalikButerin",
   "name": "@VitalikButerin",
-  "total": 993091500.0,
-  "est": 6413607228.920354,
+  "total": 1003091500.0,
+  "est": 6423602355.168141,
   "followers": 6673306,
-  "researched": 194,
-  "identified": 188,
+  "researched": 200,
+  "identified": 194,
   "owner": {
    "low": 380000000,
    "high": 750000000
@@ -67,11 +67,11 @@
  {
   "handle": "pmarca",
   "name": "@pmarca",
-  "total": 1137176500.0,
-  "est": 6368883880.458331,
+  "total": 1148216500.0,
+  "est": 6146483869.6981535,
   "followers": 4412590,
-  "researched": 305,
-  "identified": 305,
+  "researched": 314,
+  "identified": 314,
   "owner": {
    "low": 1800000000.0,
    "high": 2200000000.0
@@ -80,11 +80,11 @@
  {
   "handle": "naval",
   "name": "@naval",
-  "total": 1050386750.0,
-  "est": 5114636811.259552,
+  "total": 1058964250.0,
+  "est": 5202505143.862049,
   "followers": 3500958,
-  "researched": 263,
-  "identified": 248,
+  "researched": 274,
+  "identified": 259,
   "owner": {
    "low": 60000000,
    "high": 150000000
@@ -93,11 +93,11 @@
  {
   "handle": "paulg",
   "name": "@paulg",
-  "total": 1085275000.0,
-  "est": 4322670687.500523,
+  "total": 1094350000.0,
+  "est": 4352125262.323518,
   "followers": 3599536,
-  "researched": 290,
-  "identified": 285,
+  "researched": 295,
+  "identified": 290,
   "owner": {
    "low": 150000000,
    "high": 1000000000
@@ -106,11 +106,11 @@
  {
   "handle": "garryTan",
   "name": "@garryTan",
-  "total": 1055793000.0,
-  "est": 4250581388.8382134,
+  "total": 1057518000.0,
+  "est": 4141226519.935794,
   "followers": 926149,
-  "researched": 267,
-  "identified": 267,
+  "researched": 275,
+  "identified": 275,
   "owner": {
    "low": 50000000,
    "high": 300000000
@@ -119,11 +119,11 @@
  {
   "handle": "balajis",
   "name": "@balajis",
-  "total": 1037756500.0,
-  "est": 3530505866.629277,
+  "total": 1048281500.0,
+  "est": 3341542220.8151217,
   "followers": 1745391,
-  "researched": 228,
-  "identified": 219,
+  "researched": 235,
+  "identified": 226,
   "owner": {
    "low": 200000000,
    "high": 500000000
@@ -132,11 +132,11 @@
  {
   "handle": "patrickc",
   "name": "@patrickc",
-  "total": 394371500.0,
-  "est": 1403697152.9646018,
+  "total": 404621500.0,
+  "est": 1413942279.2123895,
   "followers": 1242793,
-  "researched": 228,
-  "identified": 228,
+  "researched": 234,
+  "identified": 234,
   "owner": {
    "low": 16000000000.0,
    "high": 18500000000.0
@@ -145,11 +145,11 @@
  {
   "handle": "dhh",
   "name": "@dhh",
-  "total": 261498000.0,
-  "est": 1171544082.2269082,
+  "total": 262298000.0,
+  "est": 1081172866.8486476,
   "followers": 725860,
-  "researched": 163,
-  "identified": 163,
+  "researched": 164,
+  "identified": 164,
   "owner": {
    "low": 40000000,
    "high": 80000000
@@ -159,7 +159,7 @@
   "handle": "cdossman",
   "name": "@cdossman",
   "total": 547994250.0,
-  "est": 607952078.1133649,
+  "est": 602805233.6065851,
   "followers": 1497,
   "researched": 666,
   "identified": 462,

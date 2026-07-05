@@ -3,8 +3,8 @@
   "account": "jack",
   "name": "@jack",
   "totalFollowers": 9161230,
-  "researched": 205,
-  "identified": 204,
+  "researched": 210,
+  "identified": 209,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Jack Dorsey",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 8426703643.58407,
-   "low": 4213351821.792035,
-   "high": 16853407287.16814,
-   "floor": 985276000.0
+   "total": 8431799582.123894,
+   "low": 4215899791.061947,
+   "high": 16863599164.247787,
+   "floor": 990376000.0
   }
  },
  "people": [
@@ -3133,6 +3133,87 @@
     "https://profiles.wordpress.org/ereckers/",
     "https://x.com/ereckers",
     "https://www.redbridgenet.com/author/ereckers/"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
+   ]
+  },
+  {
+   "handle": "masterofnone",
+   "name": "Danial (surname unverified \u2014 \"Alias\" not confirmed)",
+   "followers": 2800,
+   "identified": true,
+   "headline": "Kuala Lumpur-based founder of Kracked Devs (Malaysian dev community/bootcamp); no public funding, exit, revenue, or wealth evidence found. Hiring posts show local-scale salaries (RM4,000-7,000/mo, ~$8",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/masterofnone (verified live profile, KL-based, joined Dec 2018, ties to @KrackedDevs)",
+    "https://krackeddevs.com/ (verified live site, community/bootcamp positioning)"
+   ]
+  },
+  {
+   "handle": "kevinvdveer",
+   "name": "Kevin van der Veer",
+   "followers": 1310,
+   "identified": true,
+   "headline": "Kevin van der Veer, confirmed co-founder of Monday Merch (with Jeroen Westerbeek, Florian Frenken, Dani\u00ebl Salimian) and co-founder of WoodWatch since 2013 (Forbes 30 Under 30 / FT1000 company); exact ",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1500000,
+   "sources": [
+    "https://www.mondaymerch.com/articles/monday-merch-raises-half-a-million-in-growth-funding",
+    "https://x.com/kevinvdveer",
+    "https://www.linkedin.com/in/kevinvanderveer/"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "fredericrenken",
+   "name": "Fr\u00e9d\u00e9ric Renken",
+   "followers": 6781,
+   "identified": true,
+   "headline": "Co-founder of Lassie, an a16z-backed AI startup automating dental (not generic doctors') office front-desk/billing work; Lassie raised a $35M Series A led by a16z (total ~$47M raised)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000000,
+   "sources": [
+    "https://a16z.com/announcement/investing-in-lassie/",
+    "https://councils.forbes.com/profile/Fr%C3%A9d%C3%A9ric-Renken-Co-Founder-Lassie/a6e63123-6926-401a-b660-f64ca5a91cfd",
+    "https://www.orrick.com/en/News/2026/06/Lassie-Raises-35-Million-in-Series-A-Round-Led-By-a16z"
    ]
   }
  ]

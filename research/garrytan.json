@@ -3,8 +3,8 @@
   "account": "garryTan",
   "name": "@garryTan",
   "totalFollowers": 926149,
-  "researched": 267,
-  "identified": 267,
+  "researched": 275,
+  "identified": 275,
   "note": "Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.",
   "sampleDist": {
    "sampled": 2000,
@@ -27,10 +27,10 @@
    ]
   },
   "estimate": {
-   "total": 4250581388.8382134,
-   "low": 2125290694.4191067,
-   "high": 8501162777.676427,
-   "floor": 1055793000.0
+   "total": 4141226519.935794,
+   "low": 2070613259.967897,
+   "high": 8282453039.871588,
+   "floor": 1057518000.0
   }
  },
  "people": [
@@ -4096,6 +4096,132 @@
    "sources": [
     "https://x.com/nic_amadio",
     "https://www.linkedin.com/posts/nicola-amadio_my-salary-journey-as-a-software-engineer-activity-7327577144983711744-meq-"
+   ]
+  },
+  {
+   "handle": "masterofnone",
+   "name": "Danial (surname unverified \u2014 \"Alias\" not confirmed)",
+   "followers": 2800,
+   "identified": true,
+   "headline": "Kuala Lumpur-based founder of Kracked Devs (Malaysian dev community/bootcamp); no public funding, exit, revenue, or wealth evidence found. Hiring posts show local-scale salaries (RM4,000-7,000/mo, ~$8",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/masterofnone (verified live profile, KL-based, joined Dec 2018, ties to @KrackedDevs)",
+    "https://krackeddevs.com/ (verified live site, community/bootcamp positioning)"
+   ]
+  },
+  {
+   "handle": "yooncoach",
+   "name": "\uc724\uc601\ub3c8 (Yoon Young-don)",
+   "followers": 1272,
+   "identified": true,
+   "headline": "South Korean career coach, author, Ph.D., and head of Yoon Coach Research Institute (\uc724\ucf54\uce58\uc5f0\uad6c\uc18c), with 20+ years in career coaching/consulting",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://x.com/yooncoach",
+    "https://yooncoach.com/",
+    "https://www.linkedin.com/in/yooncoach/"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "chaxiubao",
+   "name": "Josh Tse",
+   "followers": 26784,
+   "identified": true,
+   "headline": "Hong Kong-based food blogger/photographer (\"Cha Xiu Bao\"), formerly of chaxiubao.typepad.com; also runs \"Delish Photography by Josh Tse.\" No company, exit, or career evidence supporting any meaningful",
+   "verdict": "unfounded",
+   "confidence": "high",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/chaxiubao",
+    "https://chaxiubao.typepad.com/chaxiubao/",
+    "https://hk.linkedin.com/in/josh-tse-b0050714",
+    "https://www.facebook.com/people/Delish-Photography-by-Josh-Tse-Cha-Xiu-Bao/100079737152836/"
+   ]
+  },
+  {
+   "handle": "bkingfilm",
+   "name": "\u5218\u6d0b (BBKinG / \u5bfc\u6f14BK)",
+   "followers": 16232,
+   "identified": true,
+   "headline": "Founder of BKinGfilm/\u5f7c\u91d1\u5f71\u5320, a Shanghai game and esports video production studio, and author of \u300a\u4e2d\u56fd\u7535\u7ade\u5e55\u540e\u53f2\u300b.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://www.bkingfilm.com/about/",
+    "https://x.com/bkingfilm"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "illestrater_",
+   "name": "Tim Kang",
+   "followers": 12700,
+   "identified": true,
+   "headline": "X handle @illestrater_ (bio: tim.eth, LA-based, building with @multimedia_org) matches GitHub user illestrater / Tim Kang and Foundation.app profile Tim Kang (@illestrater) \u2014 identity confirmed. Howev",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/illestrater_",
+    "https://github.com/illestrater",
+    "https://foundation.app/@illestrater"
+   ]
+  },
+  {
+   "handle": "WasimShips",
+   "name": "Wasim (Dreamlaunch co-founder; surname not publicly verified)",
+   "followers": 3489,
+   "identified": true,
+   "headline": "Co-founder of Dreamlaunch (dreamlaunch.studio), an AI-native MVP/product studio co-founded with Harshil Tomar; corroborated by independent press coverage (Zee Business) and Tomar's own posts, not just",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://www.zeebiz.com/startups/news-fired-from-us-remote-job-indian-techies-venture-hits-rs-44-lakh-revenue-in-6-months-380310",
+    "https://x.com/Hartdrawss (Harshil Tomar's own posts naming WasimShips as co-founder)"
    ]
   }
  ]

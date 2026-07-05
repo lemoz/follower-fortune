@@ -3,8 +3,8 @@
   "account": "balajis",
   "name": "@balajis",
   "totalFollowers": 1745391,
-  "researched": 228,
-  "identified": 219,
+  "researched": 235,
+  "identified": 226,
   "note": "Evidence-based ranges from live web research with adversarial verification. Cross-board entries confirmed as followers via the X follow-relationship API. Most are low-confidence; net worth is rarely public.",
   "owner": {
    "name": "Balaji Srinivasan",
@@ -26,10 +26,10 @@
    "b3": 0
   },
   "estimate": {
-   "total": 3530505866.629277,
-   "low": 1765252933.3146386,
-   "high": 7061011733.258554,
-   "floor": 1037756500.0
+   "total": 3341542220.8151217,
+   "low": 1670771110.4075608,
+   "high": 6683084441.630243,
+   "floor": 1048281500.0
   }
  },
  "people": [
@@ -3468,6 +3468,118 @@
    "sources": [
     "https://x.com/nic_amadio",
     "https://www.linkedin.com/posts/nicola-amadio_my-salary-journey-as-a-software-engineer-activity-7327577144983711744-meq-"
+   ]
+  },
+  {
+   "handle": "DocSanchezG",
+   "name": "Dr. C\u00e9sar Alejandro S\u00e1nchez Galeana",
+   "followers": 17524,
+   "identified": true,
+   "headline": "Mexico City ophthalmologist (refractive/cataract/glaucoma/cornea specialist, 28 yrs experience, 15,000+ surgeries), founder/director of Optall Vision clinic since 2009; identity corroborated by indepe",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 1000000,
+   "sources": [
+    "https://www.optallvision.com/docsanchezg.html",
+    "https://www.marthadebayle.com/especialista/cesar-sanchez-galeana/",
+    "https://www.topdoctors.mx/doctor/cesar-alejandro-sanchez-galeana/",
+    "https://www.doctoralia.com.mx/cesar-alejandro-sanchez-galeana/oftalmologo/alvaro-obregon"
+   ]
+  },
+  {
+   "handle": "masterofnone",
+   "name": "Danial (surname unverified \u2014 \"Alias\" not confirmed)",
+   "followers": 2800,
+   "identified": true,
+   "headline": "Kuala Lumpur-based founder of Kracked Devs (Malaysian dev community/bootcamp); no public funding, exit, revenue, or wealth evidence found. Hiring posts show local-scale salaries (RM4,000-7,000/mo, ~$8",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://x.com/masterofnone (verified live profile, KL-based, joined Dec 2018, ties to @KrackedDevs)",
+    "https://krackeddevs.com/ (verified live site, community/bootcamp positioning)"
+   ]
+  },
+  {
+   "handle": "brettburky",
+   "name": "Brett Burky",
+   "followers": 1461,
+   "identified": true,
+   "headline": "Brett Burky is co-founder of Paperstac, a niche digital mortgage-note trading platform (founded 2015 with Mike McLin, Rick Allen, TJ Osterman); also co-hosts the Mortgage Note Investing Weekly podcast",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/brettburky/",
+    "https://paperstac.com/about"
+   ]
+  },
+  {
+   "handle": "pahyppolite",
+   "name": "Paul-Adrien Hyppolite",
+   "followers": 1494,
+   "identified": true,
+   "headline": "Co-founder and CEO of Spiko, a Paris-based cash-management fintech; Spiko raised a $22M Series A (led by Index Ventures, July 2025) and reports over $1B in customer AUM on its platform \u2014 AUM is not co",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.indexventures.com/perspectives/spiko-raises-22m-to-democratize-access-to-treasury-yields/",
+    "https://www.crunchbase.com/person/paul-adrien-hyppolite",
+    "https://www.spiko.io/about"
+   ]
+  },
+  {
+   "handle": "alec_wils",
+   "name": "Alec Wilson",
+   "followers": 2441,
+   "identified": true,
+   "headline": "COO of Spexi Geospatial, founder/core contributor to LayerDrone, former helicopter pilot and drone-training entrepreneur (co-founded Coastal Drone)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 2000000,
+   "sources": [
+    "https://www.spexi.com/about",
+    "https://layerdrone.org/about",
+    "https://canadianbusiness.com/people/alec-wilson-spexi/",
+    "https://www.forbes.com/sites/digital-assets/2026/03/17/drones-and-stablecoins-are-mapping-the-world-with-spexi-and-layerdrone/"
+   ]
+  },
+  {
+   "handle": "fredericrenken",
+   "name": "Fr\u00e9d\u00e9ric Renken",
+   "followers": 6781,
+   "identified": true,
+   "headline": "Co-founder of Lassie, an a16z-backed AI startup automating dental (not generic doctors') office front-desk/billing work; Lassie raised a $35M Series A led by a16z (total ~$47M raised)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 5000000,
+   "sources": [
+    "https://a16z.com/announcement/investing-in-lassie/",
+    "https://councils.forbes.com/profile/Fr%C3%A9d%C3%A9ric-Renken-Co-Founder-Lassie/a6e63123-6926-401a-b660-f64ca5a91cfd",
+    "https://www.orrick.com/en/News/2026/06/Lassie-Raises-35-Million-in-Series-A-Round-Led-By-a16z"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
    ]
   }
  ]
