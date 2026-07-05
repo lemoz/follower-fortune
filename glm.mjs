@@ -8,8 +8,11 @@
 //         GLM_API_URL   (default https://api.z.ai/api/paas/v4/chat/completions)
 //         GLM_MODEL     (default glm-5.2)
 
+// Z.ai (GLM) — endpoint + auth confirmed against docs.z.ai (2026-07-05).
+// Model id is 'glm-5' (the dashboard's "GLM-5.2" is branding, not an API id);
+// 'glm-5-turbo' is the agent-loop variant. Override with GLM_MODEL.
 const GLM_URL = process.env.GLM_API_URL || 'https://api.z.ai/api/paas/v4/chat/completions';
-const GLM_MODEL = process.env.GLM_MODEL || 'glm-5.2';
+const GLM_MODEL = process.env.GLM_MODEL || 'glm-5';
 
 export function glmAvailable() { return !!process.env.GLM_API_KEY; }
 
