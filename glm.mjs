@@ -61,7 +61,10 @@ export async function researchOwner(profile) {
   return {
     name: j.name || profile.name, headline: String(j.headline || '').slice(0, 200),
     verdict: 'ai-researched', confidence: j.confidence === 'high' ? 'medium' : 'low', // cap: unverified
-    low: Math.round(j.low), high: Math.round(j.high), sources: (j.sources || []).slice(0, 3),
+    low: Math.round(j.low), high: Math.round(j.high),
+    // GLM hallucinates citation URLs when live web search isn't firing; showing
+    // fake links is worse than none. Drop them until real search is wired up.
+    sources: [],
   };
 }
 
@@ -77,6 +80,7 @@ export async function researchPerson(f) {
     handle: f.userName, name: j.name || f.name, followers: f.followers || 0, identified: true,
     headline: String(j.headline || '').slice(0, 200),
     verdict: 'ai-researched', confidence: j.confidence === 'high' ? 'medium' : 'low',
-    low: Math.round(j.low), high: Math.round(j.high), sources: (j.sources || []).slice(0, 3),
+    low: Math.round(j.low), high: Math.round(j.high),
+    sources: [], // GLM hallucinates URLs without live search — see researchOwner
   };
 }
