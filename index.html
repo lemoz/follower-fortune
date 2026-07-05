@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NetWorkNetWorth (NWNW) — how rich is your network?</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐋%3C/text%3E%3C/svg%3E"/>
+<!--OG-->
 <style>
   :root{
     --bg:#070912; --bg2:#0c1020; --card:rgba(255,255,255,.04); --card2:rgba(255,255,255,.06);
@@ -102,6 +104,7 @@
   .gl tbody tr:hover{background:rgba(255,255,255,.045)}
   .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
   .ownworth .srclink{margin-left:2px}
+  .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
 </style>
 </head>
 <body>
@@ -139,6 +142,7 @@
         <div class="bignum">Total estimated net worth of followers</div>
         <div class="total" id="total"></div>
         <div class="sub" id="totsub"></div>
+        <button class="btn ghost sharebtn" id="share">🔗 Share this board</button>
         <div class="stats">
           <div class="stat"><div class="k" id="k0">Followers</div><div class="v" id="s_followers"></div></div>
           <div class="stat"><div class="k" id="k1">Avg per follower</div><div class="v" id="s_avg"></div></div>
@@ -376,6 +380,14 @@ function paint(d){
   renderLeaderboard(d.cast,d.lbCount);
   recordLB({handle:d.handle,totalAll:d.totalAll,followers:d.followers,whalesAll:d.whalesAll});
   renderGlobal(d.handle);
+  const sb=$("share");
+  sb.textContent="🔗 Share this board";
+  sb.onclick=()=>{
+    const url=location.origin+"/b/"+d.handle;
+    (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject())
+      .then(()=>{sb.textContent="✓ Link copied";setTimeout(()=>{sb.textContent="🔗 Share this board";},2000);})
+      .catch(()=>{prompt("Copy this link:",url);});
+  };
   $("result").classList.add("show");
   $("result").scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -571,6 +583,8 @@ function run(raw){
   if(!handle){$("q").focus();return;}
   $("q").value="@"+handle;
   clearError();
+  // shareable URL: reflect the searched board in the address bar
+  try{history.replaceState(null,"","/b/"+handle);}catch(e){}
   if($("researchmode")&&$("researchmode").checked) runResearch(handle);
   else if($("realmode")&&$("realmode").checked) runReal(handle);
   else runAuto(handle);
@@ -589,6 +603,9 @@ $("global").addEventListener("click",e=>{const tr=e.target.closest("tr[data-h]")
 renderGlobal("");
 loadDossiers();
 loadModel();
+
+/* deep-link: /b/<handle> auto-runs that board on load */
+(function(){const m=location.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);if(m)run(m[1]);})();
 
 /* stale-tab guard: if the site was redeployed while this tab was open,
    reload on next return to the tab so old JS never serves fake flows */

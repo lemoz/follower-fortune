@@ -1,0 +1,10 @@
+{
+  "name": "networknetworth",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Estimate the combined net worth of a Twitter/X account's followers.",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

@@ -1,0 +1,50 @@
+{
+ "karpathy": {
+  "name": "@karpathy",
+  "totalFollowers": 0,
+  "sampleDist": {
+   "sampled": 0,
+   "b0": 0,
+   "b1": 0,
+   "b2": 0,
+   "b3": 0
+  },
+  "members": []
+ },
+ "swyx": {
+  "name": "@swyx",
+  "totalFollowers": 0,
+  "sampleDist": {
+   "sampled": 0,
+   "b0": 0,
+   "b1": 0,
+   "b2": 0,
+   "b3": 0
+  },
+  "members": []
+ },
+ "tobi": {
+  "name": "@tobi",
+  "totalFollowers": 0,
+  "sampleDist": {
+   "sampled": 0,
+   "b0": 0,
+   "b1": 0,
+   "b2": 0,
+   "b3": 0
+  },
+  "members": []
+ },
+ "gdb": {
+  "name": "@gdb",
+  "totalFollowers": 0,
+  "sampleDist": {
+   "sampled": 0,
+   "b0": 0,
+   "b1": 0,
+   "b2": 0,
+   "b3": 0
+  },
+  "members": []
+ }
+}

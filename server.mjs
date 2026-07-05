@@ -188,8 +188,19 @@ const server = createServer(async (req, res) => {
     catch (e) { return send(res, 200, JSON.stringify({ ok: false, error: 'server', message: String((e && e.message) || e) })); }
   }
 
+  // --- Open Graph share cards ---
+  const ogMatch = u.pathname.match(/^\/og\/([A-Za-z0-9_]{1,15})\.png$/);
+  if (ogMatch) return sendOG(res, ogMatch[1].toLowerCase());
+
+  // board share URL: serve index.html with per-board OG meta injected so
+  // crawlers (X, iMessage) unfurl the right card; the SPA reads the path too.
+  const bMatch = u.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);
+  if (bMatch) return sendBoardHTML(res, bMatch[1].toLowerCase());
+
+  if (u.pathname === '/' || u.pathname === '/index.html') return sendBoardHTML(res, null);
+
   // static files
-  let p = u.pathname === '/' ? '/index.html' : u.pathname;
+  let p = u.pathname;
   p = p.replace(/\.\.+/g, ''); // no path traversal
   const file = join(__dirname, p);
   readFile(file, (err, buf) => {
@@ -197,5 +208,80 @@ const server = createServer(async (req, res) => {
     send(res, 200, buf, MIME[extname(file)] || 'application/octet-stream');
   });
 });
+
+// --- OG helpers ---
+function boardMeta(handle) {
+  try {
+    const d = JSON.parse(readFileSync(join(__dirname, 'research', handle + '.json'), 'utf8'));
+    return d.meta || null;
+  } catch { return null; }
+}
+
+async function sendOG(res, handle) {
+  const cacheFile = join(CACHE_DIR, 'og_' + handle + '.png');
+  try {
+    if (existsSync(cacheFile)) {
+      const buf = readFileSync(cacheFile);
+      res.writeHead(200, { 'content-type': 'image/png', 'cache-control': 'public, max-age=86400' });
+      return res.end(buf);
+    }
+  } catch {}
+  try {
+    const og = await import('./og.mjs');
+    const m = boardMeta(handle);
+    let svg;
+    if (m) {
+      const est = m.estimate || {};
+      svg = og.cardSVG({ handle: m.account, name: m.name, total: est.total, floor: est.floor, identified: m.identified, researched: m.researched, owner: m.owner });
+    } else {
+      svg = og.defaultCardSVG();
+    }
+    const png = await og.renderPNG(svg);
+    if (png) {
+      try { writeFileSync(cacheFile, png); } catch {}
+      res.writeHead(200, { 'content-type': 'image/png', 'cache-control': 'public, max-age=86400' });
+      return res.end(png);
+    }
+  } catch {}
+  // fail-soft: if rendering is entirely unavailable, no image (same as pre-OG;
+  // never a broken deploy). Crawlers just show no card.
+  send(res, 404, 'no card', 'text/plain');
+}
+
+function sendBoardHTML(res, handle) {
+  let html;
+  try { html = readFileSync(join(__dirname, 'index.html'), 'utf8'); } catch { return send(res, 500, 'error', 'text/plain'); }
+  const origin = 'https://networknetworth.fly.dev';
+  const m = handle ? boardMeta(handle) : null;
+  let title, desc, image;
+  if (m) {
+    const est = m.estimate || {};
+    const total = est.total || est.floor || 0;
+    const fmt = (n) => n >= 1e12 ? '$' + (n / 1e12).toFixed(2) + 'T' : n >= 1e9 ? '$' + (n / 1e9).toFixed(2) + 'B' : n >= 1e6 ? '$' + (n / 1e6).toFixed(1) + 'M' : '$' + Math.round(n / 1e3) + 'K';
+    title = `@${m.account}'s followers are worth ~${fmt(total)} — NetWorkNetWorth`;
+    desc = `${(m.identified || 0).toLocaleString()} identified followers, researched floor ${fmt(est.floor || 0)}. See who's rich in @${m.account}'s network.`;
+    image = `${origin}/og/${m.account}.png`;
+  } else {
+    title = 'NetWorkNetWorth — how rich is your network?';
+    desc = 'Drop in any X / Twitter profile and see the estimated net worth of their followers.';
+    image = `${origin}/og/default.png`;
+  }
+  const tags = [
+    `<meta property="og:type" content="website"/>`,
+    `<meta property="og:title" content="${esc(title)}"/>`,
+    `<meta property="og:description" content="${esc(desc)}"/>`,
+    `<meta property="og:image" content="${image}"/>`,
+    `<meta property="og:url" content="${origin}${handle ? '/b/' + handle : '/'}"/>`,
+    `<meta name="twitter:card" content="summary_large_image"/>`,
+    `<meta name="twitter:title" content="${esc(title)}"/>`,
+    `<meta name="twitter:description" content="${esc(desc)}"/>`,
+    `<meta name="twitter:image" content="${image}"/>`,
+  ].join('\n');
+  html = html.replace('<!--OG-->', tags);
+  res.writeHead(200, { 'content-type': 'text/html', 'cache-control': 'no-store' });
+  res.end(html);
+}
+
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
 server.listen(PORT, () => console.log(`NetWorkNetWorth live on http://localhost:${PORT}  (API key ${KEY ? 'loaded' : 'MISSING — synthetic only'})`));
