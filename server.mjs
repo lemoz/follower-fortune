@@ -217,8 +217,14 @@ function boardMeta(handle) {
   } catch { return null; }
 }
 
+const CARD_VERSION = 3; // bump when card rendering changes, to invalidate cached PNGs
 async function sendOG(res, handle) {
-  const cacheFile = join(CACHE_DIR, 'og_' + handle + '.png');
+  const m = boardMeta(handle);
+  const est = (m && m.estimate) || {};
+  // cache key includes the card version AND the current total, so cards
+  // auto-refresh when the code changes or the modeled number moves.
+  const stamp = CARD_VERSION + '_' + Math.round(est.total || est.floor || 0);
+  const cacheFile = join(CACHE_DIR, 'og_' + handle + '_' + stamp + '.png');
   try {
     if (existsSync(cacheFile)) {
       const buf = readFileSync(cacheFile);
@@ -228,10 +234,8 @@ async function sendOG(res, handle) {
   } catch {}
   try {
     const og = await import('./og.mjs');
-    const m = boardMeta(handle);
     let svg;
     if (m) {
-      const est = m.estimate || {};
       svg = og.cardSVG({ handle: m.account, name: m.name, total: est.total, floor: est.floor, identified: m.identified, researched: m.researched, owner: m.owner });
     } else {
       svg = og.defaultCardSVG();
