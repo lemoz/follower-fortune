@@ -119,7 +119,7 @@
     <button class="btn" id="go">Estimate fortune</button>
     <button class="btn ghost" id="lucky">🎲 Surprise me</button>
   </div>
-  <p class="hint" id="hint">Accounts we've researched get an evidence-based dossier automatically. Everyone else gets the toy model — made-up, deterministic, shareable. All of it is for entertainment.</p>
+  <p class="hint" id="hint">Researched accounts get an evidence-based dossier. Everyone else gets a live estimate: we sample their real followers and apply wealth rates measured on 1,400+ researched accounts. For entertainment and research.</p>
   <label class="toggle"><input type="checkbox" id="realmode"/><span>🛰️ Live mode — pull real followers from X (rate-limited)</span></label>
   <label class="toggle"><input type="checkbox" id="researchmode"/><span>🔬 Dossier mode only — evidence-based boards (best: <b>@cdossman</b>)</span></label>
   <div id="err" class="err"></div>
@@ -156,8 +156,8 @@
 
     <div class="cols">
       <div class="panel lbcard">
-        <h3>💰 Richest followers</h3>
-        <p class="muted">The whales swimming in this network.</p>
+        <h3 id="lbtitle">💰 Richest followers</h3>
+        <p class="muted" id="lbsub">The whales swimming in this network.</p>
         <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Vibe</th><th class="r">Net worth</th></tr></thead>
           <tbody id="lb"></tbody></table>
       </div>
@@ -281,7 +281,8 @@ const $=id=>document.getElementById(id);
 function renderGraph(cast,centerHandle){
   const W=560,H=420,cx=W/2,cy=H/2;
   const top=cast.slice(0,12);
-  const maxNw=top[0].nw;
+  if(!top.length){$("graph").innerHTML="";return;}
+  const maxNw=top[0].nw||1;
   let edges="",nodes="";
   top.forEach((f,i)=>{
     const ang=(i/top.length)*Math.PI*2 - Math.PI/2;
@@ -292,7 +293,7 @@ function renderGraph(cast,centerHandle){
     edges+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.12)" stroke-width="1"/>`;
     nodes+=`<g>
       <circle cx="${x}" cy="${y}" r="${r}" fill="${col}" fill-opacity="0.85" stroke="rgba(255,255,255,.25)"/>
-      <text class="node-money" x="${x}" y="${y+3}" text-anchor="middle" fill="#0a0a12">${money(f.nw)}</text>
+      <text class="node-money" x="${x}" y="${y+3}" text-anchor="middle" fill="#0a0a12">${f.graphLabel||money(f.nw)}</text>
       <text class="node-label" x="${x}" y="${y+r+11}" text-anchor="middle">@${f.handle.slice(0,12)}</text>
     </g>`;
   });
@@ -366,6 +367,8 @@ function paint(d){
   $("totsub").textContent=d.totsub;
   const ow=$("ownworth");
   if(d.ownLine){ow.innerHTML=d.ownLine;ow.style.display="block";}else{ow.style.display="none";}
+  $("lbtitle").textContent=d.lbTitle||"💰 Richest followers";
+  $("lbsub").textContent=d.lbSub||"The whales swimming in this network.";
   if(d.hint)$("hint").textContent=d.hint;
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
@@ -397,7 +400,7 @@ function syntheticD(handle){
   return {handle,displayName:"@"+handle,
     handleLine:"@"+handle,
     ownLine:"🎲 Own estimated worth: "+money(a.ownWorth)+" (invented)",
-    verified:a.verified,followers:a.followers,
+    verified:false,followers:a.followers,
     totalAll:a.totalAll,avg:a.avg,whalesAll:a.whalesAll,cast:a.cast,
     stats:[{k:realCount?"Followers (real)":"Followers",v:compact(a.followers)},{k:"Avg per follower",v:money(a.avg)},
       {k:"Millionaires",v:a.millAll.toLocaleString()},{k:"🐋 Billionaire whales",v:a.whalesAll.toLocaleString()}],
@@ -405,28 +408,64 @@ function syntheticD(handle){
     hint:"🎲 Toy mode — every number below is invented deterministically from the handle. Same handle, same result, zero facts. For entertainment only."};
 }
 
-// live — real follower list from twitterapi.io, net worth still the fun estimate per real person
+// live — real follower sample from twitterapi.io, run through the SAME measured
+// model as the researched boards (bucket mix × identification rates × bucket means)
+let MODEL=null;
+function loadModel(){
+  fetch('/research/model.json').then(r=>r.ok?r.json():null).then(m=>{if(m)MODEL=m;}).catch(()=>{});
+}
+function modelEstimate(resp){
+  const N=resp.totalFollowers||0;
+  const sample=resp.followers||[];
+  const c={b0:0,b1:0,b2:0,b3:0};
+  for(const f of sample){const n=f.followers||0;if(n<1e3)c.b0++;else if(n<1e4)c.b1++;else if(n<1e5)c.b2++;else c.b3++;}
+  const s=sample.length||1;
+  const q=(c.b1+c.b2+c.b3)/s;
+  const R={...MODEL.identRates};
+  R.b0=Math.max(0.002,Math.min(MODEL.identRates.b0,MODEL.identRates.b0*q/MODEL.qAnchor));
+  let est=0,identifiable=0;
+  for(const k of ["b0","b1","b2","b3"]){
+    est+=N*(c[k]/s)*R[k]*MODEL.bucketMeans[k];
+    identifiable+=N*(c[k]/s)*R[k];
+  }
+  return {est,q,identifiable};
+}
 function realD(handle,resp){
   const total=resp.totalFollowers||(resp.followers?resp.followers.length:0)||0;
-  const sample=(resp.followers||[]).map(f=>({name:f.name||("@"+f.userName),handle:f.userName,nw:personNetWorth(f.userName)}))
-    .sort((a,b)=>b.nw-a.nw);
-  const n=sample.length||1;
-  const sampleTotal=sample.reduce((s,x)=>s+x.nw,0);
-  const sampleMill=sample.filter(x=>x.nw>=1e6).length;
-  const sampleWhale=sample.filter(x=>x.nw>=1e9).length;
-  const avg=sampleTotal/n;
-  const richest=sample.length?sample[0].nw:0;
+  const sample=(resp.followers||[]).slice().sort((a,b)=>(b.followers||0)-(a.followers||0));
+  const cast=sample.slice(0,20).map(f=>({
+    name:f.name||("@"+f.userName),handle:f.userName,nw:f.followers||0,
+    pill:'<span class="title-pill">📊 in live sample</span>',
+    moneyText:compact(f.followers||0)+" followers",
+    graphLabel:compact(f.followers||0)
+  }));
+  if(MODEL){
+    const m=modelEstimate(resp);
+    return {handle,
+      displayName:(resp.profile&&resp.profile.name)||("@"+handle),
+      handleLine:"@"+handle+" · 🛰️ live sample × measured model",
+      verified:!!(resp.profile&&resp.profile.isBlueVerified),
+      followers:total,totalAll:m.est,
+      totalText:"~"+money(m.est),
+      whalesAll:0,cast,lbCount:10,
+      lbTitle:"📊 Biggest accounts in the live sample",
+      lbSub:"Real accounts from the follower sample, ranked by their own follower counts.",
+      stats:[{k:"Followers (real)",v:compact(total)},{k:"🛰️ Live sample",v:String(sample.length)},
+        {k:"Audience quality",v:(m.q*100).toFixed(1)+"% over 1k"},{k:"Est. identifiable people",v:compact(Math.round(m.identifiable))}],
+      totsub:"modeled: "+sample.length+"-follower live sample × wealth rates measured on "+"1,400+ researched accounts · no dossier yet · ±2x",
+      hint:"🛰️ Live model — the follower sample is real (from X) and the estimate uses the same measured identification rates and wealth averages as the researched boards. Names below are the biggest real accounts in the sample; no individual worths are invented."};
+  }
+  // model unavailable — honest minimal fallback
   return {handle,
     displayName:(resp.profile&&resp.profile.name)||("@"+handle),
     handleLine:"@"+handle+" · 🛰️ live follower sample",
     verified:!!(resp.profile&&resp.profile.isBlueVerified),
-    followers:total,totalAll:avg*total,avg,
-    totalText:"~"+money(avg*total),
-    whalesAll:sampleWhale,cast:sample,
-    stats:[{k:"Followers (real)",v:compact(total)},{k:"Avg in sample",v:money(avg)},
-      {k:"Richest in sample",v:money(richest)},{k:"🛰️ Live sample",v:String(sample.length)}],
-    totsub:"naive extrapolation: toy-model average of "+sample.length+" recent followers × "+total.toLocaleString()+" total — treat as a vibe, not a figure",
-    hint:"🛰️ Live mode — the follower list is real (pulled from X), but per-person net worths are still the toy model. Recent followers skew small, so the total is a rough vibe at best."};
+    followers:total,totalAll:0,totalText:"—",
+    whalesAll:0,cast,lbCount:10,
+    stats:[{k:"Followers (real)",v:compact(total)},{k:"🛰️ Live sample",v:String(sample.length)},
+      {k:"Audience quality",v:"—"},{k:"Est. identifiable people",v:"—"}],
+    totsub:"live sample loaded, but the model file could not be fetched",
+    hint:"🛰️ Live mode — real follower sample from X."};
 }
 
 // researched — evidence-based dossiers produced by the offline research pipeline
@@ -489,28 +528,33 @@ function clearError(){const e=$("err");e.style.display="none";e.textContent="";}
 
 async function runReal(handle){
   const btn=$("go"),old=btn.textContent;
-  btn.textContent="Fetching… (~10s)";btn.disabled=true;
+  const stages=["Sampling real followers…","Still sampling (big account)…","Crunching the model…"];
+  let stage=0;
+  btn.textContent=stages[0];btn.disabled=true;
+  const tick=setInterval(()=>{stage=Math.min(stage+1,stages.length-1);btn.textContent=stages[stage];},7000);
   try{
-    const r=await fetch("/api/lookup?handle="+encodeURIComponent(handle)+"&max=100");
+    const r=await fetch("/api/lookup?handle="+encodeURIComponent(handle)+"&max=200");
     const j=await r.json();
     if(!j.ok){
-      const m={no_api_key:"No API key on the server yet — add TWITTERAPI_KEY to .env and restart the server. Showing the estimated model instead.",
-        bad_key:"twitterapi.io rejected the API key — double-check it in .env.",
-        not_found:"twitterapi.io couldn't load @"+handle+" (typo, or a protected/suspended account?).",
-        rate_limited:"Rate limited — wait a few seconds and try again.",
+      const m={no_api_key:"The live model isn't available right now (no API key on the server). Showing the toy model instead.",
+        bad_key:"The live model isn't available right now (upstream key rejected). Showing the toy model instead.",
+        not_found:"Couldn't load @"+handle+" from X (typo, or a protected/suspended account?).",
+        rate_limited:"Live lookups are rate-limited and the budget is briefly exhausted — showing the toy model. Try again in a few minutes for the real estimate.",
+        daily_cap:"Today's live-lookup budget is used up — showing the toy model. Researched boards still work; fresh lookups resume tomorrow (UTC).",
         bad_handle:"That handle didn't parse."}[j.error]||j.message||"Lookup failed.";
       showError(m);
-      if(j.error==="no_api_key"||j.error==="bad_key"||j.error==="not_found") paint(syntheticD(handle));
+      if(j.error!=="not_found"&&j.error!=="bad_handle") paint(syntheticD(handle));
       return;
     }
     paint(realD(handle,j));
   }catch(e){
-    showError("Couldn't reach the local API server — is it running? ("+e+")");
+    showError("Couldn't reach the API server ("+e+"). Showing the toy model instead.");
     paint(syntheticD(handle));
-  }finally{ btn.textContent=old;btn.disabled=false; }
+  }finally{ clearInterval(tick);btn.textContent=old;btn.disabled=false; }
 }
 
-// default routing: researched dossier when one exists, toy model otherwise
+// default routing: researched dossier when one exists, otherwise run the live
+// model on a fresh follower sample (toy only as a last-resort fallback)
 async function runAuto(handle){
   const btn=$("go"),old=btn.textContent;
   btn.textContent="Loading…";btn.disabled=true;
@@ -519,7 +563,7 @@ async function runAuto(handle){
     if(r.ok){paint(researchD(handle,await r.json()));return;}
   }catch(e){}
   finally{btn.textContent=old;btn.disabled=false;}
-  paint(syntheticD(handle));
+  await runReal(handle);
 }
 
 function run(raw){
@@ -544,6 +588,7 @@ $("global").addEventListener("click",e=>{const tr=e.target.closest("tr[data-h]")
 
 renderGlobal("");
 loadDossiers();
+loadModel();
 </script>
 </body>
 </html>
