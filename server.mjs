@@ -5,11 +5,20 @@
 //   TWITTERAPI_KEY=...  node server.mjs       (or put the key in ./.env)
 //
 import { createServer } from 'node:http';
-import { readFile, readFileSync, existsSync } from 'node:fs';
+import { readFile, readFileSync, existsSync, mkdirSync, appendFileSync, writeFileSync } from 'node:fs';
 import { join, extname, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// durable storage: Fly volume at /data in prod, ./.data locally
+const DATA_DIR = existsSync('/data') ? '/data' : join(__dirname, '.data');
+const CACHE_DIR = join(DATA_DIR, 'cache');
+try { mkdirSync(CACHE_DIR, { recursive: true }); } catch {}
+const LOG_FILE = join(DATA_DIR, 'lookups.jsonl');
+function logLookup(rec) {
+  try { appendFileSync(LOG_FILE, JSON.stringify({ t: new Date().toISOString(), ...rec }) + '\n'); } catch {}
+}
 
 // --- tiny .env loader (so the key can live in ./.env, never in the code) ---
 const envPath = join(__dirname, '.env');
@@ -135,7 +144,19 @@ const server = createServer(async (req, res) => {
     const cap = Math.min(Math.max(parseInt(u.searchParams.get('max'), 10) || 200, 20), HARD_MAX);
     const cacheKey = handle + ':' + cap;
     const hit = cache.get(cacheKey);
-    if (hit && Date.now() - hit.ts < CACHE_TTL_MS) return send(res, 200, hit.payload);
+    if (hit && Date.now() - hit.ts < CACHE_TTL_MS) { logLookup({ handle, cap, cached: 'mem' }); return send(res, 200, hit.payload); }
+    // disk cache survives scale-to-zero restarts
+    const diskPath = join(CACHE_DIR, cacheKey.replace(/[^a-z0-9_:-]/gi, '') + '.json');
+    if (existsSync(diskPath)) {
+      try {
+        const d = JSON.parse(readFileSync(diskPath, 'utf8'));
+        if (Date.now() - d.ts < CACHE_TTL_MS) {
+          cache.set(cacheKey, d);
+          logLookup({ handle, cap, cached: 'disk' });
+          return send(res, 200, d.payload);
+        }
+      } catch {}
+    }
 
     if (!ipAllowed(clientIp(req)))
       return send(res, 429, JSON.stringify({ ok: false, error: 'rate_limited', message: 'Too many lookups from your address. Try again in a few minutes.' }));
@@ -147,8 +168,13 @@ const server = createServer(async (req, res) => {
       const payload = JSON.stringify(result);
       if (result.ok) {
         dailyCount++;
-        cache.set(cacheKey, { ts: Date.now(), payload });
+        const entry = { ts: Date.now(), payload };
+        cache.set(cacheKey, entry);
         if (cache.size > 2000) cache.delete(cache.keys().next().value);
+        try { writeFileSync(diskPath, JSON.stringify(entry)); } catch {}
+        logLookup({ handle, cap, cached: false, followers: result.totalFollowers, sampled: result.sampleSize });
+      } else {
+        logLookup({ handle, cap, cached: false, error: result.error });
       }
       return send(res, 200, payload);
     }

@@ -14,3 +14,7 @@ primary_region = "sjc"
 [[vm]]
   size = "shared-cpu-1x"
   memory = "256mb"
+
+[mounts]
+  source = "data"
+  destination = "/data"
