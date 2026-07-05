@@ -133,6 +133,141 @@ async function lookup(handle, max) {
   return { ok: true, profile, totalFollowers: profile.followers, sampleSize: Math.min(out.length, cap), followers: out.slice(0, cap), _diag: out.length ? undefined : diag };
 }
 
+// --- on-demand board building (GLM 5.2 research agents) ----------------------
+// A person's name is clicked -> if no board exists we build one for real:
+// live follower sample + GLM research of the owner and their biggest followers.
+// No fake data is ever shown; the client gets a "populating" status + the
+// average historical build time until the real board is ready.
+const BOARDS_DIR = join(DATA_DIR, 'boards');
+const JOBS_STATS = join(DATA_DIR, 'build_stats.json');
+try { mkdirSync(BOARDS_DIR, { recursive: true }); } catch {}
+const MODEL_PATH = join(__dirname, 'research', 'model.json');
+const jobs = new Map(); // handle -> {status, startedAt, finishedAt, error}
+let buildChain = Promise.resolve(); // one build at a time (credit + spend guard)
+const GLM_TOP_N = 12; // biggest sampled followers researched per board
+
+function buildStats() {
+  try { return JSON.parse(readFileSync(JOBS_STATS, 'utf8')); } catch { return { count: 0, totalMs: 0 }; }
+}
+function recordBuild(ms) {
+  const s = buildStats(); s.count++; s.totalMs += ms;
+  try { writeFileSync(JOBS_STATS, JSON.stringify(s)); } catch {}
+}
+function avgBuildMs() {
+  const s = buildStats();
+  return s.count ? Math.round(s.totalMs / s.count) : null;
+}
+function hasStaticBoard(h) { return existsSync(join(__dirname, 'research', h + '.json')); }
+function hasDynamicBoard(h) { return existsSync(join(BOARDS_DIR, h + '.json')); }
+
+function modelEstimate(meta, floor) {
+  try {
+    const MODEL = JSON.parse(readFileSync(MODEL_PATH, 'utf8'));
+    const { sampled, b0, b1, b2, b3 } = meta.sampleDist; const s = sampled || 1;
+    const q = (b1 + b2 + b3) / s;
+    const R = { ...MODEL.identRates };
+    R.b0 = Math.max(0.002, Math.min(MODEL.identRates.b0, MODEL.identRates.b0 * q / MODEL.qAnchor));
+    const remainder = Math.max(0, meta.totalFollowers - meta.researched);
+    let est = floor;
+    for (const [k, n] of [['b0', b0], ['b1', b1], ['b2', b2], ['b3', b3]])
+      est += remainder * (n / s) * R[k] * MODEL.bucketMeans[k];
+    return { total: est, low: est / MODEL.errorFactor, high: est * MODEL.errorFactor, floor };
+  } catch { return { total: floor, low: floor, high: floor, floor }; }
+}
+
+async function buildBoard(handle) {
+  const glm = await import('./glm.mjs');
+  const t0 = Date.now();
+  const cacheKey = handle + ':200';
+  const hit = cacheRead(cacheKey);
+  let result = hit ? JSON.parse(hit.payload) : await lookup(handle, 200);
+  if (!result.ok) throw new Error(result.error === 'not_found' ? 'not_found' : 'sample_failed:' + result.error);
+  if (!hit) { dailyCount++; cacheWrite(cacheKey, JSON.stringify(result)); }
+
+  const sample = result.followers || [];
+  const c = { b0: 0, b1: 0, b2: 0, b3: 0 };
+  for (const f of sample) { const n = f.followers || 0; if (n < 1e3) c.b0++; else if (n < 1e4) c.b1++; else if (n < 1e5) c.b2++; else c.b3++; }
+
+  // GLM research: owner + the biggest sampled followers (isolated failures OK)
+  const owner = await glm.researchOwner(result.profile).catch(() => null);
+  const top = sample.slice().sort((a, b) => (b.followers || 0) - (a.followers || 0)).slice(0, GLM_TOP_N);
+  const people = [];
+  for (const f of top) {
+    const p = await glm.researchPerson(f).catch(() => null);
+    if (p) people.push(p);
+  }
+  people.sort((a, b) => ((b.low + b.high) / 2) - ((a.low + a.high) / 2));
+  const floor = people.reduce((a, p) => a + (p.low + p.high) / 2, 0);
+
+  const meta = {
+    account: result.profile.userName, name: result.profile.name,
+    totalFollowers: result.totalFollowers,
+    researched: top.length, identified: people.length,
+    dynamic: true, engine: process.env.GLM_MODEL || 'glm-5.2', builtAt: new Date().toISOString(),
+    note: 'Auto-built on request: real follower sample + AI research of the largest sampled followers. Unverified — curated boards get adversarial verification, this one has not yet.',
+    sampleDist: { sampled: sample.length, ...c },
+  };
+  if (owner) meta.owner = owner;
+  meta.estimate = modelEstimate(meta, floor);
+  writeFileSync(join(BOARDS_DIR, handle + '.json'), JSON.stringify({ meta, people }, null, 1));
+  recordBuild(Date.now() - t0);
+}
+
+function requestBoard(handle) {
+  const existing = jobs.get(handle);
+  if (existing && (existing.status === 'building' || existing.status === 'queued')) return existing;
+  const job = { status: 'queued', startedAt: Date.now() };
+  jobs.set(handle, job);
+  buildChain = buildChain.then(async () => {
+    job.status = 'building';
+    job.startedAt = Date.now();
+    try {
+      await buildBoard(handle);
+      job.status = 'done';
+    } catch (e) {
+      job.status = 'failed';
+      job.error = String((e && e.message) || e);
+      logLookup({ handle, buildFailed: job.error });
+    }
+    job.finishedAt = Date.now();
+  });
+  return job;
+}
+
+function boardStatusPayload(handle) {
+  if (hasStaticBoard(handle) || hasDynamicBoard(handle)) return { status: 'ready' };
+  const job = jobs.get(handle);
+  const avgMs = avgBuildMs();
+  if (job) {
+    if (job.status === 'failed') return { status: 'failed', reason: job.error, avgMs };
+    if (job.status === 'done') return { status: 'ready', avgMs };
+    return { status: job.status, elapsedMs: Date.now() - job.startedAt, avgMs };
+  }
+  return { status: 'none', avgMs };
+}
+
+// shared lookup cache (mem -> disk); used by /api/lookup AND board builds so a
+// build never re-spends credits on an account someone just sampled.
+function cachePathFor(cacheKey) { return join(CACHE_DIR, cacheKey.replace(/[^a-z0-9_:-]/gi, '') + '.json'); }
+function cacheRead(cacheKey) {
+  const hit = cache.get(cacheKey);
+  if (hit && Date.now() - hit.ts < CACHE_TTL_MS) return { payload: hit.payload, from: 'mem' };
+  const diskPath = cachePathFor(cacheKey);
+  if (existsSync(diskPath)) {
+    try {
+      const d = JSON.parse(readFileSync(diskPath, 'utf8'));
+      if (Date.now() - d.ts < CACHE_TTL_MS) { cache.set(cacheKey, d); return { payload: d.payload, from: 'disk' }; }
+    } catch {}
+  }
+  return null;
+}
+function cacheWrite(cacheKey, payload) {
+  const entry = { ts: Date.now(), payload };
+  cache.set(cacheKey, entry);
+  if (cache.size > 2000) cache.delete(cache.keys().next().value);
+  try { writeFileSync(cachePathFor(cacheKey), JSON.stringify(entry)); } catch {}
+}
+
 const server = createServer(async (req, res) => {
   const u = new URL(req.url, 'http://localhost');
 
@@ -150,20 +285,8 @@ const server = createServer(async (req, res) => {
 
     const cap = Math.min(Math.max(parseInt(u.searchParams.get('max'), 10) || 200, 20), HARD_MAX);
     const cacheKey = handle + ':' + cap;
-    const hit = cache.get(cacheKey);
-    if (hit && Date.now() - hit.ts < CACHE_TTL_MS) { logLookup({ handle, cap, cached: 'mem' }); return send(res, 200, hit.payload); }
-    // disk cache survives scale-to-zero restarts
-    const diskPath = join(CACHE_DIR, cacheKey.replace(/[^a-z0-9_:-]/gi, '') + '.json');
-    if (existsSync(diskPath)) {
-      try {
-        const d = JSON.parse(readFileSync(diskPath, 'utf8'));
-        if (Date.now() - d.ts < CACHE_TTL_MS) {
-          cache.set(cacheKey, d);
-          logLookup({ handle, cap, cached: 'disk' });
-          return send(res, 200, d.payload);
-        }
-      } catch {}
-    }
+    const hit = cacheRead(cacheKey);
+    if (hit) { logLookup({ handle, cap, cached: hit.from }); return send(res, 200, hit.payload); }
 
     if (!ipAllowed(clientIp(req)))
       return send(res, 429, JSON.stringify({ ok: false, error: 'rate_limited', message: 'Too many lookups from your address. Try again in a few minutes.' }));
@@ -175,10 +298,7 @@ const server = createServer(async (req, res) => {
       const payload = JSON.stringify(result);
       if (result.ok) {
         dailyCount++;
-        const entry = { ts: Date.now(), payload };
-        cache.set(cacheKey, entry);
-        if (cache.size > 2000) cache.delete(cache.keys().next().value);
-        try { writeFileSync(diskPath, JSON.stringify(entry)); } catch {}
+        cacheWrite(cacheKey, payload);
         logLookup({ handle, cap, cached: false, followers: result.totalFollowers, sampled: result.sampleSize });
       } else {
         logLookup({ handle, cap, cached: false, error: result.error });
@@ -186,6 +306,32 @@ const server = createServer(async (req, res) => {
       return send(res, 200, payload);
     }
     catch (e) { return send(res, 200, JSON.stringify({ ok: false, error: 'server', message: String((e && e.message) || e) })); }
+  }
+
+  // --- on-demand board building ---
+  if (u.pathname === '/api/board_request' || u.pathname === '/api/board_status') {
+    const handle = (u.searchParams.get('handle') || '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 15).toLowerCase();
+    if (!handle) return send(res, 200, JSON.stringify({ status: 'bad_handle' }));
+    const cur = boardStatusPayload(handle);
+    if (u.pathname === '/api/board_status' || cur.status !== 'none')
+      return send(res, 200, JSON.stringify(cur));
+    // new request: only start a build if the whole pipeline can actually run
+    const { glmAvailable } = await import('./glm.mjs');
+    if (!KEY || !glmAvailable()) {
+      logLookup({ handle, boardRequest: 'queued_offline' });
+      return send(res, 200, JSON.stringify({ status: 'offline', avgMs: avgBuildMs() }));
+    }
+    if (!ipAllowed(clientIp(req)) || !dailyAllowed())
+      return send(res, 429, JSON.stringify({ status: 'rate_limited' }));
+    logLookup({ handle, boardRequest: 'build' });
+    requestBoard(handle);
+    return send(res, 200, JSON.stringify(boardStatusPayload(handle)));
+  }
+
+  // dynamic boards: /research/<handle>.json falls through to /data/boards
+  const rMatch = u.pathname.match(/^\/research\/([A-Za-z0-9_]{1,15})\.json$/);
+  if (rMatch && !hasStaticBoard(rMatch[1].toLowerCase()) && hasDynamicBoard(rMatch[1].toLowerCase())) {
+    try { return send(res, 200, readFileSync(join(BOARDS_DIR, rMatch[1].toLowerCase() + '.json'))); } catch {}
   }
 
   // --- Open Graph share cards ---
@@ -213,6 +359,11 @@ const server = createServer(async (req, res) => {
 function boardMeta(handle) {
   try {
     const d = JSON.parse(readFileSync(join(__dirname, 'research', handle + '.json'), 'utf8'));
+    return d.meta || null;
+  } catch {}
+  try {
+    // dynamic (auto-built) boards get share cards + crawler meta too
+    const d = JSON.parse(readFileSync(join(BOARDS_DIR, handle + '.json'), 'utf8'));
     return d.meta || null;
   } catch { return null; }
 }

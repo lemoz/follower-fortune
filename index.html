@@ -105,14 +105,22 @@
   .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
   .ownworth .srclink{margin-left:2px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
+  .populating{margin-top:18px}
+  .pop-row{display:flex;gap:16px;align-items:flex-start}
+  .pop-spin{width:34px;height:34px;border-radius:50%;flex:none;margin-top:4px;
+    border:3px solid var(--line);border-top-color:var(--gold);animation:popspin 0.9s linear infinite}
+  @keyframes popspin{to{transform:rotate(360deg)}}
+  .pop-eta{margin-top:8px;font-size:13px;color:var(--gold);font-weight:600}
+  tr.clickrow{cursor:pointer}
+  tr.clickrow:hover{background:rgba(255,255,255,.04)}
   .lbtabs{display:flex;gap:8px;margin-bottom:6px}
   .lbtab{background:transparent;border:1px solid var(--line);color:var(--mut);font-size:14px;font-weight:600;
     padding:8px 14px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center}
   .lbtab:hover{color:var(--txt)}
   .lbtab.active{color:#0a0a12;background:linear-gradient(135deg,var(--gold),#ff9d4a);border-color:transparent}
   .lbtab.active .pulse{background:#0a0a12;box-shadow:none;animation:none}
-  #tbl-people tbody tr{cursor:default}
-  #tbl-people tbody tr:hover{background:rgba(255,255,255,.03)}
+  #tbl-people tbody tr{cursor:pointer}
+  #tbl-people tbody tr:hover{background:rgba(255,255,255,.04)}
   .rankchip{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;font-size:12px;font-weight:800;color:#0a0a12}
   .r1{background:linear-gradient(135deg,#ffd24a,#ffb347)}.r2{background:linear-gradient(135deg,#cfd6e6,#9aa3ba)}.r3{background:linear-gradient(135deg,#e8a06a,#c77b43)}
 </style>
@@ -136,6 +144,17 @@
   <label class="toggle"><input type="checkbox" id="realmode"/><span>🛰️ Live mode — pull real followers from X (rate-limited)</span></label>
   <label class="toggle"><input type="checkbox" id="researchmode"/><span>🔬 Dossier mode only — evidence-based boards (best: <b>@cdossman</b>)</span></label>
   <div id="err" class="err"></div>
+
+  <div class="panel populating" id="populating" style="display:none">
+    <div class="pop-row">
+      <div class="pop-spin"></div>
+      <div>
+        <h3 id="pop-title">Building this board…</h3>
+        <p class="muted" id="pop-sub">AI research agents are pulling a real follower sample and researching the biggest accounts in it. We never show made-up numbers — the board appears here the moment the research is done.</p>
+        <p class="pop-eta" id="pop-eta"></p>
+      </div>
+    </div>
+  </div>
   <div class="chips" id="chips"></div>
 
   <div class="result" id="result">
@@ -325,13 +344,14 @@ function renderGraph(cast,centerHandle){
 }
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
-function renderLeaderboard(cast,n){
+function renderLeaderboard(cast,n,clickable){
   const rows=cast.slice(0,n||15).map((f,i)=>{
     const pill=f.pill||('<span class="title-pill">'+titleFor(f.nw)+'</span>');
     const sub=f.sub?('<br/><span class="whoh">'+esc(f.sub)+'</span>'):'';
     const src=f.sourceUrl?(' <a class="srclink" href="'+esc(f.sourceUrl)+'" target="_blank" rel="noopener">🔗</a>'):'';
     const moneyTxt=f.moneyText||money(f.nw);
-    return '<tr><td class="rank">'+(i+1)+'</td>'+
+    const click=clickable?(' class="clickrow" data-h="'+esc(f.handle)+'" title="Open @'+esc(f.handle)+'\'s board"'):'';
+    return '<tr'+click+'><td class="rank">'+(i+1)+'</td>'+
       '<td><div class="who"><span class="mini-av" style="background:'+grad(f.name)+'">'+initials(f.name)+'</span>'+
       '<span><span class="whoname">'+esc(f.name)+'</span>'+src+'<br/><span class="whoh">@'+esc(f.handle)+'</span>'+sub+'</span></div></td>'+
       '<td>'+pill+'</td>'+
@@ -339,6 +359,10 @@ function renderLeaderboard(cast,n){
   }).join("");
   $("lb").innerHTML=rows;
 }
+$("lb").addEventListener("click",e=>{
+  if(e.target.closest("a"))return; // source links keep their own behavior
+  const tr=e.target.closest("tr.clickrow");if(tr)run(tr.dataset.h);
+});
 
 const LB_KEY="ff_global_v1";
 function loadLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||{};}catch(e){return {};}}
@@ -368,7 +392,7 @@ function renderPeople(){
     const rank=i<3?`<span class="rankchip r${i+1}">${i+1}</span>`:(i+1);
     const src=p.source?(' <a class="srclink" href="'+esc(p.source)+'" target="_blank" rel="noopener">🔗</a>'):'';
     const nm=esc(p.name||('@'+p.handle));
-    return `<tr>
+    return `<tr data-h="${esc(p.handle)}" title="Open @${esc(p.handle)}'s board">
       <td class="rank">${rank}</td>
       <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc((p.name||p.handle).slice(0,2).toUpperCase())}</span>
         <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)} · ${esc((p.headline||'').slice(0,66))}</span></span></div></td>
@@ -422,7 +446,8 @@ function paint(d){
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
   renderGraph(d.cast,d.handle);
-  renderLeaderboard(d.cast,d.lbCount);
+  hidePopulating();
+  renderLeaderboard(d.cast,d.lbCount,d.clickableCast);
   recordLB({handle:d.handle,totalAll:d.totalAll,followers:d.followers,whalesAll:d.whalesAll});
   renderGlobal(d.handle);
   const sb=$("share");
@@ -504,7 +529,7 @@ function realD(handle,resp){
       verified:!!(resp.profile&&resp.profile.isBlueVerified),
       followers:total,totalAll:m.est,
       totalText:"~"+money(m.est),
-      whalesAll:0,cast,lbCount:10,
+      whalesAll:0,cast,lbCount:10,clickableCast:true,
       lbTitle:"📊 Biggest accounts in the live sample",
       lbSub:"Real accounts from the follower sample, ranked by their own follower counts.",
       stats:[{k:"Followers (real)",v:compact(total)},{k:"🛰️ Live sample",v:String(sample.length)},
@@ -561,13 +586,17 @@ function researchD(handle,data){
     totsub:modeled
       ?("modeled: "+money(sumMid)+" researched floor + "+compact(M.totalFollowers||0)+" followers × measured wealth rates · ±2x")
       :"Σ midpoints of researched ranges · evidence-based, mostly low-confidence",
-    handleLine:"🔬 deep-researched dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable",
-    verified:true,followers:M.totalFollowers||0,
+    handleLine:M.dynamic
+      ?("🤖 AI-built board ("+esc(M.engine||"GLM")+") · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" biggest sampled followers identified · unverified")
+      :("🔬 deep-researched dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable"),
+    verified:!M.dynamic,followers:M.totalFollowers||0,
     avg:ppl.length?sumMid/ppl.length:0,whalesAll:0,
-    cast:ppl,lbCount:20,
+    cast:ppl,lbCount:20,clickableCast:true,
     stats:[{k:"Followers (real)",v:compact(M.totalFollowers||0)},{k:"Researched",v:String(M.researched||ppl.length)},
       {k:"Identified",v:String(M.identified||0)},{k:"Richest follower (mid)",v:money(top)}],
-    hint:"🔬 Researched dossier — AI agents identified these followers from public sources and estimated ranges, with a verification pass on every entry. Modeled totals extrapolate from measured wealth rates; ±2x error bars. Opinions, not facts."};
+    hint:M.dynamic
+      ?"🤖 Auto-built board — a GLM 5.2 research agent sampled real followers and researched the biggest ones just now. Real sources, but NO verification pass yet — curated boards get one. Opinions, not facts."
+      :"🔬 Researched dossier — AI agents identified these followers from public sources and estimated ranges, with a verification pass on every entry. Modeled totals extrapolate from measured wealth rates; ±2x error bars. Opinions, not facts."};
 }
 async function runResearch(handle){
   const btn=$("go"),old=btn.textContent;
@@ -610,17 +639,72 @@ async function runReal(handle){
   }finally{ clearInterval(tick);btn.textContent=old;btn.disabled=false; }
 }
 
-// default routing: researched dossier when one exists, otherwise run the live
-// model on a fresh follower sample (toy only as a last-resort fallback)
+// --- populating state: no board -> request an AI build, show honest progress.
+// We NEVER display fake or placeholder numbers while waiting.
+let POP_POLL=null,POP_TICK=null,POP_T0=0;
+function fmtDur(ms){const s=Math.round(ms/1000);return s>=90?(Math.round(s/6)/10+" min"):(s+"s");}
+function showPopulating(handle,st){
+  hidePopulating();
+  $("result").classList.remove("show");
+  $("pop-title").textContent="Building @"+handle+"'s board…";
+  POP_T0=Date.now()-((st&&st.elapsedMs)||0);
+  const avg=st&&st.avgMs;
+  const eta=()=>{
+    $("pop-eta").textContent=(avg?("Recent builds took ~"+fmtDur(avg)+" on average"):"First builds usually take a few minutes")
+      +" · elapsed "+fmtDur(Date.now()-POP_T0);
+  };
+  eta();
+  POP_TICK=setInterval(eta,1000);
+  $("populating").style.display="";
+  POP_POLL=setInterval(async()=>{
+    try{
+      const s=await(await fetch("/api/board_status?handle="+encodeURIComponent(handle))).json();
+      if(s.status==="ready"){
+        hidePopulating();
+        const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
+        if(r.ok)paint(researchD(handle,await r.json()));
+      }else if(s.status==="failed"||s.status==="none"){
+        hidePopulating();
+        showError(s.status==="failed"&&/not_found/.test(s.reason||"")
+          ?"@"+handle+" doesn't seem to exist on X (typo, or protected/suspended)."
+          :"Couldn't finish building @"+handle+"'s board this time. It stays in our research queue — check back later.");
+      }
+    }catch(e){}
+  },5000);
+}
+function hidePopulating(){
+  $("populating").style.display="none";
+  if(POP_POLL){clearInterval(POP_POLL);POP_POLL=null;}
+  if(POP_TICK){clearInterval(POP_TICK);POP_TICK=null;}
+}
+
+// default routing: researched dossier (curated or auto-built) when one exists;
+// otherwise request a real AI build and show the populating state. No fake data.
 async function runAuto(handle){
   const btn=$("go"),old=btn.textContent;
   btn.textContent="Loading…";btn.disabled=true;
   try{
     const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
     if(r.ok){paint(researchD(handle,await r.json()));return;}
-  }catch(e){}
+    const st=await(await fetch("/api/board_request?handle="+encodeURIComponent(handle))).json();
+    if(st.status==="ready"){
+      const r2=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
+      if(r2.ok){paint(researchD(handle,await r2.json()));return;}
+    }
+    if(st.status==="building"||st.status==="queued"){showPopulating(handle,st);return;}
+    if(st.status==="offline"){
+      showError("No data for @"+handle+" yet — it just joined our research queue. Boards are added in batches; check back soon.");
+      return;
+    }
+    if(st.status==="rate_limited"){
+      showError("Too many new-board requests right now — try again in a few minutes.");
+      return;
+    }
+    showError("No data for @"+handle+" yet.");
+  }catch(e){
+    showError("Couldn't reach the server ("+e+").");
+  }
   finally{btn.textContent=old;btn.disabled=false;}
-  await runReal(handle);
 }
 
 function run(raw){
@@ -628,6 +712,7 @@ function run(raw){
   if(!handle){$("q").focus();return;}
   $("q").value="@"+handle;
   clearError();
+  hidePopulating();
   // shareable URL: reflect the searched board in the address bar
   try{history.replaceState(null,"","/b/"+handle);}catch(e){}
   if($("researchmode")&&$("researchmode").checked) runResearch(handle);
@@ -651,6 +736,10 @@ loadPeople();
 loadModel();
 $("tab-networks").addEventListener("click",()=>showLbTab('networks'));
 $("tab-people").addEventListener("click",()=>showLbTab('people'));
+$("people").addEventListener("click",e=>{
+  if(e.target.closest("a"))return;
+  const tr=e.target.closest("tr[data-h]");if(tr)run(tr.dataset.h);
+});
 
 /* deep-link: /b/<handle> auto-runs that board on load */
 (function(){const m=location.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);if(m)run(m[1]);})();
