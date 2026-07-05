@@ -105,6 +105,16 @@
   .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
   .ownworth .srclink{margin-left:2px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
+  .lbtabs{display:flex;gap:8px;margin-bottom:6px}
+  .lbtab{background:transparent;border:1px solid var(--line);color:var(--mut);font-size:14px;font-weight:600;
+    padding:8px 14px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center}
+  .lbtab:hover{color:var(--txt)}
+  .lbtab.active{color:#0a0a12;background:linear-gradient(135deg,var(--gold),#ff9d4a);border-color:transparent}
+  .lbtab.active .pulse{background:#0a0a12;box-shadow:none;animation:none}
+  #tbl-people tbody tr{cursor:default}
+  #tbl-people tbody tr:hover{background:rgba(255,255,255,.03)}
+  .rankchip{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;font-size:12px;font-weight:800;color:#0a0a12}
+  .r1{background:linear-gradient(135deg,#ffd24a,#ffb347)}.r2{background:linear-gradient(135deg,#cfd6e6,#9aa3ba)}.r3{background:linear-gradient(135deg,#e8a06a,#c77b43)}
 </style>
 </head>
 <body>
@@ -169,10 +179,15 @@
   </div>
 
   <div class="panel gl">
-    <h3><span class="pulse"></span>Global leaderboard</h3>
-    <p class="muted">Accounts we've researched, ranked by the combined net worth of their followers. Tap one to open its board.</p>
-    <table><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Network fortune</th></tr></thead>
+    <div class="lbtabs">
+      <button class="lbtab active" id="tab-networks"><span class="pulse"></span>Biggest networks</button>
+      <button class="lbtab" id="tab-people">💰 Richest people</button>
+    </div>
+    <p class="muted" id="glsub">Accounts we've researched, ranked by the combined net worth of their followers. Tap one to open its board.</p>
+    <table id="tbl-networks"><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Network fortune</th></tr></thead>
       <tbody id="global"></tbody></table>
+    <table id="tbl-people" style="display:none"><thead><tr><th class="rank">#</th><th>Person</th><th class="r">Net worth</th></tr></thead>
+      <tbody id="people"></tbody></table>
   </div>
 
   <p class="footer">
@@ -339,6 +354,36 @@ function loadDossiers(){
   fetch('/research/index.json').then(r=>r.ok?r.json():null).then(d=>{
     if(Array.isArray(d)){DOSSIERS=d;renderGlobal((($("q")&&$("q").value)||'').replace(/^@/,''));}
   }).catch(()=>{});
+}
+
+/* richest-people leaderboard (research/people.json) */
+let PEOPLE=null;
+function loadPeople(){
+  fetch('/research/people.json').then(r=>r.ok?r.json():null).then(d=>{if(Array.isArray(d)){PEOPLE=d;renderPeople();}}).catch(()=>{});
+}
+function rangeShort(lo,hi){lo=lo||0;hi=hi||0;if(!lo&&!hi)return'n/a';if(!lo)return'&lt;'+money(hi);return money(lo)+'–'+money(hi);}
+function renderPeople(){
+  if(!PEOPLE||!PEOPLE.length){$("people").innerHTML=`<tr><td colspan="3" class="empty">No people yet.</td></tr>`;return;}
+  $("people").innerHTML=PEOPLE.map((p,i)=>{
+    const rank=i<3?`<span class="rankchip r${i+1}">${i+1}</span>`:(i+1);
+    const src=p.source?(' <a class="srclink" href="'+esc(p.source)+'" target="_blank" rel="noopener">🔗</a>'):'';
+    const nm=esc(p.name||('@'+p.handle));
+    return `<tr>
+      <td class="rank">${rank}</td>
+      <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc((p.name||p.handle).slice(0,2).toUpperCase())}</span>
+        <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)} · ${esc((p.headline||'').slice(0,66))}</span></span></div></td>
+      <td class="r money">${rangeShort(p.low,p.high)}</td></tr>`;
+  }).join("");
+}
+function showLbTab(which){
+  const isP=which==='people';
+  $("tab-people").classList.toggle('active',isP);
+  $("tab-networks").classList.toggle('active',!isP);
+  $("tbl-people").style.display=isP?'':'none';
+  $("tbl-networks").style.display=isP?'none':'';
+  $("glsub").textContent=isP
+    ?"The richest individual people across every researched network, ranked by their own estimated net worth. Wide ranges, low confidence — opinions, not facts."
+    :"Accounts we've researched, ranked by the combined net worth of their followers. Tap one to open its board.";
 }
 function renderGlobal(currentHandle){
   let arr;
@@ -602,7 +647,10 @@ $("global").addEventListener("click",e=>{const tr=e.target.closest("tr[data-h]")
 
 renderGlobal("");
 loadDossiers();
+loadPeople();
 loadModel();
+$("tab-networks").addEventListener("click",()=>showLbTab('networks'));
+$("tab-people").addEventListener("click",()=>showLbTab('people'));
 
 /* deep-link: /b/<handle> auto-runs that board on load */
 (function(){const m=location.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);if(m)run(m[1]);})();
