@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["handle", "name", "followers", "identified", "category", "headline", "verdict", "confidence", "low", "high", "sources"],
+  "properties": {
+    "handle": {"type": "string"},
+    "name": {"type": "string"},
+    "followers": {"type": "integer"},
+    "identified": {"type": "boolean"},
+    "category": {"type": "string", "enum": ["person", "company", "unknown"]},
+    "headline": {"type": "string"},
+    "verdict": {"type": "string", "enum": ["supported", "plausible", "overstated", "unfounded"]},
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+    "low": {"type": "number"},
+    "high": {"type": "number"},
+    "sources": {"type": "array", "items": {"type": "string"}}
+  }
+}
