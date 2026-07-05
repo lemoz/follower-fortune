@@ -1,0 +1,88 @@
+{
+  "karpathy": {
+    "found": true, "name": "Andrej Karpathy",
+    "headline": "AI researcher and educator (ex-OpenAI founding member, ex-Tesla Sr. Director of AI, founder of Eureka Labs)",
+    "verdict": "plausible", "confidence": "medium", "low": 50000000, "high": 150000000,
+    "sources": ["https://futuresearch.ai/ai-researcher-net-worth/", "https://networthpublic.com/andrej-karpathy-net-worth-biography-career/"]
+  },
+  "swyx": { "found": false, "name": "Shawn Wang" },
+  "tobi": {
+    "found": true, "name": "Tobi Lütke",
+    "headline": "Founder and CEO of Shopify, e-commerce billionaire",
+    "verdict": "supported", "confidence": "high", "low": 10300000000, "high": 11000000000,
+    "sources": ["https://www.forbes.com/profile/tobi-lutke/", "https://www.bloomberg.com/billionaires/profiles/tobias-a-lutke/"]
+  },
+  "gdb": {
+    "found": true, "name": "Greg Brockman",
+    "headline": "OpenAI co-founder and President, holding a 2.5-3% equity stake in the company",
+    "verdict": "supported", "confidence": "medium", "low": 20000000000, "high": 30000000000,
+    "sources": ["https://www.forbes.com/sites/aliciapark/2026/05/04/greg-brockman-testifies-stake-in-openai-worth-nearly-30-billion-despite-investing-nothing/", "https://www.forbes.com/profile/greg-brockman/"]
+  },
+  "rauchg": {
+    "found": true, "name": "Guillermo Rauch",
+    "headline": "Cofounder and CEO of Vercel; wealth from his equity stake after Vercel's $300M Series F at a $9.3B valuation",
+    "verdict": "supported", "confidence": "medium", "low": 2000000000, "high": 2300000000,
+    "sources": ["https://www.forbes.com/profile/guillermo-rauch/", "https://www.forbes.com/sites/richardnieva/2026/03/17/vercel-guillermo-rauch/"]
+  },
+  "id_aa_carmack": {
+    "found": true, "name": "John Carmack",
+    "headline": "Co-founder of id Software (Doom, Quake) and former Oculus/Meta CTO; wealth from the 2009 ZeniMax sale and Oculus acquisition",
+    "verdict": "plausible", "confidence": "low", "low": 40000000, "high": 120000000,
+    "sources": ["https://www.shacknews.com/article/99359/john-carmack-suing-zenimax-for-225-million-over-id-software-sale", "https://www.gamedeveloper.com/business/john-carmack-and-zenimax-have-ended-their-legal-dispute"]
+  },
+  "lexfridman": {
+    "found": true, "name": "Lex Fridman",
+    "headline": "Podcaster and MIT research scientist; wealth from podcast/YouTube income, no equity stakes found",
+    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 10000000,
+    "sources": ["https://www.celebritynetworth.com/richest-celebrities/authors/lex-fridman-net-worth/", "https://finbold.com/guide/lex-fridman-net-worth/"]
+  },
+  "chamath": {
+    "found": true, "name": "Chamath Palihapitiya",
+    "headline": "Social Capital founder/CEO and All-In podcast host; early Facebook equity, SPAC deals, and a major Groq stake acquired by Nvidia",
+    "verdict": "plausible", "confidence": "medium", "low": 1200000000, "high": 2300000000,
+    "sources": ["https://www.forbes.com/profile/chamath-palihapitiya/", "https://www.forbes.com/sites/phoebeliu/2026/03/18/groq-cofounder-ross-explains-whirlwind-ai-chip-deal-with-nvidia/"]
+  },
+  "aaronlevie": {
+    "found": true, "name": "Aaron Levie",
+    "headline": "Box co-founder and CEO; wealth is almost entirely his documented Box (NYSE: BOX) equity stake per SEC Form 4 filings",
+    "verdict": "supported", "confidence": "high", "low": 75000000, "high": 150000000,
+    "sources": ["https://www.gurufocus.com/insider/80950/aaron-levie", "https://www.quiverquant.com/insiders/1606525/Aaron-Levie"]
+  },
+  "patio11": {
+    "found": true, "name": "Patrick McKenzie",
+    "headline": "Writer (Bits about Money) and former senior Stripe employee; accumulated high-income savings, no documented equity exit",
+    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 20000000,
+    "sources": ["https://www.kalzumeus.com/2019/3/18/two-years-at-stripe/", "https://www.kalzumeus.com/2015/05/01/talking-about-money/"]
+  },
+  "shl": {
+    "found": true, "name": "Sahil Lavingia",
+    "headline": "Founder/CEO of Gumroad; wealth is largely illiquid private equity last priced at a $100M company valuation",
+    "verdict": "plausible", "confidence": "low", "low": 20000000, "high": 80000000,
+    "sources": ["https://tylertringas.com/valuing-gumroad/", "https://www.forbes.com/sites/alexkonrad/2021/03/22/gumroad-crowdfunding-results-sahil-lavingia-investing/"]
+  },
+  "suhail": {
+    "found": true, "name": "Suhail Doshi",
+    "headline": "Co-founder/ex-CEO of Mixpanel ($1.05B valuation) and founder of Playground AI; no disclosed personal stake",
+    "verdict": "plausible", "confidence": "low", "low": 60000000, "high": 250000000,
+    "sources": ["https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/", "https://www.forbes.com/profile/suhail-doshi/"]
+  },
+  "tszzl": {
+    "found": true, "name": "roon",
+    "headline": "Pseudonymous OpenAI member of technical staff; range inferred from OpenAI employee equity compensation norms, not personal disclosures",
+    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 50000000,
+    "sources": ["https://fortune.com/2026/02/18/openai-chatgpt-creator-record-million-dollar-equity-compensation-ai-tech-talent-war-career-retention-sam-altman-millionaire-staff/", "https://www.cnbc.com/2025/10/02/openai-share-sale-500-billion-valuation.html"]
+  },
+  "t3dotgg": { "found": false, "name": "Theo Browne" },
+  "danielgross": {
+    "found": true, "name": "Daniel Gross",
+    "headline": "Tech entrepreneur/investor (Cue/Apple exit, ex-YC partner, SSI co-founder, NFDG); Meta's tender offer bought out his personal NFDG fund stakes",
+    "verdict": "plausible", "confidence": "low", "low": 300000000, "high": 1500000000,
+    "sources": ["https://www.datacenterdynamics.com/en/news/meta-in-talks-to-partially-acquire-vc-fund-nfdg-hire-nat-friedman-and-daniel-gross-for-ai-shakeup/", "https://en.wikipedia.org/wiki/Daniel_Gross_(businessman)"]
+  },
+  "jason": {
+    "found": true, "name": "Jason Calacanis",
+    "headline": "Angel investor and All-In podcast host; ~300+ angel stakes headlined by a $25K Uber bet worth ~$100M+ at IPO",
+    "verdict": "plausible", "confidence": "low", "low": 75000000, "high": 250000000,
+    "sources": ["https://en.wikipedia.org/wiki/Jason_Calacanis", "https://www.forbes.com/sites/stevenbertoni/2017/01/09/how-jason-calacanis-turned-25k-into-100m-on-uber/"]
+  }
+}
