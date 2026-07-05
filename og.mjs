@@ -39,7 +39,7 @@ export function cardSVG(data) {
   <rect width="${W}" height="${H}" fill="url(#g1)"/>
   <rect width="${W}" height="${H}" fill="url(#g2)"/>
   <text x="72" y="96" font-family="DejaVu Sans" font-size="40" font-weight="bold" fill="#e8ecf6">NetWorkNetWorth</text>
-  <text x="470" y="96" font-family="DejaVu Sans" font-size="26" fill="#8b94ad">NWNW</text>
+  <text x="510" y="96" font-family="DejaVu Sans" font-size="26" fill="#8b94ad">NWNW</text>
   <text x="72" y="250" font-family="DejaVu Sans" font-size="52" font-weight="bold" fill="#e8ecf6">@${esc(data.handle)}</text>
   <text x="72" y="300" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Total estimated net worth of followers</text>
   <text x="70" y="${300 + bigSize * 0.72 + 40}" font-family="DejaVu Sans" font-size="${bigSize}" font-weight="bold" fill="url(#money)">${esc(big)}</text>
@@ -69,12 +69,25 @@ export function defaultCardSVG() {
 </svg>`;
 }
 
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const FONT_DIR = join(dirname(fileURLToPath(import.meta.url)), 'fonts');
+
 let ResvgCls = null, resvgTried = false;
 export async function renderPNG(svg) {
   if (!resvgTried) { resvgTried = true; try { ({ Resvg: ResvgCls } = await import('@resvg/resvg-js')); } catch (e) { ResvgCls = null; } }
   if (!ResvgCls) return null;
   try {
-    const r = new ResvgCls(svg, { fitTo: { mode: 'width', value: 1200 }, font: { loadSystemFonts: true, defaultFontFamily: 'DejaVu Sans' } });
+    // Bundle the font explicitly — never rely on system-font discovery, which
+    // silently fails on minimal container images (renders text as nothing).
+    const r = new ResvgCls(svg, {
+      fitTo: { mode: 'width', value: 1200 },
+      font: {
+        fontFiles: [join(FONT_DIR, 'DejaVuSans.ttf'), join(FONT_DIR, 'DejaVuSans-Bold.ttf')],
+        loadSystemFonts: false,
+        defaultFontFamily: 'DejaVu Sans',
+      },
+    });
     return r.render().asPng();
   } catch (e) { return null; }
 }

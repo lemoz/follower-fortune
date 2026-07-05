@@ -1,7 +1,6 @@
 FROM node:22-slim
 WORKDIR /app
-# DejaVu fonts for server-side OG card text rendering (@resvg/resvg-js)
-RUN apt-get update && apt-get install -y --no-install-recommends fonts-dejavu-core && rm -rf /var/lib/apt/lists/*
+# OG card text renders from the bundled fonts/ TTFs (fonts/*.ttf) — no OS fonts needed.
 COPY package.json ./
 RUN npm install --omit=dev
 COPY . .
