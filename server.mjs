@@ -5,7 +5,7 @@
 //   TWITTERAPI_KEY=...  node server.mjs       (or put the key in ./.env)
 //
 import { createServer } from 'node:http';
-import { readFile, readFileSync, existsSync, mkdirSync, appendFileSync, writeFileSync } from 'node:fs';
+import { readFile, readFileSync, readdirSync, existsSync, mkdirSync, appendFileSync, writeFileSync } from 'node:fs';
 import { join, extname, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -106,6 +106,10 @@ async function lookup(handle, max) {
     return { ok: false, error: 'bad_key', message: 'twitterapi.io rejected the API key (HTTP ' + info.httpStatus + ').' };
   if (info.httpStatus === 429)
     return { ok: false, error: 'rate_limited', message: 'Rate limited by twitterapi.io.' };
+  // transient upstream errors (5xx / non-JSON) must NOT be mistaken for a
+  // missing account — that would falsely tell the user the account doesn't exist.
+  if (info.httpStatus >= 500)
+    return { ok: false, error: 'upstream', message: 'twitterapi.io upstream error (HTTP ' + info.httpStatus + ').' };
   const data = info.body && info.body.data;
   if (!data || (info.body.status && info.body.status !== 'success'))
     return { ok: false, error: 'not_found', message: ('twitterapi.io could not load @' + handle + '. ' + ((info.body && (info.body.msg || info.body.message)) || '')).trim() };
@@ -154,7 +158,56 @@ try { mkdirSync(BOARDS_DIR, { recursive: true }); } catch {}
 const MODEL_PATH = join(__dirname, 'research', 'model.json');
 const jobs = new Map(); // handle -> {status, startedAt, finishedAt, error}
 let buildChain = Promise.resolve(); // one build at a time (credit + spend guard)
-const GLM_TOP_N = 12; // biggest sampled followers researched per board
+const SWEEP_CONC = 6;          // parallel relationship checks during a build
+const BUILD_DAILY_CAP = 25;    // max on-demand builds per UTC day (credit guard)
+const MIN_BOARD_MEMBERS = 8;   // refuse to publish a board thinner than this
+let dailyBuildCount = 0, buildDay = new Date().toISOString().slice(0, 10);
+function buildAllowed() {
+  const today = new Date().toISOString().slice(0, 10);
+  if (today !== buildDay) { buildDay = today; dailyBuildCount = 0; }
+  return dailyBuildCount < BUILD_DAILY_CAP;
+}
+
+// the pool of already-researched wealthy people (from curated boards), each with
+// verified worth. Cached for the process lifetime (rebuilt on redeploy/restart).
+let POOL = null;
+function loadPool() {
+  if (POOL) return POOL;
+  const map = new Map();
+  try {
+    for (const f of readdirSync(join(__dirname, 'research'))) {
+      if (!f.endsWith('.json') || f === 'index.json' || f === 'model.json' || f === 'people.json') continue;
+      const d = JSON.parse(readFileSync(join(__dirname, 'research', f), 'utf8'));
+      for (const p of d.people || []) {
+        if (!p.identified) continue;
+        const k = p.handle.toLowerCase();
+        const prev = map.get(k);
+        if (!prev || ((p.low + p.high) / 2) > ((prev.low + prev.high) / 2)) map.set(k, p);
+      }
+    }
+  } catch {}
+  POOL = [...map.values()];
+  return POOL;
+}
+
+// concurrency-limited follow sweep: onHit(person) for each pool person who
+// follows `target`. Uses tw() so 429s back off. ABORTS the whole sweep on
+// credit exhaustion (402) — otherwise the remaining ~800 checks fire doomed and
+// we'd assemble a hollow, misleading board with the wealthy followers missing.
+async function sweepPool(target, pool, onHit) {
+  const queue = pool.slice();
+  let aborted = false;
+  async function worker() {
+    while (queue.length && !aborted) {
+      const p = queue.shift();
+      const r = await tw('/twitter/user/check_follow_relationship', { source_user_name: p.handle, target_user_name: target }, 2).catch(() => null);
+      if (r && (r.httpStatus === 402 || creditsExhausted(r.body))) { aborted = true; break; }
+      if (r && r.body && r.body.data && r.body.data.following) onHit(p);
+    }
+  }
+  await Promise.all(Array.from({ length: SWEEP_CONC }, worker));
+  if (aborted) { twitterCreditsOutUntil = Date.now() + 10 * 60_000; throw new Error('sample_failed:no_credits'); }
+}
 
 function buildStats() {
   try { return JSON.parse(readFileSync(JOBS_STATS, 'utf8')); } catch { return { count: 0, totalMs: 0 }; }
@@ -191,34 +244,56 @@ async function buildBoard(handle) {
   const cacheKey = handle + ':200';
   const hit = cacheRead(cacheKey);
   let result = hit ? JSON.parse(hit.payload) : await lookup(handle, 200);
+  // genuine missing account is terminal; anything else is a transient/retryable
+  // failure and must NOT be reported to the user as "doesn't exist".
   if (!result.ok) throw new Error(result.error === 'not_found' ? 'not_found' : 'sample_failed:' + result.error);
   if (!hit) { dailyCount++; cacheWrite(cacheKey, JSON.stringify(result)); }
+
+  // the sweep is the ~800-credit spend; enforce the daily cap HERE (builds run
+  // serially, so this is race-free) and count only builds that actually sweep,
+  // so pre-sweep failures never burn the cap.
+  if (!buildAllowed()) throw new Error('over_cap');
+  dailyBuildCount++;
 
   const sample = result.followers || [];
   const c = { b0: 0, b1: 0, b2: 0, b3: 0 };
   for (const f of sample) { const n = f.followers || 0; if (n < 1e3) c.b0++; else if (n < 1e4) c.b1++; else if (n < 1e5) c.b2++; else c.b3++; }
 
-  // GLM research: owner + the biggest sampled followers (isolated failures OK)
-  const owner = await glm.researchOwner(result.profile).catch(() => null);
-  const top = sample.slice().sort((a, b) => (b.followers || 0) - (a.followers || 0)).slice(0, GLM_TOP_N);
-  const people = [];
-  for (const f of top) {
-    const p = await glm.researchPerson(f).catch(() => null);
-    if (p) people.push(p);
-  }
-  people.sort((a, b) => ((b.low + b.high) / 2) - ((a.low + a.high) / 2));
-  const floor = people.reduce((a, p) => a + (p.low + p.high) / 2, 0);
+  // sweep our verified pool -> which known-wealthy people follow this account
+  const pool = loadPool().filter((p) => p.handle.toLowerCase() !== handle);
+  const members = [];
+  await sweepPool(handle, pool, (p) => members.push({
+    handle: p.handle, name: p.name, followers: p.followers || 0, identified: true,
+    headline: p.headline, verdict: p.verdict, confidence: p.confidence,
+    low: p.low, high: p.high, sources: p.sources || [],
+  }));
 
+  // GLM: owner net worth + any big NET-NEW sampled followers the sweep missed
+  const owner = await glm.researchOwner(result.profile).catch(() => null);
+  const known = new Set(members.map((m) => m.handle.toLowerCase()));
+  const bigNew = sample.filter((f) => (f.followers || 0) >= 1e5 && !known.has((f.userName || '').toLowerCase())).slice(0, 8);
+  const glmPeople = (await Promise.all(bigNew.map((f) => glm.researchPerson(f).catch(() => null)))).filter(Boolean);
+
+  const people = [...members, ...glmPeople].sort((a, b) => ((b.low + b.high) / 2) - ((a.low + a.high) / 2));
+
+  // NEVER publish a thin board — it would show a real-looking page with almost
+  // no evidence. Below the floor, report honestly (retryable) instead.
+  if (people.length < MIN_BOARD_MEMBERS) throw new Error('insufficient_data');
+
+  const floor = people.reduce((a, p) => a + (p.low + p.high) / 2, 0);
   const meta = {
     account: result.profile.userName, name: result.profile.name,
     totalFollowers: result.totalFollowers,
-    researched: top.length, identified: people.length,
-    dynamic: true, engine: process.env.GLM_MODEL || 'glm-5.2', builtAt: new Date().toISOString(),
-    note: 'Auto-built on request: real follower sample + AI research of the largest sampled followers. Unverified — curated boards get adversarial verification, this one has not yet.',
+    researched: people.length, identified: people.length,
+    dynamic: true, engine: process.env.GLM_MODEL || 'glm-5', builtAt: new Date().toISOString(),
+    note: 'Auto-built on request: researched followers found via the follow-relationship sweep (their worth was already verified on curated boards), plus a GLM agent for the owner. Owner + AI-added people are unverified; curated boards get an adversarial pass, this has not yet.',
     sampleDist: { sampled: sample.length, ...c },
   };
   if (owner) meta.owner = owner;
-  meta.estimate = modelEstimate(meta, floor);
+  // Show ONLY the researched floor (sum of identified members). The model
+  // extrapolation is valid only for the large curated samples — on a thin
+  // on-demand sweep it would fabricate a huge total from follower count alone.
+  meta.estimate = { total: floor, low: floor / 2, high: floor * 1.5, floor };
   writeFileSync(join(BOARDS_DIR, handle + '.json'), JSON.stringify({ meta, people }, null, 1));
   recordBuild(Date.now() - t0);
 }
@@ -235,9 +310,14 @@ function requestBoard(handle) {
       await buildBoard(handle);
       job.status = 'done';
     } catch (e) {
+      const msg = String((e && e.message) || e);
       job.status = 'failed';
-      job.error = String((e && e.message) || e);
-      logLookup({ handle, buildFailed: job.error });
+      job.error = msg;
+      // terminal = re-attempting can't help: account truly missing, or we simply
+      // don't have enough researched people in its network yet. Everything else
+      // (credits, upstream, over-cap) is transient and retried on the next click.
+      job.terminal = (msg === 'not_found' || msg === 'insufficient_data');
+      logLookup({ handle, buildFailed: msg });
     }
     job.finishedAt = Date.now();
   });
@@ -322,6 +402,12 @@ const server = createServer(async (req, res) => {
   if (u.pathname === '/api/board_request' || u.pathname === '/api/board_status') {
     const handle = (u.searchParams.get('handle') || '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 15).toLowerCase();
     if (!handle) return send(res, 200, JSON.stringify({ status: 'bad_handle' }));
+    // on an explicit build request, clear a stale transient failure so it retries
+    // (terminal failures — missing account / not enough data — stay put).
+    if (u.pathname === '/api/board_request') {
+      const j = jobs.get(handle);
+      if (j && j.status === 'failed' && !j.terminal) jobs.delete(handle);
+    }
     const cur = boardStatusPayload(handle);
     if (u.pathname === '/api/board_status' || cur.status !== 'none')
       return send(res, 200, JSON.stringify(cur));
@@ -331,8 +417,14 @@ const server = createServer(async (req, res) => {
       logLookup({ handle, boardRequest: 'queued_offline' });
       return send(res, 200, JSON.stringify({ status: 'offline', avgMs: avgBuildMs() }));
     }
-    if (!ipAllowed(clientIp(req)) || !dailyAllowed())
+    if (!ipAllowed(clientIp(req)))
       return send(res, 429, JSON.stringify({ status: 'rate_limited' }));
+    // each build sweeps ~hundreds of relationship checks; cap builds/day so a
+    // traffic burst can't drain credits. Over cap -> honest queue message.
+    if (!buildAllowed()) {
+      logLookup({ handle, boardRequest: 'over_daily_cap' });
+      return send(res, 200, JSON.stringify({ status: 'offline', avgMs: avgBuildMs() }));
+    }
     logLookup({ handle, boardRequest: 'build' });
     requestBoard(handle);
     return send(res, 200, JSON.stringify(boardStatusPayload(handle)));

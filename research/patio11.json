@@ -1,0 +1,1986 @@
+{
+ "meta": {
+  "account": "patio11",
+  "name": "@patio11",
+  "totalFollowers": 196170,
+  "researched": 128,
+  "identified": 128,
+  "note": "Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.",
+  "sampleDist": {
+   "sampled": 2000,
+   "b0": 1813,
+   "b1": 154,
+   "b2": 27,
+   "b3": 6
+  },
+  "owner": {
+   "name": "Patrick McKenzie",
+   "headline": "Writer (Bits about Money) and former senior Stripe employee; accumulated high-income savings, no documented equity exit",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 20000000,
+   "sources": [
+    "https://www.kalzumeus.com/2019/3/18/two-years-at-stripe/",
+    "https://www.kalzumeus.com/2015/05/01/talking-about-money/"
+   ]
+  },
+  "estimate": {
+   "total": 4704337395.4637985,
+   "low": 2352168697.7318993,
+   "high": 9408674790.927597,
+   "floor": 295566500
+  }
+ },
+ "people": [
+  {
+   "handle": "ericzelikman",
+   "name": "Eric Zelikman",
+   "followers": 23726,
+   "identified": true,
+   "headline": "Co-founder & CEO of Humans& ($4.48B seed-stage AI startup); ex-xAI early employee; Stanford CS PhD candidate",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 5000000,
+   "high": 100000000,
+   "sources": [
+    "https://techcrunch.com/2026/01/25/humans-thinks-coordination-is-the-next-frontier-for-ai-and-theyre-building-a-model-to-prove-it/",
+    "https://news.crunchbase.com/ai/humans-raises-huge-seed-round-unicorn-valuation/"
+   ]
+  },
+  {
+   "handle": "jtatarchuk",
+   "name": "Jeff Tatarchuk",
+   "followers": 2140,
+   "identified": true,
+   "headline": "Co-Founder & Chief Growth Officer, TensorWave AI Cloud",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 20000000,
+   "high": 80000000,
+   "sources": [
+    "https://techfundingnews.com/tensorwave-350m-series-b-all-amd-ai-infrastructure/",
+    "https://techcrunch.com/2025/05/14/tensorwave-raises-100m-for-its-amd-powered-ai-cloud/"
+   ]
+  },
+  {
+   "handle": "jumbld",
+   "name": "Rohit Agarwal",
+   "followers": 3408,
+   "identified": true,
+   "headline": "Co-Founder & CEO of Portkey.ai, acquired by Palo Alto Networks for ~$700M in June 2026",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 5000000,
+   "high": 40000000,
+   "sources": [
+    "https://tracxn.com/d/companies/portkey/__ZBFkMQ22qjERQNfNQH39gbt9Y3bf72VJNqiydQkp6qU",
+    "https://thenewstack.io/palo-alto-portkey-ai-gateway/"
+   ]
+  },
+  {
+   "handle": "peteskomoroch",
+   "name": "Pete Skomoroch",
+   "followers": 50766,
+   "identified": true,
+   "headline": "AI startup founder (SkipFlag, acquired by Workday 2018), EIR at Accel, angel investor in Figma (seed+Series A), Hugging Face, Weights & Biases, Roboflow; former senior data scientist at LinkedIn",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 8000000,
+   "high": 35000000,
+   "sources": [
+    "https://x.com/peteskomoroch/status/1951037987661459798",
+    "https://www.sramanamitra.com/2018/09/07/workday-spends-big-on-acquisitions/"
+   ]
+  },
+  {
+   "handle": "steijnpelle",
+   "name": "Steijn Pelle",
+   "followers": 5483,
+   "identified": true,
+   "headline": "CEO & Co-Founder of Lassie (AI for small-business back-office, e.g. dental practices); former Robinhood and Coinbase product lead.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 40000000,
+   "sources": [
+    "https://x.com/steijnpelle",
+    "https://www.lassie.ai/company",
+    "https://www.linkedin.com/company/lassie",
+    "https://www.a16z.news/p/investing-in-lassie"
+   ]
+  },
+  {
+   "handle": "mathemagic1an",
+   "name": "Jay Hack",
+   "followers": 71818,
+   "identified": true,
+   "headline": "Founder & CEO of Codegen (acquired by ClickUp Dec 2025); now Head of AI at ClickUp; ex-Palantir ML engineer, Stanford CS/AI",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 3000000,
+   "high": 12000000,
+   "sources": [
+    "https://www.startuphub.ai/ai-news/startup-news/2025/clickup-acquires-codegen-to-build-super-agent-ai-workforce/",
+    "https://www.reworked.co/digital-workplace/clickup-acquires-codegen-to-power-project-management-work-management-super-agents/"
+   ]
+  },
+  {
+   "handle": "Nick_Davidov",
+   "name": "Nick Davidov",
+   "followers": 20550,
+   "identified": true,
+   "headline": "Co-Founder and Managing Partner, Davidovs Venture Collective (DVC); serial entrepreneur (Cherry Labs, Gagarin Capital, iTech Capital)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 2000000,
+   "high": 12000000,
+   "sources": [
+    "https://murphcapital.substack.com/p/emerging-manager-q-and-a-nick-davidov",
+    "https://techfundingnews.com/husband-wife-duos-dvc-closes-75m-fund-to-invest-in-series-a-and-b-rounds/"
+   ]
+  },
+  {
+   "handle": "abidlabs",
+   "name": "🍉 Abubakar Abid",
+   "followers": 14203,
+   "identified": true,
+   "headline": "Co-founder of Gradio (acq. by Hugging Face 2021), Head of Apps at Hugging Face",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 12000000,
+   "sources": [
+    "https://huggingface.co/blog/gradio-joins-hf",
+    "https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/"
+   ]
+  },
+  {
+   "handle": "KevinMerlini",
+   "name": "Kevin Merlini",
+   "followers": 287,
+   "identified": true,
+   "headline": "VP CoCounsel (Tax/Accounting) at Thomson Reuters; former CEO/co-founder of Materia AI (acquired by Thomson Reuters Oct 2024)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1500000,
+   "high": 10000000,
+   "sources": [
+    "https://www.thomsonreuters.com/en/press-releases/2024/october/thomson-reuters-acquires-materia-a-specialist-in-agentic-ai-for-the-tax-audit-and-accounting-profession",
+    "https://aimresearch.co/generative-ai/ai-startup-materia-raises-6-3m-to-revolutionize-public-accounting"
+   ]
+  },
+  {
+   "handle": "stbaasch",
+   "name": "Stephan Baasch",
+   "followers": 80512,
+   "identified": true,
+   "headline": "Founder & CEO of XRM Vision (software, $10-50M revenue); angel investor based in Zurich, Switzerland",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 10000000,
+   "sources": [
+    "https://www.salesgear.io/p/stephan-baasch-email-phone",
+    "https://github.com/stbaasch"
+   ]
+  },
+  {
+   "handle": "Pashpops",
+   "name": "Pasha Rayan",
+   "followers": 2163,
+   "identified": true,
+   "headline": "Co-founder of A1Zap/A1Base (YC W25) and Forage (YC W19, acquired).",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 10000000,
+   "sources": [
+    "https://www.pasharayan.com/bio/",
+    "https://www.ycombinator.com/companies/a1zap-by-a1base",
+    "https://www.ycombinator.com/companies/forage",
+    "https://x.com/pashpops"
+   ]
+  },
+  {
+   "handle": "Bfaviero",
+   "name": "Bruno Faviero",
+   "followers": 22844,
+   "identified": true,
+   "headline": "Co-founder & CEO of Magna (YC W22, merged into Kraken); GP at Alloy Fund; prior exits via Synapse (acquired by Palantir) and early Kensho employee (acquired by S&P Global for ~$600M)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://bruno.vc/",
+    "https://www.vcsheet.com/who/bruno-faviero"
+   ]
+  },
+  {
+   "handle": "bencmejla",
+   "name": "Ben Cmejla",
+   "followers": 1766,
+   "identified": true,
+   "headline": "Partner at The General Partnership ($240M fund); previously VP at First Round Capital",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 8000000,
+   "sources": [
+    "https://www.thegp.com/builders/ben-cmejla",
+    "https://www.thegp.com/news"
+   ]
+  },
+  {
+   "handle": "MarcGravely",
+   "name": "Marc Gravely",
+   "followers": 14133,
+   "identified": true,
+   "headline": "Founder of Gravely Attorneys & Counselors; Texas construction defect and insurance bad-faith litigator; 15x Texas Supreme Court advocate",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 1000000,
+   "high": 6000000,
+   "sources": [
+    "https://marcgravely.com/about/",
+    "https://gravelylaw.com/gravely-pc-litigators-shine-in-2025-texas-super-lawyers-guide/"
+   ]
+  },
+  {
+   "handle": "amywumartin",
+   "name": "Amy Wu Martin",
+   "followers": 82565,
+   "identified": true,
+   "headline": "Consumer Partner at Menlo Ventures; former Head of FTX Ventures and Lightspeed Partner; ex-SVP/CFO Discovery Inc.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1500000,
+   "high": 5000000,
+   "sources": [
+    "https://menlovc.com/team/amy-wu-martin/",
+    "https://menlovc.com/perspective/menlo-ventures-doubles-down-on-consumer-investing-with-new-partner-amy-wu/"
+   ]
+  },
+  {
+   "handle": "jturow",
+   "name": "Jon Turow",
+   "followers": 1437,
+   "identified": true,
+   "headline": "Venture Partner at Madrona Venture Group; former AWS Head of Product (Computer Vision AI); now also on Anthropic technical team",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 5000000,
+   "sources": [
+    "https://www.madrona.com/team-profiles/jon-turow/",
+    "https://techcrunch.com/2025/01/23/madrona-just-announced-its-biggest-fund-ever-closing-on-770m-as-other-venture-funds-grow-smaller/"
+   ]
+  },
+  {
+   "handle": "unpopularvc",
+   "name": "Peter Livingston",
+   "followers": 4026,
+   "identified": true,
+   "headline": "Founder and General Partner, Unpopular Ventures — micro-VC rolling fund and syndicate with $81M deployed across 536 portfolio companies",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 1000000,
+   "high": 5000000,
+   "sources": [
+    "https://medium.com/unpopular-vc/unpopular-ventures-annual-update-2025-dff4ec889401",
+    "https://medium.com/unpopular-vc/unpopular-ventures-annual-update-2024-7f2be0a46aa0"
+   ]
+  },
+  {
+   "handle": "rdasxy",
+   "name": "Riddhiman Das",
+   "followers": 2605,
+   "identified": true,
+   "headline": "Co-founder & CEO of TripleBlind; serial entrepreneur; former head of international tech investments at Ant Financial (Alibaba)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 5000000,
+   "sources": [
+    "https://thetechtribune.com/riddhiman-das-of-tripleblind/",
+    "https://www.linkedin.com/in/rdasxy/"
+   ]
+  },
+  {
+   "handle": "JackLipstone",
+   "name": "Jack Lipstone",
+   "followers": 9619,
+   "identified": true,
+   "headline": "Co-founder of Rari Capital and Ambo; former Investment Partner at Chapter One; Head of DeFi BD at Sei Foundation",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 5000000,
+   "sources": [
+    "https://www.chaincatcher.com/en/article/2145806",
+    "https://cryptonary.com/rari-capitals-co-founder-joins-chapter-one-as-a-venture-partner/"
+   ]
+  },
+  {
+   "handle": "0thernet",
+   "name": "ben guo 🏇",
+   "followers": 9529,
+   "identified": true,
+   "headline": "Co-founder & President, Zo Computer; ex-Stripe (2015-2023)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 500000,
+   "high": 5000000,
+   "sources": [
+    "https://lsvp.com/company/zocomputer/",
+    "https://tracxn.com/d/companies/zo/__LZl64vydzBLi8GSC1el-8itbj5w8C5e4VTJEU2xLl-s/funding-and-investors"
+   ]
+  },
+  {
+   "handle": "eerac",
+   "name": "Eric Rachlin",
+   "followers": 2471,
+   "identified": true,
+   "headline": "Co-founder of Body Labs (acq. by Amazon ~$50-70M, 2017); former Principal Scientist at Amazon; currently founder of Modality (Techstars 2023, NSF iCorps 2024)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 1500000,
+   "high": 4000000,
+   "sources": [
+    "https://techcrunch.com/2017/10/03/amazon-has-acquired-3d-body-model-startup-body-labs-for-50m-70m/",
+    "https://www.cnbc.com/2017/10/03/amazon-bought-body-labs-for-at-least-50-million-report-says.html"
+   ]
+  },
+  {
+   "handle": "AlexanderGirau",
+   "name": "Alexander L. Girau",
+   "followers": 1575,
+   "identified": true,
+   "headline": "CEO and co-founder of Group1; founding CEO/founder of Advano; battery-materials entrepreneur and YC S17 alum.",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 5000000,
+   "sources": [
+    "https://www.group1.ai/team/alexander-l-girau-m-s",
+    "https://www.ycombinator.com/companies/advano",
+    "https://www.linkedin.com/in/alexandergirau",
+    "https://www.prnewswire.com/news-releases/advano-delivers-scalable-advanced-silicon-solution-to-battery-industry-announcing-18-5-million-in-series-a-funding-300994346.html"
+   ]
+  },
+  {
+   "handle": "seanjregan",
+   "name": "Sean Regan",
+   "followers": 1828,
+   "identified": true,
+   "headline": "SVP Product & Solutions Marketing at ServiceNow; former Head of PMM at Atlassian and Docusign",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 1000000,
+   "high": 3500000,
+   "sources": [
+    "https://www.linkedin.com/in/seanr",
+    "https://theorg.com/org/hypothes-is/org-chart/sean-regan"
+   ]
+  },
+  {
+   "handle": "Jonpon101",
+   "name": "Jonathan Pedoeem",
+   "followers": 305,
+   "identified": true,
+   "headline": "Co-founder of PromptLayer, a $4.8M-seed-funded LLM prompt engineering and observability platform",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 500000,
+   "high": 4000000,
+   "sources": [
+    "https://blog.promptlayer.com/promptlayer-announces-our-4-8m-fundraise/",
+    "https://techcrunch.com/2025/02/07/promptlayer-is-building-tools-to-put-non-techies-in-the-drivers-seat-of-ai-app-development/"
+   ]
+  },
+  {
+   "handle": "dzhng",
+   "name": "David",
+   "followers": 12778,
+   "identified": true,
+   "headline": "Serial founder and engineer; Co-Founder & CEO of Aomni (AI sales intelligence, seed-funded); currently building Duet Chat; prev CTO at Social Plus Corp/Amity and NockNock; NASA JPL alumni",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 4000000,
+   "sources": [
+    "https://github.com/dzhng",
+    "https://www.linkedin.com/in/david-zhang-2902462a"
+   ]
+  },
+  {
+   "handle": "rajko_rad",
+   "name": "Rajko Radovanović",
+   "followers": 6015,
+   "identified": true,
+   "headline": "Investing Partner at Andreessen Horowitz (a16z), focused on AI infrastructure; previously Venture Investor at NEA and consultant at BCG; Harvard Economics & CS graduate",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 500000,
+   "high": 3000000,
+   "sources": [
+    "https://theorg.com/org/andreessen-horowitz/org-chart/rajko-radovanovic",
+    "https://x.com/rajko_rad/status/1734259549786284454"
+   ]
+  },
+  {
+   "handle": "NoahBerkson",
+   "name": "Noah Berkson | Chief Networking Officer",
+   "followers": 3261,
+   "identified": true,
+   "headline": "Serial entrepreneur and Managing Director of Austin Capital Partners; co-founded 8 companies with 4 exits across payments-tech, health-tech, prop-tech, and ag-tech.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 500000,
+   "high": 3000000,
+   "sources": [
+    "https://noahberkson.com/",
+    "https://people.equilar.com/bio/person/noah-berkson-austin-capital-partners/47496637"
+   ]
+  },
+  {
+   "handle": "bbabenko",
+   "name": "Boris Babenko",
+   "followers": 1858,
+   "identified": true,
+   "headline": "ML/computer-vision engineer: PhD from UCSD (advisor Serge Belongie), founder of Anchovi Labs (acqui-hired by Dropbox ~2012), ex-Dropbox, ex-Orbital Insight, now at Google working on medical imaging",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 3000000,
+   "sources": [
+    "https://bbabenko.github.io/",
+    "https://github.com/bbabenko",
+    "https://twitter.com/bbabenko"
+   ]
+  },
+  {
+   "handle": "chriscassano",
+   "name": "🔥",
+   "followers": 1144,
+   "identified": true,
+   "headline": "Co-Founder and CTO of Lit Protocol, a Web3 decentralized key management and encryption network that raised $15.2M across Seed and Series A rounds.",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 300000,
+   "high": 3000000,
+   "sources": [
+    "https://www.linkedin.com/in/ccassano/",
+    "https://tracxn.com/d/companies/lit-protocol/__VE8Ekeva4-wkXX1Aph2JMaYUnoS-fhyJoA2XT6EbyJQ"
+   ]
+  },
+  {
+   "handle": "sldoane",
+   "name": "Stuart Doane",
+   "followers": 288,
+   "identified": true,
+   "headline": "General Partner at Allegis Capital (early-stage fintech VC), Menlo Park CA; previously investor at SVB Capital",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 300000,
+   "high": 3000000,
+   "sources": [
+    "https://me.sh/profile/stuart-doane-286fb566",
+    "https://clay.earth/profile/stuart-doane-286fb566"
+   ]
+  },
+  {
+   "handle": "imjaredz",
+   "name": "Jared Zoneraich",
+   "followers": 5688,
+   "identified": true,
+   "headline": "Co-founder of PromptLayer (AI prompt engineering infrastructure); Builder in Residence at Cognition (makers of Devin AI coding agent)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 3000000,
+   "sources": [
+    "https://blog.promptlayer.com/promptlayer-announces-our-4-8m-fundraise/",
+    "https://pitchbook.com/profiles/company/528256-63"
+   ]
+  },
+  {
+   "handle": "JohnDDulin",
+   "name": "John Dulin",
+   "followers": 2952,
+   "identified": true,
+   "headline": "CEO and Co-Founder of Modern Intelligence, an AI/defense seed-stage startup (Austin, TX)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 200000,
+   "high": 3000000,
+   "sources": [
+    "https://fortune.com/2022/03/16/modern-intelligence-venture-capital-funding-5-million-a-i-defense-industry-sensor-fusion/",
+    "https://vineventures.com/blog/meet-john-dulin-the-founder-harnessing-ai-to-keep-america-safe/"
+   ]
+  },
+  {
+   "handle": "natea",
+   "name": "Nate Aune",
+   "followers": 3022,
+   "identified": true,
+   "headline": "Confirmed as Nate Aune, Medford MA-based founder of Appsembler (open-source SaaS enablement, est. 2012) and Jazkarta (Plone web consulting, est. 2004); identity corroborated across X, LinkedIn, GitHub",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 100000,
+   "high": 3000000,
+   "sources": [
+    "https://github.com/natea",
+    "https://www.linkedin.com/in/natea/",
+    "https://x.com/natea",
+    "https://appsembler.com/blog/author/natea"
+   ]
+  },
+  {
+   "handle": "yoheinakajima",
+   "name": "Yohei",
+   "followers": 125744,
+   "identified": true,
+   "headline": "General Partner at Untapped Capital (micro-VC, ~$9.5M Fund I); creator of BabyAGI open-source autonomous agent framework",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 300000,
+   "high": 2500000,
+   "sources": [
+    "https://www.vcsheet.com/fund/untapped-capital",
+    "https://www.vcsheet.com/who/yohei-nakajima"
+   ]
+  },
+  {
+   "handle": "Mikenicholls88",
+   "name": "Mike Nicholls",
+   "followers": 6332,
+   "identified": true,
+   "headline": "Partner at Main Sequence Ventures (Australia); serial entrepreneur; semiconductor, AI & hardware investor",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 2000000,
+   "sources": [
+    "https://www.mseq.vc/team/mike-nicholls",
+    "https://signal.nfx.com/investors/mike-nicholls"
+   ]
+  },
+  {
+   "handle": "raw_works",
+   "name": "Raymond Weitekamp",
+   "followers": 2818,
+   "identified": true,
+   "headline": "Founder & CEO of polySpectra; co-founder of Cypris Materials; deep-tech materials scientist (PhD Caltech, AB Princeton)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 2000000,
+   "sources": [
+    "https://tracxn.com/d/companies/polyspectra/___Ga6_Y5UBjhfOU70gV6wvNx-N7y1tJJqmmdSeQZPFqs",
+    "https://www.crunchbase.com/person/raymond-weitekamp"
+   ]
+  },
+  {
+   "handle": "Miles_Brundage",
+   "name": "Miles Brundage",
+   "followers": 72608,
+   "identified": true,
+   "headline": "Former OpenAI Head of Policy Research; Executive Director of AVERI nonprofit",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 2000000,
+   "sources": [
+    "https://fortune.com/2026/01/15/former-openai-policy-chief-creates-nonprofit-institute-calls-for-independent-safety-audits-of-frontier-ai-models/",
+    "https://en.wikipedia.org/wiki/Miles_Brundage"
+   ]
+  },
+  {
+   "handle": "JordanGoldman_",
+   "name": "Jordan Goldman",
+   "followers": 1905,
+   "identified": true,
+   "headline": "Co-Founder, President & COO of M1X Global (USDM1); former CMO at Genesis Trading",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 2000000,
+   "sources": [
+    "https://fintech.global/2026/03/25/m1x-global-raises-3m-to-scale-on-chain-sovereign-finance/",
+    "https://board.fastcompany.com/profile/Jordan-Goldman-Chief-Marketing-Officer-Genesis/1e276545-aac0-4bef-ae48-7a127e6ede66"
+   ]
+  },
+  {
+   "handle": "iammarkhammond",
+   "name": "Mark Hammond",
+   "followers": 1679,
+   "identified": true,
+   "headline": "Founding Director of Deep Science Ventures and founder of Big Picture Bio; UK deep-tech venture builder and neuropharmacology PhD",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 2000000,
+   "sources": [
+    "https://www.deepscienceventures.com/",
+    "https://ukbaa.org.uk/blog/2019/11/11/deep-science-ventures-founding-director-mark-hammond-talks-about-the-challenges-for-deep-tech-businesses-and-the-importance-of-bringing-the-right-people-together-for-the-right-opportunity/"
+   ]
+  },
+  {
+   "handle": "ShreyaR",
+   "name": "shreya rajpal",
+   "followers": 8136,
+   "identified": true,
+   "headline": "Co-founder and CEO of Guardrails AI; previously founding engineer at Predibase, Apple SPG, and Drive.ai",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 2000000,
+   "sources": [
+    "https://www.globenewswire.com/news-release/2024/02/15/2830261/0/en/Guardrails-AI-is-Solving-the-LLM-Reliability-Problem-for-AI-Developers-With-7-5-Million-in-Seed-Funding.html",
+    "https://getlatka.com/companies/guardrailsai.com"
+   ]
+  },
+  {
+   "handle": "Scobleizer",
+   "name": "Robert Scoble",
+   "followers": 589404,
+   "identified": true,
+   "headline": "Tech blogger, author, and evangelist; known for Scobleizer blog and roles at Microsoft, Rackspace, and Fast Company",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 400000,
+   "high": 1500000,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Robert_Scoble",
+    "https://peopleai.com/fame/identities/robert-scoble"
+   ]
+  },
+  {
+   "handle": "jxnlco",
+   "name": "jason",
+   "followers": 112051,
+   "identified": true,
+   "headline": "Creator of Instructor (open-source Python library), founder of 567 Studios AI consulting, a16z scout, and OpenAI Codex team engineer",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 300000,
+   "high": 1500000,
+   "sources": [
+    "https://jxnl.co/resume/",
+    "https://jxnl.co/"
+   ]
+  },
+  {
+   "handle": "hingeloss",
+   "name": "chris",
+   "followers": 3750,
+   "identified": true,
+   "headline": "Independent data/AI professional, Wharton alumnus, writer at hua.substack.com; self-employed in New York",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 1500000,
+   "sources": [
+    "https://hua.substack.com/",
+    "https://www.linkedin.com/in/chris-hua/"
+   ]
+  },
+  {
+   "handle": "_abi_",
+   "name": "Abi Raja",
+   "followers": 2502,
+   "identified": true,
+   "headline": "Co-founder of PeerCDN (acquired by Yahoo 2013), indie developer building Pico Apps and screenshot-to-code; ex-Palantir, Stanford CS",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 300000,
+   "high": 1500000,
+   "sources": [
+    "https://vator.tv/2013-12-17-yahoos-latest-acquisition-p2p-network-peercdn/",
+    "https://github.com/abi"
+   ]
+  },
+  {
+   "handle": "doodlestein",
+   "name": "Jeffrey Emanuel",
+   "followers": 45307,
+   "identified": true,
+   "headline": "Founder & CEO of Lumera Network (formerly Pastel Network); former long/short equity analyst at Millennium Management and Balyasny Asset Management",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 1500000,
+   "sources": [
+    "https://www.jeffreyemanuel.com/",
+    "https://github.com/Dicklesworthstone"
+   ]
+  },
+  {
+   "handle": "edwardbenson",
+   "name": "Ted Benson",
+   "followers": 3896,
+   "identified": true,
+   "headline": "AI engineer at Figma; founder of Steamship (AI startup, $6M raised from a16z/General Catalyst); MIT PhD in CS; angel investor",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 1500000,
+   "sources": [
+    "https://edwardbenson.com/",
+    "https://pitchbook.com/profiles/company/489491-20"
+   ]
+  },
+  {
+   "handle": "fejes713",
+   "name": "stefo",
+   "followers": 2570,
+   "identified": true,
+   "headline": "Early co-founder / Product & Engineering at VEED.io ($160M valuation, Sequoia-backed); now CEO at Preview.io",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 1500000,
+   "sources": [
+    "https://www.stefanfejes.com/",
+    "https://techcrunch.com/2022/02/02/veed-an-online-video-editing-platform-picks-up-35m-from-sequoia/"
+   ]
+  },
+  {
+   "handle": "mike_l_lee",
+   "name": "Mike Lee",
+   "followers": 261,
+   "identified": true,
+   "headline": "Senior Technical Product Manager at Indeed; co-founder of edshelf and WebMocha",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 400000,
+   "high": 1200000,
+   "sources": [
+    "https://www.mikelee.org/",
+    "https://x.com/mike_l_lee"
+   ]
+  },
+  {
+   "handle": "che_shr_cat",
+   "name": "Grigory Sapunov",
+   "followers": 3707,
+   "identified": true,
+   "headline": "Co-founder and CTO of Intento (small AI localization startup, ~$4.3M total raised); Google Developer Expert and author of Deep Learning with JAX.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 100000,
+   "high": 1500000,
+   "sources": [
+    "https://github.com/che-shr-cat",
+    "https://x.com/che_shr_cat",
+    "https://www.crunchbase.com/organization/intento",
+    "https://news.crunchbase.com/startups/intento-raises-3m-seed-round-to-scale-ai-transformations/"
+   ]
+  },
+  {
+   "handle": "robinanil",
+   "name": "Robin Anil",
+   "followers": 1223,
+   "identified": true,
+   "headline": "CTO at Emora Health; ex-Director Research Tech at Bridgewater Associates, Head of Engineering at Tock, TL at Google Maps/Ads; IIT Kharagpur CS",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 300000,
+   "high": 1200000,
+   "sources": [
+    "https://www.linkedin.com/in/robinanil/",
+    "https://www.emorahealth.com/"
+   ]
+  },
+  {
+   "handle": "hockenbrocht",
+   "name": "Greg Hockenbrocht",
+   "followers": 177,
+   "identified": true,
+   "headline": "Co-Founder & CEO of Launch10 (AI marketing platform); former BD lead at Fundera (acq'd by NerdWallet); ex-J.P. Morgan IB Associate; LP at Rally Cap VC",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 300000,
+   "high": 1200000,
+   "sources": [
+    "https://theorg.com/org/rally-cap-vc/org-chart/greg-hockenbrocht",
+    "https://launch10.ai"
+   ]
+  },
+  {
+   "handle": "JeremyDanielFox",
+   "name": "Jeremy Fox 🦊",
+   "followers": 3014,
+   "identified": true,
+   "headline": "Member of Technical Staff (Software Engineer) at Anthropic AI; previously Google and Palantir Technologies",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 1200000,
+   "sources": [
+    "https://www.linkedin.com/in/jeremydanielfox/",
+    "https://x.com/JeremyDanielFox/status/1753653102149083474"
+   ]
+  },
+  {
+   "handle": "EvanKirstel",
+   "name": "Evan Kirstel #B2B #TechFluencer",
+   "followers": 378817,
+   "identified": true,
+   "headline": "B2B Tech Influencer, Industry Analyst, and Co-founder of eViRa Health; 30+ years in enterprise telecom/IT",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 300000,
+   "high": 1000000,
+   "sources": [
+    "https://www.evankirstel.com/about",
+    "https://www.thinkers360.com/tl/profiles/view/32"
+   ]
+  },
+  {
+   "handle": "mhmazur",
+   "name": "Matt Mazur",
+   "followers": 5358,
+   "identified": true,
+   "headline": "Bootstrapped indie founder of Preceden (SaaS timeline maker) and Emergent Mind (AI research aggregator); ex-engineer at Automattic and data lead at Help Scout; former US Air Force officer.",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 250000,
+   "high": 900000,
+   "sources": [
+    "https://mattmazur.com/about/",
+    "https://www.linkedin.com/in/mhmazur/"
+   ]
+  },
+  {
+   "handle": "Rctung",
+   "name": "Roger",
+   "followers": 1308,
+   "identified": true,
+   "headline": "Head of Marketing / Growth Marketing leader; roles at acquire.com (MicroAcquire), ManyChat, brightwheel, LendingClub; affiliated with Fulltilt Talent",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 900000,
+   "sources": [
+    "https://theorg.com/org/acquire-com/org-chart/roger-tung",
+    "https://rocketreach.co/roger-tung-email_550620"
+   ]
+  },
+  {
+   "handle": "viksit",
+   "name": "Viksit Gaur",
+   "followers": 3246,
+   "identified": true,
+   "headline": "Chief AI Officer (current); 2x founder (Myra Labs, Solarplex/Dispatch Protocol); former AI lead at Dropbox; EIR at Forward Research/Arweave",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 200000,
+   "high": 800000,
+   "sources": [
+    "https://viksit.com/about/",
+    "https://tracxn.com/d/companies/myralabs/__U4zOfRCnNTdAxDfxY__6Oqvp4SK2h5isvypeyyPMef4"
+   ]
+  },
+  {
+   "handle": "20Sunpreet",
+   "name": "Sunpreet Singh",
+   "followers": 578,
+   "identified": true,
+   "headline": "Vice President at Insight Partners, investing in SaaS, AI, dev tools, and data infrastructure",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 800000,
+   "sources": [
+    "https://signal.nfx.com/investors/sunpreet-singh",
+    "https://www.insightpartners.com/team/sunpreet-singh/"
+   ]
+  },
+  {
+   "handle": "alanyttian",
+   "name": "Yingtao Tian",
+   "followers": 3623,
+   "identified": true,
+   "headline": "Research Scientist at Sakana AI; former Google Brain / DeepMind Research Scientist (Tokyo)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 800000,
+   "sources": [
+    "https://alantian.net/",
+    "https://techcrunch.com/2025/11/17/sakana-ai-raises-135m-series-b-at-a-2-65b-valuation-to-continue-building-ai-models-for-japan/"
+   ]
+  },
+  {
+   "handle": "JulienTech",
+   "name": "Julien from Baseten",
+   "followers": 342,
+   "identified": true,
+   "headline": "GTM/Sales employee at Baseten (AI inference infrastructure), formerly Stripe",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 800000,
+   "sources": [
+    "https://x.com/julientech?lang=en",
+    "https://www.baseten.co/blog/announcing-baseten-s-300m-series-e/"
+   ]
+  },
+  {
+   "handle": "morgymcg",
+   "name": "Morgan McGuire",
+   "followers": 3437,
+   "identified": true,
+   "headline": "Senior ML Engineering Manager at CoreWeave; ex-Director of Growth ML at Weights & Biases; ex-Facebook; background in electricity/commodity trading at Danske Commodities",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 700000,
+   "sources": [
+    "https://theorg.com/org/coreweave/org-chart/morgan-mcguire",
+    "https://www.levels.fyi/companies/coreweave/salaries/software-engineering-manager"
+   ]
+  },
+  {
+   "handle": "BishPlsOk",
+   "name": "Michael Bishop",
+   "followers": 964,
+   "identified": true,
+   "headline": "CTO and Co-Founder of OpenAds.ai, an AI-native adtech startup in New York, NY; formerly Principal Product Manager at Moat (Oracle)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 750000,
+   "sources": [
+    "https://www.linkedin.com/in/michael-bishop-483aa874/",
+    "https://www.crunchbase.com/person/michael-bishop-43d7"
+   ]
+  },
+  {
+   "handle": "jorgefu_",
+   "name": "Jorge Fuentes",
+   "followers": 300,
+   "identified": true,
+   "headline": "Software engineer; prev co-founder/CTO at a YC W20 education startup; current Member of Technical Staff at Latent Health (YC W23, $80M Series A)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 150000,
+   "high": 700000,
+   "sources": [
+    "https://jsfuentes.com/",
+    "https://www.zoominfo.com/p/Jorge-Fuentes/2367862149"
+   ]
+  },
+  {
+   "handle": "FedorShabashev",
+   "name": "Fedor Shabashev",
+   "followers": 176,
+   "identified": true,
+   "headline": "Engineering Manager / Team Lead, ex-Facebook ML Engineer",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 700000,
+   "sources": [
+    "https://uk.linkedin.com/in/fedorshabashev",
+    "https://github.com/fshabashev"
+   ]
+  },
+  {
+   "handle": "max_pechyonkin",
+   "name": "Max Pechyonkin",
+   "followers": 582,
+   "identified": true,
+   "headline": "Cloud, AI & ML Technical Solutions Engineer at Google; PhD in Finance; Co-dean of China School of AI",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 100000,
+   "high": 700000,
+   "sources": [
+    "https://pechyonkin.me/about/",
+    "https://technode.com/2019/06/10/democratizing-ai-max-pechyonkin/"
+   ]
+  },
+  {
+   "handle": "lukeigel",
+   "name": "Luke Igel",
+   "followers": 8759,
+   "identified": true,
+   "headline": "Co-founder & CEO of Kino AI (YC S23), MIT '23, ex-NASA JPL & SpaceX",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 0,
+   "high": 800000,
+   "sources": [
+    "https://www.ycombinator.com/companies/kino-ai",
+    "https://www.prweb.com/releases/kino-secures-4-35m-pre-seed-stealth-extension-led-by-cathie-woods-ark-venture-fund-302139636.html"
+   ]
+  },
+  {
+   "handle": "mdahardy",
+   "name": "Matt Hardy",
+   "followers": 1017,
+   "identified": true,
+   "headline": "Co-founder and CTO of Roundtable (YC S23); PhD in Computational Cognitive Science from Princeton",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 750000,
+   "sources": [
+    "https://matthardy.org/",
+    "https://www.workatastartup.com/companies/29005"
+   ]
+  },
+  {
+   "handle": "KirkMarple",
+   "name": "Kirk Marple",
+   "followers": 3960,
+   "identified": true,
+   "headline": "Founder/CEO of Graphlit (Unstruk Data, Inc.), ex-Microsoft, serial technical founder based in Seattle",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 600000,
+   "sources": [
+    "https://getlatka.com/companies/graphlit.com#team",
+    "https://coruzant.com/profiles/kirk-marple/"
+   ]
+  },
+  {
+   "handle": "dkubb",
+   "name": "Dan Kubb",
+   "followers": 1861,
+   "identified": true,
+   "headline": "Senior Staff Software Engineer at Betterment; Ruby open-source contributor based in Mission, BC, Canada",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 150000,
+   "high": 600000,
+   "sources": [
+    "https://github.com/dkubb",
+    "https://www.zoominfo.com/p/Dan-Kubb/9433834110"
+   ]
+  },
+  {
+   "handle": "DQuick215",
+   "name": "Danny Quick",
+   "followers": 2586,
+   "identified": true,
+   "headline": "Startup founder and product executive; CEO/co-founder of Shop Galaxy and Stacks; former Head of Product at Parkwood Entertainment (Beyonce); currently building Kiko",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 600000,
+   "sources": [
+    "https://medium.com/authority-magazine/the-future-of-communication-technology-danny-quick-of-stacks-on-how-their-technological-7489e66acb13",
+    "https://dannyquick.com/"
+   ]
+  },
+  {
+   "handle": "zebird0",
+   "name": "robin",
+   "followers": 21192,
+   "identified": true,
+   "headline": "Founding team investor at a16z Speedrun; now building a stealth consumer bio startup",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 600000,
+   "sources": [
+    "https://www.robin-guo.com/p/speedrun-what-i-learned-building",
+    "https://www.robin-guo.com/p/i-left-a16z-to-go-build"
+   ]
+  },
+  {
+   "handle": "nptacek",
+   "name": "CuddlySalmon",
+   "followers": 7385,
+   "identified": true,
+   "headline": "Cybersecurity software developer, AI artist, and independent technologist; ~20 years in Mac security software; experimenter with generative AI tools",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 600000,
+   "sources": [
+    "https://nptacek.medium.com/about",
+    "https://nptacek.medium.com"
+   ]
+  },
+  {
+   "handle": "marcojelli",
+   "name": "Marcus Ellison",
+   "followers": 1044,
+   "identified": true,
+   "headline": "Co-Founder & CEO of Breadcrumb.ai, an agentic B2B reporting startup; NYU Gallatin alum; affiliated with Cerebral Valley",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 600000,
+   "sources": [
+    "https://getlatka.com/companies/breadcrumb.ai",
+    "https://www.breadcrumb.ai/blog/what-is-agentic-reporting"
+   ]
+  },
+  {
+   "handle": "vgoklani_ai",
+   "name": "Vishal Goklani",
+   "followers": 719,
+   "identified": true,
+   "headline": "Founder and CEO of Metricle, Inc. — bootstrapped financial analytics startup; ML/NLP engineer with quant finance background",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 600000,
+   "sources": [
+    "https://theorg.com/org/metricle-inc/org-chart/vishal-goklani",
+    "https://www.crunchbase.com/person/vishal-goklani"
+   ]
+  },
+  {
+   "handle": "Zecca_Lehn",
+   "name": "Zécca",
+   "followers": 20678,
+   "identified": true,
+   "headline": "General Partner at Responsibly Ventures, a sub-$10M pre-seed impact VC fund; Community Lead at posi2ive",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 500000,
+   "sources": [
+    "https://signal.nfx.com/investors/zecca-lehn",
+    "https://medium.com/bigger-than-us/160-zecca-lehn-general-partner-of-responsibly-ventures-a079bdc94254"
+   ]
+  },
+  {
+   "handle": "HunterFromNYC",
+   "name": "Hunter Brooks 😎",
+   "followers": 1308,
+   "identified": true,
+   "headline": "Co-Founder & CEO of Ellipsis (YC W24), AI code review startup; former ML Engineer at AWS and Amazon Ads",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 500000,
+   "sources": [
+    "https://www.ycombinator.com/companies/ellipsis",
+    "https://www.linkedin.com/in/seanhunterbrooks/"
+   ]
+  },
+  {
+   "handle": "dcsan",
+   "name": "˗ˏˋ DC ˎˊ˗",
+   "followers": 1184,
+   "identified": true,
+   "headline": "Creative coder, serial founder — 6 startups across 4 countries (UK, US, Japan, China) with 2 exits; worked on conversational AI at Google; active in games, NLP, gen art, and EdTech",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 80000,
+   "high": 500000,
+   "sources": [
+    "https://github.com/dcsan/dcsan",
+    "https://dc.rik.ai/"
+   ]
+  },
+  {
+   "handle": "lateinteraction",
+   "name": "Omar Khattab",
+   "followers": 36170,
+   "identified": true,
+   "headline": "Assistant Professor at MIT EECS & CSAIL; creator of DSPy and ColBERT open-source AI frameworks",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 450000,
+   "sources": [
+    "https://omarkhattab.com/",
+    "https://www.csail.mit.edu/person/omar-khattab"
+   ]
+  },
+  {
+   "handle": "anishpdalal",
+   "name": "Anish Dalal",
+   "followers": 121,
+   "identified": true,
+   "headline": "Co-Founder & CTO of DocDraft, AI legal document automation startup; Forbes 30 Under 30 (2020)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://www.anishdalal.me/",
+    "https://tracxn.com/d/companies/docdraft/__4-gqDVdbwOLYwekFYKkVbG6AM1HiVwiwcg4_9E6pAwA"
+   ]
+  },
+  {
+   "handle": "ereckers",
+   "name": "Ed Reckers",
+   "followers": 1080,
+   "identified": true,
+   "headline": "Founder and lead WordPress developer/consultant at Red Bridge Internet, a small San Francisco WordPress development agency",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://github.com/ereckers",
+    "https://profiles.wordpress.org/ereckers/",
+    "https://x.com/ereckers",
+    "https://www.redbridgenet.com/author/ereckers/"
+   ]
+  },
+  {
+   "handle": "Springcoil",
+   "name": "Peadar Coyle (🇪🇺 eu/acc)",
+   "followers": 2670,
+   "identified": true,
+   "headline": "Co-founder of AudioStack, an AI-native audio production platform for Media and Entertainment",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 500000,
+   "sources": [
+    "https://tracxn.com/d/companies/audiostack/__wosBVpgqaCgvWT-0iYS8zsw0qv_PqjFxbfXVLCBVmWY",
+    "https://www.finsmes.com/2024/02/audiostack-raises-2-5m-in-pre-series-a-funding.html"
+   ]
+  },
+  {
+   "handle": "rmcastil",
+   "name": "Ryan Castillo",
+   "followers": 1042,
+   "identified": true,
+   "headline": "Co-founder of Knowatoa (AI search analytics/SEO tool); also linked with Wafris; bootstrapped indie SaaS builder/developer.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 500000,
+   "sources": [
+    "https://knowatoa.com/",
+    "https://knowatoa.com/about",
+    "https://x.com/rmcastil",
+    "https://www.linkedin.com/in/rmcastil/"
+   ]
+  },
+  {
+   "handle": "salomartin",
+   "name": "Martin Salo",
+   "followers": 996,
+   "identified": true,
+   "headline": "Estonian tech founder with a 15-year AI industry background, now building Tensor Estate, an early-stage venture developing large power-capacity (100-400 MW) land sites for data centers/AI infrastructure in Estonia.",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 0,
+   "high": 500000,
+   "sources": [
+    "https://www.linkedin.com/in/salomartin/",
+    "https://x.com/salomartin?lang=en",
+    "https://tensor.estate/"
+   ]
+  },
+  {
+   "handle": "hrishioa",
+   "name": "Hrishi",
+   "followers": 11644,
+   "identified": true,
+   "headline": "Co-founder and former CTO of Greywing (YC W21), a maritime operations startup; now building a new venture",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://tracxn.com/d/companies/greywing/__x-bX2-REYO4dG_XXohYXM1AOHyBE56TbPNKvl2Oe3Eg",
+    "https://www.ycombinator.com/companies/greywing"
+   ]
+  },
+  {
+   "handle": "ambuj123",
+   "name": "Prof. Ambuj Varshney",
+   "followers": 1599,
+   "identified": true,
+   "headline": "Assistant Professor of Computer Science at National University of Singapore; embedded systems and wireless researcher",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 350000,
+   "sources": [
+    "https://weiserlab.github.io/ambuj/background",
+    "https://www.comp.nus.edu.sg/bytes/shrinking-ai-to-fit-the-real-world-assistant-ambuj-varshney-receives-2026-google-research-award/"
+   ]
+  },
+  {
+   "handle": "jetha",
+   "name": "Jetha Chan",
+   "followers": 1970,
+   "identified": true,
+   "headline": "Technical Solutions Consultant / AI Developer Relations at Google DeepMind; formerly Partner Engineering at Google Stadia; based in Tokyo",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 100000,
+   "high": 350000,
+   "sources": [
+    "https://jethachan.net/",
+    "https://www.linkedin.com/in/jethac/"
+   ]
+  },
+  {
+   "handle": "iporollo",
+   "name": "Ivan Porollo",
+   "followers": 3515,
+   "identified": true,
+   "headline": "Founder of Cerebral Valley (AI events/community); YC W20 alum; previously co-founded Monosi",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 50000,
+   "high": 400000,
+   "sources": [
+    "https://ivanporollo.com/about",
+    "https://www.newcomer.co/p/were-back-the-cerebral-valley-ai"
+   ]
+  },
+  {
+   "handle": "richban_",
+   "name": "Rich",
+   "followers": 109,
+   "identified": true,
+   "headline": "Data & ML Engineering Consultant at McKinsey, based in London",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 100000,
+   "high": 350000,
+   "sources": [
+    "https://github.com/richban",
+    "https://richban.tech/about/"
+   ]
+  },
+  {
+   "handle": "kristahopsalong",
+   "name": "Krista Opsahl-Ong",
+   "followers": 1796,
+   "identified": true,
+   "headline": "Research Engineer, Databricks Mosaic Research; former Stanford AI Lab PhD researcher; DSPy contributor",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 80000,
+   "high": 350000,
+   "sources": [
+    "https://www.databricks.com/dataaisummit/speaker/krista-opsahl-ong",
+    "https://stairlab.stanford.edu/members/krista_opsahl_ong.html"
+   ]
+  },
+  {
+   "handle": "Siddharth87",
+   "name": "Sid Bharath",
+   "followers": 4746,
+   "identified": true,
+   "headline": "Founder of Refound (AI consultancy); prev Head of Studio at Forum Ventures; founder of defunct AI startup Broca",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 350000,
+   "sources": [
+    "https://sidbharath.com/",
+    "https://tracxn.com/d/companies/broca/__Z4nMUFWh8LMc9VkLrIqVHFzDHas1JAaX8SZOY7FYlHw"
+   ]
+  },
+  {
+   "handle": "engineerrprompt",
+   "name": "Prompt",
+   "followers": 2204,
+   "identified": true,
+   "headline": "PhD ML researcher, creator of localGPT, AI educator with 200K+ YouTube subscribers, building whryte.com",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 80000,
+   "high": 300000,
+   "sources": [
+    "https://engineerprompt.ai/",
+    "https://engineerprompt.ai/about/"
+   ]
+  },
+  {
+   "handle": "jwintersinger",
+   "name": "Jeff Wintersinger",
+   "followers": 1018,
+   "identified": true,
+   "headline": "Senior Research Scientist in computational biology at Deep Genomics, Toronto; PhD in cancer evolutionary genomics from University of Toronto",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 75000,
+   "high": 300000,
+   "sources": [
+    "https://jeff.wintersinger.org/",
+    "https://www.glassdoor.ca/Salary/Deep-Genomics-Research-Scientist-Toronto-Salaries-EJI_IE1938810.0,13_KO14,32_IL.33,40_IM976.htm"
+   ]
+  },
+  {
+   "handle": "AnthonyCastrio",
+   "name": "Anthony Castrio",
+   "followers": 23798,
+   "identified": true,
+   "headline": "Co-Founder and CTO of ApplyAll; founder of Indie Worldwide bootstrapped community",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://substack.com/@anthonycastrio/note/c-63921587",
+    "https://www.indiehackers.com/AntCas"
+   ]
+  },
+  {
+   "handle": "eostudi0",
+   "name": "EO",
+   "followers": 1903,
+   "identified": true,
+   "headline": "CEO and Founder of EO Studio, a Korean startup media company producing founder and VC interview content",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://www.eomag.io/",
+    "https://www.cbinsights.com/company/eo-studio/people"
+   ]
+  },
+  {
+   "handle": "SalehOfTomorrow",
+   "name": "Saleh Hindi",
+   "followers": 1845,
+   "identified": true,
+   "headline": "Software/AI engineer transitioning into healthcare; ex-Lyft self-driving, ex-Bloomberg MBS API; now at stealth drug-delivery startup focused on neurological conditions",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 50000,
+   "high": 300000,
+   "sources": [
+    "https://www.linkedin.com/in/saleh-hindi/",
+    "https://www.linkedin.com/in/saleh-hindi-55895144/"
+   ]
+  },
+  {
+   "handle": "amrit_sharma",
+   "name": "Amrit Sharma",
+   "followers": 1756,
+   "identified": true,
+   "headline": "Senior Developer Advocate at ecobee; board member at OpenAQ; civic tech builder (Smokey Bot, airairair.org); based in Toronto, Canada",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 80000,
+   "high": 250000,
+   "sources": [
+    "https://www.linkedin.com/in/amritsharma/",
+    "https://www.zoominfo.com/p/Amrit-Sharma/1939309707"
+   ]
+  },
+  {
+   "handle": "nletcher",
+   "name": "Ned Letcher",
+   "followers": 1336,
+   "identified": true,
+   "headline": "Lead Data Science Engineer at Thoughtworks, Melbourne, Australia; PhD in Computational Linguistics (University of Melbourne)",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 80000,
+   "high": 250000,
+   "sources": [
+    "https://www.thoughtworks.com/profiles/n/ned-letcher",
+    "https://sessionize.com/nletcher/"
+   ]
+  },
+  {
+   "handle": "that1guy_15",
+   "name": "Ryan Booth",
+   "followers": 2096,
+   "identified": true,
+   "headline": "Infrastructure / GenAI / MLOps Engineer; Tech Field Day participant",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 75000,
+   "high": 250000,
+   "sources": [
+    "https://x.com/that1guy_15?lang=en",
+    "https://github.com/that1guy15"
+   ]
+  },
+  {
+   "handle": "generativist",
+   "name": "johnny, skroderider era",
+   "followers": 18758,
+   "identified": true,
+   "headline": "Computational social scientist and multiple-time founder (Practical Theta, Abreka); former CATO Institute and Johns Hopkins APL",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://becomingcreature.substack.com/p/generativist-on-polarization-twitter",
+    "https://www.generativist.com/"
+   ]
+  },
+  {
+   "handle": "kpatt1011",
+   "name": "Keith Pattison",
+   "followers": 1830,
+   "identified": true,
+   "headline": "Chief Technologist / founder at Black Flag Design, a Denver-based software studio (per LinkedIn/X bio); small project-based studio charging $20K-$44K+ per engagement, not evidence of personal net wort",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 300000,
+   "sources": [
+    "https://x.com/kpatt1011",
+    "https://www.linkedin.com/in/kpatt1011/",
+    "https://www.blackflag.design/",
+    "https://github.com/kpatt1011"
+   ]
+  },
+  {
+   "handle": "gijigae",
+   "name": "sangmin.eth | 安全なう",
+   "followers": 33703,
+   "identified": true,
+   "headline": "Founder & CEO of The Choimirai Company, Japan-based AI/EdTech educator and Dify Ambassador",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 30000,
+   "high": 250000,
+   "sources": [
+    "https://www.choimirai.com/ja-us/pages/sangmin",
+    "https://jp.linkedin.com/in/sangminahn"
+   ]
+  },
+  {
+   "handle": "pirchavez",
+   "name": "xtamales",
+   "followers": 1130,
+   "identified": true,
+   "headline": "Cofounder of LLM Stats (YC S25), independent AI evaluations lab; prev LLM observability at Datadog, AI at Google, particle physics research",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 30000,
+   "high": 250000,
+   "sources": [
+    "https://www.ycombinator.com/companies/llm-stats",
+    "https://llm-stats.com/"
+   ]
+  },
+  {
+   "handle": "jchook",
+   "name": "Cantante Dreamer of Dreams",
+   "followers": 446,
+   "identified": true,
+   "headline": "Independent software developer and owner of Zinc Innovations LLC, based in Asheville, NC",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 30000,
+   "high": 250000,
+   "sources": [
+    "https://github.com/jchook",
+    "https://www.linkedin.com/in/wesleyroberts42/"
+   ]
+  },
+  {
+   "handle": "sroecker",
+   "name": "Steffen Röcker",
+   "followers": 1883,
+   "identified": true,
+   "headline": "Senior Solution Architect at Red Hat; ex-particle physicist (KIT); open-source local LLM advocate",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 80000,
+   "high": 200000,
+   "sources": [
+    "https://www.levels.fyi/companies/red-hat/salaries/solution-architect",
+    "https://x.com/sroecker"
+   ]
+  },
+  {
+   "handle": "FaisalDilaijan",
+   "name": "Faisal Aldilaijan",
+   "followers": 1388,
+   "identified": true,
+   "headline": "Software Engineer (ex-Meta, currently Raya); Co-Founder of Tatayab (Kuwait fragrance e-commerce)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 200000,
+   "sources": [
+    "https://www.linkedin.com/in/faisalaldilaijan/",
+    "https://theorg.com/org/raya/org-chart/faisal-aldilaijan"
+   ]
+  },
+  {
+   "handle": "dani_avila7",
+   "name": "Daniel San",
+   "followers": 32925,
+   "identified": true,
+   "headline": "Head of AI at Hedgineer Technologies; OSS developer (claude-code-templates); Chilean software engineer ~15 years experience",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 200000,
+   "sources": [
+    "https://github.com/davila7",
+    "https://x.com/dani_avila7"
+   ]
+  },
+  {
+   "handle": "TheOneAndArjun",
+   "name": "Arjun Krishna",
+   "followers": 2878,
+   "identified": true,
+   "headline": "Member of Technical Staff at 8090 Solutions (Chamath Palihapitiya's AI software startup), University of Waterloo graduate",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 50000,
+   "high": 200000,
+   "sources": [
+    "https://www.linkedin.com/in/arjun-krishna-2001/",
+    "https://x.com/TheOneAndArjun"
+   ]
+  },
+  {
+   "handle": "ctjlewis",
+   "name": "Lewis 🇺🇸",
+   "followers": 45618,
+   "identified": true,
+   "headline": "Independent software developer and early-stage AI founder; building SpellcraftAI and open-source TypeScript/ESM tooling under EvolvingPrograms",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 20000,
+   "high": 200000,
+   "sources": [
+    "https://github.com/ctjlewis",
+    "https://www.linkedin.com/in/ctjlewis"
+   ]
+  },
+  {
+   "handle": "thegutpod",
+   "name": "christianne",
+   "followers": 37,
+   "identified": true,
+   "headline": "Host of \"GUT with Christianne\" podcast/YouTube show; former investment banking analyst at TD Securities; Canadian based in New York",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 30000,
+   "high": 150000,
+   "sources": [
+    "https://www.listennotes.com/podcasts/gut-with-christianne-christianne-MsVpCxotZ10/",
+    "https://ca.linkedin.com/in/christianne-morrison (auth wall — profile title visible in search snippet only)"
+   ]
+  },
+  {
+   "handle": "mick__net",
+   "name": "Mick.net - Saas 💻 & Aviation ✈️",
+   "followers": 1326,
+   "identified": true,
+   "headline": "Bootstrapped solo founder of BestTime.app (foot traffic data API); ex-researcher at Royal Netherlands Aerospace Centre (NLR)",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 150000,
+   "sources": [
+    "https://x.com/mick__net?lang=en",
+    "https://besttime.app"
+   ]
+  },
+  {
+   "handle": "MarkusPesonen",
+   "name": "Markus Pesonen",
+   "followers": 497,
+   "identified": true,
+   "headline": "Co-Founder and CEO of Olo, a spatial audio / nervous-system regulation startup; award-winning composer and sound designer based in Venice Beach, CA",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 20000,
+   "high": 150000,
+   "sources": [
+    "https://www.startupreporter.eu/interview-with-markus-pesonen-co-founder-of-olo-app/",
+    "https://pitchbook.com/profiles/company/512951-41"
+   ]
+  },
+  {
+   "handle": "Eli_Krumova",
+   "name": "Elitsa Krumova",
+   "followers": 63201,
+   "identified": true,
+   "headline": "Independent B2B Tech Influencer & Thought Leader; personal brand elitsakrumova.com; WBAF-G20 Senator; PhD candidate in Marketing at UNWE Sofia",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 30000,
+   "high": 120000,
+   "sources": [
+    "https://www.elitsakrumova.com/about/",
+    "https://www.linkedin.com/in/elitsa-krumova/"
+   ]
+  },
+  {
+   "handle": "jonLorraine9",
+   "name": "Jonathan Lorraine",
+   "followers": 7111,
+   "identified": true,
+   "headline": "Research Scientist at NVIDIA Spatial Intelligence Lab; PhD in Machine Learning, University of Toronto (2024)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://www.jonlorraine.com/",
+    "https://research.nvidia.com/labs/toronto-ai/author/jonathan-lorraine/"
+   ]
+  },
+  {
+   "handle": "tom_walchak",
+   "name": "Tom Walczak",
+   "followers": 265,
+   "identified": true,
+   "headline": "AI Engineer / Consultant; Head of AI at Alex Epstein; Builder of AlexAI and Open Debate",
+   "verdict": "plausible",
+   "confidence": "low",
+   "low": 0,
+   "high": 150000,
+   "sources": [
+    "https://tomwalczak.com/",
+    "https://tomwalczak.substack.com/p/about-me"
+   ]
+  },
+  {
+   "handle": "nkdamoah",
+   "name": "Nana Kofi Damoah",
+   "followers": 3280,
+   "identified": true,
+   "headline": "Communications consultant and former Head of Communications, Ghana Ministry of Energy; MBA holder now based in Gaithersburg, MD",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 20000,
+   "high": 80000,
+   "sources": [
+    "https://x.com/nkdamoah",
+    "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Nana-Damoah-was-not-sacked-from-Energy-Ministry-Investigations-reveal-1253710"
+   ]
+  },
+  {
+   "handle": "orslimy",
+   "name": "Or Azulay",
+   "followers": 9795,
+   "identified": true,
+   "headline": "Co-Founder at Prysmic AI; Founder & Host of Specks of Light podcast; Product Advisor for early-stage startups; based in Tel Aviv-Yafo",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 10000,
+   "high": 80000,
+   "sources": [
+    "https://www.linkedin.com/in/orazulay/ (HTTP 999, LinkedIn blocked — identity confirmed via search snippet)",
+    "https://rocketreach.co/or-azulay-email_1308373"
+   ]
+  },
+  {
+   "handle": "mkovarski",
+   "name": "Mark",
+   "followers": 2645,
+   "identified": true,
+   "headline": "AI/tech professional and open-source LLM enthusiast; associated with The Humanized Internet non-profit; posts as GPT-Engineer on LinkedIn",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 80000,
+   "sources": [
+    "https://www.linkedin.com/in/markkovarski/",
+    "https://www.slideshare.net/mkovarski"
+   ]
+  },
+  {
+   "handle": "kunattila",
+   "name": "Attila Kun",
+   "followers": 113,
+   "identified": true,
+   "headline": "Indie programmer based in London; personal site at attilakun.net; projects include mdraft (macOS AI workspace app) and Bloch",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 80000,
+   "sources": [
+    "https://attilakun.net",
+    "https://www.mdraft.net"
+   ]
+  },
+  {
+   "handle": "panphora",
+   "name": "panphora",
+   "followers": 4029,
+   "identified": true,
+   "headline": "Independent developer and creator of Hyperclay and Remake; builds open-source \"malleable web\" tools",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 10000,
+   "high": 80000,
+   "sources": [
+    "https://github.com/panphora",
+    "https://github.com/sponsors/panphora"
+   ]
+  },
+  {
+   "handle": "psbots",
+   "name": "Praveen Sridhar",
+   "followers": 1045,
+   "identified": true,
+   "headline": "Data Scientist at Boston Consulting Group (BCG); Co-founder & Board Member, TinkerHub Foundation (nonprofit)",
+   "verdict": "overstated",
+   "confidence": "medium",
+   "low": 10000,
+   "high": 60000,
+   "sources": [
+    "https://www.theindustrial.in/news/92af93f73f/Kerala-based-TinkerHub-Foundation-receives-1-crore-in-funding-from-Zerodha-and-FOSS-United",
+    "https://www.prnewswire.com/in/news-releases/kerala-based-tinkerhub-foundation-receives-1-crore-in-funding-from-zerodha-and-foss-united-811197588.html"
+   ]
+  },
+  {
+   "handle": "chrisboden",
+   "name": "Chris Boden",
+   "followers": 1520,
+   "identified": true,
+   "headline": "Founder of The Geek Group nonprofit makerspace; science demonstrator, YouTuber, and author; convicted of unlicensed Bitcoin money transmission (2021, sentenced 30 months federal prison)",
+   "verdict": "plausible",
+   "confidence": "medium",
+   "low": 0,
+   "high": 50000,
+   "sources": [
+    "https://www.distractify.com/p/why-did-chris-boden-go-to-prison",
+    "https://www.captainboden.com/"
+   ]
+  },
+  {
+   "handle": "MindBranches",
+   "name": "MindBranches",
+   "followers": 160991,
+   "identified": true,
+   "headline": "Solo creator and founder of Teamonics LLC; produces AI-enhanced visual diagrams and sells digital products (ebooks, PDF summaries) via Gumroad",
+   "verdict": "overstated",
+   "confidence": "low",
+   "low": 3000,
+   "high": 30000,
+   "sources": [
+    "https://teamonics.com/mindbranches",
+    "https://x.com/MindBranches"
+   ]
+  },
+  {
+   "handle": "rberrelleza",
+   "name": "Ramiro Berrelleza",
+   "followers": 2717,
+   "identified": true,
+   "headline": "CEO and co-founder of Okteto, a YC W19 cloud development environments company ($18.1M total raised, $15M Series A in 2022, valuation undisclosed)",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://www.ycombinator.com/companies/okteto",
+    "https://github.com/rberrelleza",
+    "https://www.okteto.com/about-us/",
+    "https://x.com/rberrelleza"
+   ]
+  },
+  {
+   "handle": "Shin_Yamamoto21",
+   "name": "Shin Yamamoto / 山本 新",
+   "followers": 2206,
+   "identified": true,
+   "headline": "Identified as 山本 新, representative director/CEO and co-founder of CoPalette (est. May 2023), which operates hackathon platform CraftStadium and Tobari. CoPalette raised an undisclosed pre-seed round f",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/Shin_Yamamoto21",
+    "https://jp.linkedin.com/in/shin-yamamoto0422",
+    "https://github.com/shinyamamoto0422",
+    "https://www.copalette.org/news/eastventures-seed"
+   ]
+  },
+  {
+   "handle": "NightmareJS",
+   "name": "Kat Traxler",
+   "followers": 1795,
+   "identified": true,
+   "headline": "Principal Security Researcher at Vectra AI; cloud and identity security researcher, writer, and conference speaker.",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://kattraxler.cloud/",
+    "https://www.vectra.ai/about/author/kat-traxler",
+    "https://twitter.com/NightmareJS"
+   ]
+  },
+  {
+   "handle": "Clematis_Street",
+   "name": "Clematis Street",
+   "followers": 2713,
+   "identified": true,
+   "headline": "Clematis Street is a downtown West Palm Beach tourism/nightlife directory and district brand, not an individual person.",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://clematisstreet.org/",
+    "https://clematisstreet.org/about-us/",
+    "https://npgallery.nps.gov/GetAsset/33f7b12b-1b91-4ab6-a69e-0e85fcd6481c",
+    "https://www.southernliving.com/west-palm-beach-fl-8761803"
+   ]
+  },
+  {
+   "handle": "hartcb",
+   "name": "Chris Hart",
+   "followers": 1492,
+   "identified": true,
+   "headline": "CEO of Civic / Civic Technologies (crypto identity-verification startup, CVC token); 25+ years in Silicon Valley tech, finance, operations per company bio",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/hartcb (identity/employment confirmation only - no financial data)",
+    "https://x.com/CivicKey (company account - no financial data)",
+    "https://cryptorank.io/ico/civic (Civic's CVC token FDV is only ~$26M; company raised $33M ICO in 2017 plus $2.75M seed - too small to support a $1M-8M personal net worth claim with no equity/comp data)"
+   ]
+  },
+  {
+   "handle": "RafalTomal",
+   "name": "Rafal Tomal",
+   "followers": 6737,
+   "identified": true,
+   "headline": "Independent designer/developer in Chicago; founder of 8px.studio/Tomal Design Inc.; former VP of Design at Rainmaker Digital (2010-2018, StudioPress/Copyblogger)",
+   "verdict": "unfounded",
+   "confidence": "low",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://rafaltomal.com/",
+    "https://rafaltomal.com/about/",
+    "https://x.com/RafalTomal"
+   ]
+  },
+  {
+   "handle": "ModernTinyLivin",
+   "name": "Modern Tiny Living, LLC",
+   "followers": 1142,
+   "identified": true,
+   "headline": "Brand account for Modern Tiny Living, LLC, a Columbus, Ohio tiny home builder.",
+   "verdict": "supported",
+   "confidence": "high",
+   "low": 0,
+   "high": 0,
+   "sources": [
+    "https://x.com/ModernTinyLivin",
+    "https://www.moderntinyliving.com/",
+    "https://www.moderntinyliving.com/aboutmtl.html",
+    "https://www.moderntinyliving.com/press.html"
+   ]
+  }
+ ]
+}

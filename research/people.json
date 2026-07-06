@@ -11,6 +11,17 @@
   "kind": "owner"
  },
  {
+  "handle": "gdb",
+  "name": "Greg Brockman",
+  "low": 20000000000,
+  "high": 30000000000,
+  "verdict": "supported",
+  "confidence": "medium",
+  "headline": "OpenAI co-founder and President, holding a 2.5-3% equity stake in the company",
+  "source": "https://www.forbes.com/sites/aliciapark/2026/05/04/greg-brockman-testifies-stake-in-openai-worth-nearly-30-billion-despite-investing-nothing/",
+  "kind": "owner"
+ },
+ {
   "handle": "patrickc",
   "name": "Patrick Collison",
   "low": 16000000000,
@@ -19,6 +30,17 @@
   "confidence": "high",
   "headline": "Co-founder and CEO of Stripe, the payments infrastructure company",
   "source": "https://www.forbes.com/profile/patrick-collison/",
+  "kind": "owner"
+ },
+ {
+  "handle": "tobi",
+  "name": "Tobi Lütke",
+  "low": 10300000000,
+  "high": 11000000000,
+  "verdict": "supported",
+  "confidence": "high",
+  "headline": "Founder and CEO of Shopify, e-commerce billionaire",
+  "source": "https://www.forbes.com/profile/tobi-lutke/",
   "kind": "owner"
  },
  {
@@ -44,6 +66,17 @@
   "kind": "owner"
  },
  {
+  "handle": "rauchg",
+  "name": "Guillermo Rauch",
+  "low": 2000000000,
+  "high": 2300000000,
+  "verdict": "supported",
+  "confidence": "medium",
+  "headline": "Cofounder and CEO of Vercel; wealth from his equity stake after Vercel's $300M Series F at a $9.3B valuation",
+  "source": "https://www.forbes.com/profile/guillermo-rauch/",
+  "kind": "owner"
+ },
+ {
   "handle": "pmarca",
   "name": "Marc Andreessen",
   "low": 1800000000,
@@ -52,6 +85,28 @@
   "confidence": "medium",
   "headline": "Co-founder of Netscape and general partner of venture capital firm Andreessen Horowitz (a16z)",
   "source": "https://www.forbes.com/profile/marc-andreessen/",
+  "kind": "owner"
+ },
+ {
+  "handle": "chamath",
+  "name": "Chamath Palihapitiya",
+  "low": 1200000000,
+  "high": 2300000000,
+  "verdict": "plausible",
+  "confidence": "medium",
+  "headline": "Social Capital founder/CEO and All-In podcast host; early Facebook equity, SPAC deals, and a major Groq stake acquired by Nvidia",
+  "source": "https://www.forbes.com/profile/chamath-palihapitiya/",
+  "kind": "owner"
+ },
+ {
+  "handle": "danielgross",
+  "name": "Daniel Gross",
+  "low": 300000000,
+  "high": 1500000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Tech entrepreneur/investor (Cue/Apple exit, ex-YC partner, SSI co-founder, NFDG); Meta's tender offer bought out his personal NFDG fund stakes",
+  "source": "https://www.datacenterdynamics.com/en/news/meta-in-talks-to-partially-acquire-vc-fund-nfdg-hire-nat-friedman-and-daniel-gross-for-ai-shakeup/",
   "kind": "owner"
  },
  {
@@ -110,6 +165,28 @@
   "kind": "owner"
  },
  {
+  "handle": "Jason",
+  "name": "Jason Calacanis",
+  "low": 75000000,
+  "high": 250000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Angel investor and All-In podcast host; ~300+ angel stakes headlined by a $25K Uber bet worth ~$100M+ at IPO",
+  "source": "https://en.wikipedia.org/wiki/Jason_Calacanis",
+  "kind": "owner"
+ },
+ {
+  "handle": "Suhail",
+  "name": "Suhail Doshi",
+  "low": 60000000,
+  "high": 250000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Co-founder/ex-CEO of Mixpanel ($1.05B valuation) and founder of Playground AI; no disclosed personal stake",
+  "source": "https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/",
+  "kind": "owner"
+ },
+ {
   "handle": "naval",
   "name": "Naval Ravikant",
   "low": 60000000,
@@ -118,6 +195,28 @@
   "confidence": "low",
   "headline": "AngelList co-founder and angel investor/philosopher (@naval), known for early bets on Twitter, Uber, and Postmates",
   "source": "https://www.99signals.com/naval-ravikant-net-worth/",
+  "kind": "owner"
+ },
+ {
+  "handle": "karpathy",
+  "name": "Andrej Karpathy",
+  "low": 50000000,
+  "high": 150000000,
+  "verdict": "plausible",
+  "confidence": "medium",
+  "headline": "AI researcher and educator (ex-OpenAI founding member, ex-Tesla Sr. Director of AI, founder of Eureka Labs)",
+  "source": "https://futuresearch.ai/ai-researcher-net-worth/",
+  "kind": "owner"
+ },
+ {
+  "handle": "ID_AA_Carmack",
+  "name": "John Carmack",
+  "low": 40000000,
+  "high": 120000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Co-founder of id Software (Doom, Quake) and former Oculus/Meta CTO; wealth from the 2009 ZeniMax sale and Oculus acquisition",
+  "source": "https://www.shacknews.com/article/99359/john-carmack-suing-zenimax-for-225-million-over-id-software-sale",
   "kind": "owner"
  },
  {
@@ -163,6 +262,28 @@
   "headline": "Co-Founder & Chief Growth Officer, TensorWave AI Cloud",
   "source": "https://techfundingnews.com/tensorwave-350m-series-b-all-amd-ai-infrastructure/",
   "kind": "person"
+ },
+ {
+  "handle": "shl",
+  "name": "Sahil Lavingia",
+  "low": 20000000,
+  "high": 80000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Founder/CEO of Gumroad; wealth is largely illiquid private equity last priced at a $100M company valuation",
+  "source": "https://tylertringas.com/valuing-gumroad/",
+  "kind": "owner"
+ },
+ {
+  "handle": "tszzl",
+  "name": "roon",
+  "low": 3000000,
+  "high": 50000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Pseudonymous OpenAI member of technical staff; range inferred from OpenAI employee equity compensation norms, not personal disclosures",
+  "source": "https://fortune.com/2026/02/18/openai-chatgpt-creator-record-million-dollar-equity-compensation-ai-tech-talent-war-career-retention-sam-altman-millionaire-staff/",
+  "kind": "owner"
  },
  {
   "handle": "jumbld",
@@ -273,6 +394,17 @@
   "headline": "Co-Founder and CEO of Weaviate, open-source vector database company; angel investor in AI infrastructure",
   "source": "https://en.wikipedia.org/wiki/Bob_van_Luijt",
   "kind": "person"
+ },
+ {
+  "handle": "patio11",
+  "name": "Patrick McKenzie",
+  "low": 3000000,
+  "high": 20000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Writer (Bits about Money) and former senior Stripe employee; accumulated high-income savings, no documented equity exit",
+  "source": "https://www.kalzumeus.com/2019/3/18/two-years-at-stripe/",
+  "kind": "owner"
  },
  {
   "handle": "Michael_J_Black",
@@ -427,6 +559,17 @@
   "headline": "Associate Professor at Vanderbilt University (Biomedical Informatics & CS); Founder/CEO of Maize Analytics (acquired by SecureLink 2021, then Imprivata 2022); S",
   "source": "https://www.vumc.org/dbmi/person/daniel-fabbri-phd-famia",
   "kind": "person"
+ },
+ {
+  "handle": "lexfridman",
+  "name": "Lex Fridman",
+  "low": 3000000,
+  "high": 10000000,
+  "verdict": "plausible",
+  "confidence": "low",
+  "headline": "Podcaster and MIT research scientist; wealth from podcast/YouTube income, no equity stakes found",
+  "source": "https://www.celebritynetworth.com/richest-celebrities/authors/lex-fridman-net-worth/",
+  "kind": "owner"
  },
  {
   "handle": "cdossman",
@@ -1174,149 +1317,6 @@
   "confidence": "medium",
   "headline": "Physician executive and medical geneticist; Sr. Medical Director at Ultragenyx Pharmaceutical; co-founder of Alameda Biotherapeutics; prior roles at BioMarin, B",
   "source": "https://about.me/mealiffe",
-  "kind": "person"
- },
- {
-  "handle": "chamii22",
-  "name": "Ines Chami",
-  "low": 0,
-  "high": 3000000,
-  "verdict": "overstated",
-  "confidence": "low",
-  "headline": "Co-founder and Chief Scientist of Numbers Station AI (acquired by Alation); Stanford PhD AI researcher",
-  "source": "https://finance.yahoo.com/news/alation-just-bought-numbers-station-123156743.html",
-  "kind": "person"
- },
- {
-  "handle": "yoheinakajima",
-  "name": "Yohei",
-  "low": 300000,
-  "high": 2500000,
-  "verdict": "overstated",
-  "confidence": "medium",
-  "headline": "General Partner at Untapped Capital (micro-VC, ~$9.5M Fund I); creator of BabyAGI open-source autonomous agent framework",
-  "source": "https://www.vcsheet.com/fund/untapped-capital",
-  "kind": "person"
- },
- {
-  "handle": "RemiCadene",
-  "name": "Remi Cadene",
-  "low": 300000,
-  "high": 2500000,
-  "verdict": "plausible",
-  "confidence": "medium",
-  "headline": "Co-founder and CEO of UMA (Universal Mechanical Assistant), former Tesla Staff Scientist and Hugging Face Principal Research Scientist",
-  "source": "https://www.humanoidsdaily.com/news/uma-exits-stealth-the-european-robotics-supergroup-arrives-in-paris",
-  "kind": "person"
- },
- {
-  "handle": "rwhitcomb",
-  "name": "Richard Whitcomb",
-  "low": 300000,
-  "high": 2500000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "CTO at Osmo (AI olfaction startup, $133.5M raised); formerly Principal Software Engineer at Nvidia, ML Engineer at Spotify, engineer at Twitter/Bluefin Labs",
-  "source": "https://trellis.net/article/ai-fragrance-tech-startup-osmo-hires-execs-raises/",
-  "kind": "person"
- },
- {
-  "handle": "wszp",
-  "name": "Peter W. Szabo",
-  "low": 250000,
-  "high": 2500000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "Peter W. Szabo is a UX practitioner/consultant and author of User Experience Mapping; his Kaizen-UX site frames his curr",
-  "source": "https://x.com/wszp",
-  "kind": "person"
- },
- {
-  "handle": "Ritmonegro",
-  "name": "Dr Alan Beckles",
-  "low": 500000,
-  "high": 2000000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "Cardiologist (MD, Yale 1977) and CEO of Dansey ML LTD; affiliated with Sun River Health nonprofit group practice in Yonkers/Peekskill, NY",
-  "source": "https://www.healthgrades.com/physician/dr-alan-beckles-35k7h",
-  "kind": "person"
- },
- {
-  "handle": "JuergUnger",
-  "name": "Jürg Unger",
-  "low": 500000,
-  "high": 2000000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "Head of Custody & Vendor Relationship Management at Swiss Re, Zurich; FinTech/blockchain speaker and Singularity University alumnus",
-  "source": "https://www.linkedin.com/in/juergunger/",
-  "kind": "person"
- },
- {
-  "handle": "chris_j_paxton",
-  "name": "Chris Paxton",
-  "low": 400000,
-  "high": 2000000,
-  "verdict": "plausible",
-  "confidence": "medium",
-  "headline": "AI Innovation Lead at Agility Robotics; robotics researcher (prev Meta FAIR, NVIDIA)",
-  "source": "https://cpaxton.github.io/about/",
-  "kind": "person"
- },
- {
-  "handle": "martin_gorner",
-  "name": "Martin Görner",
-  "low": 400000,
-  "high": 2000000,
-  "verdict": "overstated",
-  "confidence": "medium",
-  "headline": "Director of Product Management AI/ML at Axelera AI; former Google PM for Keras/TensorFlow/TPUs; former CEO of Mobipocket (acquired by Amazon 2005)",
-  "source": "https://www.getprog.ai/profile/959847",
-  "kind": "person"
- },
- {
-  "handle": "DiffKroening",
-  "name": "Daniel Kroening",
-  "low": 400000,
-  "high": 2000000,
-  "verdict": "overstated",
-  "confidence": "medium",
-  "headline": "Co-founder and Chief Science Officer of Diffblue Ltd; Professor of Computer Science at the University of Oxford",
-  "source": "https://en.wikipedia.org/wiki/Daniel_Kroening",
-  "kind": "person"
- },
- {
-  "handle": "krassenstein",
-  "name": "Brian Krassenstein",
-  "low": 300000,
-  "high": 2000000,
-  "verdict": "overstated",
-  "confidence": "low",
-  "headline": "Political commentator, co-founder of 3DPrint.com and Hill Reporter; ~1M Twitter/X followers",
-  "source": "https://en.wikipedia.org/wiki/Brian_and_Ed_Krassenstein",
-  "kind": "person"
- },
- {
-  "handle": "Mikenicholls88",
-  "name": "Mike Nicholls",
-  "low": 300000,
-  "high": 2000000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "Partner at Main Sequence Ventures (Australia); serial entrepreneur; semiconductor, AI & hardware investor",
-  "source": "https://www.mseq.vc/team/mike-nicholls",
-  "kind": "person"
- },
- {
-  "handle": "raw_works",
-  "name": "Raymond Weitekamp",
-  "low": 300000,
-  "high": 2000000,
-  "verdict": "plausible",
-  "confidence": "low",
-  "headline": "Founder & CEO of polySpectra; co-founder of Cypris Materials; deep-tech materials scientist (PhD Caltech, AB Princeton)",
-  "source": "https://tracxn.com/d/companies/polyspectra/___Ga6_Y5UBjhfOU70gV6wvNx-N7y1tJJqmmdSeQZPFqs",
   "kind": "person"
  }
 ]

@@ -667,12 +667,16 @@ function showPopulating(handle,st){
         if(r.ok)paint(researchD(handle,await r.json()));
       }else if(s.status==="failed"||s.status==="none"){
         hidePopulating();
-        showError(s.status==="failed"&&/not_found/.test(s.reason||"")
-          ?"@"+handle+" doesn't seem to exist on X (typo, or protected/suspended)."
-          :"Couldn't finish building @"+handle+"'s board this time. It stays in our research queue — check back later.");
+        showError(boardFailMsg(handle,s.reason));
       }
     }catch(e){}
   },5000);
+}
+function boardFailMsg(handle,reason){
+  reason=reason||"";
+  if(/not_found/.test(reason)) return "@"+handle+" doesn't seem to exist on X (typo, or a protected/suspended account).";
+  if(/insufficient_data/.test(reason)) return "We don't have enough researched people in @"+handle+"'s network yet to build a board. It's in the queue for when we do.";
+  return "Couldn't finish building @"+handle+"'s board this time. It stays in our research queue — check back later.";
 }
 function hidePopulating(){
   $("populating").style.display="none";
@@ -702,6 +706,7 @@ async function runAuto(handle){
       showError("Too many new-board requests right now — try again in a few minutes.");
       return;
     }
+    if(st.status==="failed"){showError(boardFailMsg(handle,st.reason));return;}
     showError("No data for @"+handle+" yet.");
   }catch(e){
     showError("Couldn't reach the server ("+e+").");
