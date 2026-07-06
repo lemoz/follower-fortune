@@ -195,6 +195,7 @@
           <tbody id="lb"></tbody></table>
       </div>
     </div>
+    <p class="hint" id="boardnote"></p>
   </div>
 
   <div class="panel gl">
@@ -442,7 +443,7 @@ function paint(d){
   if(d.ownLine){ow.innerHTML=d.ownLine;ow.style.display="block";}else{ow.style.display="none";}
   $("lbtitle").textContent=d.lbTitle||"💰 Richest followers";
   $("lbsub").textContent=d.lbSub||"The whales swimming in this network.";
-  if(d.hint)$("hint").textContent=d.hint;
+  $("boardnote").textContent=d.hint||"";
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
   renderGraph(d.cast,d.handle);
