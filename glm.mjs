@@ -105,6 +105,14 @@ export async function searchWeb(query, num = 6) {
 // followers, description, location, link}. `link` should already be resolved
 // (t.co -> real destination) by the caller.
 export async function researchOwner(profile) {
+  // Prefer Gemini + Google-Search grounding (first-party Google) when available.
+  try {
+    const gem = await import('./gemini.mjs');
+    if (gem.geminiAvailable()) {
+      const g = await gem.researchOwnerGemini(profile).catch(() => null);
+      if (g) return g;
+    }
+  } catch {}
   const loc = (profile.location || '').trim();
   const link = (profile.link || '').trim();
   // real web search first (if configured) — this is the grounding
