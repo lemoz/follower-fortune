@@ -51,27 +51,53 @@ async function glmJSON(system, user, { maxTokens = 4000, timeoutMs = 180_000 } =
 
 const UNITS_RULE = 'All dollar amounts must be RAW US DOLLARS as JSON numbers: $2 billion = 2000000000, $50 million = 50000000. Never output 2 or 50 to mean billions/millions. If there is no credible public basis for an estimate, say found=false — never invent a number.';
 
-// --- real web search (Google Custom Search JSON API) -------------------------
+// --- real web search (provider-agnostic) -------------------------------------
 // This is what makes estimates CITED rather than guessed: we search, feed the
 // real result snippets to GLM, and the sources shown are the REAL result URLs.
+// Uses Serper (SERPER_API_KEY) if set — instant, Google results — else Google
+// Custom Search (GOOGLE_SEARCH_KEY + GOOGLE_CSE_ID). Either backend, same shape.
+const SERPER_KEY = process.env.SERPER_API_KEY;
 const GS_KEY = process.env.GOOGLE_SEARCH_KEY;
 const GS_CX = process.env.GOOGLE_CSE_ID;
-export function searchAvailable() { return !!(GS_KEY && GS_CX); }
-export async function searchWeb(query, num = 6) {
-  if (!searchAvailable()) return [];
+export function searchAvailable() { return !!(SERPER_KEY || (GS_KEY && GS_CX)); }
+
+async function serperSearch(query, num) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 8000);
+  try {
+    const r = await fetch('https://google.serper.dev/search', {
+      method: 'POST',
+      headers: { 'X-API-KEY': SERPER_KEY, 'content-type': 'application/json' },
+      body: JSON.stringify({ q: query, num }),
+      signal: ctrl.signal,
+    });
+    const j = await r.json();
+    return (j.organic || []).map((it) => ({ title: it.title, link: it.link, snippet: (it.snippet || '').replace(/\s+/g, ' ').slice(0, 300) }));
+  } finally { clearTimeout(timer); }
+}
+
+async function googleSearch(query, num) {
   const url = new URL('https://www.googleapis.com/customsearch/v1');
   url.searchParams.set('key', GS_KEY);
   url.searchParams.set('cx', GS_CX);
   url.searchParams.set('q', query);
   url.searchParams.set('num', String(Math.min(Math.max(num, 1), 10)));
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 8000);
   try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 8000);
     const r = await fetch(url, { signal: ctrl.signal });
-    clearTimeout(timer);
     const j = await r.json();
     return (j.items || []).map((it) => ({ title: it.title, link: it.link, snippet: (it.snippet || '').replace(/\s+/g, ' ').slice(0, 300) }));
-  } catch { return []; }
+  } finally { clearTimeout(timer); }
+}
+
+export async function searchWeb(query, num = 6) {
+  const n = Math.min(Math.max(num, 1), 10);
+  try {
+    if (SERPER_KEY) return await serperSearch(query, n);
+    if (GS_KEY && GS_CX) return await googleSearch(query, n);
+  } catch { /* fall through */ }
+  return [];
 }
 
 // Research the board owner's own net worth, GROUNDED on their real X profile
