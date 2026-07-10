@@ -16,7 +16,9 @@ const GLM_MODEL = process.env.GLM_MODEL || 'glm-5';
 
 export function glmAvailable() { return !!process.env.GLM_API_KEY; }
 
-async function glmJSON(system, user, { maxTokens = 4000, timeoutMs = 180_000 } = {}) {
+async function glmJSON(system, user, { maxTokens = 4000, timeoutMs = 45_000 } = {}) {
+  // Single attempt, 45s cap. (We do NOT use GLM's web_search tool — it doesn't
+  // return results on this account and doubled latency; Gemini handles grounding.)
   const body = {
     model: GLM_MODEL,
     messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
@@ -24,29 +26,22 @@ async function glmJSON(system, user, { maxTokens = 4000, timeoutMs = 180_000 } =
     max_tokens: maxTokens,
     temperature: 0.2,
   };
-  // Z.ai supports a built-in web_search tool; try with it, retry without if the
-  // endpoint rejects it (keeps us portable across OpenAI-compatible hosts).
-  for (const tools of [[{ type: 'web_search', web_search: { enable: true } }], undefined]) {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
-    try {
-      const r = await fetch(GLM_URL, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json', authorization: 'Bearer ' + process.env.GLM_API_KEY },
-        body: JSON.stringify(tools ? { ...body, tools } : body),
-        signal: ctrl.signal,
-      });
-      const j = await r.json().catch(() => null);
-      if (!r.ok || !j) { if (tools) continue; throw new Error('glm http ' + r.status + ': ' + JSON.stringify(j).slice(0, 200)); }
-      const text = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
-      if (!text) { if (tools) continue; throw new Error('glm empty response'); }
-      const m = text.match(/\{[\s\S]*\}/);
-      return JSON.parse(m ? m[0] : text);
-    } catch (e) {
-      if (!tools) throw e;
-    } finally { clearTimeout(timer); }
-  }
-  throw new Error('glm unreachable');
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const r = await fetch(GLM_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', authorization: 'Bearer ' + process.env.GLM_API_KEY },
+      body: JSON.stringify(body),
+      signal: ctrl.signal,
+    });
+    const j = await r.json().catch(() => null);
+    if (!r.ok || !j) throw new Error('glm http ' + r.status + ': ' + JSON.stringify(j).slice(0, 200));
+    const text = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
+    if (!text) throw new Error('glm empty response');
+    const m = text.match(/\{[\s\S]*\}/);
+    return JSON.parse(m ? m[0] : text);
+  } finally { clearTimeout(timer); }
 }
 
 const UNITS_RULE = 'All dollar amounts must be RAW US DOLLARS as JSON numbers: $2 billion = 2000000000, $50 million = 50000000. Never output 2 or 50 to mean billions/millions. If there is no credible public basis for an estimate, say found=false — never invent a number.';
@@ -137,7 +132,8 @@ export async function researchOwner(profile) {
     role: String(j.role || '').slice(0, 120),
     headline: String(j.headline || '').slice(0, 200),
     basis: String(j.basis || '').slice(0, 200),
-    location: loc,                                   // echo REAL location, never GLM's
+    // NOTE: location is used above as a private grounding hint only — it is
+    // deliberately NOT returned/published (pairing home location + wealth = doxxing).
     verdict: grounded ? 'web-researched' : 'ai-researched',
     // search grounding earns up to medium; ungrounded stays capped at low
     confidence: grounded ? (j.confidence === 'high' ? 'high' : j.confidence || 'low') : (j.confidence === 'high' ? 'medium' : 'low'),

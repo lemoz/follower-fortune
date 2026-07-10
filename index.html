@@ -105,6 +105,8 @@
   .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
   .ownworth .srclink{margin-left:2px}
   .ownworth .ownmeta{color:var(--mut);font-weight:400;font-size:12px}
+  .estbadge{display:inline-block;margin:6px 0 2px;font-size:12px;color:var(--gold);
+    background:rgba(255,210,74,.08);border:1px solid rgba(255,210,74,.25);border-radius:999px;padding:3px 12px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
   .populating{margin-top:18px}
   .pop-row{display:flex;gap:16px;align-items:flex-start}
@@ -171,6 +173,7 @@
         </div>
         <div class="bignum">Total estimated net worth of followers</div>
         <div class="total" id="total"></div>
+        <div class="estbadge">≈ speculative estimate for entertainment — not a verified figure</div>
         <div class="sub" id="totsub"></div>
         <button class="btn ghost sharebtn" id="share">🔗 Share this board</button>
         <div class="stats">
@@ -192,7 +195,7 @@
       <div class="panel lbcard">
         <h3 id="lbtitle">💰 Richest followers</h3>
         <p class="muted" id="lbsub">The whales swimming in this network.</p>
-        <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Vibe</th><th class="r">Net worth</th></tr></thead>
+        <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Vibe</th><th class="r">Est. net worth</th></tr></thead>
           <tbody id="lb"></tbody></table>
       </div>
     </div>
@@ -204,10 +207,10 @@
       <button class="lbtab active" id="tab-networks"><span class="pulse"></span>Biggest networks</button>
       <button class="lbtab" id="tab-people">💰 Richest people</button>
     </div>
-    <p class="muted" id="glsub">Accounts we've researched, ranked by the combined net worth of their followers. Tap one to open its board.</p>
-    <table id="tbl-networks"><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Network fortune</th></tr></thead>
+    <p class="muted" id="glsub">Ranked by the combined estimated net worth of their followers — all figures are speculative estimates, not verified facts. Tap one to open its board.</p>
+    <table id="tbl-networks"><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Est. network fortune</th></tr></thead>
       <tbody id="global"></tbody></table>
-    <table id="tbl-people" style="display:none"><thead><tr><th class="rank">#</th><th>Person</th><th class="r">Net worth</th></tr></thead>
+    <table id="tbl-people" style="display:none"><thead><tr><th class="rank">#</th><th>Person</th><th class="r">Est. net worth</th></tr></thead>
       <tbody id="people"></tbody></table>
   </div>
 
@@ -409,7 +412,7 @@ function showLbTab(which){
   $("tbl-networks").style.display=isP?'none':'';
   $("glsub").textContent=isP
     ?"The richest individual people across every researched network, ranked by their own estimated net worth. Wide ranges, low confidence — opinions, not facts."
-    :"Accounts we've researched, ranked by the combined net worth of their followers. Tap one to open its board.";
+    :"Ranked by the combined estimated net worth of their followers — all figures are speculative estimates, not verified facts. Tap one to open its board.";
 }
 function renderGlobal(currentHandle){
   let arr;
@@ -552,11 +555,12 @@ function realD(handle,resp){
     hint:"🛰️ Live mode — real follower sample from X."};
 }
 
-// researched — evidence-based dossiers produced by the offline research pipeline
+// researched — evidence-based dossiers produced by the offline research pipeline.
+// Everything is framed as an ESTIMATE (not a factual claim). We deliberately do
+// NOT surface judgmental internal verdicts like "overstated" on named people —
+// only that this is a guess and how confident we are in it.
 function verdictPill(verdict,conf){
-  const map={supported:["✅","#34e0a1"],plausible:["🟢","#5b9dff"],overstated:["🟠","#ffb155"],unfounded:["⚪","#8b94ad"]};
-  const mc=map[verdict]||["⚪","#8b94ad"];
-  return '<span class="title-pill" style="border-color:'+mc[1]+'55;color:'+mc[1]+'">'+mc[0]+' '+esc(verdict)+' · '+esc(conf)+' confidence</span>';
+  return '<span class="title-pill" title="a speculative estimate, not a verified fact">≈ estimate · '+esc(conf||'low')+' confidence</span>';
 }
 function rangeText(lo,hi){
   lo=lo||0; hi=hi||0;
@@ -579,8 +583,10 @@ function researchD(handle,data){
   let ownLine='';
   if(o){
     const src=(o.sources||[]).map((u,i)=>'<a class="srclink" href="'+esc(u)+'" target="_blank" rel="noopener">'+(i===0?'𝕏':'🔗')+'</a>').join(' ');
-    const meta=[o.role&&esc(o.role),o.location&&('📍'+esc(o.location))].filter(Boolean).join(' · ');
-    ownLine='💰 Own estimated worth: '+rangeText(o.low,o.high)+' · '+esc(o.verdict)+' '+src
+    // role only (no location — pairing home location with wealth is a doxxing risk)
+    const meta=[o.role&&esc(o.role)].filter(Boolean).join(' · ');
+    const conf=o.confidence?(' · '+esc(o.confidence)+' confidence'):'';
+    ownLine='💰 Estimated net worth (a guess, not a fact): '+rangeText(o.low,o.high)+conf+' '+src
       +(meta?('<br/><span class="ownmeta">'+meta+'</span>'):'')
       +(o.basis?('<br/><span class="ownmeta">'+esc(o.basis)+'</span>'):'');
   }

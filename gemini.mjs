@@ -58,15 +58,18 @@ Respond with ONLY a JSON object, no prose, no markdown fences:
   const webSources = chunks.map((c) => c.web && c.web.uri).filter(Boolean);
   const sources = [...new Set([...webSources, 'https://x.com/' + profile.userName, /^https?:\/\//i.test(profile.link || '') ? profile.link : null].filter(Boolean))].slice(0, 5);
 
+  // location used only as a private grounding hint (loc in the prompt) — NOT published.
+  // honest labeling: only "web-researched" when Google Search actually returned
+  // sources; otherwise it's an ungrounded guess with no citations.
+  const grounded = webSources.length > 0;
   return {
     name: j.name || profile.name,
     role: String(j.role || '').slice(0, 120),
     basis: String(j.basis || '').slice(0, 200),
-    location: loc,
-    verdict: 'web-researched',
-    confidence: webSources.length ? (j.confidence === 'high' ? 'high' : (j.confidence || 'medium')) : (j.confidence === 'high' ? 'medium' : 'low'),
+    verdict: grounded ? 'web-researched' : 'ai-researched',
+    confidence: grounded ? (j.confidence === 'high' ? 'high' : (j.confidence || 'medium')) : 'low',
     low: Math.round(j.low), high: Math.round(j.high),
-    sources,
+    sources: grounded ? sources : [],
     engine: GEMINI_MODEL,
   };
 }

@@ -41,14 +41,33 @@ const IP_WINDOW_MS = 15 * 60_000;
 const DAILY_CAP = 150;              // uncached lookups per UTC day, all users combined
 const CACHE_TTL_MS = 24 * 3600_000;
 
+const BUILD_DAILY_CAP = 25;   // max on-demand builds per UTC day (each sweeps the pool)
+const MAX_QUEUED_BUILDS = 3;  // reject new builds past this many waiting (DoS + cost guard)
+
 const ipHits = new Map();  // ip -> [timestamps]
 const cache = new Map();   // "handle:cap" -> { ts, payload }
-let dailyCount = 0;
-let dailyDay = new Date().toISOString().slice(0, 10);
+
+// Durable spend counters: persisted to the Fly volume so scale-to-zero cold
+// starts and redeploys do NOT reset the daily budgets (the review's #1 crit).
+const COUNTERS_FILE = join(DATA_DIR, 'counters.json');
+const utcDay = () => new Date().toISOString().slice(0, 10);
+let counters = { day: utcDay(), lookups: 0, builds: 0 };
+try { const c = JSON.parse(readFileSync(COUNTERS_FILE, 'utf8')); if (c && c.day) counters = { day: c.day, lookups: c.lookups || 0, builds: c.builds || 0 }; } catch {}
+function persistCounters() { try { writeFileSync(COUNTERS_FILE, JSON.stringify(counters)); } catch {} }
+function rollDay() { const t = utcDay(); if (counters.day !== t) { counters = { day: t, lookups: 0, builds: 0 }; persistCounters(); } }
+function dailyAllowed() { rollDay(); return counters.lookups < DAILY_CAP; }
+function countLookup() { rollDay(); counters.lookups++; persistCounters(); }
+function buildAllowed() { rollDay(); return counters.builds < BUILD_DAILY_CAP; }
+// atomically reserve a build slot at ADMISSION time (before the expensive work),
+// closing the race where a burst all passes the check before any build runs.
+function reserveBuild() { rollDay(); if (counters.builds >= BUILD_DAILY_CAP) return false; counters.builds++; persistCounters(); return true; }
+function refundBuild() { if (counters.builds > 0) { counters.builds--; persistCounters(); } }
 
 function clientIp(req) {
-  const fwd = req.headers['fly-client-ip'] || req.headers['x-forwarded-for'];
-  return (typeof fwd === 'string' && fwd.split(',')[0].trim()) || req.socket.remoteAddress || 'unknown';
+  // Trust ONLY fly-client-ip (set by Fly's proxy, not client-spoofable).
+  // x-forwarded-for is attacker-controlled and must NOT gate rate limits.
+  const fly = req.headers['fly-client-ip'];
+  return (typeof fly === 'string' && fly.trim()) || req.socket.remoteAddress || 'unknown';
 }
 function ipAllowed(ip) {
   const now = Date.now();
@@ -58,11 +77,6 @@ function ipAllowed(ip) {
   if (ipHits.size > 10_000) ipHits.clear(); // memory backstop
   ipHits.set(ip, hits);
   return true;
-}
-function dailyAllowed() {
-  const today = new Date().toISOString().slice(0, 10);
-  if (today !== dailyDay) { dailyDay = today; dailyCount = 0; }
-  return dailyCount < DAILY_CAP;
 }
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
@@ -133,6 +147,12 @@ async function lookup(handle, max) {
   for (let guard = 0; out.length < cap && guard < 40; guard++) {
     const page = await tw('/twitter/user/followers', { userName: handle, cursor, pageSize: 100 });
     if (guard === 0) diag = { httpStatus: page.httpStatus, status: page.body && page.body.status, code: page.body && page.body.code, msg: page.body && page.body.msg, flen: (page.body && Array.isArray(page.body.followers)) ? page.body.followers.length : 'NA', keys: page.body ? Object.keys(page.body) : null };
+    // out of credits mid-pagination: do NOT return a truncated/empty sample as
+    // success (that caches a real account as ~$0). Fail loudly + trip the breaker.
+    if (page.httpStatus === 402 || creditsExhausted(page.body)) {
+      twitterCreditsOutUntil = Date.now() + 10 * 60_000;
+      return { ok: false, error: 'no_credits', message: 'Live data is temporarily unavailable (upstream credits).' };
+    }
     if (page.httpStatus === 429) break;            // return whatever we have
     const arr = page.body && page.body.followers;
     if (!Array.isArray(arr) || arr.length === 0) break;
@@ -146,6 +166,12 @@ async function lookup(handle, max) {
     cursor = page.body.next_cursor || '';
     if (!page.body.has_next_page || !cursor) break;
   }
+
+  // a real account whose profile reports followers but whose sample came back
+  // empty means the fetch failed (throttle/transient) — never publish/cache that
+  // as a $0 board. Only accept an empty sample for a genuinely 0-follower account.
+  if (out.length === 0 && (profile.followers || 0) > 0)
+    return { ok: false, error: 'upstream', message: 'Follower sample was empty for an account that has followers (transient upstream issue).' };
 
   return { ok: true, profile, totalFollowers: profile.followers, sampleSize: Math.min(out.length, cap), followers: out.slice(0, cap), _diag: out.length ? undefined : diag };
 }
@@ -162,14 +188,8 @@ const MODEL_PATH = join(__dirname, 'research', 'model.json');
 const jobs = new Map(); // handle -> {status, startedAt, finishedAt, error}
 let buildChain = Promise.resolve(); // one build at a time (credit + spend guard)
 const SWEEP_CONC = 6;          // parallel relationship checks during a build
-const BUILD_DAILY_CAP = 25;    // max on-demand builds per UTC day (credit guard)
 const MIN_BOARD_MEMBERS = 8;   // refuse to publish a board thinner than this
-let dailyBuildCount = 0, buildDay = new Date().toISOString().slice(0, 10);
-function buildAllowed() {
-  const today = new Date().toISOString().slice(0, 10);
-  if (today !== buildDay) { buildDay = today; dailyBuildCount = 0; }
-  return dailyBuildCount < BUILD_DAILY_CAP;
-}
+// (BUILD_DAILY_CAP, buildAllowed(), reserveBuild() are the durable versions defined above.)
 
 // the pool of already-researched wealthy people (from curated boards), each with
 // verified worth. Cached for the process lifetime (rebuilt on redeploy/restart).
@@ -226,18 +246,12 @@ function avgBuildMs() {
 function hasStaticBoard(h) { return existsSync(join(__dirname, 'research', h + '.json')); }
 function hasDynamicBoard(h) { return existsSync(join(BOARDS_DIR, h + '.json')); }
 
-// resolve an X t.co short link to its real destination (grounding signal for
-// owner research). Best-effort, short timeout; returns the input on any failure.
-async function resolveLink(url) {
-  if (!url || !/^https?:\/\//i.test(url)) return url || '';
-  if (!/\bt\.co\//i.test(url)) return url; // already a real URL
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 6000);
-    const r = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: ctrl.signal });
-    clearTimeout(timer);
-    return r.url || url;
-  } catch { return url; }
+// SECURITY: we deliberately do NOT dereference the profile's t.co link. Following
+// an attacker-chosen redirect server-side is an SSRF vector (a crafted profile
+// could point at internal/metadata endpoints). The raw link is passed to the LLM
+// as a text hint only; it is never fetched by the server.
+function resolveLink(url) {
+  return url && /^https?:\/\//i.test(url) ? url : '';
 }
 
 function modelEstimate(meta, floor) {
@@ -258,19 +272,17 @@ function modelEstimate(meta, floor) {
 async function buildBoard(handle) {
   const glm = await import('./glm.mjs');
   const t0 = Date.now();
+  // the build slot was already reserved at admission (reserveBuild) — no counting here.
   const cacheKey = handle + ':200';
   const hit = cacheRead(cacheKey);
+  // the in-build follower sample is itself a paid twitterapi call — gate it on
+  // the daily lookup budget too, so builds can't bypass DAILY_CAP.
+  if (!hit && !dailyAllowed()) throw new Error('sample_failed:daily_cap');
   let result = hit ? JSON.parse(hit.payload) : await lookup(handle, 200);
   // genuine missing account is terminal; anything else is a transient/retryable
   // failure and must NOT be reported to the user as "doesn't exist".
   if (!result.ok) throw new Error(result.error === 'not_found' ? 'not_found' : 'sample_failed:' + result.error);
-  if (!hit) { dailyCount++; cacheWrite(cacheKey, JSON.stringify(result)); }
-
-  // the sweep is the ~800-credit spend; enforce the daily cap HERE (builds run
-  // serially, so this is race-free) and count only builds that actually sweep,
-  // so pre-sweep failures never burn the cap.
-  if (!buildAllowed()) throw new Error('over_cap');
-  dailyBuildCount++;
+  if (!hit) { countLookup(); cacheWrite(cacheKey, JSON.stringify(result)); }
 
   const sample = result.followers || [];
   const c = { b0: 0, b1: 0, b2: 0, b3: 0 };
@@ -287,7 +299,7 @@ async function buildBoard(handle) {
 
   // GLM: owner net worth (grounded on the real profile + resolved link) + any
   // big NET-NEW sampled followers the sweep missed
-  const link = await resolveLink(result.profile.link).catch(() => result.profile.link);
+  const link = resolveLink(result.profile.link);
   const owner = await glm.researchOwner({ ...result.profile, link }).catch(() => null);
   const known = new Set(members.map((m) => m.handle.toLowerCase()));
   const bigNew = sample.filter((f) => (f.followers || 0) >= 1e5 && !known.has((f.userName || '').toLowerCase())).slice(0, 8);
@@ -317,9 +329,15 @@ async function buildBoard(handle) {
   recordBuild(Date.now() - t0);
 }
 
+function queuedBuildCount() {
+  let n = 0;
+  for (const j of jobs.values()) if (j.status === 'building' || j.status === 'queued') n++;
+  return n;
+}
+// caller must have already reserved a build slot (reserveBuild) at admission.
 function requestBoard(handle) {
   const existing = jobs.get(handle);
-  if (existing && (existing.status === 'building' || existing.status === 'queued')) return existing;
+  if (existing && (existing.status === 'building' || existing.status === 'queued')) { refundBuild(); return existing; }
   const job = { status: 'queued', startedAt: Date.now() };
   jobs.set(handle, job);
   buildChain = buildChain.then(async () => {
@@ -332,6 +350,10 @@ function requestBoard(handle) {
       const msg = String((e && e.message) || e);
       job.status = 'failed';
       job.error = msg;
+      // failures BEFORE the sweep (missing account, sample/credits) spent
+      // little — refund the reserved slot. 'insufficient_data' fires AFTER the
+      // sweep already spent ~800 credits, so it keeps the slot.
+      if (msg === 'not_found' || /^sample_failed:/.test(msg)) refundBuild();
       // terminal = re-attempting can't help: account truly missing, or we simply
       // don't have enough researched people in its network yet. Everything else
       // (credits, upstream, over-cap) is transient and retried on the next click.
@@ -406,10 +428,11 @@ const server = createServer(async (req, res) => {
       const result = await lookup(handle, cap);
       const payload = JSON.stringify(result);
       if (result.ok) {
-        dailyCount++;
+        countLookup();
         cacheWrite(cacheKey, payload);
         logLookup({ handle, cap, cached: false, followers: result.totalFollowers, sampled: result.sampleSize });
       } else {
+        countLookup(); // a failed lookup still spent a profile call — count it so floods of bad handles can't bypass the cap
         logLookup({ handle, cap, cached: false, error: result.error });
       }
       return send(res, 200, payload);
@@ -438,14 +461,21 @@ const server = createServer(async (req, res) => {
     }
     if (!ipAllowed(clientIp(req)))
       return send(res, 429, JSON.stringify({ status: 'rate_limited' }));
-    // each build sweeps ~hundreds of relationship checks; cap builds/day so a
-    // traffic burst can't drain credits. Over cap -> honest queue message.
-    if (!buildAllowed()) {
+    // bound how many builds can be waiting at once (each sweeps ~800 paid calls
+    // and runs serially) — a spike gets an honest "busy" instead of a cost/DoS
+    // pileup. Dedup requests for the same handle don't count.
+    if (!(jobs.get(handle) && (jobs.get(handle).status === 'building' || jobs.get(handle).status === 'queued')) && queuedBuildCount() >= MAX_QUEUED_BUILDS) {
+      logLookup({ handle, boardRequest: 'queue_full' });
+      return send(res, 200, JSON.stringify({ status: 'busy', avgMs: avgBuildMs() }));
+    }
+    // reserve a build slot ATOMICALLY at admission (closes the race where a
+    // burst all passes buildAllowed() before any build increments the counter).
+    if (!reserveBuild()) {
       logLookup({ handle, boardRequest: 'over_daily_cap' });
       return send(res, 200, JSON.stringify({ status: 'offline', avgMs: avgBuildMs() }));
     }
     logLookup({ handle, boardRequest: 'build' });
-    requestBoard(handle);
+    requestBoard(handle); // consumes (or refunds) the reserved slot
     return send(res, 200, JSON.stringify(boardStatusPayload(handle)));
   }
 
