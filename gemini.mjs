@@ -22,7 +22,8 @@ export async function researchOwnerGemini(profile) {
 
 Use Google Search. Identify who they are (role + company) and estimate a defensible personal net-worth range from what's publicly known (equity, exits, funding, salary). ${UNITS} If there is no credible public basis, set found=false.
 
-Respond with ONLY a JSON object, no prose, no markdown fences:
+FIRST, write 2-3 sentences summarizing who they are and the evidence for the net-worth figure, drawing on the search results (this step is required — it grounds the answer in real sources).
+THEN, on a new line, output ONLY the JSON object (no markdown fences):
 {"found":bool,"name":str,"role":str,"basis":str,"low":number,"high":number,"confidence":"low"|"medium"|"high"}
 "basis" = one sentence on WHY this range.`;
 
