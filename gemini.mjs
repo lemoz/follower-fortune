@@ -7,7 +7,9 @@
 //                      GEMINI_MODEL      (default gemini-2.5-flash)
 
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+// 'latest' alias so a model deprecation doesn't silently break grounding (as
+// gemini-2.5-flash did for new keys). Override with GEMINI_MODEL if needed.
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-flash-latest';
 export function geminiAvailable() { return !!GEMINI_KEY; }
 
 const UNITS = 'Dollar amounts must be RAW US DOLLARS as JSON numbers: $2 billion = 2000000000, $50 million = 50000000. Never output 2 or 50 for billions/millions.';
