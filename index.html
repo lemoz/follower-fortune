@@ -4,8 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NetWorkNetWorth (NWNW) — how rich is your network?</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐋%3C/text%3E%3C/svg%3E"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <!--OG-->
+<!--ANALYTICS-CONFIG-->
 <style>
   :root{
     --bg:#070912; --bg2:#0c1020; --card:rgba(255,255,255,.04); --card2:rgba(255,255,255,.06);
@@ -126,6 +127,17 @@
   #tbl-people tbody tr:hover{background:rgba(255,255,255,.04)}
   .rankchip{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;font-size:12px;font-weight:800;color:#0a0a12}
   .r1{background:linear-gradient(135deg,#ffd24a,#ffb347)}.r2{background:linear-gradient(135deg,#cfd6e6,#9aa3ba)}.r3{background:linear-gradient(135deg,#e8a06a,#c77b43)}
+  a.board-link,.board-directory a{color:inherit;text-decoration:none}
+  a.board-link:hover,.board-directory a:hover{color:var(--gold);text-decoration:underline}
+  .server-summary{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .server-summary h2{font-size:20px;margin:0 0 8px}.server-summary p{color:var(--mut);margin:6px 0;line-height:1.5}
+  .server-summary strong{color:var(--gold)}
+  .board-directory{margin-top:22px;color:var(--mut);font-size:12px;line-height:1.9;text-align:center}
+  .board-directory span{color:#aab2c8;font-weight:700;margin-right:5px}.board-directory a{display:inline-block;margin:0 5px}
+  .privacy-btn{background:none;border:0;color:#aab2c8;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+  .analytics-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:20;max-width:720px;margin:auto;background:#11162a;border:1px solid rgba(255,210,74,.35);border-radius:16px;padding:16px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+  .analytics-consent p{margin:0 0 12px;color:#c6ccdc;font-size:13px;line-height:1.5}.analytics-actions{display:flex;gap:8px;justify-content:flex-end}
+  .analytics-actions .btn{min-height:38px;padding:8px 16px}.analytics-actions .ghost{color:var(--txt)}
 </style>
 </head>
 <body>
@@ -157,6 +169,7 @@
     </div>
   </div>
   <div class="chips" id="chips"></div>
+  <!--SERVER-SUMMARY-->
 
   <div class="result" id="result">
     <div class="hero">
@@ -212,22 +225,25 @@
       <tbody id="people"></tbody></table>
   </div>
 
+  <!--BOARD-LINKS-->
+
   <p class="footer">
     <b>NetWorkNetWorth</b> (NWNW) figures are <b>speculative estimates for entertainment and research</b> — nobody's actual net worth is known here.<br/>
     Boards are AI-compiled from public sources and carry wide error bars; every range is a guess, not a fact.<br/>
-    Not financial data. Not financial advice. If you're listed and want out, ping <a href="https://x.com/cdossman" style="color:#aab2c8">@cdossman</a> and you'll be removed. Don't @ your accountant.
+    Not financial data. Not financial advice. If you're listed and want out, ping <a href="https://x.com/cdossman" style="color:#aab2c8">@cdossman</a> and you'll be removed. <a href="/privacy" style="color:#aab2c8">Privacy</a> · <button class="privacy-btn" id="privacy-settings" type="button">Analytics choices</button>. Don't @ your accountant.
   </p>
 </div>
 
+<aside class="analytics-consent" id="analytics-consent" hidden aria-label="Analytics choice">
+  <p>Optional analytics helps us understand which researched boards are useful. It loads only if you accept; declining does not affect the site. <a href="/privacy" style="color:#ffd24a">Privacy details</a>.</p>
+  <div class="analytics-actions"><button class="btn ghost" id="analytics-decline" type="button">Decline</button><button class="btn" id="analytics-accept" type="button">Accept analytics</button></div>
+</aside>
+
 <script>
-/* ---------- deterministic RNG seeded by handle ---------- */
+/* ---------- deterministic color helpers ---------- */
 function hashSeed(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return (h^h>>>16)>>>0;}
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
 
-/* ---------- name + handle generators ---------- */
-const FIRST=["Alex","Jordan","Taylor","Morgan","Casey","Riley","Jamie","Avery","Quinn","Sky","Devin","Harper","Sasha","Noah","Mia","Leo","Zoe","Kai","Ivy","Max","Luna","Eli","Nina","Theo","Aria","Finn","Cleo","Remy","Iris","Dante","Maya","Otis","Vera","Hugo","Wren","Cyrus","Greta","Milo","Esme","Rex","Dahlia","Soren","Blair","Knox","Opal","Cruz","Nadia","Ezra","Phoebe","Tariq","Yara","Bodhi","Sloane","Wade","Priya","Dmitri"];
-const LAST=["Chen","Park","Rivera","Kim","Patel","Nguyen","Walsh","Okoro","Silva","Haddad","Ivanov","Cohen","Mbeki","Rossi","Tan","Khan","Vega","Lund","Adeyemi","Brandt","Cruz","Mori","Sato","Diallo","Novak","Reyes","Sharma","Bauer","Costa","Fischer","Lopez","Mensah","Petrov","Yamamoto","Andersson","Bianchi","Dubois","Ferraro","Gupta","Holm"];
-const HSUF=["x","_","hq","io","eth","_dev","sol","_xyz","420","fm","tv","_jpg","ssss","gg","_real","nyc","_btc","99","_ai","lol"];
 const TITLES=[
   [10e3,"🍜 Ramen survivor"],[100e3,"☕ Getting by"],[500e3,"🛋️ Comfortable"],
   [1e6,"🏠 Almost there"],[10e6,"💼 Millionaire"],[100e6,"🚀 Serious money"],
@@ -264,59 +280,51 @@ function parseHandle(raw){
   return s.slice(0,15);
 }
 
-/* ---------- the model ---------- */
-function analyze(handle,realFollowers){
-  const rng=mulberry32(hashSeed("@"+handle.toLowerCase()));
-  // follower count: real when we know it, otherwise fame roll -> roughly 80 .. 40M
-  const fame=rng();
-  const followers=realFollowers||Math.max(42,Math.floor(80*Math.pow(10,fame*5.7)));
-  // how wealthy this particular crowd skews
-  const wealthFactor=0.6+rng()*rng()*5; // right-skewed
-  const xm=1500, alpha=1.16, cap=90e9;
-
-  // aggregates computed analytically from the Pareto tail so the headline
-  // counts always agree with the order-statistic leaderboard below
-  // (a Pareto(xmw, alpha) has mean alpha*xmw/(alpha-1) and P(X>=T)=(xmw/T)^alpha)
-  const xmw=xm*wealthFactor;
-  const meanNw=(alpha/(alpha-1))*xmw;
-  const totalAll=followers*meanNw;
-  const avg=meanNw;
-  const pAbove=T=>Math.min(1,Math.pow(xmw/T,alpha));
-  // floor of (followers+1)*P(>=T) == exact count crossing T under the order
-  // statistics used for the leaderboard, so headline & list never disagree
-  const millAll=Math.floor((followers+1)*pAbove(1e6));
-  const whalesAll=Math.floor((followers+1)*pAbove(1e9));
-
-  // build a named cast representing the RICHEST followers, using order statistics
-  // of the population so the leaderboard is consistent with the aggregate stats
-  const cast=[];
-  const M=Math.min(followers,60);
-  for(let i=0;i<M;i++){
-    const fn=FIRST[Math.floor(rng()*FIRST.length)];
-    const ln=LAST[Math.floor(rng()*LAST.length)];
-    const name=fn+" "+ln;
-    const h=(fn+ln).toLowerCase().replace(/[^a-z]/g,"")+(rng()<0.6?HSUF[Math.floor(rng()*HSUF.length)]:"");
-    // exact order statistic: the (i+1)-th richest of `followers` followers.
-    // #1 is kept pure (the true max) so it matches the whale/millionaire counts;
-    // lower ranks get mild jitter so the list doesn't look mechanical.
-    const u=(i+1)/(followers+1);
-    const jit=rng();
-    let nw=Math.min(cap, xmw/Math.pow(u,1/alpha));
-    if(i>0) nw*=(0.85+jit*0.3);
-    cast.push({name,handle:h,nw});
-  }
-  cast.sort((a,b)=>b.nw-a.nw);
-
-  // the profile's own estimated worth
-  const ownU=Math.max(1e-6,rng()*rng());
-  const ownWorth=Math.min(cap, xm/Math.pow(ownU,1/alpha)*(1+fame*8));
-  const verified=fame>0.62 || rng()>0.85;
-
-  return {handle,followers,totalAll,avg,millAll,whalesAll,cast,ownWorth,verified};
-}
-
 /* ---------- rendering ---------- */
 const $=id=>document.getElementById(id);
+
+/* ---------- optional, consent-gated analytics ---------- */
+const ANALYTICS_ID=window.NWNW_ANALYTICS_ID||"";
+const ANALYTICS_KEY="nwnw_analytics_consent_v1";
+let ANALYTICS_LOADED=false,LAST_ANALYTICS_PATH="";
+function consentValue(){try{return localStorage.getItem(ANALYTICS_KEY)||"";}catch(e){return "";}}
+function setConsent(v){try{localStorage.setItem(ANALYTICS_KEY,v);}catch(e){}}
+function trackPageView(){
+  if(!ANALYTICS_LOADED||typeof window.gtag!=="function")return;
+  const path=location.pathname+location.search;
+  if(path===LAST_ANALYTICS_PATH)return;
+  LAST_ANALYTICS_PATH=path;
+  window.gtag("event","page_view",{page_title:document.title,page_location:location.href,page_path:path});
+}
+function loadAnalytics(){
+  if(!ANALYTICS_ID||ANALYTICS_LOADED)return;
+  ANALYTICS_LOADED=true;
+  window["ga-disable-"+ANALYTICS_ID]=false;
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){window.dataLayer.push(arguments);};
+  window.gtag("consent","default",{analytics_storage:"granted",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
+  window.gtag("js",new Date());
+  window.gtag("config",ANALYTICS_ID,{send_page_view:false,allow_google_signals:false});
+  const s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(ANALYTICS_ID);
+  document.head.appendChild(s);
+  trackPageView();
+}
+function showAnalyticsChoice(){if(ANALYTICS_ID)$("analytics-consent").hidden=false;}
+function hideAnalyticsChoice(){$("analytics-consent").hidden=true;}
+function acceptAnalytics(){
+  setConsent("accepted");hideAnalyticsChoice();window["ga-disable-"+ANALYTICS_ID]=false;
+  if(ANALYTICS_LOADED&&typeof window.gtag==="function"){
+    window.gtag("consent","update",{analytics_storage:"granted"});LAST_ANALYTICS_PATH="";trackPageView();
+  }else loadAnalytics();
+}
+function declineAnalytics(){
+  setConsent("declined");hideAnalyticsChoice();window["ga-disable-"+ANALYTICS_ID]=true;
+  if(typeof window.gtag==="function")window.gtag("consent","update",{analytics_storage:"denied"});
+}
+function initAnalytics(){
+  if(!ANALYTICS_ID){$("privacy-settings").style.display="none";return;}
+  const v=consentValue();if(v==="accepted")loadAnalytics();else if(v!=="declined")showAnalyticsChoice();
+}
 
 function renderGraph(cast,centerHandle){
   const W=560,H=420,cx=W/2,cy=H/2;
@@ -397,7 +405,7 @@ function renderPeople(){
     return `<tr data-h="${esc(p.handle)}" title="Open @${esc(p.handle)}'s board">
       <td class="rank">${rank}</td>
       <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc((p.name||p.handle).slice(0,2).toUpperCase())}</span>
-        <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)} · ${esc((p.headline||'').slice(0,66))}</span></span></div></td>
+        <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)} · speculative estimate, not a fact</span></span></div></td>
       <td class="r money">${rangeShort(p.low,p.high)}</td></tr>`;
   }).join("");
 }
@@ -417,7 +425,7 @@ function renderGlobal(currentHandle){
     arr=DOSSIERS.slice().sort((a,b)=>(b.est||b.total)-(a.est||a.total)).slice(0,20)
       .map(d=>({handle:d.handle,total:d.est||d.total,followers:d.followers,
         sub:(d.identified||0)+' identified · researched floor '+money(d.total)
-          +((d.owner&&(d.owner.low||d.owner.high))?(' · own '+money(d.owner.low)+'–'+money(d.owner.high)):'')}));
+          +((d.owner&&(d.owner.low||d.owner.high))?(' · own estimate '+money(d.owner.low)+'–'+money(d.owner.high)):'')}));
   }else{
     const lb=loadLB();
     arr=Object.values(lb).sort((a,b)=>b.total-a.total).slice(0,12)
@@ -427,7 +435,7 @@ function renderGlobal(currentHandle){
   $("global").innerHTML=arr.map((p,i)=>`<tr data-h="${esc(p.handle)}" title="View this board" class="${currentHandle&&p.handle.toLowerCase()===currentHandle.toLowerCase()?'me':''}">
     <td class="rank">${i+1}</td>
     <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc(p.handle.slice(0,2).toUpperCase())}</span>
-      <span><span class="whoname">@${esc(p.handle)}</span><br/><span class="whoh">${compact(p.followers)} followers · ${esc(p.sub)}</span></span></div></td>
+      <span><a class="whoname board-link" href="/b/${esc(p.handle.toLowerCase())}">@${esc(p.handle)}</a><br/><span class="whoh">${compact(p.followers)} followers · ${esc(p.sub)}</span></span></div></td>
     <td class="r money">${money(p.total)}</td></tr>`).join("");
 }
 
@@ -442,6 +450,7 @@ function paint(d){
   $("totsub").textContent=d.totsub;
   const ow=$("ownworth");
   if(d.ownLine){ow.innerHTML=d.ownLine;ow.style.display="block";}else{ow.style.display="none";}
+  const ss=$("server-summary");if(ss)ss.style.display="none";
   $("lbtitle").textContent=d.lbTitle||"💰 Richest followers";
   $("lbsub").textContent=d.lbSub||"The whales swimming in this network.";
   $("boardnote").textContent=d.hint||"";
@@ -461,95 +470,8 @@ function paint(d){
       .catch(()=>{prompt("Copy this link:",url);});
   };
   $("result").classList.add("show");
+  trackPageView();
   $("result").scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-// deterministic per-PERSON net worth: a given handle has the same worth wherever it appears
-function personNetWorth(handle){
-  const r=mulberry32(hashSeed("nw_"+String(handle).toLowerCase()));
-  let u=r(); if(u<1e-7)u=1e-7;
-  const factor=0.5+r()*r()*6;
-  return Math.min(9e10, 1500/Math.pow(u,1/1.16)*factor);
-}
-
-// synthetic (no API) — wraps the model; uses the real follower count when we know it
-function realCountFor(handle){
-  if(!DOSSIERS)return null;
-  const d=DOSSIERS.find(x=>x.handle.toLowerCase()===handle.toLowerCase());
-  return (d&&d.followers)||null;
-}
-function syntheticD(handle){
-  const realCount=realCountFor(handle);
-  const a=analyze(handle,realCount);
-  return {handle,displayName:"@"+handle,
-    handleLine:"@"+handle,
-    ownLine:"🎲 Own estimated worth: "+money(a.ownWorth)+" (invented)",
-    verified:false,followers:a.followers,
-    totalAll:a.totalAll,avg:a.avg,whalesAll:a.whalesAll,cast:a.cast,
-    stats:[{k:realCount?"Followers (real)":"Followers",v:compact(a.followers)},{k:"Avg per follower",v:money(a.avg)},
-      {k:"Millionaires",v:a.millAll.toLocaleString()},{k:"🐋 Billionaire whales",v:a.whalesAll.toLocaleString()}],
-    totsub:"across "+a.followers.toLocaleString()+(realCount?" followers (real count) · invented toy numbers":" followers · estimated model"),
-    hint:"🎲 Toy mode — every number below is invented deterministically from the handle. Same handle, same result, zero facts. For entertainment only."};
-}
-
-// live — real follower sample from twitterapi.io, run through the SAME measured
-// model as the researched boards (bucket mix × identification rates × bucket means)
-let MODEL=null;
-function loadModel(){
-  fetch('/research/model.json').then(r=>r.ok?r.json():null).then(m=>{if(m)MODEL=m;}).catch(()=>{});
-}
-function modelEstimate(resp){
-  const N=resp.totalFollowers||0;
-  const sample=resp.followers||[];
-  const c={b0:0,b1:0,b2:0,b3:0};
-  for(const f of sample){const n=f.followers||0;if(n<1e3)c.b0++;else if(n<1e4)c.b1++;else if(n<1e5)c.b2++;else c.b3++;}
-  const s=sample.length||1;
-  const q=(c.b1+c.b2+c.b3)/s;
-  const R={...MODEL.identRates};
-  R.b0=Math.max(0.002,Math.min(MODEL.identRates.b0,MODEL.identRates.b0*q/MODEL.qAnchor));
-  let est=0,identifiable=0;
-  for(const k of ["b0","b1","b2","b3"]){
-    est+=N*(c[k]/s)*R[k]*MODEL.bucketMeans[k];
-    identifiable+=N*(c[k]/s)*R[k];
-  }
-  return {est,q,identifiable};
-}
-function realD(handle,resp){
-  const total=resp.totalFollowers||(resp.followers?resp.followers.length:0)||0;
-  const sample=(resp.followers||[]).slice().sort((a,b)=>(b.followers||0)-(a.followers||0));
-  const cast=sample.slice(0,20).map(f=>({
-    name:f.name||("@"+f.userName),handle:f.userName,nw:f.followers||0,
-    pill:'<span class="title-pill">📊 in live sample</span>',
-    moneyText:compact(f.followers||0)+" followers",
-    graphLabel:compact(f.followers||0)
-  }));
-  if(MODEL){
-    const m=modelEstimate(resp);
-    return {handle,
-      displayName:(resp.profile&&resp.profile.name)||("@"+handle),
-      handleLine:"@"+handle+" · 🛰️ live sample × measured model",
-      verified:!!(resp.profile&&resp.profile.isBlueVerified),
-      followers:total,totalAll:m.est,
-      totalText:"~"+money(m.est),
-      whalesAll:0,cast,lbCount:10,clickableCast:true,
-      lbTitle:"📊 Biggest accounts in the live sample",
-      lbSub:"Real accounts from the follower sample, ranked by their own follower counts.",
-      stats:[{k:"Followers (real)",v:compact(total)},{k:"🛰️ Live sample",v:String(sample.length)},
-        {k:"Audience quality",v:(m.q*100).toFixed(1)+"% over 1k"},{k:"Est. identifiable people",v:compact(Math.round(m.identifiable))}],
-      totsub:"modeled: "+sample.length+"-follower live sample × wealth rates measured on "+"1,400+ researched accounts · no dossier yet · ±2x",
-      hint:"🛰️ Live model — the follower sample is real (from X) and the estimate uses the same measured identification rates and wealth averages as the researched boards. Names below are the biggest real accounts in the sample; no individual worths are invented."};
-  }
-  // model unavailable — honest minimal fallback
-  return {handle,
-    displayName:(resp.profile&&resp.profile.name)||("@"+handle),
-    handleLine:"@"+handle+" · 🛰️ live follower sample",
-    verified:!!(resp.profile&&resp.profile.isBlueVerified),
-    followers:total,totalAll:0,totalText:"—",
-    whalesAll:0,cast,lbCount:10,
-    stats:[{k:"Followers (real)",v:compact(total)},{k:"🛰️ Live sample",v:String(sample.length)},
-      {k:"Audience quality",v:"—"},{k:"Est. identifiable people",v:"—"}],
-    totsub:"live sample loaded, but the model file could not be fetched",
-    hint:"🛰️ Live mode — real follower sample from X."};
 }
 
 // researched — evidence-based dossiers produced by the offline research pipeline.
@@ -570,7 +492,7 @@ function researchD(handle,data){
   const ppl=(data.people||[]).map(p=>({
     name:p.name||("@"+p.handle), handle:p.handle, nw:((p.low||0)+(p.high||0))/2,
     pill:verdictPill(p.verdict,p.confidence),
-    sub:(p.headline||"").slice(0,95),
+    sub:"",
     sourceUrl:(p.sources&&p.sources[0])||"",
     moneyText:rangeText(p.low,p.high)
   })).sort((a,b)=>b.nw-a.nw);
@@ -580,12 +502,8 @@ function researchD(handle,data){
   let ownLine='';
   if(o){
     const src=(o.sources||[]).map((u,i)=>'<a class="srclink" href="'+esc(u)+'" target="_blank" rel="noopener">'+(i===0?'𝕏':'🔗')+'</a>').join(' ');
-    // role only (no location — pairing home location with wealth is a doxxing risk)
-    const meta=[o.role&&esc(o.role)].filter(Boolean).join(' · ');
     const conf=o.confidence?(' · '+esc(o.confidence)+' confidence'):'';
-    ownLine='💰 Estimated net worth (a guess, not a fact): '+rangeText(o.low,o.high)+conf+' '+src
-      +(meta?('<br/><span class="ownmeta">'+meta+'</span>'):'')
-      +(o.basis?('<br/><span class="ownmeta">'+esc(o.basis)+'</span>'):'');
+    ownLine='💰 Estimated net worth (a guess, not a fact): '+rangeText(o.low,o.high)+conf+' '+src;
   }
   const est=M.estimate;
   const modeled=est&&est.total>sumMid*1.2; // only headline the model when it adds real signal
@@ -603,54 +521,15 @@ function researchD(handle,data){
     verified:!M.dynamic,followers:M.totalFollowers||0,
     avg:ppl.length?sumMid/ppl.length:0,whalesAll:0,
     cast:ppl,lbCount:20,clickableCast:true,
+    lbSub:"Speculative ranges from public-source research; biographical location is intentionally withheld.",
     stats:[{k:"Followers (real)",v:compact(M.totalFollowers||0)},{k:"Researched",v:String(M.researched||ppl.length)},
       {k:"Identified",v:String(M.identified||0)},{k:"Richest follower (mid)",v:money(top)}],
     hint:M.dynamic
       ?"🤖 Auto-built board — we swept our pool of already-researched wealthy people to find which of them follow this account (their worth was verified on curated boards), and a GLM agent estimated the owner. The owner + AI-added names have NO verification pass yet — curated boards get one. Opinions, not facts."
       :"🔬 Researched dossier — AI agents identified these followers from public sources and estimated ranges, with a verification pass on every entry. Modeled totals extrapolate from measured wealth rates; ±2x error bars. Opinions, not facts."};
 }
-async function runResearch(handle){
-  const btn=$("go"),old=btn.textContent;
-  btn.textContent="Loading dossier…";btn.disabled=true;
-  try{
-    const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
-    if(!r.ok){ showError("No researched dossier for @"+handle+" yet. Showing the estimated model instead."); paint(syntheticD(handle)); return; }
-    paint(researchD(handle, await r.json()));
-  }catch(e){ showError("Couldn't load the dossier ("+e+"). Showing the estimated model."); paint(syntheticD(handle)); }
-  finally{ btn.textContent=old;btn.disabled=false; }
-}
-
 function showError(m){const e=$("err");e.textContent=m;e.style.display="block";}
 function clearError(){const e=$("err");e.style.display="none";e.textContent="";}
-
-async function runReal(handle){
-  const btn=$("go"),old=btn.textContent;
-  const stages=["Sampling real followers…","Still sampling (big account)…","Crunching the model…"];
-  let stage=0;
-  btn.textContent=stages[0];btn.disabled=true;
-  const tick=setInterval(()=>{stage=Math.min(stage+1,stages.length-1);btn.textContent=stages[stage];},7000);
-  try{
-    const r=await fetch("/api/lookup?handle="+encodeURIComponent(handle)+"&max=200");
-    const j=await r.json();
-    if(!j.ok){
-      const m={no_api_key:"The live model isn't available right now (no API key on the server). Showing the toy model instead.",
-        bad_key:"The live model isn't available right now (upstream key rejected). Showing the toy model instead.",
-        not_found:"Couldn't load @"+handle+" from X (typo, or a protected/suspended account?).",
-        no_credits:"Live data is temporarily unavailable (upstream credits). @"+handle+" is in our research queue — check back soon.",
-        rate_limited:"Live lookups are rate-limited and the budget is briefly exhausted — showing the toy model. Try again in a few minutes for the real estimate.",
-        daily_cap:"Today's live-lookup budget is used up — showing the toy model. Researched boards still work; fresh lookups resume tomorrow (UTC).",
-        bad_handle:"That handle didn't parse."}[j.error]||j.message||"Lookup failed.";
-      showError(m);
-      // never invent numbers for real-but-unavailable accounts
-      if(j.error!=="not_found"&&j.error!=="bad_handle"&&j.error!=="no_credits") paint(syntheticD(handle));
-      return;
-    }
-    paint(realD(handle,j));
-  }catch(e){
-    showError("Couldn't reach the API server ("+e+"). Showing the toy model instead.");
-    paint(syntheticD(handle));
-  }finally{ clearInterval(tick);btn.textContent=old;btn.disabled=false; }
-}
 
 // --- populating state: no board -> request an AI build, show honest progress.
 // We NEVER display fake or placeholder numbers while waiting.
@@ -705,24 +584,33 @@ function hidePopulating(){
 
 // default routing: researched dossier (curated or auto-built) when one exists;
 // otherwise request a real AI build and show the populating state. No fake data.
-async function runAuto(handle){
+async function runAuto(handle,allowBuild){
   const btn=$("go"),old=btn.textContent;
   btn.textContent="Loading…";btn.disabled=true;
   try{
-    const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
-    if(r.ok){paint(researchD(handle,await r.json()));return;}
-    const st=await(await fetch("/api/board_request?handle="+encodeURIComponent(handle))).json();
+    const known=await(await fetch("/api/board_status?handle="+encodeURIComponent(handle),{cache:"no-store"})).json();
+    if(known.status==="ready"){
+      const r=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
+      if(r.ok){paint(researchD(handle,await r.json()));return;}
+      showError("The completed board for @"+handle+" could not be loaded. No substitute estimate was shown.");return;
+    }
+    if(!allowBuild){showError("No completed research board exists for @"+handle+" yet. Search from the homepage to request one deliberately.");return;}
+    const st=await(await fetch("/api/board_request?handle="+encodeURIComponent(handle),{method:"POST",headers:{"x-nwnw-action":"build"}})).json();
     if(st.status==="ready"){
       const r2=await fetch("/research/"+encodeURIComponent(handle.toLowerCase())+".json");
       if(r2.ok){paint(researchD(handle,await r2.json()));return;}
     }
     if(st.status==="building"||st.status==="queued"){showPopulating(handle,st);return;}
     if(st.status==="offline"){
-      showError("No data for @"+handle+" yet — it just joined our research queue. Boards are added in batches; check back soon.");
+      showError("Research for @"+handle+" could not start right now. No estimate was generated and no paid build was started; try again later.");
       return;
     }
     if(st.status==="rate_limited"){
       showError("Too many new-board requests right now — try again in a few minutes.");
+      return;
+    }
+    if(st.status==="busy"){
+      showError("The research queue is full right now — no paid work was started for this request. Try again later.");
       return;
     }
     if(st.status==="failed"){showError(boardFailMsg(handle,st.reason));return;}
@@ -733,8 +621,9 @@ async function runAuto(handle){
   finally{btn.textContent=old;btn.disabled=false;}
 }
 
-function run(raw){
-  const handle=parseHandle(raw);
+function run(raw,allowBuild=true){
+  const parsed=parseHandle(raw);
+  const handle=parsed&&parsed.toLowerCase();
   if(!handle){$("q").focus();return;}
   $("q").value="@"+handle;
   clearError();
@@ -743,23 +632,22 @@ function run(raw){
   try{history.replaceState(null,"","/b/"+handle);}catch(e){}
   // single path: curated board if it exists, else a real on-demand build, else
   // an honest "in the queue" message. Never the invented-number toy model.
-  runAuto(handle);
+  runAuto(handle,allowBuild);
 }
 
 /* sample chips */
-const SAMPLES=["cdossman","levelsio","elonmusk","naval","balajis","VitalikButerin","jack","paulg","sama"];
+const SAMPLES=["cdossman","levelsio","elonmusk","naval","balajis","vitalikbuterin","jack","paulg","sama"];
 $("chips").innerHTML="Try: "+SAMPLES.map(s=>`<span class="chip" data-h="${s}">@${s}</span>`).join("");
 $("chips").addEventListener("click",e=>{const c=e.target.closest(".chip");if(c)run(c.dataset.h);});
 
 $("go").addEventListener("click",()=>run($("q").value));
 $("q").addEventListener("keydown",e=>{if(e.key==="Enter")run($("q").value);});
 $("lucky").addEventListener("click",()=>run(SAMPLES[Math.floor(Math.random()*SAMPLES.length)]));
-$("global").addEventListener("click",e=>{const tr=e.target.closest("tr[data-h]");if(tr)run(tr.dataset.h);});
+$("global").addEventListener("click",e=>{const tr=e.target.closest("tr[data-h]");if(tr){if(e.target.closest("a.board-link"))e.preventDefault();run(tr.dataset.h);}});
 
 renderGlobal("");
 loadDossiers();
 loadPeople();
-loadModel();
 $("tab-networks").addEventListener("click",()=>showLbTab('networks'));
 $("tab-people").addEventListener("click",()=>showLbTab('people'));
 $("people").addEventListener("click",e=>{
@@ -767,8 +655,13 @@ $("people").addEventListener("click",e=>{
   const tr=e.target.closest("tr[data-h]");if(tr)run(tr.dataset.h);
 });
 
+$("analytics-accept").addEventListener("click",acceptAnalytics);
+$("analytics-decline").addEventListener("click",declineAnalytics);
+$("privacy-settings").addEventListener("click",showAnalyticsChoice);
+
 /* deep-link: /b/<handle> auto-runs that board on load */
-(function(){const m=location.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);if(m)run(m[1]);})();
+(function(){const m=location.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);if(m)run(m[1],false);})();
+initAnalytics();
 
 /* stale-tab guard: if the site was redeployed while this tab was open,
    reload on next return to the tab so old JS never serves fake flows */

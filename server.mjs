@@ -5,14 +5,14 @@
 //   TWITTERAPI_KEY=...  node server.mjs       (or put the key in ./.env)
 //
 import { createServer } from 'node:http';
-import { readFile, readFileSync, readdirSync, existsSync, mkdirSync, appendFileSync, writeFileSync } from 'node:fs';
+import { readFile, readFileSync, readdirSync, existsSync, mkdirSync, appendFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, extname, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // durable storage: Fly volume at /data in prod, ./.data locally
-const DATA_DIR = existsSync('/data') ? '/data' : join(__dirname, '.data');
+const DATA_DIR = process.env.NWNW_DATA_DIR || (existsSync('/data') ? '/data' : join(__dirname, '.data'));
 const CACHE_DIR = join(DATA_DIR, 'cache');
 try { mkdirSync(CACHE_DIR, { recursive: true }); } catch {}
 const LOG_FILE = join(DATA_DIR, 'lookups.jsonl');
@@ -32,6 +32,10 @@ if (existsSync(envPath)) {
 const KEY = process.env.TWITTERAPI_KEY || '';
 const PORT = process.env.PORT || 4173;
 const API = 'https://api.twitterapi.io';
+const ORIGIN = (process.env.PUBLIC_ORIGIN || 'https://networknetworth.fly.dev').replace(/\/$/, '');
+const RESEARCH_DISABLED = process.env.NWNW_DISABLE_RESEARCH === '1';
+const GA_MEASUREMENT_ID = /^G-[A-Z0-9]+$/i.test(process.env.GA_MEASUREMENT_ID || '') ? process.env.GA_MEASUREMENT_ID.toUpperCase() : '';
+const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION || '';
 const HARD_MAX = 2000; // safety cap on followers fetched per lookup (cost guard)
 
 // --- public-deploy abuse guards (in-memory; reset on restart) ---------------
@@ -79,11 +83,26 @@ function ipAllowed(ip) {
   return true;
 }
 
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.png': 'image/png', '.txt': 'text/plain', '.xml': 'application/xml' };
 
 function send(res, code, body, type = 'application/json') {
   res.writeHead(code, { 'content-type': type, 'cache-control': 'no-store' });
   res.end(body);
+}
+
+function sendNoIndex(res, code, body, type = 'application/json') {
+  res.writeHead(code, { 'content-type': type, 'cache-control': 'no-store', 'x-robots-tag': 'noindex' });
+  res.end(body);
+}
+
+function redirect(res, location, code = 308) {
+  res.writeHead(code, { location, 'cache-control': 'public, max-age=3600' });
+  res.end();
+}
+
+function methodNotAllowed(res, allow) {
+  res.writeHead(405, { allow, 'content-type': 'application/json', 'cache-control': 'no-store' });
+  res.end(JSON.stringify({ error: 'method_not_allowed' }));
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -246,6 +265,110 @@ function avgBuildMs() {
 function hasStaticBoard(h) { return existsSync(join(__dirname, 'research', h + '.json')); }
 function hasDynamicBoard(h) { return existsSync(join(BOARDS_DIR, h + '.json')); }
 
+function boardPath(handle) {
+  if (hasStaticBoard(handle)) return join(__dirname, 'research', handle + '.json');
+  if (hasDynamicBoard(handle)) return join(BOARDS_DIR, handle + '.json');
+  return null;
+}
+
+function readBoard(handle) {
+  const file = boardPath(handle);
+  if (!file) return null;
+  try { return JSON.parse(readFileSync(file, 'utf8')); } catch { return null; }
+}
+
+// Public board payloads deliberately omit free-form research prose. Those fields
+// can contain a self-reported location or a judgmental internal verdict, neither
+// of which belongs beside a named person's speculative wealth range.
+function publicPerson(person) {
+  return {
+    handle: person.handle,
+    name: person.name,
+    followers: person.followers || 0,
+    identified: person.identified !== false,
+    confidence: person.confidence || 'low',
+    estimateLabel: 'Speculative estimate, not a verified fact',
+    low: Math.round(person.low || 0),
+    high: Math.round(person.high || 0),
+    source: /^https?:\/\//i.test(person.source || '') ? person.source : undefined,
+    sources: Array.isArray(person.sources) ? person.sources.filter((u) => /^https?:\/\//i.test(u)).slice(0, 5) : [],
+  };
+}
+
+function publicOwner(owner) {
+  if (!owner || !(owner.low > 0 || owner.high > 0)) return null;
+  return {
+    name: owner.name || '',
+    confidence: owner.confidence || 'low',
+    estimateLabel: 'Speculative estimate, not a verified fact',
+    low: Math.round(owner.low || 0),
+    high: Math.round(owner.high || 0),
+    sources: Array.isArray(owner.sources) ? owner.sources.filter((u) => /^https?:\/\//i.test(u)).slice(0, 5) : [],
+    engine: owner.engine || undefined,
+  };
+}
+
+function publicEstimate(estimate) {
+  if (!estimate || typeof estimate !== 'object') return undefined;
+  return {
+    total: Number(estimate.total) || 0,
+    low: Number(estimate.low) || 0,
+    high: Number(estimate.high) || 0,
+    floor: Number(estimate.floor) || 0,
+    estimateLabel: 'Speculative estimate, not a verified fact',
+  };
+}
+
+function publicBoardData(data) {
+  if (!data || !data.meta) return null;
+  const source = data.meta;
+  // Keep this an explicit allowlist. Internal dossiers and future pipeline
+  // fields must never become public merely because they were added upstream.
+  const meta = {
+    account: source.account || '',
+    name: source.name || '',
+    totalFollowers: Number(source.totalFollowers) || 0,
+    researched: Number(source.researched) || 0,
+    identified: Number(source.identified) || 0,
+    dynamic: !!source.dynamic,
+    engine: source.dynamic && source.engine ? String(source.engine).slice(0, 80) : undefined,
+    owner: publicOwner(source.owner),
+    sampleDist: source.sampleDist ? {
+      sampled: Number(source.sampleDist.sampled) || 0,
+      b0: Number(source.sampleDist.b0) || 0,
+      b1: Number(source.sampleDist.b1) || 0,
+      b2: Number(source.sampleDist.b2) || 0,
+      b3: Number(source.sampleDist.b3) || 0,
+    } : undefined,
+    estimate: publicEstimate(source.estimate),
+  };
+  return { disclaimer: 'Every monetary figure is a speculative estimate for entertainment and research, not a verified fact.', meta, people: (data.people || []).map(publicPerson) };
+}
+
+function publicIndexData() {
+  try {
+    const rows = JSON.parse(readFileSync(join(__dirname, 'research', 'index.json'), 'utf8'));
+    return rows.map((row) => ({
+      handle: row.handle || '',
+      name: row.name || '',
+      total: Number(row.total) || 0,
+      est: Number(row.est) || 0,
+      followers: Number(row.followers) || 0,
+      researched: Number(row.researched) || 0,
+      identified: Number(row.identified) || 0,
+      estimateLabel: 'Speculative estimate, not a verified fact',
+      owner: publicOwner(row.owner),
+    }));
+  } catch { return []; }
+}
+
+function publicPeopleData() {
+  try {
+    const rows = JSON.parse(readFileSync(join(__dirname, 'research', 'people.json'), 'utf8'));
+    return rows.map(publicPerson);
+  } catch { return []; }
+}
+
 // SECURITY: we deliberately do NOT dereference the profile's t.co link. Following
 // an attacker-chosen redirect server-side is an SSRF vector (a crafted profile
 // could point at internal/metadata endpoints). The raw link is passed to the LLM
@@ -399,6 +522,55 @@ function cacheWrite(cacheKey, payload) {
   try { writeFileSync(cachePathFor(cacheKey), JSON.stringify(entry)); } catch {}
 }
 
+function readyBoards() {
+  const boards = new Map();
+  const addDir = (dir, dynamic) => {
+    try {
+      for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.json') || ['index.json', 'model.json', 'people.json'].includes(file)) continue;
+        const handle = file.slice(0, -5).toLowerCase();
+        if (!/^[a-z0-9_]{1,15}$/.test(handle) || boards.has(handle)) continue;
+        try {
+          const fullPath = join(dir, file);
+          const data = JSON.parse(readFileSync(fullPath, 'utf8'));
+          if (!data.meta || !data.meta.account) continue;
+          boards.set(handle, {
+            handle,
+            name: data.meta.name || '@' + handle,
+            dynamic,
+            lastmod: new Date(statSync(fullPath).mtimeMs).toISOString().slice(0, 10),
+          });
+        } catch {}
+      }
+    } catch {}
+  };
+  addDir(join(__dirname, 'research'), false);
+  addDir(BOARDS_DIR, true);
+  return [...boards.values()].sort((a, b) => a.handle.localeCompare(b.handle));
+}
+
+function sitemapXML() {
+  const appLastmod = new Date(statSync(join(__dirname, 'index.html')).mtimeMs).toISOString().slice(0, 10);
+  const urls = [{ loc: ORIGIN + '/', lastmod: appLastmod }, { loc: ORIGIN + '/privacy', lastmod: appLastmod }]
+    .concat(readyBoards().map((b) => ({ loc: ORIGIN + '/b/' + b.handle, lastmod: b.lastmod })));
+  return '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    urls.map((u) => `  <url><loc>${xmlEsc(u.loc)}</loc><lastmod>${u.lastmod}</lastmod></url>`).join('\n') +
+    '\n</urlset>\n';
+}
+
+function boardLinksHTML(currentHandle) {
+  const links = readyBoards().map((b) => {
+    const current = currentHandle === b.handle ? ' aria-current="page"' : '';
+    return `<a href="/b/${esc(b.handle)}"${current}>@${esc(b.handle)}</a>`;
+  }).join(' ');
+  return links ? `<nav class="board-directory" aria-label="Researched boards"><span>Explore researched boards:</span> ${links}</nav>` : '';
+}
+
+function xmlEsc(value) {
+  return String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));
+}
+
 const server = createServer(async (req, res) => {
   const u = new URL(req.url, 'http://localhost');
 
@@ -442,20 +614,28 @@ const server = createServer(async (req, res) => {
 
   // --- on-demand board building ---
   if (u.pathname === '/api/board_request' || u.pathname === '/api/board_status') {
+    const isRequest = u.pathname === '/api/board_request';
+    if (isRequest && req.method !== 'POST') return methodNotAllowed(res, 'POST');
+    if (!isRequest && req.method !== 'GET') return methodNotAllowed(res, 'GET');
+    // A build is a paid, state-changing action. Requiring an explicit POST plus
+    // an application header prevents link scanners, prefetchers, and ordinary
+    // crawlers from starting research merely by discovering a URL.
+    if (isRequest && req.headers['x-nwnw-action'] !== 'build')
+      return send(res, 403, JSON.stringify({ status: 'forbidden' }));
     const handle = (u.searchParams.get('handle') || '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 15).toLowerCase();
     if (!handle) return send(res, 200, JSON.stringify({ status: 'bad_handle' }));
     // on an explicit build request, clear a stale transient failure so it retries
     // (terminal failures — missing account / not enough data — stay put).
-    if (u.pathname === '/api/board_request') {
+    if (isRequest) {
       const j = jobs.get(handle);
       if (j && j.status === 'failed' && !j.terminal) jobs.delete(handle);
     }
     const cur = boardStatusPayload(handle);
-    if (u.pathname === '/api/board_status' || cur.status !== 'none')
+    if (!isRequest || cur.status !== 'none')
       return send(res, 200, JSON.stringify(cur));
     // new request: only start a build if the whole pipeline can actually run
     const { glmAvailable } = await import('./glm.mjs');
-    if (!KEY || !glmAvailable() || Date.now() < twitterCreditsOutUntil) {
+    if (RESEARCH_DISABLED || !KEY || !glmAvailable() || Date.now() < twitterCreditsOutUntil) {
       logLookup({ handle, boardRequest: 'queued_offline' });
       return send(res, 200, JSON.stringify({ status: 'offline', avgMs: avgBuildMs() }));
     }
@@ -479,27 +659,50 @@ const server = createServer(async (req, res) => {
     return send(res, 200, JSON.stringify(boardStatusPayload(handle)));
   }
 
-  // dynamic boards: /research/<handle>.json falls through to /data/boards
+  if (u.pathname === '/robots.txt') {
+    return send(res, 200, `User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'text/plain; charset=utf-8');
+  }
+  if (u.pathname === '/sitemap.xml') return send(res, 200, sitemapXML(), 'application/xml; charset=utf-8');
+
+  // Public research responses are purpose-built and sanitized. Raw committed
+  // dossiers and internal tools are never exposed through the static server.
+  if (u.pathname === '/research/index.json') return sendNoIndex(res, 200, JSON.stringify(publicIndexData()));
+  if (u.pathname === '/research/people.json') return sendNoIndex(res, 200, JSON.stringify(publicPeopleData()));
+  if (u.pathname === '/research/model.json') {
+    try { return sendNoIndex(res, 200, readFileSync(MODEL_PATH, 'utf8')); } catch { return send(res, 404, 'Not found', 'text/plain'); }
+  }
   const rMatch = u.pathname.match(/^\/research\/([A-Za-z0-9_]{1,15})\.json$/);
-  if (rMatch && !hasStaticBoard(rMatch[1].toLowerCase()) && hasDynamicBoard(rMatch[1].toLowerCase())) {
-    try { return send(res, 200, readFileSync(join(BOARDS_DIR, rMatch[1].toLowerCase() + '.json'))); } catch {}
+  if (rMatch) {
+    const data = publicBoardData(readBoard(rMatch[1].toLowerCase()));
+    return data ? sendNoIndex(res, 200, JSON.stringify(data)) : send(res, 404, 'Not found', 'text/plain');
   }
 
   // --- Open Graph share cards ---
   const ogMatch = u.pathname.match(/^\/og\/([A-Za-z0-9_]{1,15})\.png$/);
   if (ogMatch) return sendOG(res, ogMatch[1].toLowerCase());
 
+  if (u.pathname === '/privacy') return sendPrivacyHTML(res);
+
   // board share URL: serve index.html with per-board OG meta injected so
   // crawlers (X, iMessage) unfurl the right card; the SPA reads the path too.
   const bMatch = u.pathname.match(/^\/b\/([A-Za-z0-9_]{1,15})$/);
-  if (bMatch) return sendBoardHTML(res, bMatch[1].toLowerCase());
+  if (bMatch) {
+    const rawHandle = bMatch[1];
+    const handle = rawHandle.toLowerCase();
+    if (rawHandle !== handle) return redirect(res, '/b/' + handle);
+    const meta = boardMeta(handle);
+    return meta ? sendBoardHTML(res, handle, meta) : sendMissingBoardHTML(res, handle);
+  }
 
-  if (u.pathname === '/' || u.pathname === '/index.html') return sendBoardHTML(res, null);
+  if (u.pathname === '/') return sendBoardHTML(res, null, null);
+  if (u.pathname === '/index.html') return redirect(res, '/');
+  if (u.pathname === '/favicon.ico') return redirect(res, '/favicon.svg');
 
-  // static files
-  let p = u.pathname;
-  p = p.replace(/\.\.+/g, ''); // no path traversal
-  const file = join(__dirname, p);
+  // Strict public allowlist: never serve source, dotfiles, raw research, tools,
+  // git metadata, or local secrets merely because they exist beside the app.
+  const publicFiles = new Map([['/favicon.svg', join(__dirname, 'favicon.svg')]]);
+  const file = publicFiles.get(u.pathname);
+  if (!file) return send(res, 404, 'Not found', 'text/plain');
   readFile(file, (err, buf) => {
     if (err) return send(res, 404, 'Not found', 'text/plain');
     send(res, 200, buf, MIME[extname(file)] || 'application/octet-stream');
@@ -508,24 +711,18 @@ const server = createServer(async (req, res) => {
 
 // --- OG helpers ---
 function boardMeta(handle) {
-  try {
-    const d = JSON.parse(readFileSync(join(__dirname, 'research', handle + '.json'), 'utf8'));
-    return d.meta || null;
-  } catch {}
-  try {
-    // dynamic (auto-built) boards get share cards + crawler meta too
-    const d = JSON.parse(readFileSync(join(BOARDS_DIR, handle + '.json'), 'utf8'));
-    return d.meta || null;
-  } catch { return null; }
+  const data = readBoard(handle);
+  return data && data.meta || null;
 }
 
-const CARD_VERSION = 3; // bump when card rendering changes, to invalidate cached PNGs
+const CARD_VERSION = 4; // bump when card rendering changes, to invalidate cached PNGs
 async function sendOG(res, handle) {
   const m = boardMeta(handle);
   const est = (m && m.estimate) || {};
+  const shownTotal = displayEstimate(m);
   // cache key includes the card version AND the current total, so cards
   // auto-refresh when the code changes or the modeled number moves.
-  const stamp = CARD_VERSION + '_' + Math.round(est.total || est.floor || 0);
+  const stamp = CARD_VERSION + '_' + Math.round(shownTotal);
   const cacheFile = join(CACHE_DIR, 'og_' + handle + '_' + stamp + '.png');
   try {
     if (existsSync(cacheFile)) {
@@ -538,7 +735,7 @@ async function sendOG(res, handle) {
     const og = await import('./og.mjs');
     let svg;
     if (m) {
-      svg = og.cardSVG({ handle: m.account, name: m.name, total: est.total, floor: est.floor, identified: m.identified, researched: m.researched, owner: m.owner });
+      svg = og.cardSVG({ handle: m.account, name: m.name, total: shownTotal, floor: est.floor, identified: m.identified, researched: m.researched, owner: m.owner });
     } else {
       svg = og.defaultCardSVG();
     }
@@ -554,38 +751,84 @@ async function sendOG(res, handle) {
   send(res, 404, 'no card', 'text/plain');
 }
 
-function sendBoardHTML(res, handle) {
+function fmtMoney(n) {
+  return n >= 1e12 ? '$' + (n / 1e12).toFixed(2) + 'T'
+    : n >= 1e9 ? '$' + (n / 1e9).toFixed(2) + 'B'
+      : n >= 1e6 ? '$' + (n / 1e6).toFixed(1) + 'M'
+        : '$' + Math.round(n / 1e3) + 'K';
+}
+
+function displayEstimate(meta) {
+  const est = meta && meta.estimate || {};
+  const floor = est.floor || 0;
+  return est.total > floor * 1.2 ? est.total : (floor || est.total || 0);
+}
+
+function sendBoardHTML(res, handle, m) {
   let html;
   try { html = readFileSync(join(__dirname, 'index.html'), 'utf8'); } catch { return send(res, 500, 'error', 'text/plain'); }
-  const origin = 'https://networknetworth.fly.dev';
-  const m = handle ? boardMeta(handle) : null;
-  let title, desc, image;
+  let title, desc, image, summary = '';
+  const canonical = ORIGIN + (handle ? '/b/' + handle : '/');
   if (m) {
-    const est = m.estimate || {};
-    const total = est.total || est.floor || 0;
-    const fmt = (n) => n >= 1e12 ? '$' + (n / 1e12).toFixed(2) + 'T' : n >= 1e9 ? '$' + (n / 1e9).toFixed(2) + 'B' : n >= 1e6 ? '$' + (n / 1e6).toFixed(1) + 'M' : '$' + Math.round(n / 1e3) + 'K';
-    title = `@${m.account}'s followers are worth ~${fmt(total)} — NetWorkNetWorth`;
-    desc = `${(m.identified || 0).toLocaleString()} identified followers, researched floor ${fmt(est.floor || 0)}. See who's rich in @${m.account}'s network.`;
-    image = `${origin}/og/${m.account}.png`;
+    const total = displayEstimate(m);
+    title = `@${m.account} follower network: ~${fmtMoney(total)} speculative estimate | NWNW`;
+    desc = `Speculative estimate, not fact: about ${fmtMoney(total)} across @${m.account}'s researched follower network, including ${(m.identified || 0).toLocaleString()} identified people.`;
+    image = `${ORIGIN}/og/${m.account}.png`;
+    summary = `<section class="server-summary" id="server-summary"><h2>@${esc(m.account)} follower network</h2><p><strong>Speculative estimate, not a verified fact:</strong> approximately ${esc(fmtMoney(total))} across researched followers.</p><p>${(m.identified || 0).toLocaleString()} identified people; every individual range is an estimate for entertainment and research.</p></section>`;
   } else {
-    title = 'NetWorkNetWorth — how rich is your network?';
-    desc = 'Drop in any X / Twitter profile and see the estimated net worth of their followers.';
-    image = `${origin}/og/default.png`;
+    title = 'Estimate an X follower network’s net worth | NetWorkNetWorth';
+    desc = 'Research speculative net-worth estimates for the followers of an X or Twitter account. Every figure is labeled as an estimate, not a verified fact.';
+    image = `${ORIGIN}/og/default.png`;
   }
+  const structured = m ? {
+    '@context': 'https://schema.org', '@type': 'WebPage', name: title, url: canonical, description: desc,
+    isPartOf: { '@type': 'WebSite', name: 'NetWorkNetWorth', alternateName: 'NWNW', url: ORIGIN + '/' },
+  } : {
+    '@context': 'https://schema.org', '@type': 'WebSite', name: 'NetWorkNetWorth', alternateName: 'NWNW', url: ORIGIN + '/', description: desc,
+  };
   const tags = [
+    `<meta name="description" content="${esc(desc)}"/>`,
+    `<meta name="robots" content="index,follow,max-image-preview:large"/>`,
+    `<link rel="canonical" href="${canonical}"/>`,
+    GOOGLE_SITE_VERIFICATION ? `<meta name="google-site-verification" content="${esc(GOOGLE_SITE_VERIFICATION)}"/>` : '',
     `<meta property="og:type" content="website"/>`,
+    `<meta property="og:site_name" content="NetWorkNetWorth"/>`,
     `<meta property="og:title" content="${esc(title)}"/>`,
     `<meta property="og:description" content="${esc(desc)}"/>`,
     `<meta property="og:image" content="${image}"/>`,
-    `<meta property="og:url" content="${origin}${handle ? '/b/' + handle : '/'}"/>`,
+    `<meta property="og:image:width" content="1200"/>`,
+    `<meta property="og:image:height" content="630"/>`,
+    `<meta property="og:image:alt" content="${esc(title)}"/>`,
+    `<meta property="og:url" content="${canonical}"/>`,
     `<meta name="twitter:card" content="summary_large_image"/>`,
     `<meta name="twitter:title" content="${esc(title)}"/>`,
     `<meta name="twitter:description" content="${esc(desc)}"/>`,
     `<meta name="twitter:image" content="${image}"/>`,
-  ].join('\n');
+    `<meta name="twitter:image:alt" content="${esc(title)}"/>`,
+    `<script type="application/ld+json">${JSON.stringify(structured).replace(/</g, '\\u003c')}</script>`,
+  ].filter(Boolean).join('\n');
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
   html = html.replace('<!--OG-->', tags);
+  html = html.replace('<!--ANALYTICS-CONFIG-->', `<script>window.NWNW_ANALYTICS_ID=${JSON.stringify(GA_MEASUREMENT_ID)};</script>`);
+  html = html.replace('<!--SERVER-SUMMARY-->', summary);
+  html = html.replace('<!--BOARD-LINKS-->', boardLinksHTML(handle));
   res.writeHead(200, { 'content-type': 'text/html', 'cache-control': 'no-store' });
   res.end(html);
+}
+
+function sendMissingBoardHTML(res, handle) {
+  const title = `@${handle} board not researched | NetWorkNetWorth`;
+  const body = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(title)}</title><link rel="icon" href="/favicon.svg"></head><body style="font-family:system-ui;background:#070912;color:#e8ecf6;padding:40px;max-width:720px;margin:auto"><main><h1>${esc(title)}</h1><p>There is no completed research board for @${esc(handle)}. No estimate or placeholder number is available.</p><p><a href="/" style="color:#ffd24a">Return to NetWorkNetWorth</a> to request research deliberately.</p></main></body></html>`;
+  res.writeHead(404, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex,nofollow' });
+  res.end(body);
+}
+
+function sendPrivacyHTML(res) {
+  const title = 'Privacy and optional analytics | NetWorkNetWorth';
+  const desc = 'How NetWorkNetWorth handles optional analytics and stores an analytics choice.';
+  const body = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${esc(desc)}"><meta name="robots" content="index,follow"><link rel="canonical" href="${ORIGIN}/privacy"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><title>${esc(title)}</title><style>body{font-family:system-ui;background:#070912;color:#e8ecf6;padding:40px 20px;margin:auto;max-width:760px;line-height:1.65}h1,h2{line-height:1.2}p,li{color:#b8c0d4}a{color:#ffd24a}.card{background:#11162a;border:1px solid #28304a;border-radius:16px;padding:20px}</style></head><body><main><p><a href="/">← NetWorkNetWorth</a></p><h1>Privacy and optional analytics</h1><div class="card"><h2>Analytics is opt-in</h2><p>NetWorkNetWorth does not load Google Analytics unless you choose “Accept analytics.” Declining does not change access to the site or its research boards.</p><h2>What the optional tag measures</h2><p>If accepted, Google Analytics may process page views, interactions, device and browser information, a first-party client identifier, and approximate geographic information. NetWorkNetWorth disables advertising storage, Google signals, ad user data, and ad personalization in its tag configuration.</p><h2>Your choice</h2><p>The choice is stored in your browser's local storage. Use “Analytics choices” in the site footer to change it. Declining after acceptance disables further Analytics collection from this site in that browser session.</p><h2>Research data</h2><p>Public boards contain speculative estimates compiled from public sources. Free-form biographical and location prose is removed from the public payload. To request removal from a board, contact <a href="https://x.com/cdossman">@cdossman</a>.</p></div></main></body></html>`;
+  res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300' });
+  res.end(body);
 }
 
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }

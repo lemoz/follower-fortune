@@ -16,12 +16,12 @@ function money(n) {
 export function cardSVG(data) {
   const W = 1200, H = 630;
   const total = data.total || data.floor || 0;
-  const big = (data.live ? '~' : '') + money(total);
+  const big = '≈ ' + money(total);
   const context = data.live
     ? `${(data.identified || 0).toLocaleString()} est. identifiable · live model`
-    : `${(data.identified || 0).toLocaleString()} identified followers · floor ${money(data.floor || 0)}`;
+    : `${(data.identified || 0).toLocaleString()} identified followers · speculative estimate, not fact`;
   const ownLine = data.owner && (data.owner.low || data.owner.high)
-    ? `own worth ${money(data.owner.low)}–${money(data.owner.high)}` : '';
+    ? `own estimated worth (guess) ${money(data.owner.low)}–${money(data.owner.high)}` : '';
   const bigSize = big.length > 7 ? 132 : big.length > 5 ? 156 : 176;
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -43,8 +43,8 @@ export function cardSVG(data) {
   <text x="72" y="250" font-family="DejaVu Sans" font-size="52" font-weight="bold" fill="#e8ecf6">@${esc(data.handle)}</text>
   <text x="72" y="300" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Total estimated net worth of followers</text>
   <text x="70" y="${300 + bigSize * 0.72 + 40}" font-family="DejaVu Sans" font-size="${bigSize}" font-weight="bold" fill="url(#money)">${esc(big)}</text>
-  <text x="72" y="540" font-family="DejaVu Sans" font-size="32" fill="#aab2c8">${esc(context)}</text>
-  ${ownLine ? `<text x="72" y="586" font-family="DejaVu Sans" font-size="28" fill="#ffd24a">${esc(ownLine)}</text>` : ''}
+  <text x="72" y="540" font-family="DejaVu Sans" font-size="30" fill="#aab2c8">${esc(context)}</text>
+  ${ownLine ? `<text x="72" y="586" font-family="DejaVu Sans" font-size="25" fill="#ffd24a">${esc(ownLine)}</text>` : ''}
   <text x="${W - 72}" y="586" text-anchor="end" font-family="DejaVu Sans" font-size="26" fill="#5e677f">networknetworth.fly.dev</text>
 </svg>`;
 }
@@ -64,7 +64,7 @@ export function defaultCardSVG() {
   <rect width="${W}" height="${H}" fill="url(#g1)"/>
   <text x="72" y="300" font-family="DejaVu Sans" font-size="88" font-weight="bold" fill="url(#money)">NetWorkNetWorth</text>
   <text x="72" y="380" font-family="DejaVu Sans" font-size="40" fill="#aab2c8">How rich is your network?</text>
-  <text x="72" y="440" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Drop in any X profile and see the net worth of their followers.</text>
+  <text x="72" y="440" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Speculative follower net-worth estimates — never verified facts.</text>
   <text x="72" y="560" font-family="DejaVu Sans" font-size="28" fill="#5e677f">networknetworth.fly.dev</text>
 </svg>`;
 }

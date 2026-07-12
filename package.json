@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Estimate the combined net worth of a Twitter/X account's followers.",
+  "scripts": {
+    "test": "node tests/seo-smoke.mjs"
+  },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2"
   }
