@@ -34,7 +34,7 @@ for (const f of readdirSync(RES)) {
   }
 }
 
-const ranked = [...byHandle.values()].sort((a, b) => b.mid - a.mid).slice(0, 120)
+const ranked = [...byHandle.values()].sort((a, b) => b.mid - a.mid).slice(0, 300)
   .map((r) => ({ handle: r.handle, name: r.name, low: r.low, high: r.high, verdict: r.verdict, confidence: r.confidence, headline: (r.headline || '').slice(0, 160), source: (r.sources && r.sources[0]) || '', kind: r.kind }));
 
 writeFileSync(join(RES, 'people.json'), JSON.stringify(ranked, null, 1));
