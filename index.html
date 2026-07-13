@@ -108,10 +108,9 @@
   .ownworth .ownmeta{color:var(--mut);font-weight:400;font-size:12px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
   .ranks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .rankchip2{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);
-    background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px 14px}
-  .rankchip2 b{color:var(--txt);font-size:15px}
-  .rankchip2 .rlab{font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+  .rankchip2{font-size:13px;color:var(--mut);background:var(--card2);
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+  .rankchip2 b{color:var(--txt)}
   .populating{margin-top:18px}
   .pop-row{display:flex;gap:16px;align-items:flex-start}
   .pop-spin{width:34px;height:34px;border-radius:50%;flex:none;margin-top:4px;
@@ -448,11 +447,11 @@ function renderRanks(d){
     let rank,of;
     if(pos>=0){ rank=pos+1; of=sorted.length; }            // curated board: use its real standing
     else { rank=sorted.filter(x=>val(x)>(d.totalAll||0)).length+1; of=sorted.length+1; } // not yet indexed
-    chips.push('<div class="rankchip2"><span class="rlab">Network wealth</span><b>#'+rank+'</b><span>of '+of+'</span></div>');
+    chips.push('<div class="rankchip2">🌐 Network rank <b>#'+rank+'</b> of '+of+'</div>');
   }
   if(PEOPLE&&PEOPLE.length){
     const idx=PEOPLE.findIndex(p=>(p.handle||"").toLowerCase()===h);
-    if(idx>=0) chips.push('<div class="rankchip2"><span class="rlab">Own wealth</span><b>#'+(idx+1)+'</b><span>richest researched</span></div>');
+    if(idx>=0) chips.push('<div class="rankchip2">💰 Wealth rank <b>#'+(idx+1)+'</b> of '+PEOPLE.length+'</div>');
   }
   el.innerHTML=chips.join("");
   el.style.display=chips.length?"flex":"none";
