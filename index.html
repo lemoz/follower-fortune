@@ -107,6 +107,11 @@
   .ownworth .srclink{margin-left:2px}
   .ownworth .ownmeta{color:var(--mut);font-weight:400;font-size:12px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
+  .ranks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .rankchip2{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);
+    background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px 14px}
+  .rankchip2 b{color:var(--txt);font-size:15px}
+  .rankchip2 .rlab{font-size:11px;text-transform:uppercase;letter-spacing:.03em}
   .populating{margin-top:18px}
   .pop-row{display:flex;gap:16px;align-items:flex-start}
   .pop-spin{width:34px;height:34px;border-radius:50%;flex:none;margin-top:4px;
@@ -190,6 +195,7 @@
           <div class="stat"><div class="k" id="k2">Millionaires</div><div class="v" id="s_mill"></div></div>
           <div class="stat"><div class="k" id="k3">Billionaires</div><div class="v" id="s_whales"></div></div>
         </div>
+        <div class="ranks" id="ranks"></div>
       </div>
 
       <div class="panel graphwrap">
@@ -428,6 +434,29 @@ function renderGlobal(currentHandle){
 }
 
 // shared board renderer — takes a normalized research object
+// two rankings, computed from data already loaded for the leaderboards:
+//  - network-wealth rank: this board's follower-fortune vs all researched boards
+//  - wealth rank: the account's OWN estimated worth vs everyone we've researched
+function renderRanks(d){
+  const el=$("ranks"); if(!el) return;
+  const chips=[];
+  const h=(d.handle||"").toLowerCase();
+  if(DOSSIERS&&DOSSIERS.length){
+    const val=x=>(x.est||x.total)||0;
+    const sorted=DOSSIERS.slice().sort((a,b)=>val(b)-val(a));
+    const pos=sorted.findIndex(x=>(x.handle||"").toLowerCase()===h);
+    let rank,of;
+    if(pos>=0){ rank=pos+1; of=sorted.length; }            // curated board: use its real standing
+    else { rank=sorted.filter(x=>val(x)>(d.totalAll||0)).length+1; of=sorted.length+1; } // not yet indexed
+    chips.push('<div class="rankchip2"><span class="rlab">Network wealth</span><b>#'+rank+'</b><span>of '+of+'</span></div>');
+  }
+  if(PEOPLE&&PEOPLE.length){
+    const idx=PEOPLE.findIndex(p=>(p.handle||"").toLowerCase()===h);
+    if(idx>=0) chips.push('<div class="rankchip2"><span class="rlab">Own wealth</span><b>#'+(idx+1)+'</b><span>richest researched</span></div>');
+  }
+  el.innerHTML=chips.join("");
+  el.style.display=chips.length?"flex":"none";
+}
 function paint(d){
   $("av").style.background=grad(d.handle);
   $("av").textContent=d.handle.slice(0,2).toUpperCase();
@@ -444,6 +473,7 @@ function paint(d){
   $("boardnote").textContent=d.hint||"";
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
+  renderRanks(d);
   renderGraph(d.cast,d.handle);
   hidePopulating();
   renderLeaderboard(d.cast,d.lbCount,d.clickableCast);
