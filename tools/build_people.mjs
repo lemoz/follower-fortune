@@ -34,7 +34,11 @@ for (const f of readdirSync(RES)) {
   }
 }
 
-const ranked = [...byHandle.values()].sort((a, b) => b.mid - a.mid).slice(0, 300)
+// "Richest people" = everyone we've researched with a midpoint estimate at or
+// above this floor, ranked. A wealth threshold (not a fixed count) keeps the
+// list genuinely about rich people while surfacing all of them.
+const MIN_MID = 2_000_000; // $2M floor
+const ranked = [...byHandle.values()].filter((r) => r.mid >= MIN_MID).sort((a, b) => b.mid - a.mid).slice(0, 500)
   .map((r) => ({ handle: r.handle, name: r.name, low: r.low, high: r.high, verdict: r.verdict, confidence: r.confidence, headline: (r.headline || '').slice(0, 160), source: (r.sources && r.sources[0]) || '', kind: r.kind }));
 
 writeFileSync(join(RES, 'people.json'), JSON.stringify(ranked, null, 1));
