@@ -771,13 +771,13 @@ function sendBoardHTML(res, handle, m) {
   const canonical = ORIGIN + (handle ? '/b/' + handle : '/');
   if (m) {
     const total = displayEstimate(m);
-    title = `@${m.account} follower network: ~${fmtMoney(total)} speculative estimate | NWNW`;
-    desc = `Speculative estimate, not fact: about ${fmtMoney(total)} across @${m.account}'s researched follower network, including ${(m.identified || 0).toLocaleString()} identified people.`;
+    title = `@${m.account} follower network estimated at ~${fmtMoney(total)} | NWNW`;
+    desc = `Estimated follower-network net worth: about ${fmtMoney(total)} across @${m.account}'s researched followers, including ${(m.identified || 0).toLocaleString()} identified people.`;
     image = `${ORIGIN}/og/${m.account}.png`;
-    summary = `<section class="server-summary" id="server-summary"><h2>@${esc(m.account)} follower network</h2><p><strong>Speculative estimate, not a verified fact:</strong> approximately ${esc(fmtMoney(total))} across researched followers.</p><p>${(m.identified || 0).toLocaleString()} identified people; every individual range is an estimate for entertainment and research.</p></section>`;
+    summary = `<section class="server-summary" id="server-summary"><h2>@${esc(m.account)} follower network</h2><p><strong>Estimated follower-network net worth:</strong> approximately ${esc(fmtMoney(total))}.</p><p>${(m.identified || 0).toLocaleString()} people identified through public-source research.</p></section>`;
   } else {
     title = 'Estimate an X follower network’s net worth | NetWorkNetWorth';
-    desc = 'Research speculative net-worth estimates for the followers of an X or Twitter account. Every figure is labeled as an estimate, not a verified fact.';
+    desc = 'Estimate the combined net worth of an X or Twitter account\'s followers using public-source research.';
     image = `${ORIGIN}/og/default.png`;
   }
   const structured = m ? {

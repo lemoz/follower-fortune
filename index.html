@@ -106,8 +106,6 @@
   .ownworth{display:none;margin-top:5px;font-size:13px;color:var(--gold);font-weight:600}
   .ownworth .srclink{margin-left:2px}
   .ownworth .ownmeta{color:var(--mut);font-weight:400;font-size:12px}
-  .estbadge{display:inline-block;margin:6px 0 2px;font-size:12px;color:var(--gold);
-    background:rgba(255,210,74,.08);border:1px solid rgba(255,210,74,.25);border-radius:999px;padding:3px 12px}
   .sharebtn{margin-top:14px;font-size:13px;padding:9px 16px}
   .populating{margin-top:18px}
   .pop-row{display:flex;gap:16px;align-items:flex-start}
@@ -148,14 +146,14 @@
       <h1>NetWorkNetWorth <span style="font-size:14px;color:var(--mut);font-weight:600;letter-spacing:1px">NWNW</span></h1>
     </div>
   </header>
-  <p class="tag">Drop in any X / Twitter profile and see the hidden net worth lurking in their followers.</p>
+  <p class="tag">Estimate the combined net worth of an X account's followers.</p>
 
   <div class="searchbar">
     <input id="q" type="text" placeholder="https://x.com/username  ·  or just @username" autocomplete="off" spellcheck="false"/>
     <button class="btn" id="go">Estimate fortune</button>
     <button class="btn ghost" id="lucky">🎲 Surprise me</button>
   </div>
-  <p class="hint" id="hint">Drop in any X / Twitter handle. Researched accounts open an evidence-based board; everyone else gets a live estimate built from their real followers and wealth rates measured across 1,400+ researched accounts. Speculative estimates, for entertainment and research.</p>
+  <p class="hint" id="hint">Search any X / Twitter handle. Researched accounts open an existing board; new accounts can request research based on real followers and public-source wealth estimates.</p>
   <div id="err" class="err"></div>
 
   <div class="panel populating" id="populating" style="display:none">
@@ -163,7 +161,7 @@
       <div class="pop-spin"></div>
       <div>
         <h3 id="pop-title">Building this board…</h3>
-        <p class="muted" id="pop-sub">AI research agents are pulling a real follower sample and researching the biggest accounts in it. We never show made-up numbers — the board appears here the moment the research is done.</p>
+        <p class="muted" id="pop-sub">Research agents are sampling real followers and researching the largest accounts. The board appears when the research is complete.</p>
         <p class="pop-eta" id="pop-eta"></p>
       </div>
     </div>
@@ -184,20 +182,19 @@
         </div>
         <div class="bignum">Total estimated net worth of followers</div>
         <div class="total" id="total"></div>
-        <div class="estbadge">≈ speculative estimate for entertainment — not a verified figure</div>
         <div class="sub" id="totsub"></div>
         <button class="btn ghost sharebtn" id="share">🔗 Share this board</button>
         <div class="stats">
           <div class="stat"><div class="k" id="k0">Followers</div><div class="v" id="s_followers"></div></div>
           <div class="stat"><div class="k" id="k1">Avg per follower</div><div class="v" id="s_avg"></div></div>
           <div class="stat"><div class="k" id="k2">Millionaires</div><div class="v" id="s_mill"></div></div>
-          <div class="stat"><div class="k" id="k3">🐋 Billionaire whales</div><div class="v" id="s_whales"></div></div>
+          <div class="stat"><div class="k" id="k3">Billionaires</div><div class="v" id="s_whales"></div></div>
         </div>
       </div>
 
       <div class="panel graphwrap">
         <h3>The money network</h3>
-        <p class="muted">Bubble size = estimated net worth. The 12 richest followers.</p>
+        <p class="muted">Bubble size represents estimated net worth. The 12 richest followers.</p>
         <div id="graph"></div>
       </div>
     </div>
@@ -205,8 +202,8 @@
     <div class="cols">
       <div class="panel lbcard">
         <h3 id="lbtitle">💰 Richest followers</h3>
-        <p class="muted" id="lbsub">The whales swimming in this network.</p>
-        <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Vibe</th><th class="r">Est. net worth</th></tr></thead>
+        <p class="muted" id="lbsub">Ranked by estimated net worth.</p>
+        <table><thead><tr><th class="rank">#</th><th>Follower</th><th>Confidence</th><th class="r">Est. net worth</th></tr></thead>
           <tbody id="lb"></tbody></table>
       </div>
     </div>
@@ -218,8 +215,8 @@
       <button class="lbtab active" id="tab-networks"><span class="pulse"></span>Biggest networks</button>
       <button class="lbtab" id="tab-people">💰 Richest people</button>
     </div>
-    <p class="muted" id="glsub">Ranked by the combined estimated net worth of their followers — all figures are speculative estimates, not verified facts. Tap one to open its board.</p>
-    <table id="tbl-networks"><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Est. network fortune</th></tr></thead>
+    <p class="muted" id="glsub">Ranked by estimated combined follower net worth. Tap a profile to open its board.</p>
+    <table id="tbl-networks"><thead><tr><th class="rank">#</th><th>Profile</th><th class="r">Est. network net worth</th></tr></thead>
       <tbody id="global"></tbody></table>
     <table id="tbl-people" style="display:none"><thead><tr><th class="rank">#</th><th>Person</th><th class="r">Est. net worth</th></tr></thead>
       <tbody id="people"></tbody></table>
@@ -228,9 +225,7 @@
   <!--BOARD-LINKS-->
 
   <p class="footer">
-    <b>NetWorkNetWorth</b> (NWNW) figures are <b>speculative estimates for entertainment and research</b> — nobody's actual net worth is known here.<br/>
-    Boards are AI-compiled from public sources and carry wide error bars; every range is a guess, not a fact.<br/>
-    Not financial data. Not financial advice. If you're listed and want out, ping <a href="https://x.com/cdossman" style="color:#aab2c8">@cdossman</a> and you'll be removed. <a href="/privacy" style="color:#aab2c8">Privacy</a> · <button class="privacy-btn" id="privacy-settings" type="button">Analytics choices</button>. Don't @ your accountant.
+    <b>NetWorkNetWorth</b> figures are estimates based on public-source research. Not financial advice. If you're listed and want out, contact <a href="https://x.com/cdossman" style="color:#aab2c8">@cdossman</a>. <a href="/privacy" style="color:#aab2c8">Privacy</a> · <button class="privacy-btn" id="privacy-settings" type="button">Analytics choices</button>.
   </p>
 </div>
 
@@ -243,13 +238,6 @@
 /* ---------- deterministic color helpers ---------- */
 function hashSeed(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return (h^h>>>16)>>>0;}
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
-
-const TITLES=[
-  [10e3,"🍜 Ramen survivor"],[100e3,"☕ Getting by"],[500e3,"🛋️ Comfortable"],
-  [1e6,"🏠 Almost there"],[10e6,"💼 Millionaire"],[100e6,"🚀 Serious money"],
-  [1e9,"💎 Mega rich"],[1e15,"🐋 Billionaire whale"]
-];
-function titleFor(nw){for(const [cap,t] of TITLES){if(nw<cap)return t;}return "🐋 Billionaire whale";}
 
 /* gradient avatar from a string */
 function grad(seed){const r=mulberry32(hashSeed(seed+"_g"));const h1=Math.floor(r()*360),h2=(h1+60+Math.floor(r()*180))%360;
@@ -356,7 +344,7 @@ function renderGraph(cast,centerHandle){
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
 function renderLeaderboard(cast,n,clickable){
   const rows=cast.slice(0,n||15).map((f,i)=>{
-    const pill=f.pill||('<span class="title-pill">'+titleFor(f.nw)+'</span>');
+    const pill=f.pill||'<span class="title-pill">≈ estimate</span>';
     const sub=f.sub?('<br/><span class="whoh">'+esc(f.sub)+'</span>'):'';
     const src=f.sourceUrl?(' <a class="srclink" href="'+esc(f.sourceUrl)+'" target="_blank" rel="noopener">🔗</a>'):'';
     const moneyTxt=f.moneyText||money(f.nw);
@@ -405,7 +393,7 @@ function renderPeople(){
     return `<tr data-h="${esc(p.handle)}" title="Open @${esc(p.handle)}'s board">
       <td class="rank">${rank}</td>
       <td><div class="who"><span class="mini-av" style="background:${grad(p.handle)}">${esc((p.name||p.handle).slice(0,2).toUpperCase())}</span>
-        <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)} · speculative estimate, not a fact</span></span></div></td>
+        <span><span class="whoname">${nm}</span>${src}<br/><span class="whoh">@${esc(p.handle)}</span></span></div></td>
       <td class="r money">${rangeShort(p.low,p.high)}</td></tr>`;
   }).join("");
 }
@@ -416,8 +404,8 @@ function showLbTab(which){
   $("tbl-people").style.display=isP?'':'none';
   $("tbl-networks").style.display=isP?'none':'';
   $("glsub").textContent=isP
-    ?"The richest individual people across every researched network, ranked by their own estimated net worth. Wide ranges, low confidence — opinions, not facts."
-    :"Ranked by the combined estimated net worth of their followers — all figures are speculative estimates, not verified facts. Tap one to open its board.";
+    ?"Ranked by estimated net worth."
+    :"Ranked by estimated combined follower net worth. Tap a profile to open its board.";
 }
 function renderGlobal(currentHandle){
   let arr;
@@ -429,7 +417,7 @@ function renderGlobal(currentHandle){
   }else{
     const lb=loadLB();
     arr=Object.values(lb).sort((a,b)=>b.total-a.total).slice(0,12)
-      .map(p=>({handle:p.handle,total:p.total,followers:p.followers,sub:(p.whales||0)+' 🐋'}));
+      .map(p=>({handle:p.handle,total:p.total,followers:p.followers,sub:'Saved board'}));
   }
   if(arr.length===0){$("global").innerHTML=`<tr><td colspan="3" class="empty">No researched accounts yet.</td></tr>`;return;}
   $("global").innerHTML=arr.map((p,i)=>`<tr data-h="${esc(p.handle)}" title="View this board" class="${currentHandle&&p.handle.toLowerCase()===currentHandle.toLowerCase()?'me':''}">
@@ -439,7 +427,7 @@ function renderGlobal(currentHandle){
     <td class="r money">${money(p.total)}</td></tr>`).join("");
 }
 
-// shared renderer — takes a normalized object from either the synthetic model or the live API
+// shared board renderer — takes a normalized research object
 function paint(d){
   $("av").style.background=grad(d.handle);
   $("av").textContent=d.handle.slice(0,2).toUpperCase();
@@ -452,7 +440,7 @@ function paint(d){
   if(d.ownLine){ow.innerHTML=d.ownLine;ow.style.display="block";}else{ow.style.display="none";}
   const ss=$("server-summary");if(ss)ss.style.display="none";
   $("lbtitle").textContent=d.lbTitle||"💰 Richest followers";
-  $("lbsub").textContent=d.lbSub||"The whales swimming in this network.";
+  $("lbsub").textContent=d.lbSub||"Ranked by estimated net worth.";
   $("boardnote").textContent=d.hint||"";
   const kids=["k0","k1","k2","k3"], vids=["s_followers","s_avg","s_mill","s_whales"];
   d.stats.forEach((s,i)=>{$(kids[i]).textContent=s.k;$(vids[i]).textContent=s.v;});
@@ -475,11 +463,10 @@ function paint(d){
 }
 
 // researched — evidence-based dossiers produced by the offline research pipeline.
-// Everything is framed as an ESTIMATE (not a factual claim). We deliberately do
-// NOT surface judgmental internal verdicts like "overstated" on named people —
-// only that this is a guess and how confident we are in it.
+// Every figure keeps a concise inline estimate label. We deliberately do not
+// surface judgmental internal verdicts like "overstated" on named people.
 function verdictPill(verdict,conf){
-  return '<span class="title-pill" title="a speculative estimate, not a verified fact">≈ estimate · '+esc(conf||'low')+' confidence</span>';
+  return '<span class="title-pill">≈ estimate · '+esc(conf||'low')+' confidence</span>';
 }
 function rangeText(lo,hi){
   lo=lo||0; hi=hi||0;
@@ -503,7 +490,7 @@ function researchD(handle,data){
   if(o){
     const src=(o.sources||[]).map((u,i)=>'<a class="srclink" href="'+esc(u)+'" target="_blank" rel="noopener">'+(i===0?'𝕏':'🔗')+'</a>').join(' ');
     const conf=o.confidence?(' · '+esc(o.confidence)+' confidence'):'';
-    ownLine='💰 Estimated net worth (a guess, not a fact): '+rangeText(o.low,o.high)+conf+' '+src;
+    ownLine='💰 Estimated net worth: '+rangeText(o.low,o.high)+conf+' '+src;
   }
   const est=M.estimate;
   const modeled=est&&est.total>sumMid*1.2; // only headline the model when it adds real signal
@@ -513,20 +500,20 @@ function researchD(handle,data){
     totalAll:modeled?est.total:sumMid,
     totalText:modeled?("~"+money(est.total)):undefined,
     totsub:modeled
-      ?("modeled: "+money(sumMid)+" researched floor + "+compact(M.totalFollowers||0)+" followers × measured wealth rates · ±2x")
-      :"Σ midpoints of researched ranges · evidence-based, mostly low-confidence",
+      ?("Modeled from "+money(sumMid)+" researched baseline and "+compact(M.totalFollowers||0)+" followers · ±2x")
+      :"Based on midpoint of researched ranges",
     handleLine:M.dynamic
-      ?("🤖 AI-built board ("+esc(M.engine||"GLM")+") · "+(M.identified||0)+" researched followers matched · unverified")
-      :("🔬 deep-researched dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable"),
+      ?("AI-researched board · "+(M.identified||0)+" matched followers")
+      :("Research dossier · "+(M.identified||0)+" of "+(M.researched||ppl.length)+" identifiable"),
     verified:!M.dynamic,followers:M.totalFollowers||0,
     avg:ppl.length?sumMid/ppl.length:0,whalesAll:0,
     cast:ppl,lbCount:20,clickableCast:true,
-    lbSub:"Speculative ranges from public-source research; biographical location is intentionally withheld.",
+    lbSub:"Ranges based on public-source research.",
     stats:[{k:"Followers (real)",v:compact(M.totalFollowers||0)},{k:"Researched",v:String(M.researched||ppl.length)},
       {k:"Identified",v:String(M.identified||0)},{k:"Richest follower (mid)",v:money(top)}],
     hint:M.dynamic
-      ?"🤖 Auto-built board — we swept our pool of already-researched wealthy people to find which of them follow this account (their worth was verified on curated boards), and a GLM agent estimated the owner. The owner + AI-added names have NO verification pass yet — curated boards get one. Opinions, not facts."
-      :"🔬 Researched dossier — AI agents identified these followers from public sources and estimated ranges, with a verification pass on every entry. Modeled totals extrapolate from measured wealth rates; ±2x error bars. Opinions, not facts."};
+      ?("AI-researched board with "+(M.identified||0)+" matched followers. Newly researched entries have not had the curated-board review.")
+      :("Public-source research covering "+(M.identified||0)+" identifiable followers. Modeled totals use ±2x error bars.")};
 }
 function showError(m){const e=$("err");e.textContent=m;e.style.display="block";}
 function clearError(){const e=$("err");e.style.display="none";e.textContent="";}

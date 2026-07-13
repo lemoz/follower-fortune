@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { cardSVG, defaultCardSVG } from '../og.mjs';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const dataDir = mkdtempSync(join(tmpdir(), 'nwnw-smoke-'));
@@ -86,6 +87,22 @@ try {
   const sourceHtml = readFileSync(join(root, 'index.html'), 'utf8');
   const inlineScripts = [...sourceHtml.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).filter(Boolean);
   for (const [index, source] of inlineScripts.entries()) new vm.Script(source, { filename: `index-inline-${index}.js` });
+  for (const phrase of [
+    'a guess, not a fact',
+    'speculative estimate for entertainment',
+    'opinions, not facts',
+    "don't @ your accountant",
+    'whales swimming',
+    'ramen survivor',
+  ]) assert(!sourceHtml.toLowerCase().includes(phrase), `visible copy regressed to: ${phrase}`);
+
+  const boardCard = cardSVG({ handle: 'cdossman', total: 548_000_000, identified: 462, owner: { low: 2_000_000, high: 10_000_000 } });
+  assert(boardCard.includes('research dossier'));
+  assert(boardCard.includes('owner estimate $2.0M–$10.0M'));
+  assert(!/guess|not fact|verified fact/i.test(boardCard));
+  const defaultCard = defaultCardSVG();
+  assert(defaultCard.includes('estimates based on public-source research'));
+  assert(!/not fact|verified fact/i.test(defaultCard));
 
   await waitForServer(child);
 
@@ -93,7 +110,7 @@ try {
   assert.equal(rootResponse.status, 200);
   const rootHtml = await rootResponse.text();
   assert(title(rootHtml).includes('Estimate an X follower network'));
-  assert(/speculative/i.test(meta(rootHtml, 'name', 'description') || ''));
+  assert(/combined net worth/i.test(meta(rootHtml, 'name', 'description') || ''));
   assert.equal(link(rootHtml, 'canonical'), origin + '/');
   assert.equal(meta(rootHtml, 'name', 'google-site-verification'), 'smoke-verification-token');
   assert(rootHtml.includes('window.NWNW_ANALYTICS_ID="G-TEST123456"'));
@@ -108,11 +125,12 @@ try {
   assert.equal(boardResponse.status, 200);
   const boardHtml = await boardResponse.text();
   assert.notEqual(title(boardHtml), title(rootHtml));
-  assert(title(boardHtml).includes('speculative estimate'));
-  assert(meta(boardHtml, 'name', 'description')?.startsWith('Speculative estimate, not fact:'));
+  assert(title(boardHtml).includes('estimated at'));
+  assert(meta(boardHtml, 'name', 'description')?.startsWith('Estimated follower-network net worth:'));
   assert.equal(link(boardHtml, 'canonical'), origin + '/b/cdossman');
   assert(boardHtml.includes('id="server-summary"'));
-  assert(boardHtml.includes('not a verified fact'));
+  assert(boardHtml.includes('Estimated follower-network net worth:'));
+  assert(!boardHtml.includes('a guess, not a fact'));
 
   const mixedCase = await request('/b/CDOSSMAN');
   assert.equal(mixedCase.status, 308);

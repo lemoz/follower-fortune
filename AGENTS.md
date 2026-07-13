@@ -44,7 +44,7 @@ Keys live in gitignored `.env` (local) and as **Fly secrets** (prod). Never comm
 
 ## HARD RULES (do not violate)
 1. **No fake data, ever.** No invented/placeholder numbers, no misleading errors (e.g. never tell a user a real account "doesn't exist" when the real cause is out-of-credits). If you can't research something, say so.
-2. **Everything is a labeled estimate.** Dollar figures must read as speculative guesses inline (not just a footer) — "Estimated net worth (a guess, not a fact)", "≈ estimate", "Est." headers. Don't surface judgmental verdicts ("overstated") on named people.
+2. **Everything is a labeled estimate.** Dollar figures must be labeled inline — "Estimated net worth", "≈ estimate", or "Est." headers. Use one clear label per figure; don't stack repetitive "guess/not a fact/speculative" caveats around the same number. Don't surface judgmental verdicts ("overstated") on named people.
 3. **The owner's private financial figures must never be published.** The owner (@cdossman) has a deliberately wide **$2–10M "estimate"** entry he approved; his actual private numbers must never appear anywhere.
 4. **No doxxing.** Don't publish a person's home location alongside their wealth (location is a private LLM hint only, never displayed). Public board/leaderboard JSON is sanitized by `server.mjs`; never bypass that route with raw static dossier serving.
 5. **Cost discipline.** Untrusted public traffic must not be able to drain the paid APIs. Spend caps are durable (on `/data`) and enforced at admission; don't weaken them. Gemini grounding needs a **prose-first prompt** — a JSON-only prompt returns zero citations (learned the hard way).

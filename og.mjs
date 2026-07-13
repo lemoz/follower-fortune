@@ -19,9 +19,9 @@ export function cardSVG(data) {
   const big = '≈ ' + money(total);
   const context = data.live
     ? `${(data.identified || 0).toLocaleString()} est. identifiable · live model`
-    : `${(data.identified || 0).toLocaleString()} identified followers · speculative estimate, not fact`;
+    : `${(data.identified || 0).toLocaleString()} identified followers · research dossier`;
   const ownLine = data.owner && (data.owner.low || data.owner.high)
-    ? `own estimated worth (guess) ${money(data.owner.low)}–${money(data.owner.high)}` : '';
+    ? `owner estimate ${money(data.owner.low)}–${money(data.owner.high)}` : '';
   const bigSize = big.length > 7 ? 132 : big.length > 5 ? 156 : 176;
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -64,7 +64,7 @@ export function defaultCardSVG() {
   <rect width="${W}" height="${H}" fill="url(#g1)"/>
   <text x="72" y="300" font-family="DejaVu Sans" font-size="88" font-weight="bold" fill="url(#money)">NetWorkNetWorth</text>
   <text x="72" y="380" font-family="DejaVu Sans" font-size="40" fill="#aab2c8">How rich is your network?</text>
-  <text x="72" y="440" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Speculative follower net-worth estimates — never verified facts.</text>
+  <text x="72" y="440" font-family="DejaVu Sans" font-size="30" fill="#8b94ad">Follower net-worth estimates based on public-source research.</text>
   <text x="72" y="560" font-family="DejaVu Sans" font-size="28" fill="#5e677f">networknetworth.fly.dev</text>
 </svg>`;
 }
