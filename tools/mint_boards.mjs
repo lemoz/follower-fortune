@@ -46,51 +46,18 @@ async function api(path, params) {
   const url = new URL('https://api.twitterapi.io' + path);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
   for (let a = 0; ; a++) {
-    const r = await fetch(url, { headers: { 'X-API-Key': KEY } });
+    let r;
+    try { r = await fetch(url, { headers: { 'X-API-Key': KEY } }); }
+    catch (e) { if (a < 5) { await sleep(3000); continue; } throw e; } // retry transient network errors (ECONNRESET etc.)
     if (r.status === 429 && a < 4) { await sleep(5000); continue; }
     const j = await r.json().catch(() => ({}));
     if (j && j.message && /credits/i.test(j.message)) {
-      if (++creditFailures > 20) { console.error('\nABORT: twitterapi.io says "' + j.message + '" — recharge and re-run (already-minted boards are kept).'); process.exit(2); }
+      if (++creditFailures > 20) throw new Error('CREDITS_OUT'); // caught so finished boards are still saved + indexed
     }
     return j;
   }
 }
 
-// --- per-target: profile + sample distribution ---
-const boards = {};
-for (const t of targets) {
-  const info = await api('/twitter/user/info', { userName: t });
-  const d = info.data || {};
-  if (!d.userName) { console.error(`${t}: profile fetch failed (${JSON.stringify(info).slice(0, 80)}) — skipping`); continue; }
-  const c = { b0: 0, b1: 0, b2: 0, b3: 0 };
-  let sampled = 0, cursor = '';
-  for (let page = 0; page < 20; page++) {
-    const j = await api('/twitter/user/followers', { userName: t, cursor, pageSize: 100 });
-    if (!Array.isArray(j.followers) || !j.followers.length) break;
-    for (const f of j.followers) { const n = f.followers_count || 0; sampled++; if (n < 1e3) c.b0++; else if (n < 1e4) c.b1++; else if (n < 1e5) c.b2++; else c.b3++; }
-    cursor = j.next_cursor || ''; if (!j.has_next_page || !cursor) break;
-    await sleep(200);
-  }
-  boards[t] = { account: d.userName, name: '@' + d.userName, totalFollowers: d.followers || 0, sampleDist: { sampled, ...c }, members: [] };
-  console.error(`${t}: ${boards[t].totalFollowers.toLocaleString()} followers, sampled ${sampled}`);
-}
-
-// --- sweep pool x targets ---
-const jobs = [];
-for (const [, p] of pool) for (const t of Object.keys(boards)) jobs.push([p, t]);
-console.error(`sweep: ${jobs.length} relationship checks`);
-let done = 0;
-async function worker() {
-  while (jobs.length) {
-    const [p, t] = jobs.shift();
-    const j = await api('/twitter/user/check_follow_relationship', { source_user_name: p.handle, target_user_name: t });
-    if (j.data && j.data.following) boards[t].members.push(p);
-    if (++done % 500 === 0) console.error(`  ${done} checks, hits so far: ${Object.values(boards).map((b) => b.members.length).join('/')}`);
-  }
-}
-await Promise.all(Array.from({ length: 6 }, worker));
-
-// --- assemble boards ---
 function estimate(meta, floor) {
   const { sampled, b0, b1, b2, b3 } = meta.sampleDist;
   const s = sampled || 1;
@@ -104,23 +71,58 @@ function estimate(meta, floor) {
   return { total: est, low: est / MODEL.errorFactor, high: est * MODEL.errorFactor, floor };
 }
 
+// --- process ONE target fully at a time: profile+sample, sweep the whole pool,
+// assemble, and SAVE immediately. This way a credit-out (or crash) keeps every
+// board already finished; only the in-flight target is lost. ---
+const poolArr = [...pool.values()];
 const shipped = [];
-for (const [t, b] of Object.entries(boards)) {
-  if (b.members.length < MIN_OVERLAP) { console.error(`${t}: only ${b.members.length} members (<${MIN_OVERLAP}) — NOT shipping`); continue; }
-  const people = b.members.slice().sort((x, y) => ((y.low + y.high) / 2) - ((x.low + x.high) / 2));
-  const floor = people.reduce((a, p) => a + (p.low + p.high) / 2, 0);
-  const meta = {
-    account: b.account, name: b.name, totalFollowers: b.totalFollowers,
-    researched: people.length, identified: people.length,
-    note: 'Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.',
-    sampleDist: b.sampleDist,
-  };
-  const own = OWNERS[t.toLowerCase()];
-  if (own && own.found !== false && (own.low || own.high)) meta.owner = { name: own.name, headline: own.headline, verdict: own.verdict, confidence: own.confidence, low: own.low, high: own.high, sources: own.sources || [] };
-  meta.estimate = estimate(meta, floor);
-  writeFileSync(join(RES, b.account.toLowerCase() + '.json'), JSON.stringify({ meta, people }, null, 1));
-  shipped.push(b.account);
-  console.error(`SHIPPED ${b.account}: ${people.length} members, floor $${(floor / 1e9).toFixed(2)}B, modeled $${(meta.estimate.total / 1e9).toFixed(2)}B`);
+try {
+  for (const t of targets) {
+    if (existsSync(join(RES, t.toLowerCase() + '.json'))) { console.error(`SKIP ${t}: board exists`); continue; }
+    const info = await api('/twitter/user/info', { userName: t });
+    const d = info.data || {};
+    if (!d.userName) { console.error(`${t}: profile fetch failed — skipping`); continue; }
+    // 2k-follower sample distribution
+    const c = { b0: 0, b1: 0, b2: 0, b3: 0 };
+    let sampled = 0, cursor = '';
+    for (let page = 0; page < 20; page++) {
+      const j = await api('/twitter/user/followers', { userName: d.userName, cursor, pageSize: 100 });
+      if (!Array.isArray(j.followers) || !j.followers.length) break;
+      for (const f of j.followers) { const n = f.followers_count || 0; sampled++; if (n < 1e3) c.b0++; else if (n < 1e4) c.b1++; else if (n < 1e5) c.b2++; else c.b3++; }
+      cursor = j.next_cursor || ''; if (!j.has_next_page || !cursor) break;
+      await sleep(200);
+    }
+    // sweep the FULL pool against this one target (6 workers)
+    const members = [];
+    const queue = poolArr.slice();
+    async function worker() {
+      while (queue.length) {
+        const p = queue.shift();
+        const j = await api('/twitter/user/check_follow_relationship', { source_user_name: p.handle, target_user_name: d.userName });
+        if (j.data && j.data.following) members.push(p);
+      }
+    }
+    await Promise.all(Array.from({ length: 6 }, worker));
+    if (members.length < MIN_OVERLAP) { console.error(`${t}: ${members.length} members (<${MIN_OVERLAP}) — NOT shipping`); continue; }
+    // assemble + save NOW
+    const people = members.slice().sort((x, y) => ((y.low + y.high) / 2) - ((x.low + x.high) / 2));
+    const floor = people.reduce((a, p) => a + (p.low + p.high) / 2, 0);
+    const meta = {
+      account: d.userName, name: '@' + d.userName, totalFollowers: d.followers || 0,
+      researched: people.length, identified: people.length,
+      note: 'Board seeded from the cross-account researched pool: every entry verified as a follower via the X follow-relationship API. Evidence-based ranges with adversarial verification.',
+      sampleDist: { sampled, ...c },
+    };
+    const own = OWNERS[t.toLowerCase()];
+    if (own && own.found !== false && (own.low || own.high)) meta.owner = { name: own.name, headline: own.headline, verdict: own.verdict, confidence: own.confidence, low: own.low, high: own.high, sources: own.sources || [] };
+    meta.estimate = estimate(meta, floor);
+    writeFileSync(join(RES, d.userName.toLowerCase() + '.json'), JSON.stringify({ meta, people }, null, 1));
+    shipped.push(d.userName);
+    console.error(`SHIPPED ${d.userName}: ${people.length} members, floor $${(floor / 1e9).toFixed(2)}B, modeled $${(meta.estimate.total / 1e9).toFixed(2)}B`);
+  }
+} catch (e) {
+  if (e.message === 'CREDITS_OUT') console.error('\nCREDITS OUT mid-run — recharge and re-run. Boards finished above are saved; the index is rebuilt below.');
+  else throw e;
 }
 
 // --- rebuild index.json from all board files, then people.json ---

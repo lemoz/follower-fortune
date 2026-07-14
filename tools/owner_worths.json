@@ -1,135 +1,529 @@
 {
   "karpathy": {
-    "found": true, "name": "Andrej Karpathy",
+    "found": true,
+    "name": "Andrej Karpathy",
     "headline": "AI researcher and educator (ex-OpenAI founding member, ex-Tesla Sr. Director of AI, founder of Eureka Labs)",
-    "verdict": "plausible", "confidence": "medium", "low": 50000000, "high": 150000000,
-    "sources": ["https://futuresearch.ai/ai-researcher-net-worth/", "https://networthpublic.com/andrej-karpathy-net-worth-biography-career/"]
+    "verdict": "plausible",
+    "confidence": "medium",
+    "low": 50000000,
+    "high": 150000000,
+    "sources": [
+      "https://futuresearch.ai/ai-researcher-net-worth/",
+      "https://networthpublic.com/andrej-karpathy-net-worth-biography-career/"
+    ]
   },
   "swyx": {
-    "found": true, "name": "Shawn Wang",
+    "found": true,
+    "name": "Shawn Wang",
     "headline": "Founder of Smol AI and AI Engineer; range inferred from an undisclosed Cognition deal, angel activity, and career earnings",
-    "verdict": "plausible", "confidence": "low", "low": 20000000, "high": 60000000,
-    "sources": ["https://swyx.io/cognition", "https://swyx.io/about"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 20000000,
+    "high": 60000000,
+    "sources": [
+      "https://swyx.io/cognition",
+      "https://swyx.io/about"
+    ]
   },
   "crystalhuang": {
-    "found": true, "name": "Crystal Huang",
+    "found": true,
+    "name": "Crystal Huang",
     "headline": "General Partner at GV; range inferred from senior venture compensation and carry, with no disclosed personal holdings",
-    "verdict": "plausible", "confidence": "low", "low": 5000000, "high": 15000000,
-    "sources": ["https://www.gv.com/news/new-general-partners", "https://www.gv.com/team?team=investing-team"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 5000000,
+    "high": 15000000,
+    "sources": [
+      "https://www.gv.com/news/new-general-partners",
+      "https://www.gv.com/team?team=investing-team"
+    ]
   },
   "cshorten30": {
-    "found": true, "name": "Connor Shorten",
+    "found": true,
+    "name": "Connor Shorten",
     "headline": "Product researcher at Weaviate; range inferred from career earnings and possible employee equity, neither publicly disclosed",
-    "verdict": "plausible", "confidence": "low", "low": 300000, "high": 1500000,
-    "sources": ["https://weaviate.io/papers/authors", "https://weaviate.io/blog/authors"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 300000,
+    "high": 1500000,
+    "sources": [
+      "https://weaviate.io/papers/authors",
+      "https://weaviate.io/blog/authors"
+    ]
   },
   "ericzelikman": {
-    "found": true, "name": "Eric Zelikman",
+    "found": true,
+    "name": "Eric Zelikman",
     "headline": "Humans& co-founder; range inferred from a hypothetical 5–15% stake at the reported $4.48B post-money valuation",
-    "verdict": "plausible", "confidence": "low", "low": 200000000, "high": 700000000,
-    "sources": ["https://techcrunch.com/2026/01/20/humans-a-human-centric-ai-startup-founded-by-anthropic-xai-google-alums-raised-480m-seed-round/", "https://news.crunchbase.com/ai/humans-raises-huge-seed-round-unicorn-valuation/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 200000000,
+    "high": 700000000,
+    "sources": [
+      "https://techcrunch.com/2026/01/20/humans-a-human-centric-ai-startup-founded-by-anthropic-xai-google-alums-raised-480m-seed-round/",
+      "https://news.crunchbase.com/ai/humans-raises-huge-seed-round-unicorn-valuation/"
+    ]
   },
   "jumbld": {
-    "found": true, "name": "Rohit Agarwal",
+    "found": true,
+    "name": "Rohit Agarwal",
     "headline": "Portkey co-founder and CEO; range inferred from a reported $120M–$140M acquisition and undisclosed founder ownership",
-    "verdict": "plausible", "confidence": "low", "low": 15000000, "high": 40000000,
-    "sources": ["https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-portkey-to-secure-ai-agents", "https://www.techtimes.com/articles/317470/20260531/enterprise-ai-agent-stack-takes-shape-asana-palo-alto-buy-execution-security-layers.htm"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 15000000,
+    "high": 40000000,
+    "sources": [
+      "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-portkey-to-secure-ai-agents",
+      "https://www.techtimes.com/articles/317470/20260531/enterprise-ai-agent-stack-takes-shape-asana-palo-alto-buy-execution-security-layers.htm"
+    ]
   },
   "mathemagic1an": {
-    "found": true, "name": "Jay Hack",
+    "found": true,
+    "name": "Jay Hack",
     "headline": "Founder of Codegen and Mira Beauty; range inferred from two acquisitions whose ownership and full proceeds were not disclosed",
-    "verdict": "plausible", "confidence": "low", "low": 15000000, "high": 40000000,
-    "sources": ["https://www.jay.ai/", "https://www.businesswire.com/news/home/20251223327889/en/ClickUp-Acquires-Cursor-Competitor-Codegen-to-Supercharge-AI-Super-Agents", "https://app.dealroom.co/companies/mira_beauty"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 15000000,
+    "high": 40000000,
+    "sources": [
+      "https://www.jay.ai/",
+      "https://www.businesswire.com/news/home/20251223327889/en/ClickUp-Acquires-Cursor-Competitor-Codegen-to-Supercharge-AI-Super-Agents",
+      "https://app.dealroom.co/companies/mira_beauty"
+    ]
   },
   "nathanbenaich": {
-    "found": true, "name": "Nathan Benaich",
+    "found": true,
+    "name": "Nathan Benaich",
     "headline": "Founder and solo GP of Air Street Capital; range inferred from management economics and carry across roughly $400M in reported assets under management",
-    "verdict": "plausible", "confidence": "low", "low": 30000000, "high": 120000000,
-    "sources": ["https://www.airstreet.com/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 30000000,
+    "high": 120000000,
+    "sources": [
+      "https://www.airstreet.com/"
+    ]
   },
   "saivc_": {
-    "found": true, "name": "Sai Senthilkumar",
+    "found": true,
+    "name": "Sai Senthilkumar",
     "headline": "Partner at Redpoint; range inferred from career compensation and carried interest, with no disclosed personal holdings",
-    "verdict": "plausible", "confidence": "low", "low": 2000000, "high": 10000000,
-    "sources": ["https://www.redpoint.com/our-people/sai-senthilkumar/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 2000000,
+    "high": 10000000,
+    "sources": [
+      "https://www.redpoint.com/our-people/sai-senthilkumar/"
+    ]
   },
   "tobi": {
-    "found": true, "name": "Tobi Lütke",
+    "found": true,
+    "name": "Tobi Lütke",
     "headline": "Founder and CEO of Shopify, e-commerce billionaire",
-    "verdict": "supported", "confidence": "high", "low": 10300000000, "high": 11000000000,
-    "sources": ["https://www.forbes.com/profile/tobi-lutke/", "https://www.bloomberg.com/billionaires/profiles/tobias-a-lutke/"]
+    "verdict": "supported",
+    "confidence": "high",
+    "low": 10300000000,
+    "high": 11000000000,
+    "sources": [
+      "https://www.forbes.com/profile/tobi-lutke/",
+      "https://www.bloomberg.com/billionaires/profiles/tobias-a-lutke/"
+    ]
   },
   "gdb": {
-    "found": true, "name": "Greg Brockman",
+    "found": true,
+    "name": "Greg Brockman",
     "headline": "OpenAI co-founder and President, holding a 2.5-3% equity stake in the company",
-    "verdict": "supported", "confidence": "medium", "low": 20000000000, "high": 30000000000,
-    "sources": ["https://www.forbes.com/sites/aliciapark/2026/05/04/greg-brockman-testifies-stake-in-openai-worth-nearly-30-billion-despite-investing-nothing/", "https://www.forbes.com/profile/greg-brockman/"]
+    "verdict": "supported",
+    "confidence": "medium",
+    "low": 20000000000,
+    "high": 30000000000,
+    "sources": [
+      "https://www.forbes.com/sites/aliciapark/2026/05/04/greg-brockman-testifies-stake-in-openai-worth-nearly-30-billion-despite-investing-nothing/",
+      "https://www.forbes.com/profile/greg-brockman/"
+    ]
   },
   "rauchg": {
-    "found": true, "name": "Guillermo Rauch",
+    "found": true,
+    "name": "Guillermo Rauch",
     "headline": "Cofounder and CEO of Vercel; wealth from his equity stake after Vercel's $300M Series F at a $9.3B valuation",
-    "verdict": "supported", "confidence": "medium", "low": 2000000000, "high": 2300000000,
-    "sources": ["https://www.forbes.com/profile/guillermo-rauch/", "https://www.forbes.com/sites/richardnieva/2026/03/17/vercel-guillermo-rauch/"]
+    "verdict": "supported",
+    "confidence": "medium",
+    "low": 2000000000,
+    "high": 2300000000,
+    "sources": [
+      "https://www.forbes.com/profile/guillermo-rauch/",
+      "https://www.forbes.com/sites/richardnieva/2026/03/17/vercel-guillermo-rauch/"
+    ]
   },
   "id_aa_carmack": {
-    "found": true, "name": "John Carmack",
+    "found": true,
+    "name": "John Carmack",
     "headline": "Co-founder of id Software (Doom, Quake) and former Oculus/Meta CTO; wealth from the 2009 ZeniMax sale and Oculus acquisition",
-    "verdict": "plausible", "confidence": "low", "low": 40000000, "high": 120000000,
-    "sources": ["https://www.shacknews.com/article/99359/john-carmack-suing-zenimax-for-225-million-over-id-software-sale", "https://www.gamedeveloper.com/business/john-carmack-and-zenimax-have-ended-their-legal-dispute"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 40000000,
+    "high": 120000000,
+    "sources": [
+      "https://www.shacknews.com/article/99359/john-carmack-suing-zenimax-for-225-million-over-id-software-sale",
+      "https://www.gamedeveloper.com/business/john-carmack-and-zenimax-have-ended-their-legal-dispute"
+    ]
   },
   "lexfridman": {
-    "found": true, "name": "Lex Fridman",
+    "found": true,
+    "name": "Lex Fridman",
     "headline": "Podcaster and MIT research scientist; wealth from podcast/YouTube income, no equity stakes found",
-    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 10000000,
-    "sources": ["https://www.celebritynetworth.com/richest-celebrities/authors/lex-fridman-net-worth/", "https://finbold.com/guide/lex-fridman-net-worth/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 3000000,
+    "high": 10000000,
+    "sources": [
+      "https://www.celebritynetworth.com/richest-celebrities/authors/lex-fridman-net-worth/",
+      "https://finbold.com/guide/lex-fridman-net-worth/"
+    ]
   },
   "chamath": {
-    "found": true, "name": "Chamath Palihapitiya",
+    "found": true,
+    "name": "Chamath Palihapitiya",
     "headline": "Social Capital founder/CEO and All-In podcast host; early Facebook equity, SPAC deals, and a major Groq stake acquired by Nvidia",
-    "verdict": "plausible", "confidence": "medium", "low": 1200000000, "high": 2300000000,
-    "sources": ["https://www.forbes.com/profile/chamath-palihapitiya/", "https://www.forbes.com/sites/phoebeliu/2026/03/18/groq-cofounder-ross-explains-whirlwind-ai-chip-deal-with-nvidia/"]
+    "verdict": "plausible",
+    "confidence": "medium",
+    "low": 1200000000,
+    "high": 2300000000,
+    "sources": [
+      "https://www.forbes.com/profile/chamath-palihapitiya/",
+      "https://www.forbes.com/sites/phoebeliu/2026/03/18/groq-cofounder-ross-explains-whirlwind-ai-chip-deal-with-nvidia/"
+    ]
   },
   "aaronlevie": {
-    "found": true, "name": "Aaron Levie",
+    "found": true,
+    "name": "Aaron Levie",
     "headline": "Box co-founder and CEO; wealth is almost entirely his documented Box (NYSE: BOX) equity stake per SEC Form 4 filings",
-    "verdict": "supported", "confidence": "high", "low": 75000000, "high": 150000000,
-    "sources": ["https://www.gurufocus.com/insider/80950/aaron-levie", "https://www.quiverquant.com/insiders/1606525/Aaron-Levie"]
+    "verdict": "supported",
+    "confidence": "high",
+    "low": 75000000,
+    "high": 150000000,
+    "sources": [
+      "https://www.gurufocus.com/insider/80950/aaron-levie",
+      "https://www.quiverquant.com/insiders/1606525/Aaron-Levie"
+    ]
   },
   "patio11": {
-    "found": true, "name": "Patrick McKenzie",
+    "found": true,
+    "name": "Patrick McKenzie",
     "headline": "Writer (Bits about Money) and former senior Stripe employee; accumulated high-income savings, no documented equity exit",
-    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 20000000,
-    "sources": ["https://www.kalzumeus.com/2019/3/18/two-years-at-stripe/", "https://www.kalzumeus.com/2015/05/01/talking-about-money/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 3000000,
+    "high": 20000000,
+    "sources": [
+      "https://www.kalzumeus.com/2019/3/18/two-years-at-stripe/",
+      "https://www.kalzumeus.com/2015/05/01/talking-about-money/"
+    ]
   },
   "shl": {
-    "found": true, "name": "Sahil Lavingia",
+    "found": true,
+    "name": "Sahil Lavingia",
     "headline": "Founder/CEO of Gumroad; wealth is largely illiquid private equity last priced at a $100M company valuation",
-    "verdict": "plausible", "confidence": "low", "low": 20000000, "high": 80000000,
-    "sources": ["https://tylertringas.com/valuing-gumroad/", "https://www.forbes.com/sites/alexkonrad/2021/03/22/gumroad-crowdfunding-results-sahil-lavingia-investing/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 20000000,
+    "high": 80000000,
+    "sources": [
+      "https://tylertringas.com/valuing-gumroad/",
+      "https://www.forbes.com/sites/alexkonrad/2021/03/22/gumroad-crowdfunding-results-sahil-lavingia-investing/"
+    ]
   },
   "suhail": {
-    "found": true, "name": "Suhail Doshi",
+    "found": true,
+    "name": "Suhail Doshi",
     "headline": "Co-founder/ex-CEO of Mixpanel ($1.05B valuation) and founder of Playground AI; no disclosed personal stake",
-    "verdict": "plausible", "confidence": "low", "low": 60000000, "high": 250000000,
-    "sources": ["https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/", "https://www.forbes.com/profile/suhail-doshi/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 60000000,
+    "high": 250000000,
+    "sources": [
+      "https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/",
+      "https://www.forbes.com/profile/suhail-doshi/"
+    ]
   },
   "tszzl": {
-    "found": true, "name": "roon",
+    "found": true,
+    "name": "roon",
     "headline": "Pseudonymous OpenAI member of technical staff; range inferred from OpenAI employee equity compensation norms, not personal disclosures",
-    "verdict": "plausible", "confidence": "low", "low": 3000000, "high": 50000000,
-    "sources": ["https://fortune.com/2026/02/18/openai-chatgpt-creator-record-million-dollar-equity-compensation-ai-tech-talent-war-career-retention-sam-altman-millionaire-staff/", "https://www.cnbc.com/2025/10/02/openai-share-sale-500-billion-valuation.html"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 3000000,
+    "high": 50000000,
+    "sources": [
+      "https://fortune.com/2026/02/18/openai-chatgpt-creator-record-million-dollar-equity-compensation-ai-tech-talent-war-career-retention-sam-altman-millionaire-staff/",
+      "https://www.cnbc.com/2025/10/02/openai-share-sale-500-billion-valuation.html"
+    ]
   },
-  "t3dotgg": { "found": false, "name": "Theo Browne" },
+  "t3dotgg": {
+    "found": false,
+    "name": "Theo Browne"
+  },
   "danielgross": {
-    "found": true, "name": "Daniel Gross",
+    "found": true,
+    "name": "Daniel Gross",
     "headline": "Tech entrepreneur/investor (Cue/Apple exit, ex-YC partner, SSI co-founder, NFDG); Meta's tender offer bought out his personal NFDG fund stakes",
-    "verdict": "plausible", "confidence": "low", "low": 300000000, "high": 1500000000,
-    "sources": ["https://www.datacenterdynamics.com/en/news/meta-in-talks-to-partially-acquire-vc-fund-nfdg-hire-nat-friedman-and-daniel-gross-for-ai-shakeup/", "https://en.wikipedia.org/wiki/Daniel_Gross_(businessman)"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 300000000,
+    "high": 1500000000,
+    "sources": [
+      "https://www.datacenterdynamics.com/en/news/meta-in-talks-to-partially-acquire-vc-fund-nfdg-hire-nat-friedman-and-daniel-gross-for-ai-shakeup/",
+      "https://en.wikipedia.org/wiki/Daniel_Gross_(businessman)"
+    ]
   },
   "jason": {
-    "found": true, "name": "Jason Calacanis",
+    "found": true,
+    "name": "Jason Calacanis",
     "headline": "Angel investor and All-In podcast host; ~300+ angel stakes headlined by a $25K Uber bet worth ~$100M+ at IPO",
-    "verdict": "plausible", "confidence": "low", "low": 75000000, "high": 250000000,
-    "sources": ["https://en.wikipedia.org/wiki/Jason_Calacanis", "https://www.forbes.com/sites/stevenbertoni/2017/01/09/how-jason-calacanis-turned-25k-into-100m-on-uber/"]
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 75000000,
+    "high": 250000000,
+    "sources": [
+      "https://en.wikipedia.org/wiki/Jason_Calacanis",
+      "https://www.forbes.com/sites/stevenbertoni/2017/01/09/how-jason-calacanis-turned-25k-into-100m-on-uber/"
+    ]
+  },
+  "ylecun": {
+    "found": true,
+    "name": "Yann LeCun",
+    "headline": "Turing Award AI researcher; wealth from career compensation (Meta/NYU) plus an undisclosed founder equity stake in AMI Labs (co-founded 2025/26, $3.5B pre-money valuation)",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 20000000,
+    "high": 500000000,
+    "sources": [
+      "https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/",
+      "https://www.ceotodaymagazine.com/2026/03/yann-lecun-net-worth/",
+      "https://stuffablog.com/yann-lecun-net-worth/"
+    ]
+  },
+  "drfeifei": {
+    "found": true,
+    "name": "Fei-Fei Li",
+    "headline": "Stanford AI professor and cofounder/CEO of World Labs (spatial-intelligence AI startup), valued ~$5B in early 2026",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 50000000,
+    "high": 750000000,
+    "sources": [
+      "https://www.bloomberg.com/news/articles/2026-02-18/ai-pioneer-fei-fei-li-s-startup-world-labs-raises-1-billion (corroborated by TechCrunch's Feb 18, 2026 report noting World Labs \"declined to say whether the latest round boosted its valuation,\" and by Bloomberg's Jan 23, 2026 report on ~$5B funding talks)",
+      "https://www.bloomberg.com/news/articles/2026-01-23/fei-fei-li-s-ai-startup-world-labs-in-funding-talks-at-5-billion-valuation",
+      "https://www.bloomberg.com/news/articles/2026-02-18/ai-pioneer-fei-fei-li-s-startup-world-labs-raises-1-billion"
+    ]
+  },
+  "demishassabis": {
+    "found": true,
+    "name": "Demis Hassabis",
+    "headline": "CEO/co-founder of Google DeepMind and Isomorphic Labs; wealth from a decade of Alphabet equity comp plus undisclosed angel stakes (Anthropic, Inflection AI)",
+    "verdict": "supported",
+    "confidence": "low",
+    "low": 400000000,
+    "high": 1500000000,
+    "sources": [
+      "https://www.euronews.com/business/2026/05/19/ai-bidding-wars-the-talent-making-a-fortune-as-big-tech-firms-fight-it-out (Euronews business desk, $600M estimate — the only non-SEO-mill press figure)",
+      "https://www.euronews.com/business/2026/05/21/ai-bidding-wars-the-talent-making-a-fortune-as-big-tech-firms-fight-it-out",
+      "https://www.forbes.com/sites/phoebeliu/2026/03/10/meet-the-45-ai-newcomers-to-forbes-2026-billionaires-list/"
+    ]
+  },
+  "ilyasut": {
+    "found": true,
+    "name": "Ilya Sutskever",
+    "headline": "Cofounder/CEO of Safe Superintelligence (SSI, $32B valuation) and ex-OpenAI cofounder/chief scientist; wealth from a sworn-testimony $7B OpenAI equity stake plus an undisclosed (~15-33%) SSI founder stake",
+    "verdict": "plausible",
+    "confidence": "medium",
+    "low": 13800000000,
+    "high": 30000000000,
+    "sources": [
+      "https://www.bloomberg.com/billionaires/profiles/ilya-sutskever/ (corroborated via Forbes testimony report and Wikipedia; direct fetch 403'd but figure independently confirmed twice via search)",
+      "https://www.forbes.com/sites/aliciapark/2026/05/11/ilya-sutskever-testifies-he-holds-7-billion-openai-stake-second-new-billionaire-revealed-in-musk-altman-trial/",
+      "https://www.bloomberg.com/billionaires/profiles/ilya-sutskever/"
+    ]
+  },
+  "andrewyng": {
+    "found": true,
+    "name": "Andrew Ng",
+    "headline": "AI educator/investor — wealth mainly from Coursera co-founder equity, AI Fund GP carry, and privately-held DeepLearning.AI/Landing AI stakes",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 40000000,
+    "high": 250000000,
+    "sources": [
+      "SEC Form 4 filings (CIK 0001851101) via Benzinga/InsiderTrades.com, cross-checked against live COUR price (Yahoo Finance) and Forbes' 2026 / Bloomberg's 2025-2026 AI-billionaires features (Ng absent from both)",
+      "https://www.benzinga.com/sec/insider-trades/0001851101/andrew-y-ng",
+      "https://www.insidertrades.com/coursera-inc-stock/andrew-y-ng/"
+    ]
+  },
+  "alexandr_wang": {
+    "found": true,
+    "name": "Alexandr Wang",
+    "headline": "Scale AI founder/former CEO, now Meta Chief AI Officer — wealth from ~15%+ equity stake in Scale AI (valued ~$29B after Meta's 2025 investment)",
+    "verdict": "plausible",
+    "confidence": "high",
+    "low": 3000000000,
+    "high": 4000000000,
+    "sources": [
+      "https://www.forbes.com/profile/alexandr-wang/",
+      "https://en.wikipedia.org/wiki/Alexandr_Wang",
+      "https://fortune.com/2025/06/14/self-made-billionaire-college-dropout-alexandr-wang-signs-14-3-billion-deal-to-bolster-metas-ai-efforts-theres-a-huge-premium-to-naivete/"
+    ]
+  },
+  "brian_armstrong": {
+    "found": true,
+    "name": "Brian Armstrong",
+    "headline": "Coinbase cofounder/CEO — wealth is ~14-19% equity stake in Coinbase Global (COIN), tracked live by Forbes/Bloomberg",
+    "verdict": "supported",
+    "confidence": "medium",
+    "low": 7000000000,
+    "high": 18000000000,
+    "sources": [
+      "https://www.forbes.com/profile/brian-armstrong/ (live-fetched July 13, 2026: $7.7B, real-time rank #500, source \"cryptocurrency,\" ~19% Coinbase stake — all directly confirmed)",
+      "https://www.forbes.com/profile/brian-armstrong/",
+      "https://www.bloomberg.com/billionaires/profiles/brian-armstrong/"
+    ]
+  },
+  "cdixon": {
+    "found": true,
+    "name": "Chris Dixon",
+    "headline": "General Partner and founder of a16z crypto; wealth built from carried interest in Andreessen Horowitz funds (incl. huge unrealized/realized gains on Coinbase and other crypto bets) plus two earlier startup exits (SiteAdvisor, Hunch) and pre-a16z angel stakes (Pinterest, Foursquare, Warby Parker, Behance)",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 200000000,
+    "high": 750000000,
+    "sources": [
+      "No authoritative tracked figure exists. Re-fetched forbes.com/profile/chris-dixon/ live (July 2026) and confirmed it still has NO net_worth field or dollar figure (matches the user's March 2025 Wayback check — 16+ months with Forbes declining to assign him a tracked figure). No Bloomberg Billionaires Index entry found. The $400-500M figure in circulation traces only to low-authority SEO aggregators (blockchainreporter.net, sociallifemagazine.com, valuewalk.com, sophisticatedinvestor.com) that explicitly do NOT cite Forbes or any primary source for the number — direct fetch of blockchainreporter.net confirms it's \"the author's own calculation,\" not a sourced figure. Multiple aggregators independently converging on ~$400-500M (while likely copying each other) plus multiple sources explicitly stating \"not a billionaire\" is the only corroborating signal available.",
+      "https://www.forbes.com/profile/chris-dixon/",
+      "http://web.archive.org/web/20250309232949/https://www.forbes.com/profile/chris-dixon/"
+    ]
+  },
+  "rabois": {
+    "found": true,
+    "name": "Keith Rabois",
+    "headline": "PayPal Mafia veteran, Opendoor co-founder, and Khosla Ventures/Founders Fund general partner — wealth built from equity/carry across a dozen-plus startups, not from any confirmed billionaire listing",
+    "verdict": "supported",
+    "confidence": "low",
+    "low": 40000000,
+    "high": 700000000,
+    "sources": [
+      "https://www.forbes.com/profile/keith-rabois/ (independently re-fetched: no net worth shown, only Midas List #66) plus SEC-filing trackers GuruFocus/Benzinga/QuiverQuant showing ~$15-18M disclosed public stock as the only hard floor",
+      "https://www.forbes.com/profile/keith-rabois/",
+      "https://en.wikipedia.org/wiki/Keith_Rabois"
+    ]
+  },
+  "davidsacks": {
+    "found": true,
+    "name": "David Sacks",
+    "headline": "Venture capitalist (Craft Ventures co-founder/GP) and PayPal Mafia/Yammer alum; wealth from Yammer's $1.2B Microsoft exit, PayPal equity, Craft Ventures carry on a $3.3B+ AUM fund, and early stakes in Facebook/Uber/SpaceX/Airbnb/Palantir",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 300000000,
+    "high": 2000000000,
+    "sources": [
+      "https://www.cnbc.com/2025/03/14/david-sacks-sold-200-million-in-crypto-holdings-before-taking-wh-job.html (corroborated by Forbes profile showing no tracked figure, and Axios/Fortune/White House memo)",
+      "https://www.forbes.com/profile/david-sacks/",
+      "https://www.cnbc.com/2025/03/14/david-sacks-sold-200-million-in-crypto-holdings-before-taking-wh-job.html"
+    ]
+  },
+  "reidhoffman": {
+    "found": true,
+    "name": "Reid Hoffman",
+    "headline": "LinkedIn cofounder and Greylock Partners VC; wealth from 2016 LinkedIn/Microsoft sale plus VC portfolio (Airbnb, Aurora, etc.)",
+    "verdict": "supported",
+    "confidence": "high",
+    "low": 2500000000,
+    "high": 3200000000,
+    "sources": [
+      "https://www.forbes.com/profile/reid-hoffman/",
+      "https://www.forbes.com/profile/reid-hoffman/",
+      "https://www.celebritynetworth.com/richest-businessmen/ceos/reid-hoffman-net-worth/"
+    ]
+  },
+  "bhorowitz": {
+    "found": true,
+    "name": "Ben Horowitz",
+    "headline": "a16z cofounder/GP + Opsware $1.6B exit (2007); no Forbes/Bloomberg-verified net worth exists — estimate is inferred, not sourced from a rated figure",
+    "verdict": "supported",
+    "confidence": "low",
+    "low": 700000000,
+    "high": 4000000000,
+    "sources": [
+      "https://www.forbes.com/profile/ben-horowitz/ (confirmed via direct fetch: no personal net worth figure present) cross-checked against https://www.forbes.com/profile/marc-andreessen/ (~$1.9B, Forbes Billionaires #2177) as the only comparable gold-standard data point",
+      "https://www.forbes.com/profile/ben-horowitz/",
+      "https://www.forbes.com/profile/marc-andreessen/"
+    ]
+  },
+  "fredwilson": {
+    "found": true,
+    "name": "Fred Wilson",
+    "headline": "Co-founder/managing partner, Union Square Ventures — wealth from VC carry plus disclosed Coinbase and Etsy board stakes; not a billionaire",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 75000000,
+    "high": 500000000,
+    "sources": [
+      "SEC Form 4 filings for COIN and ETSY (via StockTitan/GuruFocus), cross-checked against current market prices; Forbes profile confirms no net-worth figure and absence from the Billionaires list",
+      "https://www.forbes.com/profile/fred-wilson/",
+      "https://www.gurufocus.com/insider/2326/frederick-r-wilson"
+    ]
+  },
+  "nikitabier": {
+    "found": true,
+    "name": "Nikita Bier",
+    "headline": "Serial consumer-app founder (tbh sold to Facebook 2017, Gas sold to Discord 2023) now Head of Product at X; no billionaire/public-market wealth, no dedicated Forbes or Bloomberg net-worth listing exists",
+    "verdict": "supported",
+    "confidence": "low",
+    "low": 5000000,
+    "high": 75000000,
+    "sources": [
+      "https://techcrunch.com/2017/10/16/facebook-acquires-anonymous-teen-compliment-app-tbh-will-let-it-run/ and https://techcrunch.com/2023/01/17/discord-acquires-gas-a-compliments-based-social-media-app-for-teens/ (both confirm undisclosed/sub-$100M terms, directly refuting any precise headline figure)",
+      "https://techcrunch.com/2017/10/16/facebook-acquires-anonymous-teen-compliment-app-tbh-will-let-it-run/",
+      "https://www.forbes.com/sites/curtissilver/2017/10/17/facebook-teen-users-tbh-acquisition-snapchat/"
+    ]
+  },
+  "cobie": {
+    "found": true,
+    "name": "Cobie (Jordan Fish)",
+    "headline": "Crypto trader/investor since 2012, early Lido Finance contributor, and founder of the Echo fundraising platform, which Coinbase acquired for ~$375M (plus a separate $25M NFT purchase) in October 2025",
+    "verdict": "plausible",
+    "confidence": "medium",
+    "low": 150000000,
+    "high": 900000000,
+    "sources": [
+      "https://www.coindesk.com/business/2025/10/21/coinbase-buys-crypto-fundraising-firm-echo-for-usd375m",
+      "https://www.coinbase.com/blog/coinbase-acquires-echo-unlocking-the-future-of-onchain-capital-formation",
+      "https://decrypt.co/345168/coinbase-acquires-echo-375-million"
+    ]
+  },
+  "cathiedwood": {
+    "found": true,
+    "name": "Cathie Wood",
+    "headline": "Founder/CEO/CIO of ARK Invest; wealth is an illiquid ~50-75% ownership stake in privately-held ARK plus fee income, not a single traded asset",
+    "verdict": "plausible",
+    "confidence": "medium",
+    "low": 210000000,
+    "high": 350000000,
+    "sources": [
+      "Bloomberg Billionaires Index (~$220M, cited via coinpaper.com/datawallet.com secondary reporting) for the low anchor; aggregator consensus (datawallet.com, coinpaper.com, celebritynetworth.com, moneywise.com) clustering $250M-$350M for current estimates; Forbes profile (forbes.com/profile/cathie-wood) confirms the $400M 2021 peak / ~$140M 2022 trough trajectory but its real-time figure is JS-rendered and not directly fetchable.",
+      "https://www.forbes.com/profile/cathie-wood/",
+      "https://www.celebritynetworth.com/richest-businessmen/wall-street/cathie-wood-net-worth/"
+    ]
+  },
+  "jeremyphoward": {
+    "found": true,
+    "name": "Jeremy Howard",
+    "headline": "Fast.ai/Answer.AI cofounder and serial entrepreneur (ODG, FastMail, Enlitic exits); no verified net worth, wealth basis is fragmentary and largely modest",
+    "verdict": "plausible",
+    "confidence": "low",
+    "low": 2000000,
+    "high": 40000000,
+    "sources": [
+      "Howard v. Goldbloom, Cal. Ct. App. 1st Dist., Dec. 2018 (https://law.justia.com/cases/california/court-of-appeal/2018/a154298.html and https://caselaw.findlaw.com/court/ca-court-of-appeal/1968643.html) — discloses Google's actual Kaggle purchase (~$47.9M + $10M stay bonuses) and Howard's actual merger proceeds (~$700K), contradicting the basis's claim that Kaggle terms were fully undisclosed.",
+      "https://www.insurancejournal.com/news/national/2008/02/05/87032.htm",
+      "https://www.fastmail.com/blog/fastmail-sale-to-opera-the-story-from-one-of-the-owners/"
+    ]
   }
 }
